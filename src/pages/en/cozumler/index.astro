@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CTABanner from '../../../components/CTABanner.astro';
+import { t, type Lang } from '../../../i18n';
+
+const lang: Lang = 'en';
+const T = t(lang);
+const base = `/${lang}`;
+---
+
+<BaseLayout lang={lang} title={T.solutionsHub.title}>
+
+  <section class="hub-hero grid-bg">
+    <div class="container">
+      <span class="section-label">{T.solutionsHub.label}</span>
+      <h1 class="hub-title">{T.solutionsHub.title}</h1>
+      <p class="hub-sub">{T.solutionsHub.subtitle}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sectors-grid">
+        {T.sectors.map((s, i) => (
+          <a href={`${base}/cozumler/${s.slug}`} class="sector-card card fade-in" style={`--delay:${i * 60}ms`}>
+            <div class="sector-top">
+              <span class="sector-icon">{s.icon}</span>
+            </div>
+            <h2 class="sector-name">{s.name}</h2>
+            <p class="sector-summary">{s.summary}</p>
+            <span class="sector-link">{T.solutionsHub.inspect}</span>
+          </a>
+        ))}
+      </div>
+      <div class="no-sector fade-in">
+        <h3 class="no-sector-title">{T.solutionsHub.noSectorTitle}</h3>
+        <p class="no-sector-sub">{T.solutionsHub.noSectorSub}</p>
+        <a href={`${base}/iletisim`} class="btn btn-outline">{T.solutionsHub.noSectorCta}</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner lang={lang} />
+
+</BaseLayout>
+
+<style>
+  .hub-hero { padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem); border-bottom: 1px solid var(--color-border); }
+  .hub-title { font-size: var(--text-h1); font-weight: 700; margin: 0.75rem 0 1rem; max-width: 640px; }
+  .hub-sub { color: var(--color-muted); max-width: 480px; line-height: 1.65; font-size: 1.05rem; }
+
+  .sectors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .sector-card { display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 200ms ease-out, transform 200ms ease-out; animation-delay: var(--delay, 0ms); }
+  .sector-card:hover { transform: translateY(-2px); }
+  .sector-top { display: flex; align-items: center; justify-content: space-between; }
+  .sector-icon { font-size: 1.5rem; color: var(--color-accent); font-family: var(--font-mono); }
+  .sector-name { font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
+  .sector-summary { font-size: var(--text-small); color: var(--color-muted); line-height: 1.55; flex: 1; }
+  .sector-link { font-size: var(--text-small); font-weight: 600; color: var(--color-accent); }
+
+  .no-sector { margin-top: 3rem; padding: 2.5rem; border: 1px dashed var(--color-border); border-radius: 4px; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .no-sector-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
+  .no-sector-sub { font-size: var(--text-small); color: var(--color-muted); }
+</style>

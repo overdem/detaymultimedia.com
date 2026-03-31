@@ -1,0 +1,79 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  summary: string;
+  icon?: string;
+  count?: string;
+}
+
+const { slug, name, summary, icon = '◈', count } = Astro.props;
+---
+
+<a href={`/cozumler/${slug}`} class="sector-card card">
+  <div class="sector-card-icon" aria-hidden="true">{icon}</div>
+  {count && <span class="sector-card-badge">{count}</span>}
+  <h3 class="sector-card-name">{name}</h3>
+  <p class="sector-card-summary">{summary}</p>
+  <span class="sector-card-link">İncele →</span>
+</a>
+
+<style>
+  .sector-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+    transition: border-color 200ms ease-out, transform 200ms ease-out;
+  }
+
+  .sector-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .sector-card-icon {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+  }
+
+  .sector-card-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .sector-card-name {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+
+  .sector-card-summary {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .sector-card-link {
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-top: auto;
+    transition: gap 200ms ease-out;
+  }
+
+  .sector-card:hover .sector-card-link {
+    letter-spacing: 0.02em;
+  }
+</style>

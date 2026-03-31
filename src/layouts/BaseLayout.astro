@@ -1,0 +1,91 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { t, getAlternateLangURL, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { lang, title, description, ogImage = '/og-default.png' } = Astro.props;
+const T = t(lang);
+const alternateLang: Lang = lang === 'tr' ? 'en' : 'tr';
+const alternateURL = getAlternateLangURL(Astro.url.pathname, alternateLang);
+const canonicalURL = Astro.url.href;
+
+const desc = description ?? T.site.description;
+const siteTitle =
+  title === '__home__'
+    ? `${T.site.name} — ${T.site.tagline}`
+    : `${title} | ${T.site.name}`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{siteTitle}</title>
+    <meta name="description" content={desc} />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang={alternateLang} href={new URL(alternateURL, Astro.url).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(`/tr`, Astro.url).href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_US'} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Nav lang={lang} currentPath={Astro.url.pathname} alternateLangURL={alternateURL} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+
+    <script>
+      // Scroll reveal
+      const fadeEls = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              (entry.target as HTMLElement).classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 }
+      );
+      fadeEls.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

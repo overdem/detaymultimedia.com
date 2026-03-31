@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { t, type Lang } from '../../i18n';
+
+const lang: Lang = 'en';;
+const T = t(lang);
+const base = `/${lang}`;
+
+// TODO: Gerçek vaka çalışmaları CMS veya statik dosyadan gelecek
+const cases = [
+  {
+    sector: 'Lojistik',
+    company: 'İstanbul merkezli, 120 çalışanlı nakliye firması',
+    problem: 'Sevkiyat durumu müşterilere telefon ve e-posta ile manuel aktarılıyordu.',
+    solution: 'Otomatik sevkiyat takip sistemi ve müşteri bildirim akışı kuruldu.',
+    result: 'Haftalık 35+ iş saati kazanıldı',
+  },
+  {
+    sector: 'Üretim',
+    company: 'Ankara merkezli, 80 çalışanlı imalat şirketi',
+    problem: 'Sipariş, stok ve fatura verileri 3 ayrı sistemde tutuluyordu.',
+    solution: 'Sistemler arası otomatik veri senkronizasyonu ve raporlama kuruldu.',
+    result: 'Veri girişi hatası %90 azaldı',
+  },
+  {
+    sector: 'Sağlık',
+    company: 'İzmir merkezli, 3 şubeli klinik zinciri',
+    problem: 'Randevu hatırlatmaları sekreterler tarafından manuel olarak yapılıyordu.',
+    solution: 'Otomatik SMS/WhatsApp hatırlatma sistemi ve hasta geri çağırma akışı kuruldu.',
+    result: 'No-show oranı %45 düştü',
+  },
+  {
+    sector: 'Gayrimenkul',
+    company: 'İstanbul merkezli butik gayrimenkul danışmanlığı',
+    problem: 'Müşteri talepleri farklı kanallardan gelip kayboluyordu.',
+    solution: 'Merkezi talep yönetim sistemi ve otomatik müşteri takip akışı kuruldu.',
+    result: 'Yanıt süresi 4 saaten 20 dakikaya indi',
+  },
+];
+---
+
+<BaseLayout lang={lang} title={T.references.metaTitle} description={T.references.metaDesc}>
+
+  <section class="page-hero grid-bg">
+    <div class="container">
+      <span class="section-label">{T.references.heroLabel}</span>
+      <h1 class="page-title">{T.references.heroTitle}</h1>
+      <p class="page-sub">{T.references.heroSub}</p>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="container">
+      <span class="stats-text">{T.references.statsBar}</span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="cases-grid">
+        {cases.map((c, i) => (
+          <article class="case-card card fade-in" style={`--delay:${i * 70}ms`}>
+            <span class="section-label" style="font-size:10px;margin-bottom:0.25rem">{c.sector}</span>
+            <span class="case-company">{c.company}</span>
+            <div class="case-detail">
+              <div class="case-row">
+                <span class="case-label">Sorun</span>
+                <p>{c.problem}</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Çözüm</span>
+                <p>{c.solution}</p>
+              </div>
+            </div>
+            <div class="case-result">
+              <span>{c.result}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    lang={lang}
+    title="Siz de referansımız olun"
+    subtitle="Şirketinize özel otomasyon analizi için 30 dakikalık ücretsiz görüşme talep edin."
+    ctaText={T.references.emptyCta}
+    ctaHref={`${base}/iletisim`}
+  />
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-title { font-size: var(--text-h1); font-weight: 700; margin: 0.75rem 0 1rem; max-width: 560px; }
+  .page-sub { color: var(--color-muted); max-width: 480px; line-height: 1.65; font-size: 1.05rem; }
+
+  .stats-bar {
+    background-color: var(--color-bg-3);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+
+  .stats-text {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .case-card { display: flex; flex-direction: column; gap: 1rem; animation-delay: var(--delay, 0ms); }
+  .case-company { font-size: var(--text-small); color: var(--color-muted); font-style: italic; }
+
+  .case-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+  }
+
+  .case-row { display: grid; grid-template-columns: 56px 1fr; gap: 0.75rem; align-items: start; }
+
+  .case-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    padding-top: 0.15rem;
+  }
+
+  .case-row p { font-size: var(--text-small); color: var(--color-muted); line-height: 1.5; }
+
+  .case-result {
+    background-color: rgba(232, 150, 31, 0.08);
+    border: 1px solid rgba(232, 150, 31, 0.2);
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+  }
+
+  .case-result span {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+</style>

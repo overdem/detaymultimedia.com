@@ -1,0 +1,149 @@
+---
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const T = t(lang);
+const base = `/${lang}`;
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href={base} class="footer-logo">Detay<span class="text-accent">.</span></a>
+        <p class="footer-tagline">
+          {T.footer.tagline.split('\n').map((line, i) => (
+            <span>{line}{i === 0 ? <br /> : ''}</span>
+          ))}
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <span class="footer-col-title">{T.footer.solutionsCol}</span>
+          {T.sectors.map(s => (
+            <a href={`${base}/cozumler/${s.slug}`}>{s.name}</a>
+          ))}
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">{T.footer.companyCol}</span>
+          <a href={`${base}/hizmetler`}>{T.nav.services}</a>
+          <a href={`${base}/referanslar`}>{T.nav.references}</a>
+          <a href={`${base}/hakkimizda`}>{T.nav.about}</a>
+          <a href={`${base}/blog`}>{T.footer.blog}</a>
+          <a href={`${base}/iletisim`}>{T.nav.contact}</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">{T.footer.contactCol}</span>
+          <!-- TODO: Gerçek e-posta ekle -->
+          <a href="mailto:info@detaymultimedia.com">info@detaymultimedia.com</a>
+          <!-- TODO: Telefon ve adres ekle -->
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="footer-bottom">
+      <span class="text-subtle">&copy; {year} Detay Multimedya. {T.footer.rights}</span>
+      <div class="footer-legal">
+        <a href={`${base}/kvkk`}>{T.footer.kvkk}</a>
+        <a href={`${base}/gizlilik`}>{T.footer.privacy}</a>
+        <a href={`${base}/kullanim-kosullari`}>{T.footer.terms}</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-bg-2);
+    border-top: 1px solid var(--color-border);
+    padding: 4rem 0 2rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-col a {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    transition: color 200ms ease-out;
+  }
+
+  .footer-col a:hover { color: var(--color-text); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    font-size: var(--text-small);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-legal { display: flex; gap: 1.5rem; }
+
+  .footer-legal a {
+    font-size: var(--text-small);
+    color: var(--color-subtle);
+    transition: color 200ms ease-out;
+  }
+
+  .footer-legal a:hover { color: var(--color-muted); }
+
+  @media (max-width: 900px) {
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 640px) {
+    .footer-nav { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .footer-legal { flex-wrap: wrap; gap: 1rem; }
+  }
+</style>

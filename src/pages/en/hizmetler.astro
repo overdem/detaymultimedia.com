@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { t, type Lang } from '../../i18n';
+
+const lang: Lang = 'en';;
+const T = t(lang);
+const base = `/${lang}`;
+---
+
+<BaseLayout lang={lang} title={T.services.metaTitle} description={T.services.metaDesc}>
+
+  <section class="page-hero grid-bg">
+    <div class="container">
+      <span class="section-label">{T.services.heroLabel}</span>
+      <h1 class="page-title">{T.services.heroTitle}</h1>
+      <p class="page-sub">{T.services.heroSub}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        {T.services.categories.map((cat, i) => (
+          <article class="service-card card fade-in" style={`--delay:${i * 70}ms`}>
+            <div class="service-top">
+              <span class="service-num mono">{String(i + 1).padStart(2, '0')}</span>
+              <span class="service-duration">{cat.duration}</span>
+            </div>
+            <h2 class="service-title">{cat.title}</h2>
+            <p class="service-desc">{cat.desc}</p>
+            <div class="service-usecases">
+              {cat.useCases.map(u => (
+                <span class="usecase-item">
+                  <span class="usecase-dot" aria-hidden="true">·</span> {u}
+                </span>
+              ))}
+            </div>
+            <div class="service-sectors">
+              {cat.sectors.map(s => (
+                <span class="sector-tag">{s}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner lang={lang} />
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-title { font-size: var(--text-h1); font-weight: 700; margin: 0.75rem 0 1rem; max-width: 560px; }
+  .page-sub { color: var(--color-muted); max-width: 480px; line-height: 1.65; font-size: 1.05rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  .service-top { display: flex; align-items: center; justify-content: space-between; }
+
+  .service-num {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .service-duration {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    background-color: rgba(255,255,255,0.04);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  .service-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
+
+  .service-desc { font-size: var(--text-small); color: var(--color-muted); line-height: 1.65; flex: 1; }
+
+  .service-usecases {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+  }
+
+  .usecase-item { font-size: var(--text-small); color: var(--color-muted); }
+  .usecase-dot { color: var(--color-accent); margin-right: 0.25rem; }
+
+  .service-sectors { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .sector-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    background-color: rgba(255,255,255,0.04);
+    border: 1px solid var(--color-border);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+</style>

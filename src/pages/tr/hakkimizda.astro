@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import { t, type Lang } from '../../i18n';
+
+const lang: Lang = 'tr';
+const T = t(lang);
+const base = `/${lang}`;
+---
+
+<BaseLayout lang={lang} title={T.about.metaTitle} description={T.about.metaDesc}>
+
+  <section class="page-hero grid-bg">
+    <div class="container">
+      <span class="section-label">{T.about.heroLabel}</span>
+      <h1 class="page-title">{T.about.heroTitle}</h1>
+      <p class="page-sub">{T.about.heroSub}</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="mission-block fade-in">
+        <div class="mission-left">
+          <span class="section-label">{T.about.missionLabel}</span>
+          <h2 class="mission-title">{T.about.missionTitle}</h2>
+        </div>
+        <p class="mission-text">{T.about.missionText}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">{T.about.valuesLabel}</span>
+      <div class="values-grid">
+        {T.about.values.map((v, i) => (
+          <div class="value-card card fade-in" style={`--delay:${i * 70}ms`}>
+            <span class="value-num mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="value-title">{v.title}</h3>
+            <p class="value-desc">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TODO: Ekip bölümü eklenecek -->
+  <!-- TODO: Hakkımızda görseli eklenecek -->
+
+  <CTABanner lang={lang} />
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-title { font-size: var(--text-h1); font-weight: 700; margin: 0.75rem 0 1rem; max-width: 600px; }
+  .page-sub { color: var(--color-muted); max-width: 500px; line-height: 1.65; font-size: 1.05rem; }
+
+  .mission-block {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .mission-title { font-size: var(--text-h2); margin-top: 0.5rem; }
+
+  .mission-text {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+    line-height: 1.75;
+    padding-top: 2.25rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .value-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  .value-num {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .value-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
+  .value-desc { font-size: var(--text-small); color: var(--color-muted); line-height: 1.65; }
+
+  @media (max-width: 768px) {
+    .mission-block { grid-template-columns: 1fr; gap: 1.5rem; }
+    .mission-text { padding-top: 0; }
+  }
+</style>

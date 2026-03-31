@@ -1,0 +1,115 @@
+---
+interface Props {
+  sector: string;
+  company: string;
+  problem: string;
+  solution: string;
+  result: string;
+  href?: string;
+}
+
+const { sector, company, problem, solution, result, href = '#' } = Astro.props;
+---
+
+<article class="case-card card">
+  <div class="case-card-top">
+    <span class="case-sector section-label">{sector}</span>
+  </div>
+  <span class="case-company">{company}</span>
+  <div class="case-detail">
+    <div class="case-row">
+      <span class="case-label">Sorun</span>
+      <p class="case-text">{problem}</p>
+    </div>
+    <div class="case-row">
+      <span class="case-label">Çözüm</span>
+      <p class="case-text">{solution}</p>
+    </div>
+  </div>
+  <div class="case-result">
+    <span class="case-result-number">{result}</span>
+  </div>
+  {href !== '#' && (
+    <a href={href} class="case-read-more">Detaylı Oku →</a>
+  )}
+</article>
+
+<style>
+  .case-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .case-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .case-sector {
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+
+  .case-company {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .case-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+  }
+
+  .case-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .case-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    padding-top: 0.15rem;
+  }
+
+  .case-text {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  .case-result {
+    background-color: rgba(232, 150, 31, 0.08);
+    border: 1px solid rgba(232, 150, 31, 0.2);
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+  }
+
+  .case-result-number {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .case-read-more {
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-muted);
+    transition: color 200ms ease-out;
+  }
+
+  .case-read-more:hover {
+    color: var(--color-text);
+  }
+</style>

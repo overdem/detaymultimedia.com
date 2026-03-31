@@ -1,0 +1,64 @@
+---
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const { lang, title, subtitle, ctaText, ctaHref } = Astro.props;
+const T = t(lang);
+const base = `/${lang}`;
+
+const resolvedTitle = title ?? T.ctaBanner.title;
+const resolvedSubtitle = subtitle ?? T.ctaBanner.subtitle;
+const resolvedCta = ctaText ?? T.ctaBanner.cta;
+const resolvedHref = ctaHref ?? `${base}/iletisim`;
+---
+
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div class="cta-content">
+      <span class="section-label">{T.ctaBanner.label}</span>
+      <h2 class="cta-title">{resolvedTitle}</h2>
+      <p class="cta-subtitle">{resolvedSubtitle}</p>
+    </div>
+    <a href={resolvedHref} class="btn btn-primary cta-btn">{resolvedCta}</a>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    background-color: var(--color-bg-3);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 4rem 0;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-content { flex: 1; min-width: 280px; }
+
+  .cta-title {
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+    margin-bottom: 0.5rem;
+    max-width: 560px;
+  }
+
+  .cta-subtitle { color: var(--color-muted); font-size: var(--text-small); }
+
+  .cta-btn { flex-shrink: 0; padding: 14px 32px; font-size: 1rem; }
+
+  @media (max-width: 640px) {
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>

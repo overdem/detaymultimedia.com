@@ -43,6 +43,7 @@ export interface Translations {
     statsLabel3: string;
     statsValue3: string;
     trustLabel: string;
+    trustDesc: string;
     whyLabel: string;
     whyTitle: string;
     pains: Array<{ title: string; desc: string; stat: string }>;

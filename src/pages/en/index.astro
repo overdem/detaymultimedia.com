@@ -46,11 +46,7 @@ const base = `/${lang}`;
     <div class="trust-bar">
       <div class="container trust-bar-inner">
         <span class="trust-label">{T.home.trustLabel}</span>
-        <div class="trust-logos">
-          <span class="trust-placeholder">● Coming soon</span>
-          <span class="trust-placeholder">● Coming soon</span>
-          <span class="trust-placeholder">● Coming soon</span>
-        </div>
+        <p class="trust-desc">{T.home.trustDesc}</p>
       </div>
     </div>
   </section>
@@ -122,23 +118,22 @@ const base = `/${lang}`;
 
 <style>
   .hero { padding: clamp(5rem, 10vw, 9rem) 0 0; }
-  .hero-inner { padding-bottom: clamp(3rem, 6vw, 5rem); }
+  .hero-inner { padding-bottom: clamp(3rem, 6vw, 5rem); max-width: 800px; }
 
-  .hero-title { font-size: var(--text-hero); font-weight: 700; line-height: 1.08; margin: 1rem 0 1.5rem; max-width: 700px; }
+  .hero-title { font-size: var(--text-hero); font-weight: 700; line-height: 1.08; margin: 1rem 0 1.5rem; max-width: 800px; }
   .hero-sub { color: var(--color-muted); font-size: 1.05rem; max-width: 520px; line-height: 1.65; margin-bottom: 2.5rem; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
   .hero-stats { display: flex; align-items: stretch; margin-top: 3rem; border: 1px solid var(--color-border); border-radius: 4px; background-color: var(--color-bg-3); width: fit-content; overflow: hidden; }
-  .hero-stat-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 1rem 2rem; }
-  .hero-stat-number { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; line-height: 1; }
+  .hero-stat-item { display: flex; flex-direction: column; gap: 0.35rem; padding: 1.25rem 2.5rem; }
+  .hero-stat-number { font-family: var(--font-mono); font-size: 2rem; font-weight: 500; line-height: 1; }
   .hero-stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
   .hero-stat-divider { width: 1px; background-color: var(--color-border); }
 
   .trust-bar { border-top: 1px solid var(--color-border); background-color: var(--color-bg-2); padding: 1.25rem 0; }
   .trust-bar-inner { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
   .trust-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-subtle); }
-  .trust-logos { display: flex; gap: 2rem; }
-  .trust-placeholder { font-size: var(--text-small); color: var(--color-subtle); }
+  .trust-desc { font-size: var(--text-small); color: var(--color-muted); max-width: 600px; line-height: 1.55; }
 
   .section-title { font-size: var(--text-h2); margin-bottom: 0.75rem; }
   .section-sub { color: var(--color-muted); max-width: 560px; line-height: 1.65; margin-bottom: 3rem; }
@@ -177,11 +172,21 @@ const base = `/${lang}`;
     .step-item:nth-child(4) { border-right: none; border-top: 1px solid var(--color-border); }
   }
 
+  @media (max-width: 768px) {
+    .hero-stat-item { padding: 1rem 1.5rem; }
+    .hero-stat-number { font-size: 1.6rem; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .sectors-grid { grid-template-columns: 1fr 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 640px) {
     .steps-grid { grid-template-columns: 1fr; }
     .step-item { border-right: none !important; border-bottom: 1px solid var(--color-border); border-top: none !important; }
     .step-item:last-child { border-bottom: none; }
     .hero-stats { flex-direction: column; width: 100%; }
     .hero-stat-divider { width: 100%; height: 1px; }
+    .hero-stat-item { padding: 0.85rem 1.25rem; }
+    .sectors-grid { grid-template-columns: 1fr; }
   }
 </style>

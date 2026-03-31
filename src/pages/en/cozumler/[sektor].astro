@@ -142,10 +142,15 @@ const technologies = ['Make', 'n8n', 'Claude API', 'Supabase', 'Zapier'];
   .no-case { margin-top: 2rem; padding: 3rem; border: 1px dashed var(--color-border); border-radius: 4px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
   .no-case-text { color: var(--color-muted); font-size: var(--text-small); }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .solution-header { grid-template-columns: 1fr; }
     .solution-header span:last-child { display: none; }
     .solution-row { grid-template-columns: 1fr; }
     .problem-cell { border-right: none; border-bottom: 1px solid var(--color-border); }
+    .problem-list { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .sector-hero-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
   }
 </style>

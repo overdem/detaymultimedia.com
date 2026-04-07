@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   output: 'server',
   adapter: vercel({
-    functionPerRoute: true
+    skewProtection: false
   }),
   site: 'https://detaymultimedia.com',
   integrations: [sitemap()],

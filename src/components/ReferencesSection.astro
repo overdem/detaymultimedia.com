@@ -1,0 +1,57 @@
+---
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const T = t(lang);
+const base = `/${lang}`;
+---
+
+<section class="references-section" id="referanslar">
+  <div class="container">
+    <div class="ref-content reveal">
+      <span class="section-label">{T.home.referencesLabel}</span>
+      <h2 class="section-heading">{T.home.referencesTitle}</h2>
+      <p class="ref-desc">
+        {lang === 'tr'
+          ? 'Referans vaka çalışmalarımız hazırlanıyor. Görüşme talep edin, süreçlerinizi birlikte değerlendirelim.'
+          : 'Case studies are being prepared. Request a meeting and let us evaluate your processes together.'}
+      </p>
+      <a href={`${base}/iletisim`} class="btn btn-primary btn-lg">
+        {T.home.ctaPrimary}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .references-section {
+    padding: var(--section-gap) 0;
+  }
+
+  .ref-content {
+    max-width: 640px;
+  }
+
+  .section-heading {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .ref-desc {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-lg {
+    padding: 1.1rem 2.5rem;
+    font-size: 0.8rem;
+  }
+</style>

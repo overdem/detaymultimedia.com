@@ -1,0 +1,70 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="E-Ticaret Operasyon Otomasyonu: Neden Kaçınılmaz Hale Geldi?"
+  description="E-ticaret firmalarında müşteri hizmetleri sorgularının %60'ı sipariş durumu sorusu. Otomasyon bu yükü nasıl kaldırır?"
+  sector="Perakende"
+  sectorSlug="perakende"
+  readTime="6 dk"
+  publishDate="Nisan 2026"
+  type="seo"
+  relatedPosts={[
+    { title: 'Perakende & E-Ticaret İşletmelerinde Otomasyon Rehberi', href: '/tr/blog/perakende-surecler-rehberi', type: 'rehber' },
+    { title: 'Perakende & E-Ticaret Çözümlerimiz', href: '/tr/cozumler/perakende', type: 'seo' },
+  ]}
+>
+
+<h1>E-Ticaret Operasyon Otomasyonu:<br />Neden Kaçınılmaz Hale Geldi?</h1>
+
+<p>E-ticaret firmalarında <strong>müşteri hizmetleri sorgularının %60'ı sipariş durumu sorusu</strong>. Günde 500 sipariş işleyen bir firmada bu, müşteri hizmetleri ekibinin günlük 300 soruya cevap vermesi demek. Bu 300 sorunun büyük bölümü otomatik bildirimle hiç sorulmayacak hale gelebilir.</p>
+
+<h2>Perakende'de En Çok Zaman Kaybettiren 5 Süreç</h2>
+
+<h3>1. Sipariş durumu bildirimleri</h3>
+<p>Müşteri siparişinin nerede olduğunu bilmek istiyor. Bu bilgiyi sistematik olarak iletmemek müşteri hizmetleri yükünü katlıyor.</p>
+
+<h3>2. Çoklu platform stok yönetimi</h3>
+<p>Web sitesi, Trendyol, Hepsiburada, mağaza — dörtte ayrı stok takibi. Güncelleme gecikmesi aşırı satışa, iptale ve müşteri hayal kırıklığına yol açıyor.</p>
+
+<h3>3. İade süreci yönetimi</h3>
+<p>İade talebi e-posta zincirine dönüşüyor, takip numarası elle oluşturuluyor, stoka geri alım manuel yapılıyor. Her iade işlemi ortalama 15–20 dakika alıyor.</p>
+
+<h3>4. Satış raporlaması</h3>
+<p>Farklı kanallardan veri toplamak, birleştirmek ve analiz etmek saatler alıyor. Doğru veri geç geliyor, karar almanın gecikmesine yol açıyor.</p>
+
+<h3>5. Tedarikçi siparişleri</h3>
+<p>Stok kritik seviyeye düşünce tedarikçiye sipariş manuel veriliyor. Otomatik yenileme tetikleyicisi bu adımı kaldırıyor.</p>
+
+<BlogCTA sector="Perakende" sectorSlug="perakende" variant="inline" />
+
+<h2>Otomasyon Hangi Süreçleri Değiştirir?</h2>
+
+<table>
+  <thead>
+    <tr><th>Süreç</th><th>Önce</th><th>Sonra</th><th>Kazanım</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Sipariş bildirimi</strong></td><td>Müşteri kendisi arıyor</td><td>Otomatik durum SMS/e-posta</td><td>Müşteri hizmetleri yükü %60 azalır</td></tr>
+    <tr><td><strong>Stok senkronizasyonu</strong></td><td>Her kanalda manuel güncelleme</td><td>Gerçek zamanlı merkezi senkronizasyon</td><td>Aşırı satış sona erer</td></tr>
+    <tr><td><strong>İade süreci</strong></td><td>E-posta takibi, manuel adımlar</td><td>Otomatik iade akışı</td><td>İade başına 15 dk → 2 dk</td></tr>
+    <tr><td><strong>Satış raporu</strong></td><td>Manuel derleme, geç analiz</td><td>Günlük otomatik kanal özeti</td><td>Anlık karar alma</td></tr>
+  </tbody>
+</table>
+
+<h2>Nereden Başlamalı?</h2>
+
+<ol class="steps-list">
+  <li><span class="step-num">01</span><div><strong>Analiz — Günlük müşteri hizmetleri yükünü ölçün.</strong> Kaç soru sipariş durumu sorusu? Bu sayı, otomasyon ROI hesabının temelidir.</div></li>
+  <li><span class="step-num">02</span><div><strong>Önceliklendirme — Sipariş bildirimi ve stok senkronizasyonuyla başlayın.</strong> En hızlı ve en görünür etki bu ikisinden geliyor.</div></li>
+  <li><span class="step-num">03</span><div><strong>Uygulama — E-ticaret platformunuzu merkez alın.</strong> İkas, Shopify veya Ticimax — hepsinde webhook veya API üzerinden otomasyon kurulabiliyor.</div></li>
+</ol>
+
+<div class="cta-box">
+  <p>E-ticaret operasyon otomasyonu için ücretsiz süreç analizi.</p>
+  <a href="/tr/iletisim?sektor=perakende" class="btn btn-primary">Demo Randevusu Al →</a>
+</div>
+
+</BlogLayout>

@@ -31,19 +31,27 @@ const preselectedSector = T.sectors.find(s => s.slug === sectorParam);
         </div>
         <div class="info-block">
           <span class="section-label">E-posta</span>
-          <!-- TODO: Gerçek e-posta -->
           <a href="mailto:info@detaymultimedia.com" class="info-link">info@detaymultimedia.com</a>
         </div>
-        <!-- TODO: Telefon ve adres ekle -->
+        <div class="info-block">
+          <span class="section-label">Telefon</span>
+          <a href="tel:+902167092824" class="info-link">+90 216 709 28 24</a>
+        </div>
+        <div class="info-block">
+          <span class="section-label">Adres</span>
+          <address class="info-address">
+            Küçükbakkalköy Mah. Vedat Günyol Cad.<br />
+            Defne Sok. Flora Suite Office K:28 No:365<br />
+            34750 Ataşehir/İstanbul
+          </address>
+        </div>
       </div>
 
       <div class="contact-form-wrap">
-        <!-- Formspree veya Netlify Forms ile entegre edilecek -->
-        <!-- TODO: n8n webhook bağlantısı -->
         <form
           class="contact-form"
           method="POST"
-          action="https://formspree.io/f/placeholder"
+          action="https://motoron.app.n8n.cloud/webhook/demo-form"
           id="contact-form"
         >
           <div class="form-row">
@@ -161,6 +169,13 @@ const preselectedSector = T.sectors.find(s => s.slug === sectorParam);
   }
 
   .info-link:hover { color: var(--color-accent); }
+
+  .info-address {
+    font-style: normal;
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
 
   .contact-form-wrap { min-width: 0; }
 

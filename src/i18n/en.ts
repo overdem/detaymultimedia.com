@@ -31,7 +31,7 @@ export const en: Translations = {
     statsLabel2: 'Avg. Manual Work Reduction',
     statsValue3: '48h',
     statsLabel3: 'First Response Time',
-    trustLabel: 'Experience',
+    trustLabel: '27 Years of Experience',
     trustDesc: 'Worked with enterprise brands including Shell, Procter & Gamble, Bayer and Anadolu Group — since 1997',
     whyLabel: 'Why Automation?',
     whyTitle: 'How many of these problems exist in your company?',

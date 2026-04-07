@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const lang = 'tr';
+
+const posts = [
+  { slug: 'lojistik-otomasyon', sector: 'Lojistik', type: 'seo', title: 'Lojistik Firmalarında Süreç Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'Türkiye\'deki lojistik firmalarının %70\'i sevkiyat güncellemelerini hâlâ telefonla yapıyor. Neden değişmesi gerekiyor?', readTime: '6 dk' },
+  { slug: 'lojistik-surecler-rehberi', sector: 'Lojistik', type: 'rehber', title: 'Lojistik İşletmelerinde İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi', summary: 'Sevkiyat takibinden faturaya, sürücü raporlarından müşteri bildirimlerine — lojistikte otomasyonun tam haritası.', readTime: '12 dk' },
+  { slug: 'uretim-otomasyon', sector: 'Üretim', type: 'seo', title: 'Üretim Firmalarında Süreç Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'Üretim firmalarında veri girişi hatalarının %80\'i manuel süreçlerden kaynaklanıyor. Alternatif nedir?', readTime: '6 dk' },
+  { slug: 'uretim-surecler-rehberi', sector: 'Üretim', type: 'rehber', title: 'Üretim & Tedarik İşletmelerinde İş Akışı Otomasyonu: Uygulama Rehberi', summary: 'Sipariş takibinden stok yönetimine, tedarikçi iletişiminden raporlamaya — üretimde otomasyonun tam haritası.', readTime: '11 dk' },
+  { slug: 'hukuk-otomasyon', sector: 'Hukuk', type: 'seo', title: 'Hukuk Bürolarında Süreç Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'Hukuk bürolarında avukatların zamanının %35\'i idari işlere gidiyor. Otomasyonla bu değişiyor.', readTime: '6 dk' },
+  { slug: 'hukuk-surecler-rehberi', sector: 'Hukuk', type: 'rehber', title: 'Hukuk Bürolarında İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi', summary: 'Sözleşme takibinden müvekkil bildirimlerine, duruşma hatırlatmalarından belge yönetimine — tam rehber.', readTime: '12 dk' },
+  { slug: 'perakende-otomasyon', sector: 'Perakende', type: 'seo', title: 'E-Ticaret Operasyon Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'E-ticaret firmalarında müşteri hizmetleri sorgularının %60\'ı sipariş durumu sorusu. Otomasyonla bu biter.', readTime: '6 dk' },
+  { slug: 'perakende-surecler-rehberi', sector: 'Perakende', type: 'rehber', title: 'Perakende & E-Ticaret İşletmelerinde İş Akışı Otomasyonu: Uygulama Rehberi', summary: 'Stok senkronizasyonundan sipariş yönetimine, müşteri bildirimleri ve iade süreçlerine — tam rehber.', readTime: '11 dk' },
+  { slug: 'saglik-otomasyon', sector: 'Sağlık', type: 'seo', title: 'Klinik Randevu Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'Hatırlatma yapılmayan randevularda %30 gelmeme oranı. Klinikler için otomasyon ne anlam ifade ediyor?', readTime: '6 dk' },
+  { slug: 'saglik-surecler-rehberi', sector: 'Sağlık', type: 'rehber', title: 'Sağlık Kurumlarında İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi', summary: 'Randevu yönetiminden hasta iletişimine, sigorta süreçlerinden raporlamaya — sağlıkta otomasyon rehberi.', readTime: '12 dk' },
+  { slug: 'gayrimenkul-otomasyon', sector: 'Gayrimenkul', type: 'seo', title: 'Gayrimenkul Süreç Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'Gayrimenkul danışmanları zamanlarının %45\'ini idari işlere harcıyor. Değişim nasıl başlar?', readTime: '6 dk' },
+  { slug: 'gayrimenkul-surecler-rehberi', sector: 'Gayrimenkul', type: 'rehber', title: 'Gayrimenkul İşletmelerinde İş Akışı Otomasyonu: Uygulama Rehberi', summary: 'İlan yönetiminden müşteri takibine, görüntüleme randevularından sözleşme süreçlerine — tam rehber.', readTime: '11 dk' },
+  { slug: 'konaklama-otomasyon', sector: 'Konaklama', type: 'seo', title: 'Otel Operasyon Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'Otellerde check-in/check-out süreçleri ortalama 12 dakika alıyor. Otomasyon bu süreyi nasıl kısaltır?', readTime: '6 dk' },
+  { slug: 'konaklama-surecler-rehberi', sector: 'Konaklama', type: 'rehber', title: 'Otelcilik & Konaklama İşletmelerinde İş Akışı Otomasyonu: Uygulama Rehberi', summary: 'Rezervasyon yönetiminden misafir iletişimine, temizlik koordinasyonundan raporlamaya — tam rehber.', readTime: '12 dk' },
+  { slug: 'egitim-otomasyon', sector: 'Eğitim', type: 'seo', title: 'Eğitim Kurumlarında Süreç Otomasyonu: Neden Kaçınılmaz Hale Geldi?', summary: 'Özel okullarda idari personelin %50 zamanı manuel bildirim ve takibe gidiyor. Çözüm nedir?', readTime: '6 dk' },
+  { slug: 'egitim-surecler-rehberi', sector: 'Eğitim', type: 'rehber', title: 'Eğitim Kurumlarında İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi', summary: 'Kayıt süreçlerinden devam takibine, veli bildirimlerinden ödeme hatırlatmalarına — tam rehber.', readTime: '11 dk' },
+];
+
+const sectors = ['Tümü', 'Lojistik', 'Üretim', 'Hukuk', 'Perakende', 'Sağlık', 'Gayrimenkul', 'Konaklama', 'Eğitim'];
+---
+
+<BaseLayout
+  lang={lang}
+  title="Blog & Rehberler — Detay Multimedya"
+  description="Sektöre özgü iş otomasyonu rehberleri. Lojistik, üretim, hukuk, perakende ve daha fazlası için pratik içerikler."
+>
+
+  <section class="blog-hero grid-bg">
+    <div class="container">
+      <span class="section-label">Blog & Rehberler</span>
+      <h1 class="blog-title">Otomasyon hakkında<br />bilmeniz gerekenler</h1>
+      <p class="blog-sub">Sektöre özgü rehberler, pratik içerikler, gerçek senaryolar.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="filter-bar" role="tablist" aria-label="Sektör filtresi">
+        {sectors.map(s => (
+          <button
+            class={`filter-btn${s === 'Tümü' ? ' active' : ''}`}
+            data-filter={s === 'Tümü' ? 'all' : s}
+            role="tab"
+            aria-selected={s === 'Tümü' ? 'true' : 'false'}
+          >
+            {s}
+          </button>
+        ))}
+      </div>
+
+      <div class="posts-grid" id="posts-grid">
+        {posts.map((post, i) => (
+          <a
+            href={`/tr/blog/${post.slug}`}
+            class="post-card card fade-in"
+            data-sector={post.sector}
+            style={`--delay:${(i % 8) * 60}ms`}
+          >
+            <div class="post-card-top">
+              <span class="post-sector-tag">{post.sector}</span>
+              <span class={`post-type-tag ${post.type}`}>
+                {post.type === 'seo' ? 'SEO Rehberi' : 'Derinlemesine'}
+              </span>
+            </div>
+            <h2 class="post-card-title">{post.title}</h2>
+            <p class="post-card-summary">{post.summary}</p>
+            <div class="post-card-footer">
+              <span class="post-read-time">{post.readTime}</span>
+              <span class="post-cta">Devamını Oku →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .blog-title {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 1rem 0 1rem;
+    max-width: 600px;
+  }
+
+  .blog-sub {
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    max-width: 480px;
+    line-height: 1.65;
+  }
+
+  /* Filter */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .filter-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    min-height: 32px;
+  }
+
+  .filter-btn:hover {
+    border-color: rgba(232, 150, 31, 0.4);
+    color: var(--color-text);
+  }
+
+  .filter-btn.active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #0F0F0E;
+  }
+
+  /* Grid */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation-delay: var(--delay, 0ms);
+    transition: border-color 200ms ease-out, transform 200ms ease-out;
+  }
+
+  .post-card:hover { transform: translateY(-2px); }
+
+  .post-card[hidden] { display: none; }
+
+  .post-card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .post-sector-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    border-left: 2px solid var(--color-accent);
+    padding-left: 6px;
+  }
+
+  .post-type-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    border: 1px solid var(--color-border);
+    color: var(--color-subtle);
+  }
+
+  .post-type-tag.rehber {
+    border-color: rgba(232, 150, 31, 0.25);
+    color: var(--color-muted);
+  }
+
+  .post-card-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text);
+  }
+
+  .post-card-summary {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+  }
+
+  .post-read-time {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-subtle);
+    letter-spacing: 0.06em;
+  }
+
+  .post-cta {
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .filter-bar { gap: 0.4rem; }
+    .filter-btn { font-size: 10px; padding: 5px 10px; }
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.post-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.dataset.filter ?? 'all';
+      cards.forEach(card => {
+        const sector = card.dataset.sector ?? '';
+        if (filter === 'all' || sector === filter) {
+          card.removeAttribute('hidden');
+        } else {
+          card.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+</script>

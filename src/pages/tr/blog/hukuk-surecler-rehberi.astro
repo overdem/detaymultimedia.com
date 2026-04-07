@@ -1,0 +1,101 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Hukuk Bürolarında İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi"
+  description="Sözleşme takibinden müvekkil bildirimlerine, duruşma hatırlatmalarından belge yönetimine — hukuk büroları için kapsamlı otomasyon rehberi."
+  sector="Hukuk"
+  sectorSlug="hukuk"
+  readTime="12 dk"
+  publishDate="Nisan 2026"
+  type="rehber"
+  relatedPosts={[
+    { title: 'Hukuk Bürolarında Süreç Otomasyonu: Neden Kaçınılmaz?', href: '/tr/blog/hukuk-otomasyon', type: 'seo' },
+    { title: 'Hukuk & Danışmanlık Çözümlerimiz', href: '/tr/cozumler/hukuk', type: 'seo' },
+  ]}
+>
+
+<h1>Hukuk Bürolarında İş Akışı Otomasyonu:<br />Adım Adım Uygulama Rehberi</h1>
+
+<p>Bu rehber, 3 ila 20 avukatlı bürolar için yazıldı. Müvekkil sayısı artıyor ama idari yük buna orantılı büyüyor ve avukatların hukuki işe harcayabileceği zaman küçülüyor. Okuyacaklarınız: hangi idari süreçler otomasyona alınmalı, hangi araçlar kullanılmalı ve ilk ayda ne değişir.</p>
+
+<h2>Hukuk'un Operasyonel Gerçeği</h2>
+
+<p>Türkiye'deki hukuk bürolarında idari yük birkaç kaynaktan geliyor: sözleşme tarihleri, duruşma takibi, müvekkil bildirimleri, belge yönetimi ve ücret takibi. Bu işlerin tamamı insan koordinasyonuyla yürüdüğünde, büro büyüdükçe koordinasyon maliyeti de büyüyor. 10 avukatlı bir büro için bu, tam zamanlı bir idari personelin tüm çalışma saatine eşdeğer bir yük.</p>
+
+<h2>Hangi Süreçler Otomasyona Hazır?</h2>
+
+<div class="matrix">
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Kolay → İlk Başlayın</span>
+    <ul>
+      <li>Duruşma/tarih hatırlatmaları</li>
+      <li>Müvekkil randevu bildirimleri</li>
+      <li>Yeni müvekkil karşılama akışı</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Zor → Planlayın</span>
+    <ul>
+      <li>Merkezi belge yönetim sistemi</li>
+      <li>Dava takip yazılımı entegrasyonu</li>
+      <li>Otomatik ücret takibi</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Kolay → Fırsatta</span>
+    <ul>
+      <li>Müvekkil memnuniyet anketi</li>
+      <li>Haftalık büro özet raporu</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Zor → Erteleyin</span>
+    <ul>
+      <li>AI destekli sözleşme analizi</li>
+      <li>Tam dijital dava arşivi</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Araçlar ve Entegrasyonlar</h2>
+
+<p>Hukuk bürolarında en yaygın başlangıç noktası takvim entegrasyonu: Google Calendar veya Outlook'tan otomatik hatırlatma akışı kurmak. Avukat dava kaydını girerken sistem 7 gün ve 1 gün öncesine hatırlatma ayarlıyor. Daha ileri aşamada, Türkiye'de yaygın kullanılan Huksis veya büro yönetim yazılımlarıyla entegrasyon için API veya dışa aktarma seçeneklerini inceleyin.</p>
+
+<BlogCTA sector="Hukuk" sectorSlug="hukuk" variant="inline" />
+
+<h2>Gerçek Senaryo: Bir Haftada Ne Değişir?</h2>
+
+<p><strong>Büro:</strong> 6 avukatlı, 180 aktif dosyalı İstanbul merkezli hukuk bürosu.</p>
+
+<p><strong>Otomasyon öncesi:</strong> Sekreter her hafta başı aktif dosyaları gözden geçiriyor, yaklaşan tarihleri avukatlara ayrı ayrı bildiriyor. Yeni müvekkillerden belge toplamak haftalar alıyor. Müvekkil randevu hatırlatması tek tek yapılıyor.</p>
+
+<p><strong>4 hafta sonra:</strong></p>
+<ul>
+  <li>Duruşma tarihine 7 gün ve 1 gün kala avukata otomatik bildirim geliyor</li>
+  <li>Müvekkile randevudan 24 saat önce otomatik hatırlatma gidiyor — gelmeme oranı düştü</li>
+  <li>Yeni müvekkilden gerekli belgeler standart form üzerinden toplandı — sekreter takibi kalktı</li>
+  <li>Sekreter haftada 6 saat kazandı, bu süreyi müvekkil ilişkilerine harcıyor</li>
+</ul>
+
+<h2>Sık Yapılan Hatalar</h2>
+
+<h3>Hata 1: Gizlilik endişesiyle hiç başlamamak</h3>
+<p><strong>Neden olur:</strong> "Müvekkil verisi hassas" denilerek otomasyon konusu kapanıyor. <strong>Nasıl önlenir:</strong> Gizlilik gereksinimleri otomasyona engel değil. Hangi verinin otomasyona dahil olacağı seçilebilir.</p>
+
+<h3>Hata 2: Tüm avukatların aynı anda adapte olmasını beklemek</h3>
+<p><strong>Neden olur:</strong> Büro genelinde aynı anda değişim zor. <strong>Nasıl önlenir:</strong> Bir avukat veya bir dava tipiyle başlayın. Başarıyı görmek diğerlerini ikna eder.</p>
+
+<h2>Nereden Başlamalısınız?</h2>
+
+<ul class="questions-list">
+  <li>Son 6 ayda kritik bir son tarihin kaçırılma riski yaşandı mı?</li>
+  <li>Müvekkil randevularında gelmeme oranı %15'in üzerinde mi?</li>
+  <li>Yeni müvekkil onboarding süreci standartlaşmış mı?</li>
+  <li>Avukatlar idari işler için haftada 5 saatten fazla harcıyor mu?</li>
+  <li>Dava belgelerine erişim için e-posta araması yapılması gerekiyor mu?</li>
+</ul>
+
+</BlogLayout>

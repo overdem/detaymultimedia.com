@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detay Multimedya — Teknoloji değil, sonuç satıyoruz.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "brand-bg": "#131313",
+        "brand-surface": "#1c1b1b",
+        "brand-surface-high": "#2a2a2a",
+        "brand-surface-highest": "#353535",
+        "brand-orange": "#ff5708",
+        "brand-text": "#e5e2e1",
+        "brand-muted": "#9c8a84",
+        "brand-teal": "#5cd8da",
+      },
+      borderRadius: { DEFAULT: "0px", lg: "0px", xl: "0px", full: "9999px" },
+      fontFamily: {
+        headline: ["Inter", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Space Grotesk", "monospace"]
+      }
+    }
+  }
+}
+</script>
+<style>
+  * { box-sizing: border-box; }
+  body { background-color: #131313; color: #e5e2e1; }
+  .mat { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #131313; }
+  ::-webkit-scrollbar-thumb { background: #ff5708; }
+
+  /* Dropdown */
+  .dropdown:hover .dropdown-menu { display: block; }
+  .dropdown-menu { display: none; }
+
+  /* Ticker */
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .ticker-inner { display: flex; animation: ticker 24s linear infinite; white-space: nowrap; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Hover card */
+  .sector-card:hover .sector-num { color: #ff5708; }
+  .sector-card:hover { border-color: #ff5708 !important; }
+</style>
+</head>
+<body class="font-body">
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/90 backdrop-blur-xl border-b border-white/5">
+  <div class="flex justify-between items-center px-8 md:px-12 py-5">
+
+    <!-- Logo -->
+    <a href="/tr" class="font-headline font-black text-2xl tracking-tighter text-white">Detay.</a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-10">
+
+      <!-- Çözümler dropdown -->
+      <div class="dropdown relative">
+        <button class="font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white flex items-center gap-1 transition-colors">
+          Çözümler <span class="mat text-sm">expand_more</span>
+        </button>
+        <div class="dropdown-menu absolute top-8 left-0 w-64 bg-[#1c1b1b] border border-white/10 py-2 z-50">
+          <a href="/tr/cozumler" class="block px-6 py-3 font-label text-[11px] uppercase tracking-widest text-brand-orange hover:bg-white/5 border-b border-white/5">Tüm Çözümler →</a>
+          <a href="/tr/cozumler/uretim"     class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Üretim & Tedarik</a>
+          <a href="/tr/cozumler/lojistik"   class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Lojistik & Nakliye</a>
+          <a href="/tr/cozumler/hukuk"      class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Hukuk & Danışmanlık</a>
+          <a href="/tr/cozumler/perakende"  class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Perakende & E-Ticaret</a>
+          <a href="/tr/cozumler/saglik"     class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Sağlık & Klinik</a>
+          <a href="/tr/cozumler/gayrimenkul" class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Gayrimenkul & İnşaat</a>
+          <a href="/tr/cozumler/konaklama"  class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Otelcilik & Konaklama</a>
+          <a href="/tr/cozumler/egitim"     class="block px-6 py-2.5 font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white hover:bg-white/5">Eğitim & Kurumlar</a>
+        </div>
+      </div>
+
+      <a href="/tr/hizmetler"   class="font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white transition-colors">Hizmetler</a>
+      <a href="/tr/referanslar" class="font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white transition-colors">Referanslar</a>
+      <a href="/tr/hakkimizda"  class="font-label text-[11px] uppercase tracking-widest text-white/60 hover:text-white transition-colors">Hakkımızda</a>
+      <a href="/en"             class="font-label text-[11px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">TR / EN</a>
+    </div>
+
+    <a href="/tr/iletisim" class="bg-[#ff5708] text-white px-6 py-2.5 font-label font-bold text-[11px] uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-200">Demo Al →</a>
+  </div>
+</nav>
+
+<main class="pt-20">
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="min-h-screen flex flex-col justify-center px-8 md:px-12 relative overflow-hidden">
+  <!-- Bg watermark -->
+  <div class="absolute right-[-2vw] top-1/4 opacity-[0.06] pointer-events-none select-none leading-none font-black text-[38vw] tracking-tighter">OT</div>
+
+  <div class="z-10 max-w-6xl reveal">
+    <div class="flex items-center gap-4 mb-8">
+      <div class="w-12 h-[1px] bg-[#ff5708]"></div>
+      <span class="font-label text-brand-teal tracking-[0.3em] text-xs uppercase">Kurumsal İş Otomasyonu</span>
+    </div>
+
+    <h1 class="font-headline font-black text-6xl md:text-[100px] leading-[0.9] tracking-tighter mb-8">
+      Operasyonunuzu<br/>otomasyona<br/><span class="text-[#ff5708]">geçiriyoruz.</span>
+    </h1>
+
+    <p class="font-body font-light text-xl md:text-2xl text-brand-muted max-w-2xl mb-6 leading-relaxed">
+      Mühendis olmadan. Şirketinizdeki tekrarlayan süreçleri tespit edip otomasyona geçiriyoruz.<br/>
+      <span class="text-white/40 text-lg">Teknoloji değil, sonuç satıyoruz.</span>
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-5 mb-16">
+      <a href="/tr/iletisim" class="bg-[#ff5708] text-white px-12 py-5 font-label font-black text-lg uppercase text-center hover:bg-white hover:text-black transition-all duration-200">
+        Demo Talep Et →
+      </a>
+      <a href="/tr/cozumler" class="border border-white/20 text-white px-12 py-5 font-label font-bold text-lg uppercase text-center hover:bg-white/5 transition-all duration-200">
+        Çözümleri İncele
+      </a>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="flex flex-col md:flex-row gap-0 border border-white/10 w-full max-w-2xl">
+      <div class="flex-1 p-6 border-b md:border-b-0 md:border-r border-white/10">
+        <div class="font-headline font-black text-4xl tracking-tighter text-[#ff5708]">27</div>
+        <div class="font-label text-[10px] uppercase tracking-widest text-white/40 mt-1">Yıllık Deneyim</div>
+      </div>
+      <div class="flex-1 p-6 border-b md:border-b-0 md:border-r border-white/10">
+        <div class="font-headline font-black text-4xl tracking-tighter text-[#ff5708]">%65</div>
+        <div class="font-label text-[10px] uppercase tracking-widest text-white/40 mt-1">Ort. Manuel İş Azalması</div>
+      </div>
+      <div class="flex-1 p-6">
+        <div class="font-headline font-black text-4xl tracking-tighter text-[#ff5708]">48s</div>
+        <div class="font-label text-[10px] uppercase tracking-widest text-white/40 mt-1">İlk Geri Dönüş</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TICKER (Client Logos) ═══════════════ -->
+<div class="border-y border-white/5 py-5 overflow-hidden bg-[#1c1b1b]">
+  <div class="ticker-inner">
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Shell</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Procter &amp; Gamble</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Bayer</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Anadolu Group</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Efes</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-[#ff5708]/30 px-16">·</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Shell</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Procter &amp; Gamble</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Bayer</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Anadolu Group</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-white/20 px-16">Efes</span>
+    <span class="font-label text-[11px] uppercase tracking-[0.4em] text-[#ff5708]/30 px-16">·</span>
+  </div>
+</div>
+
+<!-- ═══════════════ SORUNLAR ═══════════════ -->
+<section class="py-32 px-8 md:px-12 bg-[#1c1b1b]">
+  <div class="mb-20 reveal">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-8 h-[1px] bg-[#ff5708]"></div>
+      <span class="font-label text-[10px] uppercase tracking-[0.3em] text-white/40">Neden Otomasyon?</span>
+    </div>
+    <h2 class="font-headline font-black text-4xl md:text-5xl tracking-tighter">Şirketinizde bu sorunlardan<br/>kaçı var?</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
+    <!-- Sorun 1 -->
+    <div class="bg-[#131313] p-10 hover:bg-[#2a2a2a] transition-colors group reveal">
+      <span class="font-label text-brand-teal text-sm mb-8 block">01</span>
+      <h3 class="font-headline font-bold text-2xl mb-5 group-hover:text-[#ff5708] transition-colors leading-tight">İnsan Hatası Riski</h3>
+      <p class="text-brand-muted leading-relaxed font-light mb-8">Manuel veri girişi, kopyala-yapıştır süreçleri, e-posta zincirlerinde kaybolan bilgiler. Her gün küçük hatalar, büyük sonuçlar.</p>
+      <div class="border-t border-white/10 pt-6">
+        <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708]">Hataların %80'i tekrarlayan görevlerde oluşur</span>
+      </div>
+    </div>
+    <!-- Sorun 2 -->
+    <div class="bg-[#131313] p-10 hover:bg-[#2a2a2a] transition-colors group reveal">
+      <span class="font-label text-brand-teal text-sm mb-8 block">02</span>
+      <h3 class="font-headline font-bold text-2xl mb-5 group-hover:text-[#ff5708] transition-colors leading-tight">Ölçeklenemeyen Süreçler</h3>
+      <p class="text-brand-muted leading-relaxed font-light mb-8">Takım büyüdükçe süreçler karmaşıklaşıyor. Yeni kişi = yeni eğitim = yeni hata riski. Otomasyon sistemi siz büyüdükçe büyür.</p>
+      <div class="border-t border-white/10 pt-6">
+        <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708]">Şirketlerin %67'si manuel süreç yüzünden ölçeklenemiyor</span>
+      </div>
+    </div>
+    <!-- Sorun 3 -->
+    <div class="bg-[#131313] p-10 hover:bg-[#2a2a2a] transition-colors group reveal">
+      <span class="font-label text-brand-teal text-sm mb-8 block">03</span>
+      <h3 class="font-headline font-bold text-2xl mb-5 group-hover:text-[#ff5708] transition-colors leading-tight">Görünmez Zaman Kayıpları</h3>
+      <p class="text-brand-muted leading-relaxed font-light mb-8">Haftalık kaç saat rapor derleniyor? Kaç saat veri aktarılıyor? Kaç saat "bu mail gitti mi?" diye soruluyor?</p>
+      <div class="border-t border-white/10 pt-6">
+        <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708]">Çalışanlar zamanlarının %40'ını tekrarlayan görevlere harcıyor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SEKTÖRLER ═══════════════ -->
+<section class="py-32 px-8 md:px-12" id="cozumler">
+  <div class="mb-20 flex justify-between items-end reveal">
+    <div>
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-8 h-[1px] bg-[#ff5708]"></div>
+        <span class="font-label text-[10px] uppercase tracking-[0.3em] text-white/40">Sektörler</span>
+      </div>
+      <h2 class="font-headline font-black text-4xl md:text-5xl tracking-tighter">Sektörünüze Özel<br/>Otomasyon</h2>
+    </div>
+    <div class="hidden md:block opacity-20 font-label text-xs uppercase text-right leading-relaxed">
+      01 // SEKTÖR ANALİZİ<br/>02 // ÖZEL ÇÖZÜM
+    </div>
+  </div>
+
+  <p class="text-brand-muted text-lg font-light max-w-2xl mb-16 reveal">
+    Aynı teknolojiyi farklı sektörler için farklı şekilde yapılandırıyoruz. Lojistik firmasının sorunu ile hukuk bürosunun sorunu farklı — çözümümüz de farklı olmalı.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
+    <!-- Üretim -->
+    <a href="/tr/cozumler/uretim" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">⬡</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Üretim & Tedarik</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Üretim planlaması, stok yönetimi ve tedarikçi iletişimini otomasyona geçirin.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+    <!-- Lojistik -->
+    <a href="/tr/cozumler/lojistik" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">◈</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Lojistik & Nakliye</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Sevkiyat takibi, müşteri bildirimleri ve sürücü raporlarını otomatikleştirin.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+    <!-- Hukuk -->
+    <a href="/tr/cozumler/hukuk" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">◻</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Hukuk & Danışmanlık</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Sözleşme yönetimi, müvekkil takibi ve belge süreçlerini hızlandırın.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+    <!-- Perakende -->
+    <a href="/tr/cozumler/perakende" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">◇</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Perakende & E-Ticaret</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Sipariş, stok ve müşteri hizmetleri süreçlerini entegre edin.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+    <!-- Sağlık -->
+    <a href="/tr/cozumler/saglik" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">○</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Sağlık & Klinik</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Hasta randevu, hatırlatma ve raporlama süreçlerini otomasyona alın.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+    <!-- Gayrimenkul -->
+    <a href="/tr/cozumler/gayrimenkul" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">▣</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Gayrimenkul & İnşaat</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Portföy yönetimi, müşteri takibi ve sözleşme süreçlerini kolaylaştırın.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+    <!-- Otelcilik -->
+    <a href="/tr/cozumler/konaklama" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">▨</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Otelcilik & Konaklama</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Rezervasyon, misafir iletişimi ve operasyon raporlarını otomatikleştirin.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+    <!-- Eğitim -->
+    <a href="/tr/cozumler/egitim" class="sector-card bg-[#131313] p-8 hover:bg-[#1c1b1b] transition-all border border-transparent group">
+      <div class="sector-num font-headline font-black text-5xl tracking-tighter text-white/10 mb-6 transition-colors group-hover:text-[#ff5708]">▦</div>
+      <h3 class="font-headline font-bold text-xl mb-3 group-hover:text-[#ff5708] transition-colors">Eğitim & Kurumlar</h3>
+      <p class="text-brand-muted text-sm font-light leading-relaxed mb-6">Öğrenci kayıt, bildirim ve raporlama süreçlerini dijitalleştirin.</p>
+      <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] opacity-0 group-hover:opacity-100 transition-opacity">İncele →</span>
+    </a>
+  </div>
+
+  <div class="mt-8 text-center">
+    <span class="font-label text-[11px] text-white/30 uppercase tracking-widest">Sektörünüzü görmüyor musunuz? </span>
+    <a href="/tr/iletisim" class="font-label text-[11px] text-[#ff5708] uppercase tracking-widest hover:underline">İletişime geçin →</a>
+  </div>
+</section>
+
+<!-- ═══════════════ SÜREÇ ═══════════════ -->
+<section class="py-32 px-8 md:px-12 bg-[#1c1b1b]">
+  <div class="mb-20 reveal">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-8 h-[1px] bg-[#ff5708]"></div>
+      <span class="font-label text-[10px] uppercase tracking-[0.3em] text-white/40">Süreç</span>
+    </div>
+    <h2 class="font-headline font-black text-4xl md:text-5xl tracking-tighter">Nasıl Çalışıyoruz?</h2>
+    <p class="text-brand-muted text-lg font-light mt-4">İlk görüşmeden canlıya geçişe kadar her adımda yanınızdayız.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-white/5 border border-white/5">
+    <div class="bg-[#131313] p-10 hover:bg-[#2a2a2a] transition-colors group reveal">
+      <div class="flex items-start justify-between mb-8">
+        <span class="font-headline font-black text-6xl text-white/5 leading-none group-hover:text-[#ff5708]/20 transition-colors">01</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-white/30 mt-2">1–3 gün</span>
+      </div>
+      <h3 class="font-headline font-bold text-2xl mb-4 group-hover:text-[#ff5708] transition-colors">Analiz</h3>
+      <p class="text-brand-muted font-light leading-relaxed">Süreçlerinizi dinliyoruz. Nerede zaman kaybedildiğini, hangi adımın tekrarlandığını tespit ediyoruz.</p>
+    </div>
+    <div class="bg-[#131313] p-10 hover:bg-[#2a2a2a] transition-colors group reveal">
+      <div class="flex items-start justify-between mb-8">
+        <span class="font-headline font-black text-6xl text-white/5 leading-none group-hover:text-[#ff5708]/20 transition-colors">02</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-white/30 mt-2">3–5 gün</span>
+      </div>
+      <h3 class="font-headline font-bold text-2xl mb-4 group-hover:text-[#ff5708] transition-colors">Tasarım</h3>
+      <p class="text-brand-muted font-light leading-relaxed">Size özel otomasyon haritası çıkarıyoruz. Hangi araç, hangi entegrasyon, hangi öncelik sırası.</p>
+    </div>
+    <div class="bg-[#131313] p-10 hover:bg-[#2a2a2a] transition-colors group reveal">
+      <div class="flex items-start justify-between mb-8">
+        <span class="font-headline font-black text-6xl text-white/5 leading-none group-hover:text-[#ff5708]/20 transition-colors">03</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-white/30 mt-2">1–4 hafta</span>
+      </div>
+      <h3 class="font-headline font-bold text-2xl mb-4 group-hover:text-[#ff5708] transition-colors">Uygulama</h3>
+      <p class="text-brand-muted font-light leading-relaxed">Sistemi kuruyoruz, test ediyoruz, ekibinizi alıştırıyoruz. Siz sadece onay veriyorsunuz.</p>
+    </div>
+    <div class="bg-[#131313] p-10 hover:bg-[#2a2a2a] transition-colors group reveal">
+      <div class="flex items-start justify-between mb-8">
+        <span class="font-headline font-black text-6xl text-white/5 leading-none group-hover:text-[#ff5708]/20 transition-colors">04</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-[#ff5708] mt-2">Süregelen</span>
+      </div>
+      <h3 class="font-headline font-bold text-2xl mb-4 group-hover:text-[#ff5708] transition-colors">Optimizasyon</h3>
+      <p class="text-brand-muted font-light leading-relaxed">Sistem canlıya geçtikten sonra ölçüp iyileştiriyoruz. Tek seferlik proje değil, süregelen ortaklık.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ REFERANSLAR ═══════════════ -->
+<section class="py-32 px-8 md:px-12" id="referanslar">
+  <div class="max-w-4xl reveal">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-8 h-[1px] bg-[#ff5708]"></div>
+      <span class="font-label text-[10px] uppercase tracking-[0.3em] text-white/40">Referanslar</span>
+    </div>
+    <h2 class="font-headline font-black text-4xl md:text-5xl tracking-tighter mb-6">Sonuçlarla<br/>Konuşuyoruz.</h2>
+    <p class="text-brand-muted text-xl font-light leading-relaxed mb-12">
+      Referans vaka çalışmalarımız hazırlanıyor.<br/>
+      Görüşme talep edin, süreçlerinizi birlikte değerlendirelim.
+    </p>
+    <a href="/tr/iletisim" class="inline-block bg-[#ff5708] text-white px-12 py-5 font-label font-black text-lg uppercase hover:bg-white hover:text-black transition-all duration-200">
+      Demo Randevusu Al →
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="py-32 px-8 md:px-12 bg-[#0e0e0e] border-t border-white/5">
+  <div class="max-w-4xl reveal">
+    <h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter mb-8 uppercase leading-[0.9]">
+      Operasyonunuzu<br/><span class="text-[#ff5708]">otomasyona</span><br/>geçirmeye hazır mısınız?
+    </h2>
+    <p class="font-body text-xl text-brand-muted font-light mb-12 max-w-xl">
+      48 saat içinde geri dönüş garantisiyle ücretsiz analiz randevusu alın.
+    </p>
+    <a href="/tr/iletisim" class="inline-block bg-[#ff5708] text-white px-16 py-6 font-label font-black text-xl uppercase hover:bg-white hover:text-black transition-all">
+      Demo Randevusu Al →
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="px-8 md:px-12 pt-20 pb-12 bg-[#131313] border-t border-white/5">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <!-- Brand -->
+    <div class="md:col-span-1">
+      <div class="font-headline font-black text-3xl tracking-tighter text-white mb-4">Detay.</div>
+      <p class="font-label text-[10px] uppercase tracking-widest text-white/30 leading-relaxed mb-6">
+        Teknoloji değil, sonuç satıyoruz.<br/>Mühendis tutmadan, kurumsal verimlilik.
+      </p>
+      <div class="font-label text-[10px] uppercase tracking-[0.3em] text-[#ff5708]">1997'den beri.</div>
+    </div>
+
+    <!-- Çözümler -->
+    <div>
+      <div class="font-label text-[10px] uppercase tracking-widest text-white/30 mb-6">Çözümler</div>
+      <div class="flex flex-col gap-3">
+        <a href="/tr/cozumler/uretim"      class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Üretim & Tedarik</a>
+        <a href="/tr/cozumler/lojistik"    class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Lojistik & Nakliye</a>
+        <a href="/tr/cozumler/hukuk"       class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Hukuk & Danışmanlık</a>
+        <a href="/tr/cozumler/perakende"   class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Perakende & E-Ticaret</a>
+        <a href="/tr/cozumler/saglik"      class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Sağlık & Klinik</a>
+        <a href="/tr/cozumler/gayrimenkul" class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Gayrimenkul & İnşaat</a>
+        <a href="/tr/cozumler/konaklama"   class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Otelcilik & Konaklama</a>
+        <a href="/tr/cozumler/egitim"      class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Eğitim & Kurumlar</a>
+      </div>
+    </div>
+
+    <!-- Şirket -->
+    <div>
+      <div class="font-label text-[10px] uppercase tracking-widest text-white/30 mb-6">Şirket</div>
+      <div class="flex flex-col gap-3">
+        <a href="/tr/hizmetler"            class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Hizmetler</a>
+        <a href="/tr/referanslar"          class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Referanslar</a>
+        <a href="/tr/hakkimizda"           class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Hakkımızda</a>
+        <a href="/tr/blog"                 class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">Blog</a>
+        <a href="/tr/iletisim"             class="font-label text-[11px] uppercase tracking-widest text-white/50 hover:text-[#ff5708] transition-colors">İletişim</a>
+      </div>
+    </div>
+
+    <!-- İletişim -->
+    <div>
+      <div class="font-label text-[10px] uppercase tracking-widest text-white/30 mb-6">İletişim</div>
+      <div class="flex flex-col gap-3">
+        <a href="mailto:info@detaymultimedia.com" class="font-label text-[11px] tracking-wide text-white/50 hover:text-[#ff5708] transition-colors">info@detaymultimedia.com</a>
+        <a href="tel:+902167092824" class="font-label text-[11px] tracking-wide text-white/50 hover:text-[#ff5708] transition-colors">+90 216 709 28 24</a>
+        <p class="font-label text-[10px] text-white/30 leading-relaxed mt-2">
+          Küçükbakkalköy Mah. Vedat Günyol Cad.<br/>
+          Defne Sok. Flora Suite Office K:28 No:365<br/>
+          34750 Ataşehir / İstanbul
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <span class="font-label text-[10px] uppercase tracking-widest text-white/20">© 2026 Detay Multimedya. Tüm hakları saklıdır.</span>
+    <div class="flex gap-8">
+      <a href="/tr/kvkk"              class="font-label text-[10px] uppercase tracking-widest text-white/20 hover:text-[#ff5708] transition-colors">KVKK</a>
+      <a href="/tr/gizlilik"          class="font-label text-[10px] uppercase tracking-widest text-white/20 hover:text-[#ff5708] transition-colors">Gizlilik</a>
+      <a href="/tr/kullanim-kosullari" class="font-label text-[10px] uppercase tracking-widest text-white/20 hover:text-[#ff5708] transition-colors">Kullanım Koşulları</a>
+    </div>
+    <span class="font-label text-[10px] tracking-[0.4em] text-[#ff5708] uppercase">Engineered in Turkey</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

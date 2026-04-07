@@ -1,0 +1,74 @@
+---
+interface Props {
+  sector: string;
+  sectorSlug: string;
+  variant?: 'inline' | 'footer';
+}
+
+const { sector, sectorSlug, variant = 'inline' } = Astro.props;
+---
+
+{variant === 'footer' ? (
+  <div class="cta-footer">
+    <span class="section-label">Birlikte Çalışalım</span>
+    <h2 class="cta-footer-title">Süreçlerinizi birlikte haritalayalım</h2>
+    <p class="cta-footer-sub">30 dakikalık ücretsiz analiz görüşmesiyle başlayalım.</p>
+    <a href={`/tr/iletisim?sektor=${sectorSlug}`} class="btn btn-primary">Demo Randevusu Al →</a>
+  </div>
+) : (
+  <div class="cta-inline">
+    <p class="cta-inline-text">
+      <strong>{sector} sektörü için ücretsiz süreç analizi</strong> — 30 dakikada süreçlerinizi haritalayalım.
+    </p>
+    <a href={`/tr/iletisim?sektor=${sectorSlug}`} class="btn btn-primary">Demo Randevusu Al →</a>
+  </div>
+)}
+
+<style>
+  .cta-inline {
+    border-left: 4px solid var(--color-accent);
+    background-color: var(--color-bg-3);
+    border-radius: 0 4px 4px 0;
+    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .cta-inline-text {
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cta-footer {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background-color: rgba(232, 150, 31, 0.06);
+    border: 1px solid rgba(232, 150, 31, 0.2);
+    border-radius: 4px;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .cta-footer-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .cta-footer-sub {
+    color: var(--color-muted);
+    font-size: 1rem;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Lojistik İşletmelerinde İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi"
+  description="Sevkiyat takibinden faturaya, sürücü raporlarından müşteri bildirimlerine — lojistik firmaları için kapsamlı otomasyon uygulama rehberi."
+  sector="Lojistik"
+  sectorSlug="lojistik"
+  readTime="12 dk"
+  publishDate="Nisan 2026"
+  type="rehber"
+  relatedPosts={[
+    { title: 'Lojistik Firmalarında Süreç Otomasyonu: Neden Kaçınılmaz?', href: '/tr/blog/lojistik-otomasyon', type: 'seo' },
+    { title: 'Lojistik & Nakliye Çözümlerimiz', href: '/tr/cozumler/lojistik', type: 'seo' },
+  ]}
+>
+
+<h1>Lojistik İşletmelerinde İş Akışı Otomasyonu:<br />Adım Adım Uygulama Rehberi</h1>
+
+<p>Bu rehber, 20 ila 200 araçlık filosu olan, günde onlarca teslimat yöneten ve operasyon ekibinin zamanının büyük bölümünü müşteri sorularına ve manuel raporlamaya harcadığı lojistik firmaları için yazıldı. Okuyacaklarınız: hangi süreçleri otomasyona almanız gerektiği, nereden başlayacağınız, hangi araçları kullanacağınız ve ilk haftada ne değişeceği.</p>
+
+<p>Neden şimdi? Çünkü e-ticaretin büyümesiyle birlikte müşteri beklentisi değişti. Artık teslimat güncellemesini telefon ederek öğrenmek isteyen müşteri değil, sistem üzerinden takip etmek isteyen müşteri var. Bu beklentiye manuel süreçlerle cevap vermek sürdürülebilir değil.</p>
+
+<h2>Lojistik'in Operasyonel Gerçeği</h2>
+
+<p>Türkiye'deki orta ölçekli nakliye ve lojistik firmalarında tipik bir operasyon günü şöyle geçiyor:</p>
+
+<ul>
+  <li>Sabah: Araçlara yükleme listesi dağıtılıyor — çoğunlukla WhatsApp veya kağıt üzerinden</li>
+  <li>Gün içi: Operasyon ekibi sürücülerden ve müşterilerden gelen telefon sorgularını yanıtlıyor</li>
+  <li>Öğleden sonra: Gecikme veya sorun varsa bildirim zinciri başlıyor — sürücü arar, operatör öğrenir, müşteriyi arar</li>
+  <li>Akşam: Günlük teslimat verileri Excel'e aktarılıyor, raporlar hazırlanıyor</li>
+</ul>
+
+<p>Bu işleyişte <strong>3 kritik verimlilik sorunu</strong> var: bilgi gecikmesi, tekrarlayan insan müdahalesi, ve hata riski. Her üçü de otomasyon ile çözülüyor.</p>
+
+<h2>Hangi Süreçler Otomasyona Hazır?</h2>
+
+<p>Tüm süreçleri aynı anda otomasyona almak hem mümkün hem de doğru değil. Etkisine ve uygulanma kolaylığına göre bir önceliklendirme yapın:</p>
+
+<div class="matrix">
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Kolay Uygulama → İlk Başlayın</span>
+    <ul>
+      <li>Sevkiyat durum bildirimleri (SMS/e-posta)</li>
+      <li>Teslimat teyidi otomasyonu</li>
+      <li>Gecikme uyarıları</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Zor Uygulama → Planlayın</span>
+    <ul>
+      <li>ERP entegrasyonu</li>
+      <li>Filo takip sistemi entegrasyonu</li>
+      <li>Otomatik faturalandırma</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Kolay Uygulama → Fırsatta Yapın</span>
+    <ul>
+      <li>Sürücü günlük özet bildirimi</li>
+      <li>Yönetici sabah raporu</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Zor Uygulama → Erteyin</span>
+    <ul>
+      <li>Tam dijital onboarding (sürücüler için)</li>
+      <li>Tahmine dayalı rota optimizasyonu</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Araçlar ve Entegrasyonlar</h2>
+
+<p>Lojistik firmalarının büyük bölümü halihazırda aşağıdaki araçlardan bir veya birkaçını kullanıyor. Otomasyon bu araçların arasındaki köprüyü kurar:</p>
+
+<h3>Filo takip ve TMS sistemleri</h3>
+<p>Logo, Mikro, SAP veya sektöre özel TMS kullanıyorsanız — bu sistemlerden gelen veriyi (teslimat teyidi, konum güncellemesi) tetikleyici olarak kullanmak mümkün. Özel entegrasyon gerektirir ama büyük ihtimalle API veya webhook desteği mevcuttur.</p>
+
+<h3>İletişim kanalları</h3>
+<p>SMS gönderimi için İleti Yönetim Sistemi (İYS) uyumlu sağlayıcılar kullanılıyor. E-posta bildirimleri için ek bir servise ihtiyaç yok. WhatsApp Business API ise özellikle B2C lojistik için güçlü bir seçenek — kurumsal müşteriler için e-posta yeterli.</p>
+
+<h3>Otomasyon platformları</h3>
+<p>Make (eski Integromat) veya n8n gibi araçlar, sistemler arası akışı kod yazmadan kurmanızı sağlıyor. "TMS'de teslimat tamamlandı → müşteriye SMS gönder → muhasebeye fatura tetikleyicisi gönder" gibi bir akış 1–2 gün içinde kurulabiliyor.</p>
+
+<BlogCTA sector="Lojistik" sectorSlug="lojistik" variant="inline" />
+
+<h2>Gerçek Senaryo: Bir Haftada Ne Değişir?</h2>
+
+<p><strong>Firma:</strong> İstanbul merkezli, 45 araçlı nakliye firması. Günde ortalama 60 teslimat.</p>
+
+<p><strong>Pazartesi sabahı — otomasyon öncesi:</strong> Operasyon ekibi (3 kişi) günün ilk saatlerini sürücülerle koordinasyon kurarak, önceki günün eksik raporlarını tamamlayarak geçiriyor. Müşteri aramaları 09:00'dan itibaren başlıyor.</p>
+
+<p><strong>Cuma akşamı — otomasyondan 3 hafta sonra:</strong></p>
+
+<ul>
+  <li>Her müşteri, teslimat çıkışında ve teslimat tamamlanınca otomatik SMS alıyor. "Kargom nerede?" sorusu %80 azaldı.</li>
+  <li>Sürücüler konum güncellemesini mobil uygulama üzerinden yapıyor. Operatörler sürücüleri aramak yerine dashboard üzerinden takip ediyor.</li>
+  <li>Gecikme 30 dakikayı aşınca sistem hem müşteriye hem yöneticiye uyarı gönderiyor. Operatör şikayeti önce öğrenmek yerine sistemi takip ediyor.</li>
+  <li>Teslimat tamamlanınca fatura tetikleyicisi muhasebe sistemine otomatik düşüyor. Manuel belge bekleme süresi ortadan kalktı.</li>
+  <li>Sabah 08:00'de yöneticinin e-postasına önceki günün özet raporu geliyor. Excel derleme kalktı.</li>
+</ul>
+
+<p>Ekibin günlük 3–4 saati açıldı. Bu saatler artık planlama, müşteri ilişkileri ve sorun önlemeye gidiyor.</p>
+
+<h2>Sık Yapılan Hatalar</h2>
+
+<h3>Hata 1: Her şeyi aynı anda yapmaya çalışmak</h3>
+<p><strong>Neden olur:</strong> İlk toplantıda tüm acı noktalar masaya gelir, hepsi çözülmek istenir. <strong>Nasıl önlenir:</strong> İlk 30 gün için tek bir süreç seçin. Müşteri bildirimi veya teslimat teyidi genellikle en iyi başlangıç noktasıdır.</p>
+
+<h3>Hata 2: Sürücüleri sisteme dahil etmemek</h3>
+<p><strong>Neden olur:</strong> Otomasyon ofis perspektifinden tasarlanır, sürücü deneyimi düşünülmez. <strong>Nasıl önlenir:</strong> Sürücülerin kullanacağı mobil arayüz basit ve hızlı olmalı. Karmaşık bir uygulama benimsenmez.</p>
+
+<h3>Hata 3: Mevcut sistemi görmezden gelmek</h3>
+<p><strong>Neden olur:</strong> "Yeni bir sistem kuralım" yaklaşımıyla başlanır. <strong>Nasıl önlenir:</strong> Halihazırda kullandığınız TMS veya takip sistemi büyük ihtimalle entegrasyona hazır. Önce bunu inceleyin, gereksiz yere yenisini kurmayın.</p>
+
+<h3>Hata 4: Başarıyı ölçmemek</h3>
+<p><strong>Neden olur:</strong> Otomasyon kurulur, "iyileşti mi?" sorusu sorulmaz. <strong>Nasıl önlenir:</strong> Başlamadan önce bir temel ölçüt belirleyin: haftalık müşteri telefon sayısı, operasyon ekibinin müşteri sorgularına harcadığı saat. 4 hafta sonra ölçün.</p>
+
+<h2>Nereden Başlamalısınız?</h2>
+
+<p>Aşağıdaki soruları cevaplayın. Çoğuna "evet" diyorsanız, otomasyon için hazırsınız:</p>
+
+<ul class="questions-list">
+  <li>Operasyon ekibiniz günde 10'dan fazla "kargom nerede?" sorusu alıyor mu?</li>
+  <li>Sürücü konumu bilgisine gerçek zamanlı erişiminiz yok mu?</li>
+  <li>Gecikme durumunda müşteriye bildirim yapılması 30 dakikadan uzun süruyor mu?</li>
+  <li>Günlük operasyon raporu hazırlamak 1 saatinden fazla alıyor mu?</li>
+  <li>Teslimat teyidi ile fatura kesilmesi arasında 24 saatten uzun bir bekleme var mı?</li>
+</ul>
+
+<p>3 veya daha fazlasına "evet" dediyseniz, otomasyon yatırımı ilk 60 gün içinde kendini amorti edecektir.</p>
+
+</BlogLayout>

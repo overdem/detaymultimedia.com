@@ -1,0 +1,493 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Demo Detayı - Müşteri Paneli';
+const description = 'Demo görüntüleme ve feedback verme sayfası';
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="project-container">
+    <a href="/musteri/dashboard" class="back-link">← Geri Dön</a>
+
+    <div class="project-header">
+      <div class="project-image">📱</div>
+      <div class="project-info">
+        <h1 id="demoName"></h1>
+        <p id="demoCategory" class="project-category"></p>
+        <p id="demoDescription" class="project-description"></p>
+      </div>
+    </div>
+
+    <div class="project-content">
+      <div class="features-section">
+        <h2>Özellikler</h2>
+        <ul id="featuresList" class="features-list"></ul>
+      </div>
+
+      <div class="demo-section">
+        <div class="demo-preview">
+          <h2>Demo Önizlemesi</h2>
+          <div class="placeholder-demo">
+            <p>Demo gösterimi burada görüntülenecek</p>
+            <p style="font-size: 48px; margin: 20px 0;">🎬</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-section">
+        <h2>Geri Bildirim Ver</h2>
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="title">Başlık</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              required
+              placeholder="Geri bildiriminiz için bir başlık yazın"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mesaj</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Detaylı geri bildiriminizi yazın..."
+              rows="5"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="rating">Puanlama (1-5)</label>
+            <div class="rating-group">
+              <input
+                type="radio"
+                id="star1"
+                name="rating"
+                value="1"
+              />
+              <label for="star1" class="star">⭐</label>
+
+              <input
+                type="radio"
+                id="star2"
+                name="rating"
+                value="2"
+              />
+              <label for="star2" class="star">⭐</label>
+
+              <input
+                type="radio"
+                id="star3"
+                name="rating"
+                value="3"
+              />
+              <label for="star3" class="star">⭐</label>
+
+              <input
+                type="radio"
+                id="star4"
+                name="rating"
+                value="4"
+              />
+              <label for="star4" class="star">⭐</label>
+
+              <input
+                type="radio"
+                id="star5"
+                name="rating"
+                value="5"
+              />
+              <label for="star5" class="star">⭐</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Geri Bildirimi Gönder</button>
+        </form>
+
+        <div id="feedbackMessage" class="feedback-message"></div>
+      </div>
+
+      <div class="feedback-list-section">
+        <h2>Diğer Geri Bildirimler</h2>
+        <div id="feedbackList" class="feedback-list"></div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .project-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+    background: #f9f9f9;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  .back-link:hover {
+    color: #764ba2;
+  }
+
+  .project-header {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .project-image {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+  }
+
+  .project-info h1 {
+    margin: 0 0 15px 0;
+    font-size: 32px;
+    color: #1a1a1a;
+  }
+
+  .project-category {
+    display: inline-block;
+    padding: 6px 15px;
+    background: #f0f0f0;
+    color: #666;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .project-description {
+    margin: 0;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .project-content {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .project-content h2 {
+    font-size: 22px;
+    color: #1a1a1a;
+    margin: 0 0 25px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .features-list li {
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border-left: 4px solid #667eea;
+    border-radius: 4px;
+  }
+
+  .demo-preview {
+    margin-bottom: 40px;
+  }
+
+  .placeholder-demo {
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    border-radius: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #999;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feedback-section {
+    margin-bottom: 40px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+  }
+
+  input[type="text"]:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .rating-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .star {
+    font-size: 32px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+  }
+
+  input[type="radio"]:checked + .star {
+    opacity: 1;
+  }
+
+  .btn-primary {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+  }
+
+  .feedback-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .feedback-message.success {
+    background: #efe;
+    color: #3c3;
+    display: block;
+  }
+
+  .feedback-message.error {
+    background: #fee;
+    color: #c33;
+    display: block;
+  }
+
+  .feedback-list-section {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #f0f0f0;
+  }
+
+  .feedback-list {
+    display: grid;
+    gap: 20px;
+  }
+
+  .feedback-item {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+  }
+
+  .feedback-item h4 {
+    margin: 0 0 5px 0;
+    color: #1a1a1a;
+  }
+
+  .feedback-item .rating {
+    color: #ffc107;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .feedback-item p {
+    margin: 0 0 10px 0;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .feedback-item .date {
+    font-size: 12px;
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .project-header {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+
+    .project-image {
+      width: 100%;
+    }
+
+    .features-list {
+      grid-template-columns: 1fr;
+    }
+
+    .rating-group {
+      gap: 8px;
+    }
+
+    .star {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<script>
+  const demoId = window.location.pathname.split('/').pop();
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      window.location.href = '/musteri/login';
+      return;
+    }
+
+    // Load demo details
+    fetch(`/api/demos/${demoId}`)
+      .then(r => r.json())
+      .then(demo => {
+        document.getElementById('demoName').textContent = demo.name;
+        document.getElementById('demoCategory').textContent = demo.category;
+        document.getElementById('demoDescription').textContent = demo.description;
+
+        const featuresList = document.getElementById('featuresList');
+        demo.features.forEach((feature: string) => {
+          const li = document.createElement('li');
+          li.textContent = feature;
+          featuresList.appendChild(li);
+        });
+      });
+
+    // Load feedback
+    fetch(`/api/feedback?demoId=${demoId}`)
+      .then(r => r.json())
+      .then(feedbacks => {
+        const feedbackList = document.getElementById('feedbackList');
+
+        if (feedbacks.length === 0) {
+          feedbackList.innerHTML = '<p style="color: #999; text-align: center;">Henüz geri bildirim yok</p>';
+          return;
+        }
+
+        feedbacks.forEach((feedback: any) => {
+          const item = document.createElement('div');
+          item.className = 'feedback-item';
+          const date = new Date(feedback.createdAt).toLocaleDateString('tr-TR');
+          const stars = '⭐'.repeat(feedback.rating);
+
+          item.innerHTML = `
+            <h4>${feedback.title}</h4>
+            <div class="rating">${stars} (${feedback.rating}/5)</div>
+            <p>${feedback.message}</p>
+            <div class="date">${date}</div>
+          `;
+
+          feedbackList.appendChild(item);
+        });
+      });
+
+    // Submit feedback
+    document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const title = (document.getElementById('title') as HTMLInputElement).value;
+      const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+      const rating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
+      const messageDiv = document.getElementById('feedbackMessage');
+
+      if (!rating) {
+        messageDiv.textContent = 'Lütfen bir puan seçin';
+        messageDiv.className = 'feedback-message error';
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ demoId, title, message, rating: parseInt(rating) })
+        });
+
+        if (!response.ok) {
+          throw new Error('Feedback gönderilemedi');
+        }
+
+        messageDiv.textContent = 'Geri bildiriminiz başarıyla gönderildi! ✓';
+        messageDiv.className = 'feedback-message success';
+
+        (document.getElementById('feedbackForm') as HTMLFormElement).reset();
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      } catch (err) {
+        messageDiv.textContent = 'Hata: ' + (err as Error).message;
+        messageDiv.className = 'feedback-message error';
+      }
+    });
+  });
+</script>

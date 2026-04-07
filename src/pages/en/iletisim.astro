@@ -26,15 +26,25 @@ const preselectedSector = T.sectors.find(s => s.slug === sectorParam);
 
       <div class="contact-info">
         <div class="info-block">
-          <span class="section-label">Garanti</span>
+          <span class="section-label">Guarantee</span>
           <p class="info-text">{T.contact.responseNote}</p>
         </div>
         <div class="info-block">
-          <span class="section-label">E-posta</span>
-          <!-- TODO: Gerçek e-posta -->
+          <span class="section-label">Email</span>
           <a href="mailto:info@detaymultimedia.com" class="info-link">info@detaymultimedia.com</a>
         </div>
-        <!-- TODO: Telefon ve adres ekle -->
+        <div class="info-block">
+          <span class="section-label">Phone</span>
+          <a href="tel:+902167092824" class="info-link">+90 216 709 28 24</a>
+        </div>
+        <div class="info-block">
+          <span class="section-label">Address</span>
+          <address class="info-address">
+            Küçükbakkalköy Mah. Vedat Günyol Cad.<br />
+            Defne Sok. Flora Suite Office K:28 No:365<br />
+            34750 Ataşehir/İstanbul
+          </address>
+        </div>
       </div>
 
       <div class="contact-form-wrap">
@@ -43,7 +53,7 @@ const preselectedSector = T.sectors.find(s => s.slug === sectorParam);
         <form
           class="contact-form"
           method="POST"
-          action="https://formspree.io/f/placeholder"
+          action="https://motoron.app.n8n.cloud/webhook/demo-form"
           id="contact-form"
         >
           <div class="form-row">
@@ -74,19 +84,19 @@ const preselectedSector = T.sectors.find(s => s.slug === sectorParam);
             <div class="form-group">
               <label class="form-label" for="sector">{T.contact.formSector}</label>
               <select class="form-input form-select" id="sector" name="sector">
-                <option value="">— Seçin</option>
+                <option value="">— Select</option>
                 {T.sectors.map(s => (
                   <option value={s.slug} selected={s.slug === sectorParam}>{s.name}</option>
                 ))}
-                <option value="diger">Diğer</option>
+                <option value="other">Other</option>
               </select>
             </div>
             <div class="form-group">
               <label class="form-label" for="size">{T.contact.formSize}</label>
               <select class="form-input form-select" id="size" name="size">
-                <option value="">— Seçin</option>
+                <option value="">— Select</option>
                 {T.contact.sizes.map(s => (
-                  <option value={s}>{s} çalışan</option>
+                  <option value={s}>{s} employees</option>
                 ))}
               </select>
             </div>
@@ -161,6 +171,8 @@ const preselectedSector = T.sectors.find(s => s.slug === sectorParam);
   }
 
   .info-link:hover { color: var(--color-accent); }
+
+  .info-address { font-style: normal; font-size: var(--text-small); color: var(--color-muted); line-height: 1.65; }
 
   .contact-form-wrap { min-width: 0; }
 

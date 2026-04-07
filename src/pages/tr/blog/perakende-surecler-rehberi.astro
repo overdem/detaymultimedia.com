@@ -1,0 +1,101 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Perakende & E-Ticaret İşletmelerinde İş Akışı Otomasyonu: Uygulama Rehberi"
+  description="Stok senkronizasyonundan sipariş yönetimine, müşteri bildirimleri ve iade süreçlerine — perakende ve e-ticaret için kapsamlı otomasyon rehberi."
+  sector="Perakende"
+  sectorSlug="perakende"
+  readTime="11 dk"
+  publishDate="Nisan 2026"
+  type="rehber"
+  relatedPosts={[
+    { title: 'E-Ticaret Operasyon Otomasyonu: Neden Kaçınılmaz?', href: '/tr/blog/perakende-otomasyon', type: 'seo' },
+    { title: 'Perakende & E-Ticaret Çözümlerimiz', href: '/tr/cozumler/perakende', type: 'seo' },
+  ]}
+>
+
+<h1>Perakende & E-Ticaret İşletmelerinde İş Akışı Otomasyonu:<br />Uygulama Rehberi</h1>
+
+<p>Bu rehber, fiziksel mağaza ve/veya çoklu e-ticaret kanalı üzerinden satış yapan perakende işletmeleri için yazıldı. Odak: sipariş yönetimi, stok senkronizasyonu ve müşteri iletişimindeki manuel yükü kaldırmak. E-ticaret büyüdükçe operasyon karmaşıklığı aynı oranda büyüyor — otomasyon bu denklemi değiştiriyor.</p>
+
+<h2>Perakende'nin Operasyonel Gerçeği</h2>
+
+<p>Çok kanallı satış yapan orta ölçekli perakende firmaları için tipik tablo: web sitesi, 2–3 marketplace, bazen fiziksel mağaza. Her kanalın kendi sipariş yönetimi, kendi stok takibi var. Entegrasyon yoksa: her stok güncellemesi her kanalda ayrı ayrı yapılıyor, sipariş kanalına göre farklı işlem adımları izleniyor, müşteri soruları dağınık geliyor.</p>
+
+<h2>Hangi Süreçler Otomasyona Hazır?</h2>
+
+<div class="matrix">
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Kolay → İlk Başlayın</span>
+    <ul>
+      <li>Sipariş durum bildirimleri</li>
+      <li>Kargo teslim bildirimleri</li>
+      <li>Stok eşik uyarıları</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Zor → Planlayın</span>
+    <ul>
+      <li>Çoklu kanal stok senkronizasyonu</li>
+      <li>ERP entegrasyonu</li>
+      <li>Otomatik iade akışı</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Kolay → Fırsatta</span>
+    <ul>
+      <li>Müşteri değerlendirme isteği</li>
+      <li>Terk edilmiş sepet hatırlatması</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Zor → Erteleyin</span>
+    <ul>
+      <li>Tahmine dayalı stok planlaması</li>
+      <li>Kişiselleştirilmiş ürün önerisi</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Araçlar ve Entegrasyonlar</h2>
+
+<p>İkas, Shopify veya Ticimax üzerinden satış yapıyorsanız: bu platformların webhook veya API desteği var. Make veya n8n gibi otomasyon platformlarıyla "yeni sipariş → müşteriye bildirim → stok güncelleme → muhasebe kaydı" akışı kurmak 1–2 günlük iş. Trendyol ve Hepsiburada entegrasyonu için her iki marketplace'in de API'si mevcut.</p>
+
+<BlogCTA sector="Perakende" sectorSlug="perakende" variant="inline" />
+
+<h2>Gerçek Senaryo: Bir Haftada Ne Değişir?</h2>
+
+<p><strong>Firma:</strong> Kendi web sitesi + Trendyol + Hepsiburada üzerinden satış yapan, günde 200 sipariş alan moda perakendecisi.</p>
+
+<p><strong>Otomasyon öncesi:</strong> Her siparişte stok 3 kanalda manuel güncelleniyor. Müşteri hizmetleri günde 80–100 sipariş sorgusu alıyor. İade talebi e-posta zincirine dönüşüyor.</p>
+
+<p><strong>4 hafta sonra:</strong></p>
+<ul>
+  <li>Stok tüm kanallarda gerçek zamanlı senkronize — aşırı satış sona erdi</li>
+  <li>Her sipariş teyidinde ve kargo çıkışında müşteriye otomatik bildirim — sorgu %65 azaldı</li>
+  <li>İade talebi formla geliyor, onay ve kargo kodu otomatik gönderiliyor</li>
+  <li>Müşteri hizmetleri ekibi gerçek sorunlara odaklanıyor</li>
+</ul>
+
+<h2>Sık Yapılan Hatalar</h2>
+
+<h3>Hata 1: Önce tek kanalda test etmemek</h3>
+<p>Tüm kanalları aynı anda otomasyona almaya çalışmak karmaşıklık yaratır. Tek bir kanal veya tek bir sipariş tipiyle başlayın.</p>
+
+<h3>Hata 2: Müşteri iletişim dilini otomasyona bırakmak</h3>
+<p>Otomatik mesajlar "robot" hissettirmemeli. Mesaj şablonlarına zaman ayırın — bu ayrıntı müşteri deneyimini belirler.</p>
+
+<h2>Nereden Başlamalısınız?</h2>
+
+<ul class="questions-list">
+  <li>Müşteri hizmetleri sorgularının yarısından fazlası sipariş durumu sorusu mu?</li>
+  <li>Stok güncellemesi birden fazla platformda manuel yapılıyor mu?</li>
+  <li>İade süreci tamamlanması 24 saatten uzun alıyor mu?</li>
+  <li>Satış raporu farklı kanallardan manuel derleniyor mu?</li>
+  <li>Haftalık stok sayımı hâlâ manuel yapılıyor mu?</li>
+</ul>
+
+</BlogLayout>

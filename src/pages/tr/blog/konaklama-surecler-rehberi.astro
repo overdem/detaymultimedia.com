@@ -1,0 +1,102 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Otelcilik & Konaklama İşletmelerinde İş Akışı Otomasyonu: Uygulama Rehberi"
+  description="Rezervasyon yönetiminden misafir iletişimine, temizlik koordinasyonundan raporlamaya — konaklama tesisleri için kapsamlı otomasyon rehberi."
+  sector="Konaklama"
+  sectorSlug="konaklama"
+  readTime="12 dk"
+  publishDate="Nisan 2026"
+  type="rehber"
+  relatedPosts={[
+    { title: 'Otel Operasyon Otomasyonu: Neden Kaçınılmaz?', href: '/tr/blog/konaklama-otomasyon', type: 'seo' },
+    { title: 'Otelcilik & Konaklama Çözümlerimiz', href: '/tr/cozumler/konaklama', type: 'seo' },
+  ]}
+>
+
+<h1>Otelcilik & Konaklama İşletmelerinde İş Akışı Otomasyonu:<br />Uygulama Rehberi</h1>
+
+<p>Bu rehber, 20 ila 150 odalı butik oteller ve konaklama tesisleri için yazıldı. Birden fazla kanal üzerinden rezervasyon alan, misafir iletişimini manuel yürüten ve operasyon raporlarını sabah toplantısı öncesinde hazırlayan tesisler için otomasyon neyi değiştirebilir — bunu somut olarak ele alıyoruz.</p>
+
+<h2>Konaklama'nın Operasyonel Gerçeği</h2>
+
+<p>Çok kanallı rezervasyon yönetimi konaklama sektörünün en kritik operasyonel sorunu. Booking, Airbnb, Expedia ve direkt rezervasyonlar bir arada yönetildiğinde, anlık güncelleme olmadan çakışma kaçınılmaz. Buna misafir öncesi iletişim, check-in işlemleri, temizlik koordinasyonu ve misafir sonrası süreçler eklenince, front desk personelinin kapasitesi aşılıyor.</p>
+
+<h2>Hangi Süreçler Otomasyona Hazır?</h2>
+
+<div class="matrix">
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Kolay → İlk Başlayın</span>
+    <ul>
+      <li>Rezervasyon onay ve hatırlatma akışı</li>
+      <li>Misafir öncesi bilgi toplama formu</li>
+      <li>Checkout sonrası değerlendirme isteği</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Zor → Planlayın</span>
+    <ul>
+      <li>Kanal yöneticisi entegrasyonu</li>
+      <li>PMS ile otomasyon entegrasyonu</li>
+      <li>Temizlik ekibi görev sistemi</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Kolay → Fırsatta</span>
+    <ul>
+      <li>Yönetici sabah doluluk özeti</li>
+      <li>Misafir anket takibi</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Zor → Erteleyin</span>
+    <ul>
+      <li>Dijital check-in kiosk</li>
+      <li>Tahmine dayalı fiyatlandırma</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Araçlar ve Entegrasyonlar</h2>
+
+<p>Beds24, Cloudbeds veya sektöre özel kanal yöneticileri otomasyon entegrasyonuna açık. Make veya n8n üzerinden "yeni rezervasyon geldi → misafire onay e-postası → varış tarihine 48 saat kala hatırlatma → checkout sonrası değerlendirme isteği" akışı 2–3 günlük kurulumdur. WhatsApp Business API konaklama sektöründe özellikle etkili — misafirler bu kanalı tercih ediyor.</p>
+
+<BlogCTA sector="Konaklama" sectorSlug="konaklama" variant="inline" />
+
+<h2>Gerçek Senaryo: Bir Haftada Ne Değişir?</h2>
+
+<p><strong>Tesis:</strong> 35 odalı Kapadokya butik oteli. Booking, Airbnb ve direkt rezervasyonlar.</p>
+
+<p><strong>Otomasyon öncesi:</strong> Her rezervasyona manuel onay e-postası yazılıyor. Varıştan önce giriş bilgisi e-postayla gönderiliyor ama zaman zaman unutuluyor. Checkout sonrası yorum isteği hiç yapılmıyor. Sabah raporu front desk tarafından önceki günün verilerinden derleniyor.</p>
+
+<p><strong>4 hafta sonra:</strong></p>
+<ul>
+  <li>Rezervasyon gelince otomatik onay, 48 saat önce hatırlatma ve giriş bilgisi WhatsApp ile gönderiliyor</li>
+  <li>Çift rezervasyon sona erdi — tüm kanallar anlık güncelleniyor</li>
+  <li>Checkout sonraki saat içinde Google ve Booking yorumu için otomatik istek gönderiliyor — yorum sayısı arttı</li>
+  <li>Sabah 07:30'da yöneticiye günlük doluluk ve gelir özeti otomatik geliyor</li>
+  <li>Front desk haftada 10 saat kazandı</li>
+</ul>
+
+<h2>Sık Yapılan Hatalar</h2>
+
+<h3>Hata 1: Kanal yöneticisini atlamak</h3>
+<p>Çakışma sorunu varsa kanal yöneticisi entegrasyonu olmadan hiçbir otomasyon tam çalışmaz. Bu temel altyapıyı önce kurun.</p>
+
+<h3>Hata 2: Misafir mesajlarını çok otomatik hale getirmek</h3>
+<p>Konaklama kişisel bir deneyim. Otomatik mesajlar otel tonu ve diliyle yazılmalı. "Otomatik" hissettiren şablonlar misafir deneyimini zedeliyor.</p>
+
+<h2>Nereden Başlamalısınız?</h2>
+
+<ul class="questions-list">
+  <li>Son 6 ayda çift rezervasyon yaşandı mı?</li>
+  <li>Misafire varış öncesi giriş bilgisi tutarlı gönderiliyor mu?</li>
+  <li>Checkout sonrası yorum isteği sistematik olarak yapılıyor mu?</li>
+  <li>Temizlik koordinasyonu için ayrı bir bildirim adımı gerekiyor mu?</li>
+  <li>Sabah raporu hazırlamak 30 dakikadan fazla alıyor mu?</li>
+</ul>
+
+</BlogLayout>

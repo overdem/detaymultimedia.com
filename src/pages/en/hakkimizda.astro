@@ -1,108 +1,325 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTABanner from '../../components/CTABanner.astro';
-import { t, type Lang } from '../../i18n';
 
-const lang: Lang = 'en';;
-const T = t(lang);
-const base = `/${lang}`;
+const lang = 'en';
 ---
 
-<BaseLayout lang={lang} title={T.about.metaTitle} description={T.about.metaDesc}>
+<BaseLayout
+  lang={lang}
+  title="About Us — Detay Multimedia"
+  description="Since 1997. With experience from 50+ enterprise projects including Shell, P&G, Bayer and Anadolu Group, we deliver business automation solutions."
+>
 
-  <section class="page-hero grid-bg">
+  <!-- SECTION 1 — Intro -->
+  <section class="section section-intro grid-bg">
     <div class="container">
-      <span class="section-label">{T.about.heroLabel}</span>
-      <h1 class="page-title">{T.about.heroTitle}</h1>
-      <p class="page-sub">{T.about.heroSub}</p>
+      <span class="section-label fade-in">Since 1997</span>
+      <h1 class="intro-title fade-in">
+        You're working with a team<br />
+        that knows how to read the market.
+      </h1>
+      <p class="intro-body fade-in">
+        Detay Multimedia was founded in 1997, when the internet
+        was just entering Turkey. Back then, building enterprise
+        websites was no small matter — it required large budgets,
+        long projects, and serious decision-makers. Brands like
+        Shell, Procter &amp; Gamble, Bayer, Anadolu Group, Efes,
+        and Yeni İlaç trusted us with their work. Because they
+        saw that we took it seriously.
+      </p>
     </div>
   </section>
 
+  <!-- SECTION 2 — Story -->
   <section class="section section-alt">
     <div class="container">
-      <div class="mission-block fade-in">
-        <div class="mission-left">
-          <span class="section-label">{T.about.missionLabel}</span>
-          <h2 class="mission-title">{T.about.missionTitle}</h2>
-        </div>
-        <p class="mission-text">{T.about.missionText}</p>
+      <span class="section-label fade-in">Why We Stopped, Why We Came Back</span>
+      <h2 class="story-title fade-in">
+        We left when the market cheapened.<br />
+        Now we're at the start of a new cycle.
+      </h2>
+      <div class="story-body fade-in">
+        <p>
+          By the mid-2000s, building websites had become a
+          commodity. Anyone could do it, prices fell, enterprise
+          budgets shrank. We stepped away from that space — it
+          was a rational decision.
+        </p>
+        <p>
+          For the next 20 years we worked in digital media.
+          Motoron.com.tr, Turkey's most established motorcycle
+          publication, is still live today. Throughout that
+          period we accumulated deep practical experience in
+          content production, automation, AI tools, and digital
+          operations.
+        </p>
+        <p>
+          Now we're in business automation. And this looks a lot
+          like the beginning of the 1997 cycle: technology is
+          powerful, the market hasn't matured yet, enterprise
+          budgets are open. Our advantage this time — we entered
+          earlier, and we know exactly what we're doing.
+        </p>
       </div>
     </div>
   </section>
 
+  <!-- SECTION 3 — Approach -->
   <section class="section">
     <div class="container">
-      <span class="section-label">{T.about.valuesLabel}</span>
-      <div class="values-grid">
-        {T.about.values.map((v, i) => (
-          <div class="value-card card fade-in" style={`--delay:${i * 70}ms`}>
-            <span class="value-num mono">{String(i + 1).padStart(2, '0')}</span>
-            <h3 class="value-title">{v.title}</h3>
-            <p class="value-desc">{v.desc}</p>
-          </div>
-        ))}
+      <span class="section-label fade-in">Our Approach</span>
+      <h2 class="section-title fade-in">Technology is a tool. Results are the goal.</h2>
+      <div class="approach-grid">
+        <div class="approach-card card fade-in" style="--delay:0ms">
+          <h3 class="approach-card-title">We understand you first</h3>
+          <p class="approach-card-text">We start by talking about the problem to solve, not the tool to use. The solution comes after.</p>
+        </div>
+        <div class="approach-card card fade-in" style="--delay:80ms">
+          <h3 class="approach-card-title">We build and deliver</h3>
+          <p class="approach-card-text">We deliver a working system, not a strategy document. Installation is complete, you start using it.</p>
+        </div>
+        <div class="approach-card card fade-in" style="--delay:160ms">
+          <h3 class="approach-card-title">We stay with you</h3>
+          <p class="approach-card-text">The project doesn't end, the partnership begins. We're with you as the system grows and needs change.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TODO: Ekip bölümü eklenecek -->
-  <!-- TODO: Hakkımızda görseli eklenecek -->
+  <!-- SECTION 4 — Stats -->
+  <section class="section section-alt">
+    <div class="container">
+      <span class="section-label fade-in">By the Numbers</span>
+      <div class="stats-grid fade-in">
+        <div class="stat-item">
+          <span class="stat-number">27</span>
+          <span class="stat-label">Years of digital experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Enterprise projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Active sectors</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">1997</span>
+          <span class="stat-label">Founded</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <CTABanner lang={lang} />
+  <!-- SECTION 5 — CTA -->
+  <section class="section cta-section">
+    <div class="container cta-inner">
+      <span class="section-label fade-in">Let's Work Together</span>
+      <h2 class="cta-title fade-in">
+        Ready to automate<br />
+        your processes?
+      </h2>
+      <p class="cta-sub fade-in">Let's start with a free 30-minute analysis.</p>
+      <a href="/en/iletisim" class="btn btn-primary fade-in">Schedule a Demo →</a>
+    </div>
+  </section>
 
 </BaseLayout>
 
 <style>
-  .page-hero {
-    padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem);
-    border-bottom: 1px solid var(--color-border);
+  /* SECTION 1 — Intro */
+  .section-intro {
+    padding-top: clamp(5rem, 10vw, 9rem);
   }
 
-  .page-title { font-size: var(--text-h1); font-weight: 700; margin: 0.75rem 0 1rem; max-width: 600px; }
-  .page-sub { color: var(--color-muted); max-width: 500px; line-height: 1.65; font-size: 1.05rem; }
-
-  .mission-block {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 4rem;
-    align-items: start;
+  .intro-title {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 1rem 0 1.75rem;
+    max-width: 720px;
   }
 
-  .mission-title { font-size: var(--text-h2); margin-top: 0.5rem; }
-
-  .mission-text {
-    font-size: 1.1rem;
+  .intro-body {
     color: var(--color-muted);
+    font-size: 1.05rem;
+    max-width: 600px;
     line-height: 1.75;
-    padding-top: 2.25rem;
   }
 
-  .values-grid {
+  /* SECTION 2 — Story */
+  .story-title {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 1rem 0 2rem;
+    max-width: 640px;
+  }
+
+  .story-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 600px;
+  }
+
+  .story-body p {
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  /* SECTION 3 — Approach */
+  .section-title {
+    font-size: var(--text-h2);
+    margin-bottom: 2.5rem;
+  }
+
+  .approach-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-top: 2rem;
   }
 
-  .value-card {
+  .approach-card {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     animation-delay: var(--delay, 0ms);
   }
 
-  .value-num {
-    font-size: 1.5rem;
+  .approach-card-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .approach-card-text {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* SECTION 4 — Stats */
+  .stats-grid {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-bg-3);
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem 3rem;
+    flex: 1;
+  }
+
+  .stat-number {
+    font-family: var(--font-mono);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 500;
     color: var(--color-accent);
     line-height: 1;
   }
 
-  .value-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
-  .value-desc { font-size: var(--text-small); color: var(--color-muted); line-height: 1.65; }
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .stat-divider {
+    width: 1px;
+    background-color: var(--color-border);
+    flex-shrink: 0;
+  }
+
+  /* SECTION 5 — CTA */
+  .cta-section {
+    background-color: var(--color-bg);
+  }
+
+  .cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-title {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 1rem 0 1rem;
+    max-width: 560px;
+  }
+
+  .cta-sub {
+    color: var(--color-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .approach-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
   @media (max-width: 768px) {
-    .mission-block { grid-template-columns: 1fr; gap: 1.5rem; }
-    .mission-text { padding-top: 0; }
+    .stats-grid {
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      flex: 1 1 40%;
+      padding: 1.5rem 2rem;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+
+    .stats-grid .stat-item:nth-child(odd) {
+      border-right: 1px solid var(--color-border);
+    }
+
+    .stats-grid .stat-item:nth-child(1),
+    .stats-grid .stat-item:nth-child(2) {
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    .stat-item {
+      flex: none;
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      border-right: none !important;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .stat-item:last-child {
+      border-bottom: none;
+    }
   }
 </style>

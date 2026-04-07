@@ -40,9 +40,13 @@ const year = new Date().getFullYear();
         </div>
         <div class="footer-col">
           <span class="footer-col-title">{T.footer.contactCol}</span>
-          <!-- TODO: Gerçek e-posta ekle -->
           <a href="mailto:info@detaymultimedia.com">info@detaymultimedia.com</a>
-          <!-- TODO: Telefon ve adres ekle -->
+          <a href="tel:+902167092824">+90 216 709 28 24</a>
+          <address class="footer-address">
+            Küçükbakkalköy Mah. Vedat Günyol Cad.<br />
+            Defne Sok. Flora Suite Office K:28 No:365<br />
+            34750 Ataşehir/İstanbul
+          </address>
         </div>
       </div>
     </div>
@@ -113,6 +117,14 @@ const year = new Date().getFullYear();
     font-size: var(--text-small);
     color: var(--color-muted);
     transition: color 200ms ease-out;
+  }
+
+  .footer-address {
+    font-size: var(--text-small);
+    color: var(--color-subtle);
+    line-height: 1.65;
+    font-style: normal;
+    margin-top: 0.25rem;
   }
 
   .footer-col a:hover { color: var(--color-text); }

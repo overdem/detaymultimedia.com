@@ -1,0 +1,106 @@
+---
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const T = t(lang);
+---
+
+<section class="pain-section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">{T.home.whyLabel}</span>
+      <h2 class="section-heading">{T.home.whyTitle}</h2>
+    </div>
+
+    <div class="pain-grid">
+      {T.home.pains.map((p, i) => (
+        <div class="pain-card reveal" style={`transition-delay:${i * 100}ms`}>
+          <span class="pain-num">0{i + 1}</span>
+          <h3 class="pain-title">{p.title}</h3>
+          <p class="pain-desc">{p.desc}</p>
+          <div class="pain-stat">
+            <span>{p.stat}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pain-section {
+    padding: var(--section-gap) 0;
+    background-color: var(--color-bg-2);
+  }
+
+  .section-heading {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background-color: var(--color-border);
+    border: 1px solid var(--color-border);
+  }
+
+  .pain-card {
+    background-color: var(--color-bg);
+    padding: 2.5rem;
+    transition: background-color 200ms ease-out, opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .pain-card:hover { background-color: var(--color-bg-3); }
+
+  .pain-num {
+    font-family: var(--font-label);
+    font-size: 0.8rem;
+    color: var(--color-teal);
+    display: block;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+  }
+
+  .pain-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    transition: color 200ms ease-out;
+  }
+
+  .pain-card:hover .pain-title { color: var(--color-accent); }
+
+  .pain-desc {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .pain-stat {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.25rem;
+  }
+
+  .pain-stat span {
+    font-family: var(--font-label);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 900px) {
+    .pain-grid { grid-template-columns: 1fr; }
+  }
+</style>

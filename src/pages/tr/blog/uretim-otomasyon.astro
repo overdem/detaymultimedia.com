@@ -1,0 +1,72 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Üretim Firmalarında Süreç Otomasyonu: Neden Kaçınılmaz Hale Geldi?"
+  description="Üretim firmalarında veri girişi hatalarının %80'i manuel süreçlerden kaynaklanıyor. Hangi süreçler otomasyona hazır, nereden başlanmalı?"
+  sector="Üretim"
+  sectorSlug="uretim"
+  readTime="6 dk"
+  publishDate="Nisan 2026"
+  type="seo"
+  relatedPosts={[
+    { title: 'Üretim İşletmelerinde İş Akışı Otomasyonu: Adım Adım Rehber', href: '/tr/blog/uretim-surecler-rehberi', type: 'rehber' },
+    { title: 'Üretim & Tedarik Çözümlerimiz', href: '/tr/cozumler/uretim', type: 'seo' },
+  ]}
+>
+
+<h1>Üretim Firmalarında Süreç Otomasyonu:<br />Neden Kaçınılmaz Hale Geldi?</h1>
+
+<p>Üretim firmalarında <strong>veri girişi hatalarının %80'i manuel süreçlerden kaynaklanıyor</strong>. Sipariş, stok ve fatura verilerini üç ayrı sistemde tutan, aralarında entegrasyon olmayan bir üretim firmasını düşünün: her gün saatler, aynı verinin farklı sistemlere girilmesiyle geçiyor. Hata kaçınılmaz, geç tespit edilen hata ise çok daha maliyetli.</p>
+
+<p>Bu yazı, üretim ve tedarik sektöründe hangi süreçlerin otomasyona hazır olduğunu ve somut kazanımların ne olduğunu ele alıyor.</p>
+
+<h2>Üretim'de En Çok Zaman Kaybettiren 5 Süreç</h2>
+
+<h3>1. Manuel stok takibi</h3>
+<p>Stok seviyesi kritik eşiğin altına düştüğünde sistematik bir uyarı yok. Eksiklik genellikle üretim durduğunda fark ediliyor. Otomasyon: otomatik stok uyarısı ve yenileme tetikleyicisi.</p>
+
+<h3>2. Tedarikçi iletişimi</h3>
+<p>Sipariş durumu tedarikçiye e-posta veya telefonla bildiriliyor, gelen bilgi tekrar sisteme manuel giriliyor. Kayıp: her iki yönde de zaman ve hata riski.</p>
+
+<h3>3. Üretim planı yönetimi</h3>
+<p>Excel'de tutulan üretim planları her değişiklikte manuel güncelleniyor. Birden fazla kişi dosyayı düzenlediğinde çakışmalar çıkıyor. Gerçek zamanlı üretim panosu bu sorunu ortadan kaldırıyor.</p>
+
+<h3>4. Kalite kontrol kayıt yönetimi</h3>
+<p>Kağıt formlar ya da ayrı bir Excel. Veri birleştirmek, raporlamak veya bir sorunu geriye dönük izlemek saatler alıyor.</p>
+
+<h3>5. Haftalık raporlama</h3>
+<p>Üretim özet raporu hazırlamak birden fazla kaynaktan veri toplamayı gerektiriyor. Otomatik haftalık rapor bu süreci sıfır insan müdahalesine indiriyor.</p>
+
+<BlogCTA sector="Üretim" sectorSlug="uretim" variant="inline" />
+
+<h2>Otomasyon Hangi Süreçleri Değiştirir?</h2>
+
+<table>
+  <thead>
+    <tr><th>Süreç</th><th>Önce</th><th>Sonra</th><th>Kazanım</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Stok takibi</strong></td><td>Manuel kontrol, geç fark etme</td><td>Eşik bazlı otomatik uyarı</td><td>Üretim durmaları azalır</td></tr>
+    <tr><td><strong>Tedarikçi bildirimi</strong></td><td>E-posta / telefon</td><td>Sistem tabanlı otomatik bildirim</td><td>İletişim süresi %70 azalır</td></tr>
+    <tr><td><strong>Üretim planı</strong></td><td>Excel, çakışma riski</td><td>Gerçek zamanlı paylaşımlı pano</td><td>Planlama hatası azalır</td></tr>
+    <tr><td><strong>Raporlama</strong></td><td>Elle derleme, 2–3 saat</td><td>Otomatik haftalık özet</td><td>Haftalık 10+ saat kazanılır</td></tr>
+  </tbody>
+</table>
+
+<h2>Nereden Başlamalı?</h2>
+
+<ol class="steps-list">
+  <li><span class="step-num">01</span><div><strong>Analiz — En çok hata nerede çıkıyor?</strong> Stok eksikliği mi, tedarikçi gecikmesi mi, raporlama mı? En yüksek hata/maliyet noktası ilk başlangıç noktasıdır.</div></li>
+  <li><span class="step-num">02</span><div><strong>Önceliklendirme — Sistemler arası veri köprüsü kurun.</strong> Sipariş, stok ve fatura verisi üç ayrı sistemdeyse, önce bu sistemlerin otomatik senkronize olmasını sağlayın. Bu tek adım en büyük hata kaynağını ortadan kaldırır.</div></li>
+  <li><span class="step-num">03</span><div><strong>Uygulama — Mevcut ERP veya üretim yazılımınızla başlayın.</strong> Büyük ihtimalle entegrasyon seçeneği var. Yeni yazılım almadan mevcut sistemi daha akıllı kullanmak ilk hedef.</div></li>
+</ol>
+
+<div class="cta-box">
+  <p>Üretim sektörü için ücretsiz süreç analizi — hangi süreçlerin otomasyona hazır olduğunu birlikte belirleyelim.</p>
+  <a href="/tr/iletisim?sektor=uretim" class="btn btn-primary">Demo Randevusu Al →</a>
+</div>
+
+</BlogLayout>

@@ -1,0 +1,4 @@
+Her konuşmanın sonunda, kullanıcı "bitti", "kapat", 
+"tamam görüşürüz" veya benzeri bir kapanış ifadesi 
+kullandığında CLAUDE.md'deki "Son durum" ve 
+"Sıradaki adım" bölümlerini otomatik güncelle.

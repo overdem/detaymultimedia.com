@@ -1,0 +1,102 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Sağlık Kurumlarında İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi"
+  description="Randevu yönetiminden hasta iletişimine, sigorta süreçlerinden raporlamaya — klinik ve sağlık kurumları için kapsamlı otomasyon rehberi."
+  sector="Sağlık"
+  sectorSlug="saglik"
+  readTime="12 dk"
+  publishDate="Nisan 2026"
+  type="rehber"
+  relatedPosts={[
+    { title: 'Klinik Randevu Otomasyonu: Neden Kaçınılmaz?', href: '/tr/blog/saglik-otomasyon', type: 'seo' },
+    { title: 'Sağlık & Klinik Çözümlerimiz', href: '/tr/cozumler/saglik', type: 'seo' },
+  ]}
+>
+
+<h1>Sağlık Kurumlarında İş Akışı Otomasyonu:<br />Adım Adım Uygulama Rehberi</h1>
+
+<p>Bu rehber, 2 ila 15 doktorlu özel klinikler ve sağlık merkezleri için yazıldı. Resepsiyon ekibinizin zamanının büyük bölümü telefon görüşmelerine ve randevu hatırlatmalarına gidiyorsa, otomasyon bu denklemi değiştirebilir. Okuyacaklarınız: hangi süreçleri önceliklendirmeniz gerektiği, hangi araçları kullanacağınız ve doluluk oranına somut etkisi.</p>
+
+<h2>Sağlık'ın Operasyonel Gerçeği</h2>
+
+<p>Özel kliniklerde resepsiyon ekibi iki görev arasında sıkışıyor: gelen aramaları ve ziyaretçileri karşılamak, ve proaktif randevu yönetimi yapmak. Manuel süreçte ikincisi genellikle aksıyor. Sonuç: yüksek no-show oranı, boş seanslar ve kaçırılan periyodik kontrol fırsatları.</p>
+
+<h2>Hangi Süreçler Otomasyona Hazır?</h2>
+
+<div class="matrix">
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Kolay → İlk Başlayın</span>
+    <ul>
+      <li>Randevu hatırlatma SMS/WhatsApp</li>
+      <li>Onay ve iptal akışı</li>
+      <li>Periyodik kontrol davetleri</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Zor → Planlayın</span>
+    <ul>
+      <li>Klinik yazılımı entegrasyonu</li>
+      <li>Sigorta form otomasyonu</li>
+      <li>Hasta portföy yönetimi</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Kolay → Fırsatta</span>
+    <ul>
+      <li>Hasta memnuniyet anketi</li>
+      <li>Doktor sabah program özeti</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Zor → Erteleyin</span>
+    <ul>
+      <li>Tam dijital hasta dosyası</li>
+      <li>AI destekli teşhis yardımı</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Araçlar ve Entegrasyonlar</h2>
+
+<p>WhatsApp Business API, klinik otomasyonunda en etkili araçlardan biri. Türkiye'de hastaların büyük çoğunluğu WhatsApp kullandığından, bu kanal üzerinden gönderilen hatırlatmalar SMS'e kıyasla çok daha yüksek açılma oranına sahip. Randevu yazılımından (Poliklinik, Medisoft, vb.) gelen veriyi okuyarak otomasyon akışı tetiklenebiliyor.</p>
+
+<BlogCTA sector="Sağlık" sectorSlug="saglik" variant="inline" />
+
+<h2>Gerçek Senaryo: Bir Haftada Ne Değişir?</h2>
+
+<p><strong>Klinik:</strong> 4 doktorlu dermatoloji kliniği, günde 60 randevu, %25 no-show oranı.</p>
+
+<p><strong>Otomasyon öncesi:</strong> Resepsiyon her öğleden sonra yarın günü için hatırlatma aramaları yapıyor. Her arama 2–4 dakika. 60 aramanın yarısı sesli mesaja düşüyor.</p>
+
+<p><strong>4 hafta sonra:</strong></p>
+<ul>
+  <li>24 saat ve 2 saat öncesinde otomatik WhatsApp mesajı — onay veya iptal seçeneğiyle</li>
+  <li>No-show oranı %25 → %9'a düştü</li>
+  <li>İptal eden hastaların yerine bekleyen hasta otomatik davet ediliyor</li>
+  <li>6 ay geçen hasta kontrolleri için otomatik hatırlatma — periyodik doluluk arttı</li>
+  <li>Resepsiyon haftada 8 saat kazandı</li>
+</ul>
+
+<h2>Sık Yapılan Hatalar</h2>
+
+<h3>Hata 1: Mesaj sıklığını doğru ayarlamamak</h3>
+<p>Çok fazla mesaj hasta şikayetine yol açar. Tek bir etkili mesaj zamanlaması (24 saat önce veya 2 saat önce) yeterli. İkisini birden göndermek de çoğu klinik için uygun.</p>
+
+<h3>Hata 2: İptal akışını unutmak</h3>
+<p>Hatırlatma gönderilir ama iptal kanalı açılmaz. Hastanın iptal edebileceği basit bir yol sunun — bu gelmeme oranını tahmin etmenizi sağlar ve erken haber almanızı kolaylaştırır.</p>
+
+<h2>Nereden Başlamalısınız?</h2>
+
+<ul class="questions-list">
+  <li>Aylık no-show oranınız %10'un üzerinde mi?</li>
+  <li>Resepsiyon günde 1 saatten fazlasını hatırlatma aramalarına harcıyor mu?</li>
+  <li>Periyodik kontrol hastalarını takip eden otomatik bir sistem var mı?</li>
+  <li>İptal edilen randevular için bekleme listesinde hasta var mı?</li>
+  <li>Hasta memnuniyetini ölçen otomatik bir anket mekanizmanız var mı?</li>
+</ul>
+
+</BlogLayout>

@@ -1,192 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Ticker from '../../components/Ticker.astro';
+import PainPoints from '../../components/PainPoints.astro';
+import SectorsGrid from '../../components/SectorsGrid.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import ReferencesSection from '../../components/ReferencesSection.astro';
 import CTABanner from '../../components/CTABanner.astro';
-import { t, type Lang } from '../../i18n';
+import { type Lang } from '../../i18n';
 
 const lang: Lang = 'en';
-const T = t(lang);
-const base = `/${lang}`;
 ---
 
 <BaseLayout lang={lang} title="__home__">
-
-  <!-- HERO -->
-  <section class="hero grid-bg">
-    <div class="container hero-inner">
-      <span class="section-label fade-in">{T.home.heroLabel}</span>
-      <h1 class="hero-title fade-in">
-        {T.home.heroTitle[0]}<br />
-        {T.home.heroTitle[1]}<br />
-        <em class="text-accent" style="font-style:normal">{T.home.heroTitle[2]}</em>
-      </h1>
-      <p class="hero-sub fade-in">{T.home.heroSub}</p>
-      <div class="hero-actions fade-in">
-        <a href={`${base}/iletisim`} class="btn btn-primary">{T.home.ctaPrimary}</a>
-        <a href={`${base}/cozumler`} class="btn btn-outline">{T.home.ctaSecondary}</a>
-      </div>
-
-      <div class="hero-stats fade-in">
-        <div class="hero-stat-item">
-          <span class="hero-stat-number">{T.home.statsValue1}</span>
-          <span class="hero-stat-label">{T.home.statsLabel1}</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat-item">
-          <span class="hero-stat-number">{T.home.statsValue2}</span>
-          <span class="hero-stat-label">{T.home.statsLabel2}</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat-item">
-          <span class="hero-stat-number">{T.home.statsValue3}</span>
-          <span class="hero-stat-label">{T.home.statsLabel3}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="trust-bar">
-      <div class="container trust-bar-inner">
-        <span class="trust-label">{T.home.trustLabel}</span>
-        <p class="trust-desc">{T.home.trustDesc}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY -->
-  <section class="section section-alt">
-    <div class="container">
-      <span class="section-label">{T.home.whyLabel}</span>
-      <h2 class="section-title fade-in">{T.home.whyTitle}</h2>
-      <div class="pain-grid">
-        {T.home.pains.map((p, i) => (
-          <div class="pain-card fade-in" style={`--delay:${i * 80}ms`}>
-            <h3 class="pain-title">{p.title}</h3>
-            <p class="pain-desc">{p.desc}</p>
-            <div class="pain-stat"><span class="pain-stat-text">{p.stat}</span></div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTORS -->
-  <section class="section">
-    <div class="container">
-      <span class="section-label">{T.home.sectorsLabel}</span>
-      <h2 class="section-title fade-in">{T.home.sectorsTitle}</h2>
-      <p class="section-sub fade-in">{T.home.sectorsSub}</p>
-      <div class="sectors-grid">
-        {T.sectors.map((s, i) => (
-          <a href={`${base}/cozumler/${s.slug}`} class="sector-card card fade-in" style={`--delay:${i * 60}ms`}>
-            <div class="sector-icon">{s.icon}</div>
-            <h3 class="sector-name">{s.name}</h3>
-            <p class="sector-summary">{s.summary}</p>
-            <span class="sector-link">Explore →</span>
-          </a>
-        ))}
-      </div>
-      <p class="sectors-fallback fade-in">
-        {T.home.sectorsMissing}
-        <a href={`${base}/iletisim`} class="sectors-fallback-link">{T.home.sectorsMissingCta}</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="section section-alt">
-    <div class="container">
-      <span class="section-label">{T.home.processLabel}</span>
-      <h2 class="section-title fade-in">{T.home.processTitle}</h2>
-      <p class="section-sub fade-in">{T.home.processSub}</p>
-      <div class="steps-grid">
-        {T.home.steps.map((s, i) => (
-          <div class="step-item fade-in" style={`--delay:${i * 80}ms`}>
-            <div class="step-top">
-              <span class="step-number">{s.number}</span>
-              <span class="step-duration">{s.duration}</span>
-            </div>
-            <h3 class="step-title">{s.title}</h3>
-            <p class="step-desc">{s.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
+  <Hero lang={lang} />
+  <Ticker />
+  <PainPoints lang={lang} />
+  <SectorsGrid lang={lang} />
+  <ProcessSteps lang={lang} />
+  <ReferencesSection lang={lang} />
   <CTABanner lang={lang} />
-
 </BaseLayout>
-
-<style>
-  .hero { padding: clamp(5rem, 10vw, 9rem) 0 0; }
-  .hero-inner { padding-bottom: clamp(3rem, 6vw, 5rem); max-width: 800px; }
-
-  .hero-title { font-size: var(--text-hero); font-weight: 700; line-height: 1.08; margin: 1rem 0 1.5rem; max-width: 800px; }
-  .hero-sub { color: var(--color-muted); font-size: 1.05rem; max-width: 520px; line-height: 1.65; margin-bottom: 2.5rem; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .hero-stats { display: flex; align-items: stretch; margin-top: 3rem; border: 1px solid var(--color-border); border-radius: 4px; background-color: var(--color-bg-3); width: fit-content; overflow: hidden; }
-  .hero-stat-item { display: flex; flex-direction: column; gap: 0.35rem; padding: 1.25rem 2.5rem; }
-  .hero-stat-number { font-family: var(--font-mono); font-size: 2rem; font-weight: 500; line-height: 1; }
-  .hero-stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
-  .hero-stat-divider { width: 1px; background-color: var(--color-border); }
-
-  .trust-bar { border-top: 1px solid var(--color-border); background-color: var(--color-bg-2); padding: 1.25rem 0; }
-  .trust-bar-inner { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
-  .trust-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-subtle); }
-  .trust-desc { font-size: var(--text-small); color: var(--color-muted); max-width: 600px; line-height: 1.55; }
-
-  .section-title { font-size: var(--text-h2); margin-bottom: 0.75rem; }
-  .section-sub { color: var(--color-muted); max-width: 560px; line-height: 1.65; margin-bottom: 3rem; }
-
-  .pain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; border: 1px solid var(--color-border); border-radius: 4px; overflow: hidden; margin-top: 2.5rem; }
-  .pain-card { padding: 2rem; background-color: var(--color-bg-3); transition: background-color 200ms ease-out; animation-delay: var(--delay, 0ms); }
-  .pain-card:hover { background-color: rgba(232, 150, 31, 0.04); }
-  .pain-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
-  .pain-desc { font-size: var(--text-small); color: var(--color-muted); line-height: 1.65; margin-bottom: 1.5rem; }
-  .pain-stat { border-left: 2px solid var(--color-accent); padding-left: 0.75rem; }
-  .pain-stat-text { font-family: var(--font-mono); font-size: 11px; color: var(--color-muted); }
-
-  .sectors-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-  .sector-card { display: flex; flex-direction: column; gap: 0.7rem; transition: border-color 200ms ease-out, transform 200ms ease-out; animation-delay: var(--delay, 0ms); }
-  .sector-card:hover { transform: translateY(-2px); }
-  .sector-icon { font-size: 1.4rem; color: var(--color-accent); font-family: var(--font-mono); }
-  .sector-name { font-size: 0.95rem; font-weight: 600; font-family: var(--font-display); }
-  .sector-summary { font-size: var(--text-small); color: var(--color-muted); line-height: 1.55; flex: 1; }
-  .sector-link { font-size: var(--text-small); font-weight: 600; color: var(--color-accent); }
-  .sectors-fallback { text-align: center; font-size: var(--text-small); color: var(--color-muted); padding: 1rem; }
-  .sectors-fallback-link { color: var(--color-accent); font-weight: 600; margin-left: 0.25rem; }
-
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--color-border); border-radius: 4px; overflow: hidden; margin-top: 2.5rem; }
-  .step-item { padding: 2rem; border-right: 1px solid var(--color-border); animation-delay: var(--delay, 0ms); }
-  .step-item:last-child { border-right: none; }
-  .step-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-  .step-number { font-family: var(--font-mono); font-size: 1.75rem; font-weight: 500; color: var(--color-accent); line-height: 1; }
-  .step-duration { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-subtle); background-color: rgba(255,255,255,0.04); padding: 3px 8px; border-radius: 2px; }
-  .step-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.75rem; }
-  .step-desc { font-size: var(--text-small); color: var(--color-muted); line-height: 1.65; }
-
-  @media (max-width: 900px) {
-    .steps-grid { grid-template-columns: 1fr 1fr; }
-    .step-item:nth-child(2) { border-right: none; }
-    .step-item:nth-child(3) { border-right: 1px solid var(--color-border); border-top: 1px solid var(--color-border); }
-    .step-item:nth-child(4) { border-right: none; border-top: 1px solid var(--color-border); }
-  }
-
-  @media (max-width: 768px) {
-    .hero-stat-item { padding: 1rem 1.5rem; }
-    .hero-stat-number { font-size: 1.6rem; }
-    .pain-grid { grid-template-columns: 1fr; }
-    .sectors-grid { grid-template-columns: 1fr 1fr; }
-    .cases-grid { grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 640px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .step-item { border-right: none !important; border-bottom: 1px solid var(--color-border); border-top: none !important; }
-    .step-item:last-child { border-bottom: none; }
-    .hero-stats { flex-direction: column; width: 100%; }
-    .hero-stat-divider { width: 100%; height: 1px; }
-    .hero-stat-item { padding: 0.85rem 1.25rem; }
-    .sectors-grid { grid-template-columns: 1fr; }
-  }
-</style>

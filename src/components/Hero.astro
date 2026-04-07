@@ -1,0 +1,155 @@
+---
+import { t, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const T = t(lang);
+const base = `/${lang}`;
+---
+
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">OT</div>
+
+  <div class="container hero-inner reveal">
+    <span class="section-label">{T.home.heroLabel}</span>
+
+    <h1 class="hero-title">
+      {T.home.heroTitle[0]}<br />
+      {T.home.heroTitle[1]}<br />
+      <span class="text-accent">{T.home.heroTitle[2]}</span>
+    </h1>
+
+    <p class="hero-sub">{T.home.heroSub}</p>
+
+    <div class="hero-actions">
+      <a href={`${base}/iletisim`} class="btn btn-primary btn-lg">{T.home.ctaPrimary}</a>
+      <a href={`${base}/cozumler`} class="btn btn-outline btn-lg">{T.home.ctaSecondary}</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-value">{T.home.statsValue1}</span>
+        <span class="stat-label">{T.home.statsLabel1}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">{T.home.statsValue2}</span>
+        <span class="stat-label">{T.home.statsLabel2}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">{T.home.statsValue3}</span>
+        <span class="stat-label">{T.home.statsLabel3}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(6rem, 12vw, 10rem) 0 clamp(4rem, 8vw, 6rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-watermark {
+    position: absolute;
+    right: -2vw;
+    top: 25%;
+    opacity: 0.05;
+    pointer-events: none;
+    user-select: none;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 38vw;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--color-text);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 9vw, 100px);
+    margin: 1rem 0 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-muted);
+    max-width: 580px;
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .btn-lg {
+    padding: 1.1rem 2.5rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    border: 1px solid var(--color-border);
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem 2.5rem;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-label {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 640px) {
+    .hero-stats {
+      flex-direction: column;
+      width: 100%;
+    }
+    .stat-item {
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem 1.5rem;
+    }
+    .stat-item:last-child { border-bottom: none; }
+    .hero-actions { flex-direction: column; }
+    .btn-lg { text-align: center; justify-content: center; }
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Üretim & Tedarik İşletmelerinde İş Akışı Otomasyonu: Uygulama Rehberi"
+  description="Sipariş takibinden stok yönetimine, tedarikçi iletişiminden raporlamaya — üretim firmaları için kapsamlı otomasyon uygulama rehberi."
+  sector="Üretim"
+  sectorSlug="uretim"
+  readTime="11 dk"
+  publishDate="Nisan 2026"
+  type="rehber"
+  relatedPosts={[
+    { title: 'Üretim Firmalarında Süreç Otomasyonu: Neden Kaçınılmaz?', href: '/tr/blog/uretim-otomasyon', type: 'seo' },
+    { title: 'Üretim & Tedarik Çözümlerimiz', href: '/tr/cozumler/uretim', type: 'seo' },
+  ]}
+>
+
+<h1>Üretim & Tedarik İşletmelerinde İş Akışı Otomasyonu:<br />Uygulama Rehberi</h1>
+
+<p>Bu rehber, üretim hattı yöneticileri ve operasyon direktörleri için yazıldı. Odak nokta: sipariş, stok ve tedarikçi süreçlerindeki manuel yükü kaldırmak, hata oranını düşürmek ve raporlamayı otomatikleştirmek. Neden şimdi? Çünkü tedarik zinciri kırılganlığı ve maliyet baskısı, operasyonel verimliliği ertelenebilir olmaktan çıkardı.</p>
+
+<h2>Üretim'in Operasyonel Gerçeği</h2>
+
+<p>Orta ölçekli üretim firmalarında yaygın tablo: sipariş sistemi ayrı, stok takibi ayrı, muhasebe ayrı. Bu üç sistem birbiriyle konuşmuyor. Aralarındaki veri akışını insan sağlıyor — yani her güncelleme manuel giriş gerektiriyor. Sonuç: haftada onlarca saat kaybı ve sürekli hata riski.</p>
+
+<h2>Hangi Süreçler Otomasyona Hazır?</h2>
+
+<div class="matrix">
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Kolay → İlk Başlayın</span>
+    <ul>
+      <li>Stok eşik uyarıları</li>
+      <li>Tedarikçi sipariş bildirimleri</li>
+      <li>Haftalık üretim raporu</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Zor → Planlayın</span>
+    <ul>
+      <li>ERP ↔ muhasebe entegrasyonu</li>
+      <li>Kalite kontrol dijitalizasyonu</li>
+      <li>Tedarikçi portal entegrasyonu</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Kolay → Fırsatta</span>
+    <ul>
+      <li>Sipariş onay bildirimleri</li>
+      <li>Yönetici sabah özeti</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Zor → Erteleyin</span>
+    <ul>
+      <li>Tahmine dayalı bakım</li>
+      <li>Tam dijital kalite belgeleme</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Araçlar ve Entegrasyonlar</h2>
+
+<p>Logo, Mikro, SAP veya NetSIS kullanan firmalarda entegrasyon büyük ihtimalle mümkün. ERP sistemlerin çoğu API veya veritabanı bağlantısı sunuyor. Make veya n8n gibi otomasyon platformları bu entegrasyonları kod yazmadan kuruyor. Tedarikçi iletişimi için e-posta otomasyon akışı en hızlı kurulabilen ve en yüksek ROI sağlayan başlangıç noktası.</p>
+
+<BlogCTA sector="Üretim" sectorSlug="uretim" variant="inline" />
+
+<h2>Gerçek Senaryo: Bir Haftada Ne Değişir?</h2>
+
+<p><strong>Firma:</strong> Ankara merkezli, 80 çalışanlı metal imalat firması. Sipariş, stok ve fatura verisi üç ayrı sistemde.</p>
+
+<p><strong>Otomasyon öncesi:</strong> Sipariş girilince stok elle düşülüyor, fatura ayrı sistemde manuel oluşturuluyor. Tedarikçiye sipariş e-postayla bildiriliyor, gelen cevap sisteme elle giriliyor. Haftalık üretim raporu Cuma öğleden sonra 2 saat alıyor.</p>
+
+<p><strong>4 hafta sonra:</strong></p>
+<ul>
+  <li>Sipariş girilince stok otomatik güncelleniyor, eşik altına düşünce tedarikçi bildirimi tetikleniyor</li>
+  <li>Üretim tamamlanınca fatura tetikleyicisi muhasebe sistemine otomatik düşüyor</li>
+  <li>Haftalık rapor Cuma sabahı yöneticinin e-postasında hazır — Cuma öğleden sonra açıldı</li>
+  <li>Veri girişi hataları %80 azaldı (tek giriş noktası kaldı)</li>
+</ul>
+
+<h2>Sık Yapılan Hatalar</h2>
+
+<h3>Hata 1: "Önce sistemleri değiştirelim" tuzağı</h3>
+<p><strong>Neden olur:</strong> Otomasyon konuşması yeni ERP satın alma tartışmasına dönüşür. <strong>Nasıl önlenir:</strong> Mevcut sisteminizi önce entegrasyon açısından değerlendirin. Çoğu zaman yeni yazılıma gerek yok.</p>
+
+<h3>Hata 2: Üretim ekibini dışlamak</h3>
+<p><strong>Neden olur:</strong> IT veya yönetim kararı alır, hat çalışanları habersiz. <strong>Nasıl önlenir:</strong> Günlük veriyi giren kişiler sürece dahil edilmeden kurulan otomasyon benimsenmez.</p>
+
+<h3>Hata 3: Paralel manuel süreci kesmemek</h3>
+<p><strong>Neden olur:</strong> "Güvence olsun" diye eski yöntem devam ediyor. <strong>Nasıl önlenir:</strong> Test aşamasından sonra eski yöntemi kesin olarak kapatın. İkisi birden devam ederse otomasyon hiçbir zaman benimsenmez.</p>
+
+<h2>Nereden Başlamalısınız?</h2>
+
+<ul class="questions-list">
+  <li>Sipariş girişi ile stok güncellemesi arasında manuel adım var mı?</li>
+  <li>Tedarikçilere sipariş durumu e-posta veya telefonla mı bildiriliyor?</li>
+  <li>Haftalık üretim raporu 1 saatten fazla zaman alıyor mu?</li>
+  <li>Stok eksikliği genellikle üretim durduğunda mı fark ediliyor?</li>
+  <li>Fatura ile teslimat arasında 48 saatten uzun bekleme var mı?</li>
+</ul>
+
+<p>3 veya daha fazlasına "evet" dediyseniz, otomasyon yatırımı ilk 2 ayda kendini amorti edecektir.</p>
+
+</BlogLayout>

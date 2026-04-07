@@ -1,0 +1,70 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Klinik Randevu Otomasyonu: Neden Kaçınılmaz Hale Geldi?"
+  description="Hatırlatma yapılmayan randevularda %30 gelmeme oranı. Klinikler ve sağlık kurumları için otomasyon ne anlam ifade ediyor?"
+  sector="Sağlık"
+  sectorSlug="saglik"
+  readTime="6 dk"
+  publishDate="Nisan 2026"
+  type="seo"
+  relatedPosts={[
+    { title: 'Sağlık Kurumlarında İş Akışı Otomasyonu: Adım Adım Rehber', href: '/tr/blog/saglik-surecler-rehberi', type: 'rehber' },
+    { title: 'Sağlık & Klinik Çözümlerimiz', href: '/tr/cozumler/saglik', type: 'seo' },
+  ]}
+>
+
+<h1>Klinik Randevu Otomasyonu:<br />Neden Kaçınılmaz Hale Geldi?</h1>
+
+<p>Hatırlatma yapılmayan randevularda <strong>gelmeme oranı %30'a çıkıyor</strong>. 3 doktorlu bir kliniği düşünün: günde 45 randevu, %30 gelmeme demek 13–14 boş seans. Bu boş seansların her biri hem gelir kaybı hem de dolu olabilecek bir zaman dilimi. Telefon hatırlatmasıyla bu oran %8–10'a düşüyor. Otomasyon ise bu süreyi sıfır insan müdahalesine indiriyor.</p>
+
+<h2>Sağlık'ta En Çok Zaman Kaybettiren 5 Süreç</h2>
+
+<h3>1. Randevu hatırlatmaları</h3>
+<p>Resepsiyon her randevuyu tek tek arıyor. Bu aramaların büyük bölümü sesli mesaja düşüyor, geri arama yapılması gerekiyor. Otomasyon: SMS ve/veya WhatsApp üzerinden otomatik hatırlatma, onay isteği.</p>
+
+<h3>2. Periyodik kontrol davetleri</h3>
+<p>6 ay önce muayene olan hasta kontrol randevusu için tekrar aranması gerekiyor. Manuel takipte bu sistem dışına çıkıyor.</p>
+
+<h3>3. Sigorta ve fatura takibi</h3>
+<p>Sigorta formu doldurma, onay bekleme ve fatura takibi idari ekibin önemli bir bölümünü alıyor.</p>
+
+<h3>4. Hasta kayıt ve bilgi güncelleme</h3>
+<p>Her yeni hasta için aynı formlar kağıt veya ayrı sistemlerde. Bilginin dijitale aktarılması ayrı bir iş adımı oluşturuyor.</p>
+
+<h3>5. Gelmeme yönetimi</h3>
+<p>Hasta gelmediğinde boş kalan seans için başka hastaya haber vermek ve randevu doldurmak manuel koordinasyon gerektiriyor.</p>
+
+<BlogCTA sector="Sağlık" sectorSlug="saglik" variant="inline" />
+
+<h2>Otomasyon Hangi Süreçleri Değiştirir?</h2>
+
+<table>
+  <thead>
+    <tr><th>Süreç</th><th>Önce</th><th>Sonra</th><th>Kazanım</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Randevu hatırlatması</strong></td><td>Resepsiyon tek tek arıyor</td><td>Otomatik SMS/WhatsApp (24s ve 2s öncesi)</td><td>No-show %30 → %8</td></tr>
+    <tr><td><strong>Periyodik davet</strong></td><td>Elle takip veya unutulmuş</td><td>Otomatik geri çağırma kampanyası</td><td>Doluluk artar</td></tr>
+    <tr><td><strong>Sigorta işlemleri</strong></td><td>Manuel form, bekleme</td><td>Otomatik form akışı ve takip</td><td>Başına 30 dk → 5 dk</td></tr>
+    <tr><td><strong>Hasta kaydı</strong></td><td>Kağıt form, elle giriş</td><td>Dijital form, otomatik sisteme aktarım</td><td>Hata riski azalır</td></tr>
+  </tbody>
+</table>
+
+<h2>Nereden Başlamalı?</h2>
+
+<ol class="steps-list">
+  <li><span class="step-num">01</span><div><strong>Analiz — No-show oranınızı ölçün.</strong> Geçen ay kaç randevu boş kaldı? Bu sayıyı ortalama seans ücretiyle çarpın: otomasyon yatırımının ROI'si burada görünür.</div></li>
+  <li><span class="step-num">02</span><div><strong>Önceliklendirme — Randevu hatırlatmasıyla başlayın.</strong> En hızlı kurulabilen, en görünür etkiye sahip otomasyon noktası.</div></li>
+  <li><span class="step-num">03</span><div><strong>Uygulama — Mevcut randevu sisteminizle entegre edin.</strong> Türkiye'de yaygın kullanılan klinik yazılımlarının büyük bölümünde API veya dışa aktarma seçeneği mevcut.</div></li>
+</ol>
+
+<div class="cta-box">
+  <p>Klinik randevu otomasyonu ve süreç analizi için ücretsiz görüşme.</p>
+  <a href="/tr/iletisim?sektor=saglik" class="btn btn-primary">Demo Randevusu Al →</a>
+</div>
+
+</BlogLayout>

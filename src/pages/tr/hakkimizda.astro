@@ -1,108 +1,324 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTABanner from '../../components/CTABanner.astro';
-import { t, type Lang } from '../../i18n';
 
-const lang: Lang = 'tr';
-const T = t(lang);
-const base = `/${lang}`;
+const lang = 'tr';
 ---
 
-<BaseLayout lang={lang} title={T.about.metaTitle} description={T.about.metaDesc}>
+<BaseLayout
+  lang={lang}
+  title="Hakkımızda — Detay Multimedya"
+  description="1997'den bu yana dijital projeler. Shell, P&G, Bayer ve Anadolu Group dahil 50+ kurumsal proje deneyimiyle iş otomasyonu çözümleri sunuyoruz."
+>
 
-  <section class="page-hero grid-bg">
+  <!-- BÖLÜM 1 — Giriş -->
+  <section class="section section-intro grid-bg">
     <div class="container">
-      <span class="section-label">{T.about.heroLabel}</span>
-      <h1 class="page-title">{T.about.heroTitle}</h1>
-      <p class="page-sub">{T.about.heroSub}</p>
+      <span class="section-label fade-in">1997'den Bu Yana</span>
+      <h1 class="intro-title fade-in">
+        Piyasayı okumasını bilen<br />
+        bir ekiple çalışıyorsunuz.
+      </h1>
+      <p class="intro-body fade-in">
+        Detay Multimedya, internetin Türkiye'ye yeni girdiği
+        1997 yılında kuruldu. O dönemde kurumsal web sitesi
+        yapmak küçük bir iş değildi — büyük bütçeler, uzun
+        projeler, ciddi karar vericiler gerektiriyordu. Shell,
+        Procter &amp; Gamble, Bayer, Anadolu Group, Efes ve Yeni
+        İlaç gibi markalar bu dönemde bize iş verdi. Çünkü
+        işi ciddiye aldığımızı gördüler.
+      </p>
     </div>
   </section>
 
+  <!-- BÖLÜM 2 — Hikaye -->
   <section class="section section-alt">
     <div class="container">
-      <div class="mission-block fade-in">
-        <div class="mission-left">
-          <span class="section-label">{T.about.missionLabel}</span>
-          <h2 class="mission-title">{T.about.missionTitle}</h2>
-        </div>
-        <p class="mission-text">{T.about.missionText}</p>
+      <span class="section-label fade-in">Neden Durdu, Neden Geri Döndü</span>
+      <h2 class="story-title fade-in">
+        Piyasa ucuzlayınca bıraktık.<br />
+        Şimdi yeni bir döngünün başındayız.
+      </h2>
+      <div class="story-body fade-in">
+        <p>
+          2000'lerin ortasında web sitesi yapmak commodity haline
+          geldi. Herkes yapabiliyordu, fiyatlar düştü, kurumsal
+          bütçeler küçüldü. Biz de o alanı bıraktık — mantıklı
+          bir karardı.
+        </p>
+        <p>
+          Sonraki 20 yıl boyunca dijital medya alanında çalıştık.
+          Motoron.com.tr, Türkiye'nin en köklü motosiklet yayını
+          olarak bugün hâlâ yayında. Bu süreçte içerik üretimi,
+          otomasyon, AI araçları ve dijital operasyonlar üzerine
+          derin bir pratik deneyim biriktirdik.
+        </p>
+        <p>
+          Şimdi iş otomasyonu alanındayız. Ve bu, 1997'deki
+          döngünün başına çok benziyor: teknoloji güçlü, piyasa
+          henüz olgunlaşmamış, kurumsal bütçeler açık. Farkımız
+          şu — bu sefer daha erken girdik ve ne yapacağımızı
+          çok daha iyi biliyoruz.
+        </p>
       </div>
     </div>
   </section>
 
+  <!-- BÖLÜM 3 — Yaklaşım -->
   <section class="section">
     <div class="container">
-      <span class="section-label">{T.about.valuesLabel}</span>
-      <div class="values-grid">
-        {T.about.values.map((v, i) => (
-          <div class="value-card card fade-in" style={`--delay:${i * 70}ms`}>
-            <span class="value-num mono">{String(i + 1).padStart(2, '0')}</span>
-            <h3 class="value-title">{v.title}</h3>
-            <p class="value-desc">{v.desc}</p>
-          </div>
-        ))}
+      <span class="section-label fade-in">Yaklaşımımız</span>
+      <h2 class="section-title fade-in">Teknoloji araçtır. Sonuç amaçtır.</h2>
+      <div class="approach-grid">
+        <div class="approach-card card fade-in" style="--delay:0ms">
+          <h3 class="approach-card-title">Önce sizi anlıyoruz</h3>
+          <p class="approach-card-text">Hangi aracı kullanacağımızı değil, hangi sorunu çözeceğimizi konuşarak başlıyoruz. Çözüm sonra geliyor.</p>
+        </div>
+        <div class="approach-card card fade-in" style="--delay:80ms">
+          <h3 class="approach-card-title">Kuruyoruz, teslim ediyoruz</h3>
+          <p class="approach-card-text">Strateji belgesi değil, çalışan sistem teslim ediyoruz. Kurulum biter, siz kullanmaya başlarsınız.</p>
+        </div>
+        <div class="approach-card card fade-in" style="--delay:160ms">
+          <h3 class="approach-card-title">Yanınızda kalıyoruz</h3>
+          <p class="approach-card-text">Proje bitmez, ortaklık başlar. Sistem büyüdükçe, ihtiyaç değiştikçe yanınızdayız.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TODO: Ekip bölümü eklenecek -->
-  <!-- TODO: Hakkımızda görseli eklenecek -->
+  <!-- BÖLÜM 4 — İstatistikler -->
+  <section class="section section-alt">
+    <div class="container">
+      <span class="section-label fade-in">Rakamlarla</span>
+      <div class="stats-grid fade-in">
+        <div class="stat-item">
+          <span class="stat-number">27</span>
+          <span class="stat-label">Yıllık dijital deneyim</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Kurumsal proje</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Aktif sektör</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">1997</span>
+          <span class="stat-label">Kuruluş yılı</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <CTABanner lang={lang} />
+  <!-- BÖLÜM 5 — CTA -->
+  <section class="section cta-section">
+    <div class="container cta-inner">
+      <span class="section-label fade-in">Birlikte Çalışalım</span>
+      <h2 class="cta-title fade-in">
+        Süreçlerinizi otomasyona taşımaya<br />
+        hazır mısınız?
+      </h2>
+      <p class="cta-sub fade-in">30 dakikalık ücretsiz analiz görüşmesiyle başlayalım.</p>
+      <a href="/tr/iletisim" class="btn btn-primary fade-in">Demo Randevusu Al →</a>
+    </div>
+  </section>
 
 </BaseLayout>
 
 <style>
-  .page-hero {
-    padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem);
-    border-bottom: 1px solid var(--color-border);
+  /* BÖLÜM 1 — Giriş */
+  .section-intro {
+    padding-top: clamp(5rem, 10vw, 9rem);
   }
 
-  .page-title { font-size: var(--text-h1); font-weight: 700; margin: 0.75rem 0 1rem; max-width: 600px; }
-  .page-sub { color: var(--color-muted); max-width: 500px; line-height: 1.65; font-size: 1.05rem; }
-
-  .mission-block {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 4rem;
-    align-items: start;
+  .intro-title {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 1rem 0 1.75rem;
+    max-width: 720px;
   }
 
-  .mission-title { font-size: var(--text-h2); margin-top: 0.5rem; }
-
-  .mission-text {
-    font-size: 1.1rem;
+  .intro-body {
     color: var(--color-muted);
+    font-size: 1.05rem;
+    max-width: 600px;
     line-height: 1.75;
-    padding-top: 2.25rem;
   }
 
-  .values-grid {
+  /* BÖLÜM 2 — Hikaye */
+  .story-title {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 1rem 0 2rem;
+    max-width: 640px;
+  }
+
+  .story-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 600px;
+  }
+
+  .story-body p {
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  /* BÖLÜM 3 — Yaklaşım */
+  .section-title {
+    font-size: var(--text-h2);
+    margin-bottom: 2.5rem;
+  }
+
+  .approach-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-top: 2rem;
   }
 
-  .value-card {
+  .approach-card {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     animation-delay: var(--delay, 0ms);
   }
 
-  .value-num {
-    font-size: 1.5rem;
+  .approach-card-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .approach-card-text {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* BÖLÜM 4 — İstatistikler */
+  .stats-grid {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-bg-3);
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem 3rem;
+    flex: 1;
+  }
+
+  .stat-number {
+    font-family: var(--font-mono);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 500;
     color: var(--color-accent);
     line-height: 1;
   }
 
-  .value-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
-  .value-desc { font-size: var(--text-small); color: var(--color-muted); line-height: 1.65; }
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .stat-divider {
+    width: 1px;
+    background-color: var(--color-border);
+    flex-shrink: 0;
+  }
+
+  /* BÖLÜM 5 — CTA */
+  .cta-section {
+    background-color: var(--color-bg);
+  }
+
+  .cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-title {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 1rem 0 1rem;
+    max-width: 560px;
+  }
+
+  .cta-sub {
+    color: var(--color-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .approach-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
   @media (max-width: 768px) {
-    .mission-block { grid-template-columns: 1fr; gap: 1.5rem; }
-    .mission-text { padding-top: 0; }
+    .stats-grid {
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      flex: 1 1 40%;
+      padding: 1.5rem 2rem;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+
+    .stats-grid .stat-item:nth-child(odd) {
+      border-right: 1px solid var(--color-border);
+    }
+
+    .stats-grid .stat-item:nth-child(1),
+    .stats-grid .stat-item:nth-child(2) {
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    .stat-item {
+      flex: none;
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      border-right: none !important;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .stat-item:last-child {
+      border-bottom: none;
+    }
   }
 </style>

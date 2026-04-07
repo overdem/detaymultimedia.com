@@ -1,0 +1,101 @@
+---
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BlogCTA from '../../../components/BlogCTA.astro';
+---
+
+<BlogLayout
+  title="Eğitim Kurumlarında İş Akışı Otomasyonu: Adım Adım Uygulama Rehberi"
+  description="Kayıt süreçlerinden devam takibine, veli bildirimlerinden ödeme hatırlatmalarına — eğitim kurumları için kapsamlı otomasyon rehberi."
+  sector="Eğitim"
+  sectorSlug="egitim"
+  readTime="11 dk"
+  publishDate="Nisan 2026"
+  type="rehber"
+  relatedPosts={[
+    { title: 'Eğitim Kurumlarında Süreç Otomasyonu: Neden Kaçınılmaz?', href: '/tr/blog/egitim-otomasyon', type: 'seo' },
+    { title: 'Eğitim & Kurumlar Çözümlerimiz', href: '/tr/cozumler/egitim', type: 'seo' },
+  ]}
+>
+
+<h1>Eğitim Kurumlarında İş Akışı Otomasyonu:<br />Adım Adım Uygulama Rehberi</h1>
+
+<p>Bu rehber, 100 ila 1000 öğrencili özel okullar, etüt merkezleri ve dil okulları için yazıldı. İdari ekibinizin zamanının büyük bölümü bildirim, takip ve raporlamaya gidiyorsa — ve bu durum sizi öğrenci ve veli ilişkilerine harcayabileceğiniz zamandan çalıyorsa — otomasyon bu denklemi değiştirebilir.</p>
+
+<h2>Eğitim'in Operasyonel Gerçeği</h2>
+
+<p>Eğitim kurumlarında idari yük iki dönemde patlıyor: kayıt sezonu ve dönem arası. Kayıt sezonunda formlar, belgeler ve onaylar birikiyor. Dönem içinde devamsızlık, ödeme hatırlatması ve veli bildirimleri sürekli insan müdahalesi gerektiriyor. Bu döngüden çıkmanın yolu, tekrarlayan ve standart içerikli her adımı otomasyona almak.</p>
+
+<h2>Hangi Süreçler Otomasyona Hazır?</h2>
+
+<div class="matrix">
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Kolay → İlk Başlayın</span>
+    <ul>
+      <li>Devamsızlık bildirimi (SMS/WhatsApp)</li>
+      <li>Ödeme hatırlatmaları</li>
+      <li>Sınav tarihi bildirimleri</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Yüksek Etki · Zor → Planlayın</span>
+    <ul>
+      <li>Dijital kayıt ve onboarding akışı</li>
+      <li>Okul yönetim sistemi entegrasyonu</li>
+      <li>Dönem sonu otomatik rapor</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Kolay → Fırsatta</span>
+    <ul>
+      <li>Veli memnuniyet anketi</li>
+      <li>Yönetim haftalık özeti</li>
+    </ul>
+  </div>
+  <div class="matrix-cell">
+    <span class="matrix-label">Düşük Etki · Zor → Erteleyin</span>
+    <ul>
+      <li>AI destekli öğrenci başarı tahmini</li>
+      <li>Tam dijital sınav sistemi</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Araçlar ve Entegrasyonlar</h2>
+
+<p>E-Okul entegrasyonu devamsızlık verisi için temel tetikleyici. Özel okul yazılımları (Kolaysoft, Okulaile, vb.) genellikle API veya dışa aktarma sunuyor. WhatsApp Business API veli iletişiminde SMS'e kıyasla çok daha yüksek açılma oranı sağlıyor. Ödeme hatırlatmaları için muhasebe sistemi entegrasyonu veya takvim bazlı basit bir akış yeterli.</p>
+
+<BlogCTA sector="Eğitim" sectorSlug="egitim" variant="inline" />
+
+<h2>Gerçek Senaryo: Bir Haftada Ne Değişir?</h2>
+
+<p><strong>Kurum:</strong> 280 öğrencili İstanbul özel ilköğretim okulu. Devamsızlık bildirimi telefon, ödeme hatırlatması Excel takibi.</p>
+
+<p><strong>Otomasyon öncesi:</strong> İdari personel her sabah gelen öğrencileri işaretliyor, devamsız olanların velilerini tek tek arıyor. Ödeme tarihi geçen velileri hafta başında ayrıca arıyor.</p>
+
+<p><strong>4 hafta sonra:</strong></p>
+<ul>
+  <li>Öğrenci yoklaması sisteme girince, devamsız öğrencilerin velisine otomatik WhatsApp mesajı gidiyor — sabah telefon görüşmesi kalktı</li>
+  <li>Ödeme tarihinden 3 gün önce veliye otomatik hatırlatma — gecikme oranı %40 azaldı</li>
+  <li>Sınav tarihi duyurusu tüm velilere 2 dakikada ulaştı (eskiden sınıf sınıf manuel)</li>
+  <li>İdari ekip haftada 12 saat kazandı</li>
+</ul>
+
+<h2>Sık Yapılan Hatalar</h2>
+
+<h3>Hata 1: Veli onayı olmadan mesaj göndermek</h3>
+<p>İletişim otomasyonu başlamadan velilerin hangi kanaldan mesaj alacakları konusunda tercih toplayın. Hem yasal gereklilik hem güven meselesi.</p>
+
+<h3>Hata 2: Devamsızlık bildirimini tek adıma indirgemek</h3>
+<p>Bazı okullar devamsızlık bildirimi gönderip sürecin bittiğini düşünüyor. Veli yanıt vermezse ne olacağı da akışa dahil edilmeli.</p>
+
+<h2>Nereden Başlamalısınız?</h2>
+
+<ul class="questions-list">
+  <li>Devamsızlık bildirimi için harcanan günlük süre 1 saatten fazla mı?</li>
+  <li>Ödeme gecikme oranı %15'in üzerinde mi?</li>
+  <li>Veli bildirimlerini göndermek sınıf bazında ayrı ayrı yapılıyor mu?</li>
+  <li>Kayıt sezonunda form takibi için ayrı bir ekip üyesi mi gerekiyor?</li>
+  <li>Dönem raporu hazırlamak 1 günden fazla mı alıyor?</li>
+</ul>
+
+</BlogLayout>

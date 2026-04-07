@@ -31,7 +31,7 @@ export const tr: Translations = {
     statsLabel2: 'Ort. Manuel İş Azalması',
     statsValue3: '48s',
     statsLabel3: 'İlk Geri Dönüş',
-    trustLabel: 'Deneyim',
+    trustLabel: '27 Yıllık Deneyim',
     trustDesc: 'Shell, Procter & Gamble, Bayer ve Anadolu Group dahil kurumsal markalarla çalışma deneyimi — 1997\'den bu yana',
     whyLabel: 'Neden Otomasyon?',
     whyTitle: 'Şirketinizde bu sorunlardan kaçı var?',

@@ -1,7 +1,14 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-export const prerender = false;
+// Prerender for all demo IDs (21 total)
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return Array.from({ length: 21 }, (_, i) => ({
+    params: { id: (i + 1).toString() }
+  }));
+}
 
 const title = 'Demo Detayı - Müşteri Paneli';
 const description = 'Demo görüntüleme ve feedback verme sayfası';

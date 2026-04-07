@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import jwt from 'jsonwebtoken';
 
+export const prerender = false;
+
 const JWT_SECRET = import.meta.env.JWT_SECRET || 'demo-secret-key-change-in-production';
 
 // In-memory feedback storage (for demo)

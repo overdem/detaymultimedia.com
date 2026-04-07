@@ -1,12 +1,7 @@
 import type { APIRoute } from 'astro';
-import jwt from 'jsonwebtoken';
 
-export const prerender = false;
-
-const JWT_SECRET = import.meta.env.JWT_SECRET || 'demo-secret-key-change-in-production';
-
-// In-memory store (for demo - resets on deploy)
-const usersStore: any[] = [];
+// DEMO MODE: Uses localStorage on client-side, no server storage
+// In production: use Supabase or another backend database
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -19,32 +14,19 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // Check if user exists
-    if (usersStore.find((u) => u.email === email)) {
-      return new Response(JSON.stringify({ error: 'User already exists' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
+    // Generate a simple token (not cryptographically secure - demo only)
+    const token = btoa(`${email}:${password}:${Date.now()}`);
 
     const user = {
       id: Date.now().toString(),
       email,
-      password, // In production: hash with bcrypt!
       name,
-      createdAt: new Date().toISOString(),
     };
-
-    usersStore.push(user);
-
-    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
-      expiresIn: '7d',
-    });
 
     return new Response(
       JSON.stringify({
         token,
-        user: { id: user.id, email: user.email, name: user.name },
+        user,
       }),
       {
         status: 200,

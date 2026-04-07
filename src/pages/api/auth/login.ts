@@ -1,15 +1,4 @@
 import type { APIRoute } from 'astro';
-import jwt from 'jsonwebtoken';
-
-export const prerender = false;
-
-const JWT_SECRET = import.meta.env.JWT_SECRET || 'demo-secret-key-change-in-production';
-
-// Demo in-memory users (in production, use Supabase!)
-const demoUsers = [
-  { id: '1', email: 'demo@detay.com', password: 'demo123', name: 'Demo User' },
-  { id: '2', email: 'test@detay.com', password: 'test123', name: 'Test User' },
-];
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -22,24 +11,19 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // Check credentials against demo users
-    const user = demoUsers.find((u) => u.email === email && u.password === password);
+    // Demo mode: accept any email/password combination
+    // In production: check against Supabase users table
 
-    if (!user) {
-      return new Response(JSON.stringify({ error: 'Invalid credentials' }), {
-        status: 401,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
-      expiresIn: '7d',
-    });
+    const token = btoa(`${email}:${password}:${Date.now()}`);
 
     return new Response(
       JSON.stringify({
         token,
-        user: { id: user.id, email: user.email, name: user.name },
+        user: {
+          id: email,
+          email,
+          name: email.split('@')[0],
+        },
       }),
       {
         status: 200,

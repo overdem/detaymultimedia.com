@@ -1,7 +1,6 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
 
-// Prerender for all demo IDs (21 total)
 export const prerender = true;
 
 export async function getStaticPaths() {
@@ -10,14 +9,14 @@ export async function getStaticPaths() {
   }));
 }
 
-const title = 'Demo Detayı - Müşteri Paneli';
-const description = 'Demo görüntüleme ve feedback verme sayfası';
-const lang = 'tr';
+const title = 'Demo Details - Customer Panel';
+const description = 'Demo preview and feedback page';
+const lang = 'en';
 ---
 
 <BaseLayout lang={lang} title={title} description={description}>
   <div class="project-container">
-    <a href="/musteri/dashboard" class="back-link">← Geri Dön</a>
+    <a href="/en/musteri/dashboard" class="back-link">← Back</a>
 
     <div class="project-header">
       <div class="project-image">📱</div>
@@ -30,98 +29,69 @@ const lang = 'tr';
 
     <div class="project-content">
       <div class="features-section">
-        <h2>Özellikler</h2>
+        <h2>Features</h2>
         <ul id="featuresList" class="features-list"></ul>
       </div>
 
       <div class="demo-section">
         <div class="demo-preview">
-          <h2>Demo Önizlemesi</h2>
+          <h2>Demo Preview</h2>
           <div class="placeholder-demo">
-            <p>Demo gösterimi burada görüntülenecek</p>
+            <p>Demo will be displayed here</p>
             <p style="font-size: 48px; margin: 20px 0;">🎬</p>
           </div>
         </div>
       </div>
 
       <div class="feedback-section">
-        <h2>Geri Bildirim Ver</h2>
+        <h2>Send Feedback</h2>
         <form id="feedbackForm">
           <div class="form-group">
-            <label for="title">Başlık</label>
+            <label for="title">Title</label>
             <input
               type="text"
               id="title"
               name="title"
               required
-              placeholder="Geri bildiriminiz için bir başlık yazın"
+              placeholder="Give your feedback a title"
             />
           </div>
 
           <div class="form-group">
-            <label for="message">Mesaj</label>
+            <label for="message">Message</label>
             <textarea
               id="message"
               name="message"
               required
-              placeholder="Detaylı geri bildiriminizi yazın..."
+              placeholder="Write your detailed feedback..."
               rows="5"
             ></textarea>
           </div>
 
           <div class="form-group">
-            <label for="rating">Puanlama (1-5)</label>
+            <label for="rating">Rating (1-5)</label>
             <div class="rating-group">
-              <input
-                type="radio"
-                id="star1"
-                name="rating"
-                value="1"
-              />
+              <input type="radio" id="star1" name="rating" value="1" />
               <label for="star1" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star2"
-                name="rating"
-                value="2"
-              />
+              <input type="radio" id="star2" name="rating" value="2" />
               <label for="star2" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star3"
-                name="rating"
-                value="3"
-              />
+              <input type="radio" id="star3" name="rating" value="3" />
               <label for="star3" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star4"
-                name="rating"
-                value="4"
-              />
+              <input type="radio" id="star4" name="rating" value="4" />
               <label for="star4" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star5"
-                name="rating"
-                value="5"
-              />
+              <input type="radio" id="star5" name="rating" value="5" />
               <label for="star5" class="star">⭐</label>
             </div>
           </div>
 
-          <button type="submit" class="btn-primary">Geri Bildirimi Gönder</button>
+          <button type="submit" class="btn-primary">Send Feedback</button>
         </form>
 
         <div id="feedbackMessage" class="feedback-message"></div>
       </div>
 
       <div class="feedback-list-section">
-        <h2>Diğer Geri Bildirimler</h2>
+        <h2>Other Feedback</h2>
         <div id="feedbackList" class="feedback-list"></div>
       </div>
     </div>
@@ -411,21 +381,39 @@ const lang = 'tr';
 
   const demoId = window.location.pathname.split('/').pop();
 
+  const allDemos: Record<string, any> = {
+    '1': { name: 'Campus Maya', description: 'Integrated management system for educational institutions', category: 'Education', features: ['Student management', 'Class management', 'Grading system'] },
+    '2': { name: 'Hospital Management', description: 'System for healthcare institutions', category: 'Healthcare', features: ['Patient registration', 'Appointment scheduling'] },
+    '3': { name: 'E-Commerce Platform', description: 'Complete solution for online sales', category: 'Commerce', features: ['Product management', 'Order tracking'] },
+    '4': { name: 'Human Resources', description: 'HR management system', category: 'HR', features: ['Employee management', 'Leave tracking'] },
+    '5': { name: 'Accounting System', description: 'Financial calculations and reporting', category: 'Finance', features: ['Invoice management', 'Reports'] },
+    '6': { name: 'Project Management', description: 'Project and task tracking', category: 'Management', features: ['Task list', 'Calendar'] },
+    '7': { name: 'CRM System', description: 'Customer relationship management', category: 'Sales', features: ['Contact tracking', 'Opportunity management'] },
+    '8': { name: 'Content Management', description: 'Website content management system', category: 'Web', features: ['Page management', 'Media library'] },
+    '9': { name: 'Inventory Tracking', description: 'Stock and inventory management', category: 'Logistics', features: ['Stock updates', 'Exports'] },
+    '10': { name: 'Appointment System', description: 'Service appointment booking', category: 'Service', features: ['Calendar', 'Notifications'] },
+    '11': { name: 'Restaurant Management', description: 'Restaurant operations management', category: 'Food', features: ['Order management', 'Table planning'] },
+    '12': { name: 'Hotel Management', description: 'Hotel operations system', category: 'Tourism', features: ['Room management', 'Reservations'] },
+    '13': { name: 'Bus Ticket Sales', description: 'Transportation services management', category: 'Transport', features: ['Ticket sales', 'Route planning'] },
+    '14': { name: 'Gym Management', description: 'Sports facility management system', category: 'Sports', features: ['Membership management', 'Class scheduling'] },
+    '15': { name: 'Real Estate Management', description: 'Property management platform', category: 'Real Estate', features: ['Property catalog', 'Listing management'] },
+    '16': { name: 'Veterinary Clinic', description: 'Veterinary services management', category: 'Healthcare', features: ['Patient records', 'Appointments'] },
+    '17': { name: 'Beauty Salon', description: 'Beauty center management system', category: 'Service', features: ['Service list', 'Staff scheduling'] },
+    '18': { name: 'Law Office Management', description: 'Legal firm management system', category: 'Services', features: ['Case tracking', 'Document management'] },
+    '19': { name: 'Clinical Laboratory', description: 'Laboratory analysis system', category: 'Healthcare', features: ['Test management', 'Result reports'] },
+    '20': { name: 'Auto Repair Shop', description: 'Auto shop management system', category: 'Automotive', features: ['Repair requests', 'Parts tracking'] },
+    '21': { name: 'Hair Salon', description: 'Hair salon services management', category: 'Service', features: ['Service packages', 'Staff scheduling'] },
+  };
+
   document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('token');
 
     if (!token) {
-      window.location.href = '/musteri/login';
+      window.location.href = '/en/musteri/login';
       return;
     }
 
-    // Load demo details (hardcoded for now - from db.json)
-    const demos: Record<string, any> = {
-      '1': { name: 'Campus Maya', description: 'Eğitim kurumları için entegre yönetim sistemi', category: 'Eğitim', features: ['Öğrenci yönetimi', 'Sınıf yönetimi', 'Not sistemi'] },
-      '2': { name: 'Hastane Yönetim', description: 'Sağlık kurumları için sistem', category: 'Sağlık', features: ['Hasta kayıt', 'Randevu'] },
-    };
-
-    const demo = demos[demoId!] || { name: `Demo ${demoId}`, category: 'Demo', description: 'Demo açıklaması', features: [] };
+    const demo = allDemos[demoId!] || { name: `Demo ${demoId}`, category: 'Demo', description: 'Demo description', features: [] };
 
     document.getElementById('demoName')!.textContent = demo.name;
     document.getElementById('demoCategory')!.textContent = demo.category;
@@ -448,12 +436,12 @@ const lang = 'tr';
     const feedbackList = document.getElementById('feedbackList')!;
 
     if (error || !feedbacks?.length) {
-      feedbackList.innerHTML = '<p style="color: #999; text-align: center;">Henüz geri bildirim yok</p>';
+      feedbackList.innerHTML = '<p style="color: #999; text-align: center;">No feedback yet</p>';
     } else {
       feedbacks.forEach((feedback: any) => {
         const item = document.createElement('div');
         item.className = 'feedback-item';
-        const date = new Date(feedback.created_at).toLocaleDateString('tr-TR');
+        const date = new Date(feedback.created_at).toLocaleDateString('en-US');
         const stars = '⭐'.repeat(feedback.rating);
 
         item.innerHTML = `
@@ -477,7 +465,7 @@ const lang = 'tr';
       const messageDiv = document.getElementById('feedbackMessage')!;
 
       if (!rating) {
-        messageDiv.textContent = 'Lütfen bir puan seçin';
+        messageDiv.textContent = 'Please select a rating';
         messageDiv.className = 'feedback-message error';
         return;
       }
@@ -497,7 +485,7 @@ const lang = 'tr';
           throw new Error(insertError.message);
         }
 
-        messageDiv.textContent = 'Geri bildiriminiz başarıyla gönderildi! ✓';
+        messageDiv.textContent = 'Feedback sent successfully! ✓';
         messageDiv.className = 'feedback-message success';
 
         (document.getElementById('feedbackForm') as HTMLFormElement).reset();
@@ -506,7 +494,7 @@ const lang = 'tr';
           window.location.reload();
         }, 2000);
       } catch (err) {
-        messageDiv.textContent = 'Hata: ' + (err as Error).message;
+        messageDiv.textContent = 'Error: ' + (err as Error).message;
         messageDiv.className = 'feedback-message error';
       }
     });

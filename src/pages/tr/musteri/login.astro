@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const title = 'Giriş Yap - Müşteri Paneli';
 const description = 'Müşteri paneline giriş yapın ve demo gösterimlerine erişin.';
@@ -44,7 +44,7 @@ const lang = 'tr';
         </form>
 
         <div class="form-footer">
-          <p>Hesabın yok mu? <a href="/musteri/register">Yeni hesap oluştur</a></p>
+          <p>Hesabın yok mu? <a href="/tr/musteri/register">Yeni hesap oluştur</a></p>
         </div>
 
         <div id="error" class="error-message"></div>
@@ -212,7 +212,6 @@ const lang = 'tr';
 </style>
 
 <script>
-  // Supabase Auth JS (client-side)
   import { createClient } from '@supabase/supabase-js';
 
   const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
@@ -250,7 +249,7 @@ const lang = 'tr';
         id: data.user?.id,
         email: data.user?.email,
       }));
-      window.location.href = '/musteri/dashboard';
+      window.location.href = '/tr/musteri/dashboard';
     } catch (err) {
       errorDiv.textContent = 'Hata: ' + (err as Error).message;
       errorDiv.classList.add('show');

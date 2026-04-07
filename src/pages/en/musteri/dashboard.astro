@@ -1,25 +1,25 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-const title = 'Dashboard - Müşteri Paneli';
-const description = 'Müşteri paneli dashboard - demo gösterimleri';
-const lang = 'tr';
+const title = 'Dashboard - Customer Panel';
+const description = 'Customer panel dashboard - demo presentations';
+const lang = 'en';
 ---
 
 <BaseLayout lang={lang} title={title} description={description}>
   <div class="dashboard-container">
     <div class="dashboard-header">
       <div>
-        <h1>Hoşgeldiniz</h1>
+        <h1>Welcome</h1>
         <p id="userName"></p>
       </div>
-      <button id="logoutBtn" class="btn-logout">Çıkış Yap</button>
+      <button id="logoutBtn" class="btn-logout">Sign Out</button>
     </div>
 
     <div class="demos-section">
-      <h2>Mevcut Demo Gösterimleri</h2>
+      <h2>Available Demo Presentations</h2>
       <div id="demosList" class="demos-grid">
-        <div class="loading">Yükleniyor...</div>
+        <div class="loading">Loading...</div>
       </div>
     </div>
   </div>
@@ -204,51 +204,56 @@ const lang = 'tr';
     const user = localStorage.getItem('user');
 
     if (!token || !user) {
-      window.location.href = '/musteri/login';
+      window.location.href = '/en/musteri/login';
       return;
     }
 
     const userData = JSON.parse(user);
-    document.getElementById('userName').textContent = `${userData.name} hoşgeldiniz!`;
+    document.getElementById('userName')!.textContent = `Signed in as ${userData.email}`;
 
-    // Load demos
-    fetch('/api/demos')
-      .then(r => r.json())
-      .then(demos => {
-        const demosList = document.getElementById('demosList');
-        demosList.innerHTML = '';
+    // Hardcoded demo data
+    const demos = [
+      { id: 1, name: 'Campus Maya', description: 'Integrated management system for educational institutions', category: 'Education', features: ['Student management', 'Class management', 'Grading system'] },
+      { id: 2, name: 'Hospital Management', description: 'System for healthcare institutions', category: 'Healthcare', features: ['Patient registration', 'Appointment scheduling'] },
+      { id: 3, name: 'E-Commerce Platform', description: 'Complete solution for online sales', category: 'Commerce', features: ['Product management', 'Order tracking'] },
+      { id: 4, name: 'Human Resources', description: 'HR management system', category: 'HR', features: ['Employee management', 'Leave tracking'] },
+      { id: 5, name: 'Accounting System', description: 'Financial calculations and reporting', category: 'Finance', features: ['Invoice management', 'Reports'] },
+      { id: 6, name: 'Project Management', description: 'Project and task tracking', category: 'Management', features: ['Task list', 'Calendar'] },
+      { id: 7, name: 'CRM System', description: 'Customer relationship management', category: 'Sales', features: ['Contact tracking', 'Opportunity management'] },
+      { id: 8, name: 'Content Management', description: 'Website content management system', category: 'Web', features: ['Page management', 'Media library'] },
+      { id: 9, name: 'Inventory Tracking', description: 'Stock and inventory management', category: 'Logistics', features: ['Stock updates', 'Exports'] },
+      { id: 10, name: 'Appointment System', description: 'Service appointment booking', category: 'Service', features: ['Calendar', 'Notifications'] },
+    ];
 
-        demos.forEach((demo: any) => {
-          const card = document.createElement('div');
-          card.className = 'demo-card';
-          card.onclick = () => window.location.href = `/musteri/project/${demo.id}`;
+    const demosList = document.getElementById('demosList')!;
+    demosList.innerHTML = '';
 
-          const features = demo.features.map((f: string) => `<li>${f}</li>`).join('');
+    demos.forEach((demo: any) => {
+      const card = document.createElement('div');
+      card.className = 'demo-card';
+      card.onclick = () => window.location.href = `/en/musteri/project/${demo.id}`;
 
-          card.innerHTML = `
-            <div class="demo-image">📱</div>
-            <div class="demo-content">
-              <span class="demo-category">${demo.category}</span>
-              <h3 class="demo-name">${demo.name}</h3>
-              <p class="demo-description">${demo.description}</p>
-              <ul class="demo-features">${features}</ul>
-              <button class="btn-view-demo">Demo Gösterimini Gör →</button>
-            </div>
-          `;
+      const features = demo.features.map((f: string) => `<li>${f}</li>`).join('');
 
-          demosList.appendChild(card);
-        });
-      })
-      .catch(err => {
-        document.getElementById('demosList').innerHTML =
-          '<div class="loading" style="color: red;">Demolar yüklenemedi</div>';
-      });
+      card.innerHTML = `
+        <div class="demo-image">📱</div>
+        <div class="demo-content">
+          <span class="demo-category">${demo.category}</span>
+          <h3 class="demo-name">${demo.name}</h3>
+          <p class="demo-description">${demo.description}</p>
+          <ul class="demo-features">${features}</ul>
+          <button class="btn-view-demo">View Demo →</button>
+        </div>
+      `;
+
+      demosList.appendChild(card);
+    });
 
     // Logout
-    document.getElementById('logoutBtn').addEventListener('click', () => {
+    document.getElementById('logoutBtn')!.addEventListener('click', () => {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      window.location.href = '/musteri/login';
+      window.location.href = '/en/musteri/login';
     });
   });
 </script>

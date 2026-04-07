@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-const title = 'Giriş Yap - Müşteri Paneli';
-const description = 'Müşteri paneline giriş yapın ve demo gösterimlerine erişin.';
-const lang = 'tr';
+const title = 'Sign Up - Customer Panel';
+const description = 'Sign up for the customer panel and access demo presentations.';
+const lang = 'en';
 ---
 
 <BaseLayout lang={lang} title={title} description={description}>
@@ -11,15 +11,26 @@ const lang = 'tr';
     <div class="container">
       <div class="auth-card">
         <div class="auth-header">
-          <h1>Müşteri Paneli</h1>
-          <p class="section-label"><span class="label-line"></span>Giriş Yap</p>
+          <h1>Create Your Account</h1>
+          <p class="section-label"><span class="label-line"></span>New Account</p>
         </div>
 
-        <p class="subtitle">Supabase üzerinden giriş yaparak demo gösterimleri izleyin</p>
+        <p class="subtitle">Create an account on Supabase and get started now</p>
 
-        <form id="loginForm" class="auth-form">
+        <form id="registerForm" class="auth-form">
           <div class="form-group">
-            <label for="email">Email Adresi</label>
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="John Doe"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
             <input
               type="email"
               id="email"
@@ -30,7 +41,7 @@ const lang = 'tr';
           </div>
 
           <div class="form-group">
-            <label for="password">Şifre</label>
+            <label for="password">Password</label>
             <input
               type="password"
               id="password"
@@ -40,11 +51,11 @@ const lang = 'tr';
             />
           </div>
 
-          <button type="submit" class="btn btn-primary">Giriş Yap</button>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
 
         <div class="form-footer">
-          <p>Hesabın yok mu? <a href="/musteri/register">Yeni hesap oluştur</a></p>
+          <p>Already have an account? <a href="/en/musteri/login">Sign in</a></p>
         </div>
 
         <div id="error" class="error-message"></div>
@@ -212,7 +223,6 @@ const lang = 'tr';
 </style>
 
 <script>
-  // Supabase Auth JS (client-side)
   import { createClient } from '@supabase/supabase-js';
 
   const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
@@ -224,17 +234,18 @@ const lang = 'tr';
 
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-  const form = document.getElementById('loginForm');
+  const form = document.getElementById('registerForm');
   const errorDiv = document.getElementById('error');
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
     const email = (form.elements.namedItem('email') as HTMLInputElement).value;
     const password = (form.elements.namedItem('password') as HTMLInputElement).value;
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signUpWithPassword({
         email,
         password,
       });
@@ -245,14 +256,21 @@ const lang = 'tr';
         return;
       }
 
+      // Store name in users table
+      await supabase.from('users').insert([{
+        id: data.user?.id,
+        email,
+        name,
+      }]);
+
       localStorage.setItem('token', data.session?.access_token || '');
       localStorage.setItem('user', JSON.stringify({
         id: data.user?.id,
         email: data.user?.email,
       }));
-      window.location.href = '/musteri/dashboard';
+      window.location.href = '/en/musteri/dashboard';
     } catch (err) {
-      errorDiv.textContent = 'Hata: ' + (err as Error).message;
+      errorDiv.textContent = 'Error: ' + (err as Error).message;
       errorDiv.classList.add('show');
     }
   });

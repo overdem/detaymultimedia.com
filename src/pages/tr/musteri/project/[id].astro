@@ -1,7 +1,6 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
 
-// Prerender for all demo IDs (21 total)
 export const prerender = true;
 
 export async function getStaticPaths() {
@@ -17,7 +16,7 @@ const lang = 'tr';
 
 <BaseLayout lang={lang} title={title} description={description}>
   <div class="project-container">
-    <a href="/musteri/dashboard" class="back-link">← Geri Dön</a>
+    <a href="/tr/musteri/dashboard" class="back-link">← Geri Dön</a>
 
     <div class="project-header">
       <div class="project-image">📱</div>
@@ -72,44 +71,15 @@ const lang = 'tr';
           <div class="form-group">
             <label for="rating">Puanlama (1-5)</label>
             <div class="rating-group">
-              <input
-                type="radio"
-                id="star1"
-                name="rating"
-                value="1"
-              />
+              <input type="radio" id="star1" name="rating" value="1" />
               <label for="star1" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star2"
-                name="rating"
-                value="2"
-              />
+              <input type="radio" id="star2" name="rating" value="2" />
               <label for="star2" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star3"
-                name="rating"
-                value="3"
-              />
+              <input type="radio" id="star3" name="rating" value="3" />
               <label for="star3" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star4"
-                name="rating"
-                value="4"
-              />
+              <input type="radio" id="star4" name="rating" value="4" />
               <label for="star4" class="star">⭐</label>
-
-              <input
-                type="radio"
-                id="star5"
-                name="rating"
-                value="5"
-              />
+              <input type="radio" id="star5" name="rating" value="5" />
               <label for="star5" class="star">⭐</label>
             </div>
           </div>
@@ -411,21 +381,39 @@ const lang = 'tr';
 
   const demoId = window.location.pathname.split('/').pop();
 
+  const allDemos: Record<string, any> = {
+    '1': { name: 'Campus Maya', description: 'Eğitim kurumları için entegre yönetim sistemi', category: 'Eğitim', features: ['Öğrenci yönetimi', 'Sınıf yönetimi', 'Not sistemi'] },
+    '2': { name: 'Hastane Yönetim', description: 'Sağlık kurumları için sistem', category: 'Sağlık', features: ['Hasta kayıt', 'Randevu'] },
+    '3': { name: 'E-Ticaret Platformu', description: 'Çevrimiçi satış için tam çözüm', category: 'Ticaret', features: ['Ürün yönetimi', 'Sipariş takibi'] },
+    '4': { name: 'İnsan Kaynakları', description: 'HR yönetim sistemi', category: 'İnsan Kaynakları', features: ['Personel yönetimi', 'İzin takibi'] },
+    '5': { name: 'Muhasebe Sistemi', description: 'Mali hesaplamalar ve raporlama', category: 'Muhasebe', features: ['Fatura yönetimi', 'Raporlar'] },
+    '6': { name: 'Proje Yönetimi', description: 'Proje ve görev takibi', category: 'Yönetim', features: ['Görev listesi', 'Takvim'] },
+    '7': { name: 'CRM Sistemi', description: 'Müşteri ilişkileri yönetimi', category: 'Satış', features: ['İletişim takibi', 'Fırsat yönetimi'] },
+    '8': { name: 'İçerik Yönetimi', description: 'Website içerik yönetim sistemi', category: 'Web', features: ['Sayfa yönetimi', 'Media kütüphanesi'] },
+    '9': { name: 'Envanter Takibi', description: 'Stok ve envanter yönetimi', category: 'Lojistik', features: ['Stok güncelleme', 'İhracat'] },
+    '10': { name: 'Randevu Sistemi', description: 'Hizmet randevu rezervasyonu', category: 'Hizmet', features: ['Takvim', 'Bildirimler'] },
+    '11': { name: 'Restoran Yönetimi', description: 'Restoran operasyonları yönetimi', category: 'Gıda', features: ['Sipariş yönetimi', 'Masa planlama'] },
+    '12': { name: 'Otel Yönetimi', description: 'Otel işletme sistemi', category: 'Turizm', features: ['Oda yönetimi', 'Rezervasyon'] },
+    '13': { name: 'Otobüs Bilet Satış', description: 'Ulaştırma hizmetleri yönetimi', category: 'Ulaştırma', features: ['Bilet satış', 'Rota planlama'] },
+    '14': { name: 'Spor Salı Yönetimi', description: 'Spor tesisleri yönetim sistemi', category: 'Spor', features: ['Üyelik yönetimi', 'Sınıf planlaması'] },
+    '15': { name: 'Emlak Yönetimi', description: 'Gayrimenkul işletme platformu', category: 'Emlak', features: ['Mülk kataloğu', 'İlan yönetimi'] },
+    '16': { name: 'Veteriner Kliniği', description: 'Veteriner hizmetleri yönetimi', category: 'Sağlık', features: ['Hasta kayıtları', 'Randevu'] },
+    '17': { name: 'Kozmetik Salonu', description: 'Güzellik merkezi yönetim sistemi', category: 'Hizmet', features: ['Hizmet listesi', 'Personel planlama'] },
+    '18': { name: 'Hukuk Bürası Yönetimi', description: 'Hukuk firması yönetim sistemi', category: 'Hizmetler', features: ['Dava takibi', 'Belge yönetimi'] },
+    '19': { name: 'Klinik Laboratuvar', description: 'Laboratuvar analiz sistemi', category: 'Sağlık', features: ['Test yönetimi', 'Sonuç raporları'] },
+    '20': { name: 'Oto Tamirhanesi', description: 'Oto işletme yönetim sistemi', category: 'Otomotiv', features: ['Tamir talepleri', 'Parça takibi'] },
+    '21': { name: 'Kuaför Salonu', description: 'Kuaför hizmetleri yönetimi', category: 'Hizmet', features: ['Hizmet paketi', 'Çalışan planlama'] },
+  };
+
   document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('token');
 
     if (!token) {
-      window.location.href = '/musteri/login';
+      window.location.href = '/tr/musteri/login';
       return;
     }
 
-    // Load demo details (hardcoded for now - from db.json)
-    const demos: Record<string, any> = {
-      '1': { name: 'Campus Maya', description: 'Eğitim kurumları için entegre yönetim sistemi', category: 'Eğitim', features: ['Öğrenci yönetimi', 'Sınıf yönetimi', 'Not sistemi'] },
-      '2': { name: 'Hastane Yönetim', description: 'Sağlık kurumları için sistem', category: 'Sağlık', features: ['Hasta kayıt', 'Randevu'] },
-    };
-
-    const demo = demos[demoId!] || { name: `Demo ${demoId}`, category: 'Demo', description: 'Demo açıklaması', features: [] };
+    const demo = allDemos[demoId!] || { name: `Demo ${demoId}`, category: 'Demo', description: 'Demo açıklaması', features: [] };
 
     document.getElementById('demoName')!.textContent = demo.name;
     document.getElementById('demoCategory')!.textContent = demo.category;

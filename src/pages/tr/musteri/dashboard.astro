@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const title = 'Dashboard - Müşteri Paneli';
 const description = 'Müşteri paneli dashboard - demo gösterimleri';
@@ -204,51 +204,56 @@ const lang = 'tr';
     const user = localStorage.getItem('user');
 
     if (!token || !user) {
-      window.location.href = '/musteri/login';
+      window.location.href = '/tr/musteri/login';
       return;
     }
 
     const userData = JSON.parse(user);
-    document.getElementById('userName').textContent = `${userData.name} hoşgeldiniz!`;
+    document.getElementById('userName')!.textContent = `${userData.email} olarak giriş yapıldı`;
 
-    // Load demos
-    fetch('/api/demos')
-      .then(r => r.json())
-      .then(demos => {
-        const demosList = document.getElementById('demosList');
-        demosList.innerHTML = '';
+    // Hardcoded demo data
+    const demos = [
+      { id: 1, name: 'Campus Maya', description: 'Eğitim kurumları için entegre yönetim sistemi', category: 'Eğitim', features: ['Öğrenci yönetimi', 'Sınıf yönetimi', 'Not sistemi'] },
+      { id: 2, name: 'Hastane Yönetim', description: 'Sağlık kurumları için sistem', category: 'Sağlık', features: ['Hasta kayıt', 'Randevu'] },
+      { id: 3, name: 'E-Ticaret Platformu', description: 'Çevrimiçi satış için tam çözüm', category: 'Ticaret', features: ['Ürün yönetimi', 'Sipariş takibi'] },
+      { id: 4, name: 'İnsan Kaynakları', description: 'HR yönetim sistemi', category: 'İnsan Kaynakları', features: ['Personel yönetimi', 'İzin takibi'] },
+      { id: 5, name: 'Muhasebe Sistemi', description: 'Mali hesaplamalar ve raporlama', category: 'Muhasebe', features: ['Fatura yönetimi', 'Raporlar'] },
+      { id: 6, name: 'Proje Yönetimi', description: 'Proje ve görev takibi', category: 'Yönetim', features: ['Görev listesi', 'Takvim'] },
+      { id: 7, name: 'CRM Sistemi', description: 'Müşteri ilişkileri yönetimi', category: 'Satış', features: ['İletişim takibi', 'Fırsat yönetimi'] },
+      { id: 8, name: 'İçerik Yönetimi', description: 'Website içerik yönetim sistemi', category: 'Web', features: ['Sayfa yönetimi', 'Media kütüphanesi'] },
+      { id: 9, name: 'Envanter Takibi', description: 'Stok ve envanter yönetimi', category: 'Lojistik', features: ['Stok güncelleme', 'İhracat'] },
+      { id: 10, name: 'Randevu Sistemi', description: 'Hizmet randevu rezervasyonu', category: 'Hizmet', features: ['Takvim', 'Bildirimler'] },
+    ];
 
-        demos.forEach((demo: any) => {
-          const card = document.createElement('div');
-          card.className = 'demo-card';
-          card.onclick = () => window.location.href = `/musteri/project/${demo.id}`;
+    const demosList = document.getElementById('demosList')!;
+    demosList.innerHTML = '';
 
-          const features = demo.features.map((f: string) => `<li>${f}</li>`).join('');
+    demos.forEach((demo: any) => {
+      const card = document.createElement('div');
+      card.className = 'demo-card';
+      card.onclick = () => window.location.href = `/tr/musteri/project/${demo.id}`;
 
-          card.innerHTML = `
-            <div class="demo-image">📱</div>
-            <div class="demo-content">
-              <span class="demo-category">${demo.category}</span>
-              <h3 class="demo-name">${demo.name}</h3>
-              <p class="demo-description">${demo.description}</p>
-              <ul class="demo-features">${features}</ul>
-              <button class="btn-view-demo">Demo Gösterimini Gör →</button>
-            </div>
-          `;
+      const features = demo.features.map((f: string) => `<li>${f}</li>`).join('');
 
-          demosList.appendChild(card);
-        });
-      })
-      .catch(err => {
-        document.getElementById('demosList').innerHTML =
-          '<div class="loading" style="color: red;">Demolar yüklenemedi</div>';
-      });
+      card.innerHTML = `
+        <div class="demo-image">📱</div>
+        <div class="demo-content">
+          <span class="demo-category">${demo.category}</span>
+          <h3 class="demo-name">${demo.name}</h3>
+          <p class="demo-description">${demo.description}</p>
+          <ul class="demo-features">${features}</ul>
+          <button class="btn-view-demo">Demo Gösterimini Gör →</button>
+        </div>
+      `;
+
+      demosList.appendChild(card);
+    });
 
     // Logout
-    document.getElementById('logoutBtn').addEventListener('click', () => {
+    document.getElementById('logoutBtn')!.addEventListener('click', () => {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      window.location.href = '/musteri/login';
+      window.location.href = '/tr/musteri/login';
     });
   });
 </script>

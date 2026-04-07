@@ -402,9 +402,15 @@ const description = 'Demo görüntüleme ve feedback verme sayfası';
 </style>
 
 <script>
+  import { createClient } from '@supabase/supabase-js';
+
+  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
   const demoId = window.location.pathname.split('/').pop();
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
     const token = localStorage.getItem('token');
 
     if (!token) {
@@ -412,58 +418,62 @@ const description = 'Demo görüntüleme ve feedback verme sayfası';
       return;
     }
 
-    // Load demo details
-    fetch(`/api/demos/${demoId}`)
-      .then(r => r.json())
-      .then(demo => {
-        document.getElementById('demoName').textContent = demo.name;
-        document.getElementById('demoCategory').textContent = demo.category;
-        document.getElementById('demoDescription').textContent = demo.description;
+    // Load demo details (hardcoded for now - from db.json)
+    const demos: Record<string, any> = {
+      '1': { name: 'Campus Maya', description: 'Eğitim kurumları için entegre yönetim sistemi', category: 'Eğitim', features: ['Öğrenci yönetimi', 'Sınıf yönetimi', 'Not sistemi'] },
+      '2': { name: 'Hastane Yönetim', description: 'Sağlık kurumları için sistem', category: 'Sağlık', features: ['Hasta kayıt', 'Randevu'] },
+    };
 
-        const featuresList = document.getElementById('featuresList');
-        demo.features.forEach((feature: string) => {
-          const li = document.createElement('li');
-          li.textContent = feature;
-          featuresList.appendChild(li);
-        });
+    const demo = demos[demoId!] || { name: `Demo ${demoId}`, category: 'Demo', description: 'Demo açıklaması', features: [] };
+
+    document.getElementById('demoName')!.textContent = demo.name;
+    document.getElementById('demoCategory')!.textContent = demo.category;
+    document.getElementById('demoDescription')!.textContent = demo.description;
+
+    const featuresList = document.getElementById('featuresList')!;
+    demo.features.forEach((feature: string) => {
+      const li = document.createElement('li');
+      li.textContent = feature;
+      featuresList.appendChild(li);
+    });
+
+    // Load feedback from Supabase
+    const { data: feedbacks, error } = await supabase
+      .from('feedback')
+      .select('*')
+      .eq('demo_id', demoId)
+      .order('created_at', { ascending: false });
+
+    const feedbackList = document.getElementById('feedbackList')!;
+
+    if (error || !feedbacks?.length) {
+      feedbackList.innerHTML = '<p style="color: #999; text-align: center;">Henüz geri bildirim yok</p>';
+    } else {
+      feedbacks.forEach((feedback: any) => {
+        const item = document.createElement('div');
+        item.className = 'feedback-item';
+        const date = new Date(feedback.created_at).toLocaleDateString('tr-TR');
+        const stars = '⭐'.repeat(feedback.rating);
+
+        item.innerHTML = `
+          <h4>${feedback.title}</h4>
+          <div class="rating">${stars} (${feedback.rating}/5)</div>
+          <p>${feedback.message}</p>
+          <div class="date">${date}</div>
+        `;
+
+        feedbackList.appendChild(item);
       });
+    }
 
-    // Load feedback
-    fetch(`/api/feedback?demoId=${demoId}`)
-      .then(r => r.json())
-      .then(feedbacks => {
-        const feedbackList = document.getElementById('feedbackList');
-
-        if (feedbacks.length === 0) {
-          feedbackList.innerHTML = '<p style="color: #999; text-align: center;">Henüz geri bildirim yok</p>';
-          return;
-        }
-
-        feedbacks.forEach((feedback: any) => {
-          const item = document.createElement('div');
-          item.className = 'feedback-item';
-          const date = new Date(feedback.createdAt).toLocaleDateString('tr-TR');
-          const stars = '⭐'.repeat(feedback.rating);
-
-          item.innerHTML = `
-            <h4>${feedback.title}</h4>
-            <div class="rating">${stars} (${feedback.rating}/5)</div>
-            <p>${feedback.message}</p>
-            <div class="date">${date}</div>
-          `;
-
-          feedbackList.appendChild(item);
-        });
-      });
-
-    // Submit feedback
-    document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+    // Submit feedback with Supabase
+    document.getElementById('feedbackForm')?.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const title = (document.getElementById('title') as HTMLInputElement).value;
       const message = (document.getElementById('message') as HTMLTextAreaElement).value;
       const rating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
-      const messageDiv = document.getElementById('feedbackMessage');
+      const messageDiv = document.getElementById('feedbackMessage')!;
 
       if (!rating) {
         messageDiv.textContent = 'Lütfen bir puan seçin';
@@ -472,17 +482,18 @@ const description = 'Demo görüntüleme ve feedback verme sayfası';
       }
 
       try {
-        const response = await fetch('/api/feedback', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify({ demoId, title, message, rating: parseInt(rating) })
-        });
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
 
-        if (!response.ok) {
-          throw new Error('Feedback gönderilemedi');
+        const { error: insertError } = await supabase.from('feedback').insert([{
+          demo_id: demoId,
+          user_id: user.id,
+          title,
+          message,
+          rating: parseInt(rating),
+        }]);
+
+        if (insertError) {
+          throw new Error(insertError.message);
         }
 
         messageDiv.textContent = 'Geri bildiriminiz başarıyla gönderildi! ✓';

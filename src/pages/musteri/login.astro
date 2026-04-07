@@ -160,35 +160,42 @@ const description = 'Müşteri paneline giriş yapın ve demo gösterimlerine er
 </style>
 
 <script>
+  // Supabase Auth JS (client-side)
+  import { createClient } from '@supabase/supabase-js';
+
+  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
   const form = document.getElementById('loginForm');
   const errorDiv = document.getElementById('error');
 
-  form.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const email = (form.elements.namedItem('email') as HTMLInputElement).value;
     const password = (form.elements.namedItem('password') as HTMLInputElement).value;
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
       });
 
-      if (!response.ok) {
-        const error = await response.json();
-        errorDiv.textContent = error.error || 'Giriş başarısız';
+      if (error) {
+        errorDiv.textContent = error.message;
         errorDiv.classList.add('show');
         return;
       }
 
-      const data = await response.json();
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+      localStorage.setItem('token', data.session?.access_token || '');
+      localStorage.setItem('user', JSON.stringify({
+        id: data.user?.id,
+        email: data.user?.email,
+      }));
       window.location.href = '/musteri/dashboard';
     } catch (err) {
-      errorDiv.textContent = 'Sunucu hatası: ' + (err as Error).message;
+      errorDiv.textContent = 'Hata: ' + (err as Error).message;
       errorDiv.classList.add('show');
     }
   });

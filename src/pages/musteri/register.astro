@@ -170,10 +170,16 @@ const description = 'Müşteri paneline kaydolun ve demo gösterimlerine erişim
 </style>
 
 <script>
+  import { createClient } from '@supabase/supabase-js';
+
+  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
   const form = document.getElementById('registerForm');
   const errorDiv = document.getElementById('error');
 
-  form.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = (form.elements.namedItem('name') as HTMLInputElement).value;
@@ -181,25 +187,32 @@ const description = 'Müşteri paneline kaydolun ve demo gösterimlerine erişim
     const password = (form.elements.namedItem('password') as HTMLInputElement).value;
 
     try {
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password })
+      const { data, error } = await supabase.auth.signUpWithPassword({
+        email,
+        password,
       });
 
-      if (!response.ok) {
-        const error = await response.json();
-        errorDiv.textContent = error.error || 'Kayıt başarısız';
+      if (error) {
+        errorDiv.textContent = error.message;
         errorDiv.classList.add('show');
         return;
       }
 
-      const data = await response.json();
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+      // Store name in users table
+      await supabase.from('users').insert([{
+        id: data.user?.id,
+        email,
+        name,
+      }]);
+
+      localStorage.setItem('token', data.session?.access_token || '');
+      localStorage.setItem('user', JSON.stringify({
+        id: data.user?.id,
+        email: data.user?.email,
+      }));
       window.location.href = '/musteri/dashboard';
     } catch (err) {
-      errorDiv.textContent = 'Sunucu hatası: ' + (err as Error).message;
+      errorDiv.textContent = 'Hata: ' + (err as Error).message;
       errorDiv.classList.add('show');
     }
   });

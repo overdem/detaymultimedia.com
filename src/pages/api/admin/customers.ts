@@ -71,6 +71,7 @@ export const POST: APIRoute = async ({ request }) => {
       email,
       name,
       role: 'customer',
+      password: 'supabase-auth',
     }]);
 
     if (profileError) {

@@ -11,21 +11,28 @@ const adminClient = createClient(supabaseUrl || '', serviceRoleKey || '');
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
-  if (request.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });
+  let body: { email?: string; password?: string };
+  try {
+    body = await request.json();
+  } catch {
+    return new Response(JSON.stringify({ error: 'Invalid request body' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
-  const { email, password } = await request.json();
-
-  if (!email || !password) {
-    return new Response(JSON.stringify({ error: 'Email and password required' }), { status: 400 });
+  const { email: bodyEmail, password: bodyPassword } = body;
+  if (!bodyEmail || !bodyPassword) {
+    return new Response(JSON.stringify({ error: 'Email and password required' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
   try {
-    // Sign in with Supabase Auth
     const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
+      email: bodyEmail,
+      password: bodyPassword,
     });
 
     if (error || !data.user) {

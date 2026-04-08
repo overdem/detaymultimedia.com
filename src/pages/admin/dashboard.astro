@@ -1,0 +1,156 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+
+export const prerender = false;
+
+const title = 'Dashboard - Admin Paneli';
+const description = 'Admin dashboard';
+---
+
+<AdminLayout title={title} description={description}>
+  <div class="dashboard">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Toplam Demolar</div>
+        <div class="stat-value" id="demoCount">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Toplam Müşteriler</div>
+        <div class="stat-value" id="customerCount">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Toplam Atamalar</div>
+        <div class="stat-value" id="assignmentCount">0</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="/admin/demos" class="btn btn-primary">Demolar</a>
+      <a href="/admin/customers" class="btn btn-secondary">Müşteriler</a>
+    </div>
+  </div>
+</AdminLayout>
+
+<style>
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background-color: var(--color-bg-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-label {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-accent);
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--font-label);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 200ms ease-out;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: #ff6b1a;
+  }
+
+  .btn-secondary {
+    background-color: var(--color-bg-3);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(255, 87, 8, 0.1);
+    border-color: var(--color-accent);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Check admin authentication
+    const admin = localStorage.getItem('admin');
+    if (!admin) {
+      window.location.href = '/admin/login';
+      return;
+    }
+
+    // Load stats
+    try {
+      // Get demos count
+      const demosRes = await fetch('/api/admin/demos', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+      const demos = await demosRes.json();
+      document.getElementById('demoCount')!.textContent = demos.length || '0';
+
+      // Get customers count
+      const customersRes = await fetch('/api/admin/customers', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+      const customers = await customersRes.json();
+      document.getElementById('customerCount')!.textContent = customers.length || '0';
+
+      // Get assignments count
+      const assignmentsRes = await fetch('/api/admin/assignments', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+      const assignments = await assignmentsRes.json();
+      document.getElementById('assignmentCount')!.textContent = assignments.length || '0';
+    } catch (err) {
+      console.error('Error loading stats:', err);
+    }
+  });
+</script>

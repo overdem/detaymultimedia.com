@@ -1,32 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = 'Kaydol - Müşteri Paneli';
-const description = 'Müşteri paneline kaydolun ve demo gösterimlerine erişim sağlayın.';
+const title = 'Admin Giriş - Detay Multimedia';
+const description = 'Admin paneline giriş yapın';
 const lang = 'tr';
 ---
 
 <BaseLayout lang={lang} title={title} description={description}>
-  <div class="customer-auth">
+  <div class="admin-login">
     <div class="container">
-      <div class="auth-card">
-        <div class="auth-header">
-          <h1>Panele Kaydolun</h1>
-          <p class="section-label"><span class="label-line"></span>Yeni Hesap</p>
+      <div class="login-card">
+        <div class="login-header">
+          <h1>Admin Paneli</h1>
+          <p class="section-label"><span class="label-line"></span>Giriş Yap</p>
         </div>
 
-        <form id="registerForm" class="auth-form">
-          <div class="form-group">
-            <label for="name">Ad Soyad</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="John Doe"
-            />
-          </div>
-
+        <form id="loginForm" class="login-form">
           <div class="form-group">
             <label for="email">Email Adresi</label>
             <input
@@ -34,7 +23,7 @@ const lang = 'tr';
               id="email"
               name="email"
               required
-              placeholder="name@example.com"
+              placeholder="admin@detaymultimedia.com"
             />
           </div>
 
@@ -49,7 +38,7 @@ const lang = 'tr';
             />
           </div>
 
-          <button type="submit" class="btn btn-primary">Kaydol</button>
+          <button type="submit" class="btn btn-primary">Giriş Yap</button>
         </form>
 
         <div id="error" class="error-message"></div>
@@ -59,7 +48,7 @@ const lang = 'tr';
 </BaseLayout>
 
 <style>
-  .customer-auth {
+  .admin-login {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -68,22 +57,22 @@ const lang = 'tr';
     background-color: var(--color-bg);
   }
 
-  .customer-auth .container {
+  .admin-login .container {
     max-width: 480px;
   }
 
-  .auth-card {
+  .login-card {
     background-color: var(--color-bg-3);
     border: 1px solid var(--color-border);
     border-radius: 4px;
     padding: clamp(2rem, 5vw, 3.5rem);
   }
 
-  .auth-header {
+  .login-header {
     margin-bottom: 2rem;
   }
 
-  .auth-header h1 {
+  .login-header h1 {
     font-size: var(--text-h1);
     font-weight: 900;
     margin-bottom: 0.5rem;
@@ -108,14 +97,7 @@ const lang = 'tr';
     background-color: var(--color-accent);
   }
 
-  .subtitle {
-    font-size: var(--text-body);
-    color: var(--color-muted);
-    margin-bottom: 2rem;
-    line-height: 1.6;
-  }
-
-  .auth-form {
+  .login-form {
     margin-bottom: 1.5rem;
   }
 
@@ -173,23 +155,6 @@ const lang = 'tr';
     color: #131313;
   }
 
-  .form-footer {
-    text-align: center;
-    color: var(--color-muted);
-    font-size: 0.9rem;
-  }
-
-  .form-footer a {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 200ms ease-out;
-  }
-
-  .form-footer a:hover {
-    color: #fff;
-  }
-
   .error-message {
     padding: 1rem;
     background-color: rgba(140, 61, 61, 0.2);
@@ -206,65 +171,48 @@ const lang = 'tr';
   }
 
   @media (max-width: 640px) {
-    .auth-card {
+    .login-card {
       padding: 1.5rem;
     }
 
-    .auth-header h1 {
+    .login-header h1 {
       font-size: var(--text-h2);
     }
   }
 </style>
 
 <script>
-  import { createClient } from '@supabase/supabase-js';
-
-  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.error('Supabase environment variables not found');
-  }
-
-  const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-  const form = document.getElementById('registerForm');
+  const form = document.getElementById('loginForm');
   const errorDiv = document.getElementById('error');
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
     const email = (form.elements.namedItem('email') as HTMLInputElement).value;
     const password = (form.elements.namedItem('password') as HTMLInputElement).value;
 
     try {
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
+      const response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
       });
 
-      if (error) {
-        errorDiv.textContent = error.message;
+      const data = await response.json();
+
+      if (!response.ok) {
+        errorDiv.textContent = data.error || 'Giriş başarısız';
         errorDiv.classList.add('show');
         return;
       }
 
-      // Store name in users table
-      await supabase.from('users').insert([{
-        id: data.user?.id,
-        email,
-        name,
-        role: 'customer',
-      }]);
-
-      localStorage.setItem('token', data.session?.access_token || '');
-      localStorage.setItem('user', JSON.stringify({
-        id: data.user?.id,
-        email: data.user?.email,
-        name: name,
+      // Store admin info in localStorage
+      localStorage.setItem('admin', JSON.stringify({
+        id: data.user.id,
+        email: data.user.email,
       }));
-      window.location.href = '/musteri/dashboard';
+
+      window.location.href = '/admin/dashboard';
     } catch (err) {
       errorDiv.textContent = 'Hata: ' + (err as Error).message;
       errorDiv.classList.add('show');

@@ -1,0 +1,172 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+
+export const prerender = false;
+
+const title = 'Müşteriler - Admin Paneli';
+const description = 'Müşteri yönetimi';
+---
+
+<AdminLayout title={title} description={description}>
+  <div class="customers-page">
+    <div class="page-header">
+      <h2>Müşteri Yönetimi</h2>
+    </div>
+
+    <div id="customersList" class="customers-table-container">
+      <p style="text-align: center; color: var(--color-muted);">Yükleniyor...</p>
+    </div>
+  </div>
+</AdminLayout>
+
+<style>
+  .customers-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .page-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-text);
+    font-weight: 900;
+  }
+
+  .customers-table-container {
+    background-color: var(--color-bg-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: rgba(255, 87, 8, 0.05);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.95rem;
+  }
+
+  tbody tr:hover {
+    background-color: rgba(255, 87, 8, 0.05);
+  }
+
+  .btn-assign {
+    background-color: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 200ms;
+    display: inline-block;
+  }
+
+  .btn-assign:hover {
+    background-color: #ff6b1a;
+  }
+
+  @media (max-width: 768px) {
+    table {
+      font-size: 0.85rem;
+    }
+
+    th,
+    td {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const admin = localStorage.getItem('admin');
+    if (!admin) {
+      window.location.href = '/admin/login';
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/admin/customers', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch customers');
+      }
+
+      const customers = await response.json();
+
+      const customersList = document.getElementById('customersList');
+      if (!customers.length) {
+        customersList.innerHTML =
+          '<p style="padding: 2rem; text-align: center; color: var(--color-muted);">Henüz müşteri eklenmemiş</p>';
+        return;
+      }
+
+      let html = `
+        <table>
+          <thead>
+            <tr>
+              <th>Adı</th>
+              <th>Email</th>
+              <th>Kayıt Tarihi</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      customers.forEach((customer: any) => {
+        const createdAt = new Date(customer.created_at).toLocaleDateString('tr-TR');
+        html += `
+          <tr>
+            <td><strong>${customer.name || '-'}</strong></td>
+            <td>${customer.email}</td>
+            <td>${createdAt}</td>
+            <td>
+              <a href="/admin/customers/assign?id=${customer.id}" class="btn-assign">Demo Ata</a>
+            </td>
+          </tr>
+        `;
+      });
+
+      html += `
+          </tbody>
+        </table>
+      `;
+
+      customersList.innerHTML = html;
+    } catch (err) {
+      console.error('Error:', err);
+      document.getElementById('customersList').innerHTML =
+        '<p style="padding: 2rem; text-align: center; color: var(--color-error);">Müşteriler yüklenemedi</p>';
+    }
+  });
+</script>

@@ -5,8 +5,16 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+export function createAdminClient() {
+  const serviceRoleKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!serviceRoleKey) {
+    throw new Error('SUPABASE_SERVICE_ROLE_KEY env var is not set');
+  }
+  return createClient(supabaseUrl, serviceRoleKey);
+}
+
 export async function signUp(email: string, password: string, name: string) {
-  const { data, error } = await supabase.auth.signUpWithPassword({
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
   });
@@ -18,7 +26,7 @@ export async function signUp(email: string, password: string, name: string) {
   // Store name in users table
   const { error: insertError } = await supabase
     .from('users')
-    .insert([{ id: data.user?.id, email, name, password }]);
+    .insert([{ id: data.user?.id, email, name, role: 'customer' }]);
 
   if (insertError) {
     return { error: insertError.message };

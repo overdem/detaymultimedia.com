@@ -1,0 +1,252 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+
+export const prerender = false;
+
+const title = 'Demolar - Admin Paneli';
+const description = 'Demo yönetimi';
+---
+
+<AdminLayout title={title} description={description}>
+  <div class="demos-page">
+    <div class="page-header">
+      <h2>Demo Yönetimi</h2>
+      <a href="/admin/demos/new" class="btn btn-primary">+ Yeni Demo</a>
+    </div>
+
+    <div id="demosList" class="demos-table-container">
+      <p style="text-align: center; color: var(--color-muted);">Yükleniyor...</p>
+    </div>
+  </div>
+</AdminLayout>
+
+<style>
+  .demos-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .page-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-text);
+    font-weight: 900;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--font-label);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: all 200ms ease-out;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: #ff6b1a;
+  }
+
+  .btn-danger {
+    background-color: var(--color-error);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .btn-danger:hover {
+    background-color: #d63c3c;
+  }
+
+  .demos-table-container {
+    background-color: var(--color-bg-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: rgba(255, 87, 8, 0.05);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.95rem;
+  }
+
+  tbody tr:hover {
+    background-color: rgba(255, 87, 8, 0.05);
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .btn-edit {
+    background-color: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 200ms;
+  }
+
+  .btn-edit:hover {
+    background-color: #ff6b1a;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    table {
+      font-size: 0.85rem;
+    }
+
+    th,
+    td {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const admin = localStorage.getItem('admin');
+    if (!admin) {
+      window.location.href = '/admin/login';
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/admin/demos', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch demos');
+      }
+
+      const demos = await response.json();
+
+      const demosList = document.getElementById('demosList');
+      if (!demos.length) {
+        demosList.innerHTML = '<p style="padding: 2rem; text-align: center; color: var(--color-muted);">Henüz demo eklenmemiş</p>';
+        return;
+      }
+
+      let html = `
+        <table>
+          <thead>
+            <tr>
+              <th>Adı</th>
+              <th>Kategori</th>
+              <th>Açıklama</th>
+              <th>Durum</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      demos.forEach((demo: any) => {
+        const status = demo.is_active ? 'Aktif' : 'Pasif';
+        html += `
+          <tr>
+            <td><strong>${demo.name}</strong></td>
+            <td>${demo.category || '-'}</td>
+            <td>${demo.description ? demo.description.substring(0, 50) + '...' : '-'}</td>
+            <td>${status}</td>
+            <td>
+              <div class="actions">
+                <a href="/admin/demos/edit?id=${demo.id}" class="btn-edit">Düzenle</a>
+                <button class="btn-danger" onclick="deleteDemo('${demo.id}')">Sil</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      });
+
+      html += `
+          </tbody>
+        </table>
+      `;
+
+      demosList.innerHTML = html;
+    } catch (err) {
+      console.error('Error:', err);
+      document.getElementById('demosList').innerHTML =
+        '<p style="padding: 2rem; text-align: center; color: var(--color-error);">Demolar yüklenemedi</p>';
+    }
+  });
+
+  async function deleteDemo(demoId: string) {
+    if (!confirm('Bu demoyu silmek istediğinizden emin misiniz?')) return;
+
+    try {
+      const response = await fetch(`/api/admin/demos/${demoId}`, {
+        method: 'DELETE',
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+
+      if (response.ok) {
+        window.location.reload();
+      } else {
+        alert('Silme işlemi başarısız oldu');
+      }
+    } catch (err) {
+      alert('Hata: ' + (err as Error).message);
+    }
+  }
+</script>

@@ -1,0 +1,322 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+
+const title = 'Demo Düzenle - Admin Paneli';
+const description = 'Demo düzenleme';
+---
+
+<AdminLayout title={title} description={description}>
+  <div class="demo-form-container">
+    <div class="form-header">
+      <a href="/admin/demos" class="back-link">← Demolara Dön</a>
+      <h2>Demo Düzenle</h2>
+    </div>
+
+    <form id="demoForm" class="demo-form">
+      <div class="form-group">
+        <label for="name">Demo Adı *</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Demo adını girin"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="category">Kategori</label>
+        <input
+          type="text"
+          id="category"
+          name="category"
+          placeholder="Örn: Eğitim, Sağlık"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Açıklama</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Demo açıklamasını girin"
+          rows="4"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="features">Özellikler (virgülle ayrılmış)</label>
+        <textarea
+          id="features"
+          name="features"
+          placeholder="Örn: Özellik 1, Özellik 2, Özellik 3"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="demo_url">Demo URL'si</label>
+        <input
+          type="url"
+          id="demo_url"
+          name="demo_url"
+          placeholder="https://example.com/demo"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="is_active">
+          <input type="checkbox" id="is_active" name="is_active" />
+          Aktif
+        </label>
+      </div>
+
+      <div id="error" class="error-message"></div>
+      <div id="success" class="success-message"></div>
+
+      <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+    </form>
+  </div>
+</AdminLayout>
+
+<style>
+  .demo-form-container {
+    max-width: 700px;
+  }
+
+  .form-header {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    transition: color 200ms;
+  }
+
+  .back-link:hover {
+    color: #ff6b1a;
+  }
+
+  .form-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-text);
+    font-weight: 900;
+  }
+
+  .demo-form {
+    background-color: var(--color-bg-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: var(--font-label);
+    letter-spacing: 0.01em;
+  }
+
+  input[type='text'],
+  input[type='url'],
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--color-bg-2);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 200ms;
+  }
+
+  input[type='text']:focus,
+  input[type='url']:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 87, 8, 0.1);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input[type='checkbox'] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  .error-message {
+    padding: 1rem;
+    background-color: rgba(220, 60, 60, 0.1);
+    border: 1px solid var(--color-error);
+    border-radius: 4px;
+    color: #d9a5a5;
+    display: none;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .error-message.show {
+    display: block;
+  }
+
+  .success-message {
+    padding: 1rem;
+    background-color: rgba(100, 200, 100, 0.1);
+    border: 1px solid #4c4;
+    border-radius: 4px;
+    color: #9f9;
+    display: none;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .success-message.show {
+    display: block;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: var(--font-label);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 200ms ease-out;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: #fff;
+    width: 100%;
+  }
+
+  .btn-primary:hover {
+    background-color: #ff6b1a;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const admin = localStorage.getItem('admin');
+    if (!admin) {
+      window.location.href = '/admin/login';
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const demoId = params.get('id');
+
+    if (!demoId) {
+      window.location.href = '/admin/demos';
+      return;
+    }
+
+    const form = document.getElementById('demoForm') as HTMLFormElement;
+    const errorDiv = document.getElementById('error');
+    const successDiv = document.getElementById('success');
+
+    // Load demo data
+    try {
+      const response = await fetch('/api/admin/demos', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+
+      const demos = await response.json();
+      const demo = demos.find((d: any) => d.id === demoId);
+
+      if (!demo) {
+        errorDiv.textContent = 'Demo bulunamadı';
+        errorDiv.classList.add('show');
+        return;
+      }
+
+      // Populate form
+      (document.getElementById('name') as HTMLInputElement).value = demo.name || '';
+      (document.getElementById('category') as HTMLInputElement).value = demo.category || '';
+      (document.getElementById('description') as HTMLTextAreaElement).value = demo.description || '';
+      (document.getElementById('demo_url') as HTMLInputElement).value = demo.demo_url || '';
+      (document.getElementById('is_active') as HTMLInputElement).checked = demo.is_active !== false;
+
+      if (demo.features && Array.isArray(demo.features)) {
+        (document.getElementById('features') as HTMLTextAreaElement).value = demo.features.join(', ');
+      }
+    } catch (err) {
+      errorDiv.textContent = 'Demo yüklenemedi: ' + (err as Error).message;
+      errorDiv.classList.add('show');
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = (document.getElementById('name') as HTMLInputElement).value;
+      const category = (document.getElementById('category') as HTMLInputElement).value;
+      const description = (document.getElementById('description') as HTMLTextAreaElement).value;
+      const featuresStr = (document.getElementById('features') as HTMLTextAreaElement).value;
+      const demo_url = (document.getElementById('demo_url') as HTMLInputElement).value;
+      const is_active = (document.getElementById('is_active') as HTMLInputElement).checked;
+
+      const features = featuresStr
+        .split(',')
+        .map((f) => f.trim())
+        .filter((f) => f);
+
+      try {
+        const response = await fetch(`/api/admin/demos/${demoId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Cookie': document.cookie,
+          },
+          body: JSON.stringify({
+            name,
+            category,
+            description,
+            features,
+            demo_url,
+            is_active,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          errorDiv.textContent = data.error || 'Demo güncelleme başarısız';
+          errorDiv.classList.add('show');
+          return;
+        }
+
+        successDiv.textContent = 'Demo başarıyla güncellendi!';
+        successDiv.classList.add('show');
+
+        setTimeout(() => {
+          window.location.href = '/admin/demos';
+        }, 1500);
+      } catch (err) {
+        errorDiv.textContent = 'Hata: ' + (err as Error).message;
+        errorDiv.classList.add('show');
+      }
+    });
+  });
+</script>

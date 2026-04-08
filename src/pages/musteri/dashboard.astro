@@ -209,10 +209,14 @@ const lang = 'tr';
     }
 
     const userData = JSON.parse(user);
-    document.getElementById('userName').textContent = `${userData.name} hoşgeldiniz!`;
+    document.getElementById('userName').textContent = `${userData.name || userData.email} hoşgeldiniz!`;
 
-    // Load demos
-    fetch('/api/demos')
+    // Load demos with auth header
+    fetch('/api/demos', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
       .then(r => r.json())
       .then(demos => {
         const demosList = document.getElementById('demosList');

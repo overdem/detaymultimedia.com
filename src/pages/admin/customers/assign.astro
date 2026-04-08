@@ -1,0 +1,382 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+
+const title = 'Demo Ata - Admin Paneli';
+const description = 'Müşteriye demo ata';
+---
+
+<AdminLayout title={title} description={description}>
+  <div class="assign-container">
+    <div class="page-header">
+      <a href="/admin/customers" class="back-link">← Müşterilere Dön</a>
+      <h2 id="pageTitle">Demo Ata</h2>
+    </div>
+
+    <div class="assign-content">
+      <div class="customer-info">
+        <div>
+          <label>Müşteri:</label>
+          <p id="customerName"></p>
+        </div>
+        <div>
+          <label>Email:</label>
+          <p id="customerEmail"></p>
+        </div>
+      </div>
+
+      <div class="demos-list">
+        <h3>Atanacak Demolar</h3>
+        <div id="demosList" class="demos-checkboxes">
+          <p style="color: var(--color-muted);">Yükleniyor...</p>
+        </div>
+      </div>
+
+      <div id="error" class="error-message"></div>
+      <div id="success" class="success-message"></div>
+
+      <div class="actions">
+        <button id="saveBtn" class="btn btn-primary">Atamaları Kaydet</button>
+        <a href="/admin/customers" class="btn btn-secondary">İptal</a>
+      </div>
+    </div>
+  </div>
+</AdminLayout>
+
+<style>
+  .assign-container {
+    max-width: 700px;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    transition: color 200ms;
+  }
+
+  .back-link:hover {
+    color: #ff6b1a;
+  }
+
+  .page-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--color-text);
+    font-weight: 900;
+  }
+
+  .assign-content {
+    background-color: var(--color-bg-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+
+  .customer-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .customer-info label {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .customer-info p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1rem;
+  }
+
+  .demos-list h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  .demos-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-bg-2);
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    transition: all 200ms;
+  }
+
+  .checkbox-item:hover {
+    background-color: rgba(255, 87, 8, 0.05);
+    border-color: var(--color-accent);
+  }
+
+  .checkbox-item input[type='checkbox'] {
+    margin-right: 1rem;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-accent);
+  }
+
+  .checkbox-label {
+    flex: 1;
+    cursor: pointer;
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .checkbox-category {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    margin-left: auto;
+  }
+
+  .error-message {
+    padding: 1rem;
+    background-color: rgba(220, 60, 60, 0.1);
+    border: 1px solid var(--color-error);
+    border-radius: 4px;
+    color: #d9a5a5;
+    display: none;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .error-message.show {
+    display: block;
+  }
+
+  .success-message {
+    padding: 1rem;
+    background-color: rgba(100, 200, 100, 0.1);
+    border: 1px solid #4c4;
+    border-radius: 4px;
+    color: #9f9;
+    display: none;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .success-message.show {
+    display: block;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: var(--font-label);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 200ms ease-out;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: #fff;
+    flex: 1;
+  }
+
+  .btn-primary:hover {
+    background-color: #ff6b1a;
+  }
+
+  .btn-secondary {
+    background-color: var(--color-bg-2);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    flex: 1;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .customer-info {
+      grid-template-columns: 1fr;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const admin = localStorage.getItem('admin');
+    if (!admin) {
+      window.location.href = '/admin/login';
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const customerId = params.get('id');
+
+    if (!customerId) {
+      window.location.href = '/admin/customers';
+      return;
+    }
+
+    const errorDiv = document.getElementById('error');
+    const successDiv = document.getElementById('success');
+    const saveBtn = document.getElementById('saveBtn');
+
+    // Load customer info
+    try {
+      const response = await fetch('/api/admin/customers', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+      const customers = await response.json();
+      const customer = customers.find((c: any) => c.id === customerId);
+
+      if (!customer) {
+        errorDiv.textContent = 'Müşteri bulunamadı';
+        errorDiv.classList.add('show');
+        return;
+      }
+
+      document.getElementById('customerName').textContent = customer.name || '-';
+      document.getElementById('customerEmail').textContent = customer.email;
+      document.getElementById('pageTitle').textContent = `${customer.name || customer.email} - Demo Ata`;
+    } catch (err) {
+      errorDiv.textContent = 'Müşteri yüklenemedi: ' + (err as Error).message;
+      errorDiv.classList.add('show');
+    }
+
+    // Load demos and current assignments
+    try {
+      const demosRes = await fetch('/api/admin/demos', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+      const demos = await demosRes.json();
+
+      const assignmentsRes = await fetch('/api/admin/assignments', {
+        headers: {
+          'Cookie': document.cookie,
+        },
+      });
+      const assignments = await assignmentsRes.json();
+
+      const assignedDemoIds = assignments
+        .filter((a: any) => a.user_id === customerId)
+        .map((a: any) => a.demo_id);
+
+      const demosList = document.getElementById('demosList');
+      let html = '';
+
+      demos.forEach((demo: any) => {
+        const isChecked = assignedDemoIds.includes(demo.id);
+        const checkedAttr = isChecked ? 'checked' : '';
+        html += `
+          <div class="checkbox-item">
+            <input
+              type="checkbox"
+              id="demo_${demo.id}"
+              value="${demo.id}"
+              ${checkedAttr}
+            />
+            <label for="demo_${demo.id}" class="checkbox-label">${demo.name}</label>
+            <span class="checkbox-category">${demo.category || '-'}</span>
+          </div>
+        `;
+      });
+
+      demosList.innerHTML = html || '<p style="color: var(--color-muted);">Henüz demo eklenmemiş</p>';
+
+      // Save button handler
+      saveBtn?.addEventListener('click', async () => {
+        const checked = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(
+          (input: any) => input.value
+        );
+
+        try {
+          // Remove unchecked assignments
+          for (const assignment of assignments.filter((a: any) => a.user_id === customerId)) {
+            if (!checked.includes(assignment.demo_id)) {
+              await fetch(`/api/admin/assignments/${assignment.id}`, {
+                method: 'DELETE',
+                headers: {
+                  'Cookie': document.cookie,
+                },
+              });
+            }
+          }
+
+          // Add new assignments
+          for (const demoId of checked) {
+            if (!assignedDemoIds.includes(demoId)) {
+              await fetch('/api/admin/assignments', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Cookie': document.cookie,
+                },
+                body: JSON.stringify({
+                  demo_id: demoId,
+                  user_id: customerId,
+                }),
+              });
+            }
+          }
+
+          successDiv.textContent = 'Atamalar başarıyla kaydedildi!';
+          successDiv.classList.add('show');
+
+          setTimeout(() => {
+            window.location.href = '/admin/customers';
+          }, 1500);
+        } catch (err) {
+          errorDiv.textContent = 'Hata: ' + (err as Error).message;
+          errorDiv.classList.add('show');
+        }
+      });
+    } catch (err) {
+      errorDiv.textContent = 'Demolar yüklenemedi: ' + (err as Error).message;
+      errorDiv.classList.add('show');
+    }
+  });
+</script>

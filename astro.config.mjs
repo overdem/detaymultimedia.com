@@ -4,8 +4,8 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
-  output: 'static',
-  // No adapter needed for static mode
+  output: 'hybrid',
+  adapter: vercel(),
   site: 'https://detaymultimedia.com',
   integrations: [sitemap()],
 });

@@ -1,12 +1,16 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type { APIRoute } from 'astro';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.PUBLIC_SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+const serviceRoleKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
+
 const adminClient = createClient(supabaseUrl || '', serviceRoleKey || '');
 
-async function requireAdmin(req: VercelRequest): Promise<{ userId?: string; error?: string }> {
-  const cookie = req.headers.cookie;
+export const prerender = false;
+
+async function requireAdmin(request: Request): Promise<{ userId?: string; error?: string }> {
+  const cookie = request.headers.get('cookie');
   const token = cookie
     ?.split(';')
     .find(c => c.trim().startsWith('admin_token='))
@@ -16,16 +20,12 @@ async function requireAdmin(req: VercelRequest): Promise<{ userId?: string; erro
     return { error: 'Unauthorized' };
   }
 
-  const supabaseUrl = process.env.PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.PUBLIC_SUPABASE_ANON_KEY;
   const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
-
   const { data: { user }, error } = await supabase.auth.getUser(token);
   if (error || !user) {
     return { error: 'Unauthorized' };
   }
 
-  // Check admin role
   const { data: profile } = await adminClient
     .from('users')
     .select('role')
@@ -39,14 +39,12 @@ async function requireAdmin(req: VercelRequest): Promise<{ userId?: string; erro
   return { userId: user.id };
 }
 
-export default async (req: VercelRequest, res: VercelResponse) => {
-  const auth = await requireAdmin(req);
+export const GET: APIRoute = async ({ request }) => {
+  const auth = await requireAdmin(request);
   if (auth.error) {
-    return res.status(auth.error === 'Forbidden' ? 403 : 401).json({ error: auth.error });
-  }
-
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return new Response(JSON.stringify({ error: auth.error }), {
+      status: auth.error === 'Forbidden' ? 403 : 401,
+    });
   }
 
   try {
@@ -57,11 +55,14 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       .order('created_at', { ascending: false });
 
     if (error) {
-      return res.status(400).json({ error: error.message });
+      return new Response(JSON.stringify({ error: error.message }), { status: 400 });
     }
 
-    return res.status(200).json(data);
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
   } catch (err) {
-    return res.status(500).json({ error: (err as Error).message });
+    return new Response(JSON.stringify({ error: (err as Error).message }), { status: 500 });
   }
 };

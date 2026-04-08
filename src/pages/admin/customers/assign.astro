@@ -264,9 +264,7 @@ const description = 'Müşteriye demo ata';
     // Load customer info
     try {
       const response = await fetch('/api/admin/customers', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
       const customers = await response.json();
       const customer = customers.find((c: any) => c.id === customerId);
@@ -288,16 +286,12 @@ const description = 'Müşteriye demo ata';
     // Load demos and current assignments
     try {
       const demosRes = await fetch('/api/admin/demos', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
       const demos = await demosRes.json();
 
       const assignmentsRes = await fetch('/api/admin/assignments', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
       const assignments = await assignmentsRes.json();
 
@@ -339,9 +333,7 @@ const description = 'Müşteriye demo ata';
             if (!checked.includes(assignment.demo_id)) {
               await fetch(`/api/admin/assignments/${assignment.id}`, {
                 method: 'DELETE',
-                headers: {
-                  'Cookie': document.cookie,
-                },
+                credentials: 'include',
               });
             }
           }
@@ -353,7 +345,7 @@ const description = 'Müşteriye demo ata';
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
-                  'Cookie': document.cookie,
+                  
                 },
                 body: JSON.stringify({
                   demo_id: demoId,

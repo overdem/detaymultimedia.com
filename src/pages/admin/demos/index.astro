@@ -167,9 +167,7 @@ const description = 'Demo yönetimi';
 
     try {
       const response = await fetch('/api/admin/demos', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
 
       if (!response.ok) {
@@ -235,9 +233,7 @@ const description = 'Demo yönetimi';
     try {
       const response = await fetch(`/api/admin/demos/${demoId}`, {
         method: 'DELETE',
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
 
       if (response.ok) {

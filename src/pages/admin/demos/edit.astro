@@ -238,9 +238,7 @@ const description = 'Demo düzenleme';
     // Load demo data
     try {
       const response = await fetch('/api/admin/demos', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
 
       const demos = await response.json();
@@ -287,7 +285,7 @@ const description = 'Demo düzenleme';
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
-            'Cookie': document.cookie,
+            
           },
           body: JSON.stringify({
             name,

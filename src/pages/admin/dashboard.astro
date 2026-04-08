@@ -125,27 +125,21 @@ const description = 'Admin dashboard';
     try {
       // Get demos count
       const demosRes = await fetch('/api/admin/demos', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
       const demos = await demosRes.json();
       document.getElementById('demoCount')!.textContent = demos.length || '0';
 
       // Get customers count
       const customersRes = await fetch('/api/admin/customers', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
       const customers = await customersRes.json();
       document.getElementById('customerCount')!.textContent = customers.length || '0';
 
       // Get assignments count
       const assignmentsRes = await fetch('/api/admin/assignments', {
-        headers: {
-          'Cookie': document.cookie,
-        },
+        credentials: 'include',
       });
       const assignments = await assignmentsRes.json();
       document.getElementById('assignmentCount')!.textContent = assignments.length || '0';

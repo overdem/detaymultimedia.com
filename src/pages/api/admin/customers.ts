@@ -39,6 +39,57 @@ async function requireAdmin(request: Request): Promise<{ userId?: string; error?
   return { userId: user.id };
 }
 
+export const POST: APIRoute = async ({ request }) => {
+  const auth = await requireAdmin(request);
+  if (auth.error) {
+    return new Response(JSON.stringify({ error: auth.error }), {
+      status: auth.error === 'Forbidden' ? 403 : 401,
+    });
+  }
+
+  try {
+    const { name, email, password } = await request.json();
+
+    if (!name || !email || !password) {
+      return new Response(JSON.stringify({ error: 'Ad, email ve şifre zorunlu' }), { status: 400 });
+    }
+
+    // Supabase admin API ile kullanıcı oluştur
+    const { data: authData, error: authError } = await adminClient.auth.admin.createUser({
+      email,
+      password,
+      email_confirm: true,
+    });
+
+    if (authError) {
+      return new Response(JSON.stringify({ error: authError.message }), { status: 400 });
+    }
+
+    // users tablosuna profil ekle
+    const { error: profileError } = await adminClient.from('users').insert([{
+      id: authData.user.id,
+      email,
+      name,
+      role: 'customer',
+    }]);
+
+    if (profileError) {
+      // Auth user oluşturuldu ama profil eklenemedi, geri al
+      await adminClient.auth.admin.deleteUser(authData.user.id);
+      return new Response(JSON.stringify({ error: profileError.message }), { status: 400 });
+    }
+
+    return new Response(JSON.stringify({
+      id: authData.user.id,
+      email,
+      name,
+      role: 'customer',
+    }), { status: 201, headers: { 'Content-Type': 'application/json' } });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: (err as Error).message }), { status: 500 });
+  }
+};
+
 export const GET: APIRoute = async ({ request }) => {
   const auth = await requireAdmin(request);
   if (auth.error) {

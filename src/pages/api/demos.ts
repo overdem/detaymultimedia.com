@@ -3,7 +3,6 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
 
 export const prerender = false;
 
@@ -14,16 +13,21 @@ export const GET: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
   }
 
+  // Kullanıcının token'ıyla client oluştur (RLS doğru çalışsın)
+  const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '', {
+    global: { headers: { Authorization: `Bearer ${token}` } },
+  });
+
   try {
     const { data: { user }, error } = await supabase.auth.getUser(token);
     if (error || !user) {
       return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
     }
 
-    // Get demos assigned to this user
+    // Bu kullanıcıya atanmış aktif demoları getir
     const { data, error: assignError } = await supabase
       .from('demo_assignments')
-      .select('demos(id, name, description, category, features, demo_url, is_active, created_at)')
+      .select('demos!inner(id, name, description, category, features, demo_url, is_active, created_at)')
       .eq('user_id', user.id)
       .eq('demos.is_active', true);
 

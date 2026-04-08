@@ -199,6 +199,13 @@ const lang = 'tr';
 </style>
 
 <script>
+  import { createClient } from '@supabase/supabase-js';
+
+  const supabase = createClient(
+    import.meta.env.PUBLIC_SUPABASE_URL,
+    import.meta.env.PUBLIC_SUPABASE_ANON_KEY
+  );
+
   document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
@@ -249,7 +256,8 @@ const lang = 'tr';
       });
 
     // Logout
-    document.getElementById('logoutBtn').addEventListener('click', () => {
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await supabase.auth.signOut();
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       window.location.href = '/musteri/login';

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Şevket Steakhouse 24 Kasım Önerisi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one narrow phone-first column, the work shown at phone size, nothing competing with it. */
+:root {
+  color-scheme: dark;
+  --bg: #0d0a08;          /* charred wood */
+  --panel: #17120e;
+  --line: #3a2e22;
+  --text: #f4ecde;        /* cream, same as the artwork */
+  --muted: #b3a593;
+  --gold: #cba46a;
+  --display: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--body); font-size: 16px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+main { max-width: 560px; margin: 0 auto; padding: 32px 20px 48px; display: flex; flex-direction: column; gap: 44px; }
+header { display: flex; flex-direction: column; gap: 14px; text-align: center; padding-top: 8px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin: 0; }
+h1 { font-family: var(--display); font-weight: 500; font-size: clamp(32px, 9vw, 44px); line-height: 1.12; margin: 0; text-wrap: balance; }
+h1 em { color: var(--gold); }
+.lede { margin: 0 auto; max-width: 34em; color: var(--muted); font-size: 15px; }
+section { display: flex; flex-direction: column; gap: 16px; }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+h2 { font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1.2; margin: 0; }
+.meta { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.note { margin: 0; color: var(--muted); font-size: 14px; }
+img, video { display: block; max-width: 100%; }
+.shot { display: block; width: auto; height: auto; max-width: 100%; max-height: 72vh; max-height: 72svh; margin: 0 auto; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+video.shot { aspect-ratio: 9 / 16; }
+.swipe {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  margin: 0; padding: 0 0 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.swipe::-webkit-scrollbar { display: none; }
+.swipe figure { flex: 0 0 100%; min-width: 0; margin: 0; scroll-snap-align: center; }
+.dots { display: flex; justify-content: center; gap: 8px; }
+.dots button {
+  width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer;
+}
+.dots button[aria-current="true"] { background: var(--gold); }
+.dots button:focus-visible, video:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 13px; text-align: center; }
+footer p { margin: 0; }
+footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+@media (prefers-reduced-motion: no-preference) { .swipe { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Örnek çalışma · Detay Multimedya</p>
+    <h1>Şevket Steakhouse için <em>24 Kasım</em> içerikleri</h1>
+    <p class="lede">Öğretmenler Günü kampanyanız için hazırladığımız bir reels, altı karelik bir karusel ve tek gönderi.</p>
+  </header>
+
+  <section aria-labelledby="h-reel">
+    <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">24 sn · dikey</span></div>
+    <video class="shot" controls playsinline preload="metadata" poster="img/reel_poster.jpg" src="video/reel.mp4" width="720" height="1280"></video>
+    <p class="note">Video sessizdir; müzik Instagram’da paylaşırken eklenir.</p>
+  </section>
+
+  <section aria-labelledby="h-kar">
+    <div class="head"><h2 id="h-kar">Karusel</h2><span class="meta" id="count">1 / 6</span></div>
+    <div class="swipe" id="swipe" tabindex="0" aria-label="Karusel kareleri, yana kaydırın">
+      <figure><img class="shot" src="img/karusel_1.jpg" alt="Kare 1: Bize ilk harfi öğretenlere. Masada eski bir defter, tebeşir ve kırmızı karanfil." width="1080" height="1440"></figure>
+      <figure><img class="shot" src="img/karusel_2.jpg" alt="Kare 2: Sofrayı biz kuruyoruz. Kalabalık bir grup için kurulmuş uzun masa." width="1080" height="1440" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_3.jpg" alt="Kare 3: 3 nesil, 100 yıllık ustalık. Közde alevler içinde et." width="1080" height="1440" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_4.jpg" alt="Kare 4: Öğretmenler odası bu akşam bizde. Masanın yanında ud ve darbuka." width="1080" height="1440" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_5.jpg" alt="Kare 5: Öğretmenlerimize özel yüzde 10 indirim. Dilimlenmiş et." width="1080" height="1440" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_6.jpg" alt="Kare 6: Rezervasyon 0286 213 09 08, Barbaros Mah. Aziziye Cad. No: 87, Çanakkale." width="1080" height="1440" loading="lazy"></figure>
+    </div>
+    <div class="dots" id="dots" aria-label="Kare seçimi"></div>
+  </section>
+
+  <section aria-labelledby="h-post">
+    <div class="head"><h2 id="h-post">Tek gönderi</h2><span class="meta">3:4</span></div>
+    <div><img class="shot" src="img/post.jpg" alt="Öğretmenler Günü kutlu olsun. Tahta üzerinde ızgara biftek, yanında öğretmenlere özel yüzde 10 indirim mührü." width="1080" height="1440" loading="lazy"></div>
+  </section>
+
+  <footer>
+    <p><strong>Detay Multimedya</strong></p>
+  </footer>
+</main>
+<script>
+(function () {
+  var swipe = document.getElementById('swipe'), dots = document.getElementById('dots'), count = document.getElementById('count');
+  var figs = swipe.querySelectorAll('figure');
+  figs.forEach(function (f, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('aria-label', 'Kare ' + (i + 1));
+    b.addEventListener('click', function () { f.scrollIntoView({ inline: 'center', block: 'nearest' }); });
+    dots.appendChild(b);
+  });
+  function update() {
+    var mid = swipe.scrollLeft + swipe.clientWidth / 2, best = 0, d = Infinity;
+    figs.forEach(function (f, i) {
+      var c = f.offsetLeft - swipe.offsetLeft + f.offsetWidth / 2, x = Math.abs(c - mid);
+      if (x < d) { d = x; best = i; }
+    });
+    dots.querySelectorAll('button').forEach(function (b, i) { b.setAttribute('aria-current', i === best ? 'true' : 'false'); });
+    count.textContent = (best + 1) + ' / ' + figs.length;
+  }
+  swipe.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+  update();
+})();
+</script>
+</body>
+</html>

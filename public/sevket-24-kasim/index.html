@@ -54,6 +54,17 @@ video.shot { aspect-ratio: 9 / 16; }
 }
 .dots button[aria-current="true"] { background: var(--gold); }
 .dots button:focus-visible, video:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.cap { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.cap-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 0; }
+.cap pre { margin: 0; font-family: var(--body); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); -webkit-user-select: all; user-select: all; }
+.copy { font: 600 13px/1 var(--body); color: var(--bg); background: var(--gold); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
+.copy:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+.music { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.music li { border-left: 2px solid var(--gold); padding-left: 14px; }
+.music b { display: block; font-weight: 600; }
+.music span { color: var(--muted); font-size: 14px; }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 13px; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
@@ -92,6 +103,62 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
     <div><img class="shot" src="img/post.jpg" alt="Öğretmenler Günü kutlu olsun. Tahta üzerinde ızgara biftek, yanında öğretmenlere özel yüzde 10 indirim mührü." width="1080" height="1440" loading="lazy"></div>
   </section>
 
+  <section aria-labelledby="h-muzik">
+    <div class="head"><h2 id="h-muzik">Reels için müzik</h2><span class="meta">3 seçenek</span></div>
+    <p class="note">Video sessiz teslim edilir. Reels’i yüklerken Instagram’ın ses aramasına aşağıdakilerden birini yazıp ilk 24 saniyeyi seçin.</p>
+    <ul class="music">
+      <li><b>Öğretmen Marşı, piyano</b><span>Aramaya “Öğretmen Marşı piyano” yazın. Günün anlamına en doğrudan bağlanan seçenek.</span></li>
+      <li><b>Sakin sinematik piyano</b><span>Aramaya “emotional piano” ya da “cinematic piano” yazın. Yazıları öne çıkarır, her sahneye uyar.</span></li>
+      <li><b>Ud ya da kanun, enstrümantal</b><span>Aramaya “ud enstrümantal” ya da “kanun enstrümantal” yazın. Fasıl sahnesiyle örtüşür.</span></li>
+    </ul>
+    <p class="note">Sözlü şarkı yerine enstrümantal seçin; yazılar rahat okunur. İşletme hesaplarında bazı parçalar listede çıkmayabilir, o durumda sıradaki seçeneğe geçin.</p>
+  </section>
+
+  <section aria-labelledby="h-metin">
+    <div class="head"><h2 id="h-metin">Açıklama metinleri</h2><span class="meta">kopyala · yapıştır</span></div>
+
+    <div class="cap">
+      <div class="cap-top"><h3>Reels</h3><button class="copy" type="button" data-copy="cap-reel">Kopyala</button></div>
+      <pre id="cap-reel">Yıllarca bize emek verdiniz. Bugün emek sırası bizde. ❤️
+
+24 Kasım’da tüm öğretmenlerimize %10 indirim.
+🎶 Büyük grup rezervasyonlarında fasıl ekibi talep edebilirsiniz.
+
+📍 Barbaros Mah. Aziziye Cad. No: 87, Çanakkale
+📞 Rezervasyon: 0286 213 09 08
+
+#ÖğretmenlerGünü #24Kasım #ŞevketSteakhouse #şevketteyiz #Çanakkale #çanakkaleyenikordon #çanakkalelezzetleri #steakhouse #steak #fasıl</pre>
+    </div>
+
+    <div class="cap">
+      <div class="cap-top"><h3>Karusel</h3><button class="copy" type="button" data-copy="cap-kar">Kopyala</button></div>
+      <pre id="cap-kar">Bize ilk harfi öğretenlere… bugün sofrayı biz kuruyoruz. 🌹
+
+3 nesildir aynı özenle kurduğumuz soframızda, 24 Kasım’da tüm öğretmenlerimize %10 indirim.
+Kalabalık gelin; büyük grup rezervasyonlarında fasıl ekibi talep edebilirsiniz.
+
+Öğretmeninizi etiketleyin, masanızı ayırtın. 👇
+
+📍 Barbaros Mah. Aziziye Cad. No: 87, Çanakkale
+📞 Rezervasyon: 0286 213 09 08
+
+#ÖğretmenlerGünü #24Kasım #ŞevketSteakhouse #şevketteyiz #Çanakkale #çanakkaleyenikordon #çanakkalemekan #steakhouse #steakdinner #öğretmenim</pre>
+    </div>
+
+    <div class="cap">
+      <div class="cap-top"><h3>Tek gönderi</h3><button class="copy" type="button" data-copy="cap-post">Kopyala</button></div>
+      <pre id="cap-post">Öğretmenler Günü kutlu olsun. 🌹
+
+Emeğinizin karşılığı ölçülmez; soframız bugün sizin için kurulu.
+24 Kasım’da tüm öğretmenlerimize %10 indirim.
+
+📍 Barbaros Mah. Aziziye Cad. No: 87, Çanakkale
+📞 Rezervasyon: 0286 213 09 08
+
+#ÖğretmenlerGünü #24Kasım #ŞevketSteakhouse #şevketteyiz #Çanakkale #çanakkaleyenikordon #steakhouse #steak</pre>
+    </div>
+  </section>
+
   <footer>
     <p><strong>Detay Multimedya</strong></p>
   </footer>
@@ -117,6 +184,16 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
   }
   swipe.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
   update();
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-copy')), txt = el.textContent;
+      function done(ok) { b.textContent = ok ? 'Kopyalandı' : 'Metni seçip kopyalayın'; setTimeout(function () { b.textContent = 'Kopyala'; }, 2200); }
+      function select() { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+      try {
+        navigator.clipboard.writeText(txt).then(function () { done(true); }, function () { select(); done(false); });
+      } catch (e) { select(); done(false); }
+    });
+  });
 })();
 </script>
 </body>

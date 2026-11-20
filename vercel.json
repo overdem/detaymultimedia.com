@@ -1,4 +1,9 @@
 {
   "buildCommand": "npm run build",
-  "framework": "astro"
+  "framework": "astro",
+  "git": {
+    "deploymentEnabled": {
+      "sevket-24-kasim-sunum": false
+    }
+  }
 }

@@ -65,6 +65,13 @@ h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing
 .music li { border-left: 2px solid var(--gold); padding-left: 14px; }
 .music b { display: block; font-weight: 600; }
 .music span { color: var(--muted); font-size: 14px; }
+
+.dl-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.dl { display: inline-flex; align-items: center; gap: 8px; font: 600 14px/1 var(--body); color: var(--bg); background: var(--gold); border-radius: 999px; padding: 12px 18px; text-decoration: none; }
+.dl.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+.dl:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+.dl svg { width: 16px; height: 16px; flex: none; }
+.all { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 13px; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
@@ -77,11 +84,13 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
     <p class="eyebrow">Örnek çalışma · Detay Multimedya</p>
     <h1>Şevket Steakhouse için <em>24 Kasım</em> içerikleri</h1>
     <p class="lede">Öğretmenler Günü kampanyanız için hazırladığımız bir reels, altı karelik bir karusel ve tek gönderi.</p>
+    <div class="all"><a class="dl" href="indir/sevket-24kasim-tumu.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Tüm dosyaları indir (ZIP, 23 MB)</a></div>
   </header>
 
   <section aria-labelledby="h-reel">
     <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">24 sn · dikey</span></div>
     <video class="shot" controls playsinline preload="metadata" poster="img/reel_poster.jpg" src="video/reel.mp4" width="720" height="1280"></video>
+    <div class="dl-row"><a class="dl" href="indir/sevket-24kasim-reels.mp4" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Reels’i indir (MP4, 1080×1920)</a></div>
     <p class="note">Video sessizdir; müzik Instagram’da paylaşırken eklenir.</p>
   </section>
 
@@ -96,11 +105,12 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
       <figure><img class="shot" src="img/karusel_6.jpg" alt="Kare 6: Rezervasyon 0286 213 09 08, Barbaros Mah. Aziziye Cad. No: 87, Çanakkale." width="1080" height="1440" loading="lazy"></figure>
     </div>
     <div class="dots" id="dots" aria-label="Kare seçimi"></div>
+    <div class="dl-row"><a class="dl" id="dl-one" href="indir/sevket-24kasim-karusel-1.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span id="dl-one-t">Bu kareyi indir (1/6)</span></a><a class="dl ghost" href="indir/sevket-24kasim-karusel.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>6 karenin tümü (ZIP)</a></div>
   </section>
 
   <section aria-labelledby="h-post">
     <div class="head"><h2 id="h-post">Tek gönderi</h2><span class="meta">3:4</span></div>
-    <div><img class="shot" src="img/post.jpg" alt="Öğretmenler Günü kutlu olsun. Tahta üzerinde ızgara biftek, yanında öğretmenlere özel yüzde 10 indirim mührü." width="1080" height="1440" loading="lazy"></div>
+    <div class="dl-row" style="flex-direction:column;align-items:center"><img class="shot" src="img/post.jpg" alt="Öğretmenler Günü kutlu olsun. Tahta üzerinde ızgara biftek, yanında öğretmenlere özel yüzde 10 indirim mührü." width="1080" height="1440" loading="lazy"><a class="dl" href="indir/sevket-24kasim-gonderi.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Gönderiyi indir (JPG)</a></div>
   </section>
 
   <section aria-labelledby="h-muzik">
@@ -181,6 +191,9 @@ Emeğinizin karşılığı ölçülmez; soframız bugün sizin için kurulu.
     });
     dots.querySelectorAll('button').forEach(function (b, i) { b.setAttribute('aria-current', i === best ? 'true' : 'false'); });
     count.textContent = (best + 1) + ' / ' + figs.length;
+    var one = document.getElementById('dl-one');
+    one.href = 'indir/sevket-24kasim-karusel-' + (best + 1) + '.jpg';
+    document.getElementById('dl-one-t').textContent = 'Bu kareyi indir (' + (best + 1) + '/' + figs.length + ')';
   }
   swipe.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
   update();

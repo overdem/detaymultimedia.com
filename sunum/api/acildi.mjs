@@ -1,5 +1,6 @@
 // Sends a push notification (ntfy) when a client opens a presentation page.
-// The ntfy topic lives in the NTFY_TOPIC environment variable, never in this public repo.
+// Secrets live in environment variables, never in this public repo:
+// NTFY_TOPIC (push), RESEND_API_KEY + NOTIFY_EMAIL (e-mail copy), NOTIFY_FROM (optional sender).
 
 const PAGES = {
   'sayka-ornek': 'Şayka Balık & Meze',
@@ -39,6 +40,25 @@ export async function POST(request) {
     }),
   }).catch(() => null);
 
-  const ok = r && r.ok;
-  return new Response(null, { status: ok ? 202 : 502, headers: { 'x-push': String(r ? r.status : 0) } });
+  // E-mail copy through Resend (domain motoron.com.tr is verified there).
+  let m = null;
+  if (process.env.RESEND_API_KEY && process.env.NOTIFY_EMAIL) {
+    const title = `${PAGES[page]} sunumu açıldı`;
+    const info = `${time} · ${city} · ${device(h.get('user-agent') || '')}`;
+    const link = `https://sunum.detaymultimedia.com/${page}/`;
+    m = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: process.env.NOTIFY_FROM || 'Detay Sunum <bildirim@motoron.com.tr>',
+        to: [process.env.NOTIFY_EMAIL],
+        subject: title,
+        text: `${title}\n${info}\n${link}`,
+        html: `<p><b>${title}</b></p><p>${info}</p><p><a href="${link}">${link}</a></p>`,
+      }),
+    }).catch(() => null);
+  }
+
+  const ok = (r && r.ok) || (m && m.ok);
+  return new Response(null, { status: ok ? 202 : 502, headers: { 'x-push': String(r ? r.status : 0), 'x-mail': String(m ? m.status : 0) } });
 }

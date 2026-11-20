@@ -219,12 +219,6 @@ document.addEventListener('contextmenu', function (e) { if (e.target.closest('.s
     if (!(navigator.sendBeacon && navigator.sendBeacon('/api/acildi', new Blob([body], { type: 'application/json' })))) {
       fetch('/api/acildi', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
     }
-    var cihaz = /iPhone/.test(navigator.userAgent) ? 'iPhone' : /Android/.test(navigator.userAgent) ? 'Android' : /Mac/.test(navigator.userAgent) ? 'Mac' : /Windows/.test(navigator.userAgent) ? 'Windows' : 'Diğer';
-    fetch('https://formsubmit.co/ajax/ozdem.erdem@detaymultimedia.com', {
-      method: 'POST', keepalive: true,
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ _subject: 'Şayka Balık & Meze sunumu açıldı', _template: 'box', _captcha: 'false', Sayfa: location.href.split('?')[0], Saat: new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' }), Cihaz: cihaz })
-    });
   } catch (e) {}
 })();
 </script>

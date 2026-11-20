@@ -1,6 +1,5 @@
 // Sends a push notification (ntfy) when a client opens a presentation page.
 // The ntfy topic lives in the NTFY_TOPIC environment variable, never in this public repo.
-// The e-mail copy is sent from the visitor's browser through FormSubmit (see the page script).
 
 const PAGES = {
   'sayka-ornek': 'Şayka Balık & Meze',

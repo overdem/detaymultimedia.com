@@ -1,5 +1,6 @@
 // Sends a push notification (ntfy) when a client opens a presentation page.
-// The ntfy topic (NTFY_TOPIC) and the e-mail address (NOTIFY_EMAIL) live in environment variables, never in this public repo.
+// The ntfy topic lives in the NTFY_TOPIC environment variable, never in this public repo.
+// The e-mail copy is sent from the visitor's browser through FormSubmit (see the page script).
 
 const PAGES = {
   'sayka-ornek': 'Şayka Balık & Meze',
@@ -39,22 +40,6 @@ export async function POST(request) {
     }),
   }).catch(() => null);
 
-  // E-mail copy via FormSubmit (free; the first message asks the address owner to confirm once).
-  let m = null;
-  if (process.env.NOTIFY_EMAIL) {
-    m = await fetch(`https://formsubmit.co/ajax/${process.env.NOTIFY_EMAIL}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Referer: 'https://sunum.detaymultimedia.com/' },
-      body: JSON.stringify({
-        _subject: `${PAGES[page]} sunumu açıldı`,
-        _template: 'box',
-        _captcha: 'false',
-        Sayfa: `https://sunum.detaymultimedia.com/${page}/`,
-        Bilgi: `${time} · ${city} · ${device(h.get('user-agent') || '')}`,
-      }),
-    }).catch(() => null);
-  }
-
-  const ok = (r && r.ok) || (m && m.ok);
-  return new Response(null, { status: ok ? 202 : 502, headers: { 'x-push': String(r ? r.status : 0), 'x-mail': String(m ? m.status : 0) } });
+  const ok = r && r.ok;
+  return new Response(null, { status: ok ? 202 : 502, headers: { 'x-push': String(r ? r.status : 0) } });
 }

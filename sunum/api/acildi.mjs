@@ -3,6 +3,7 @@
 // NTFY_TOPIC (push), RESEND_API_KEY + NOTIFY_EMAIL (e-mail copy), NOTIFY_FROM (optional sender).
 
 const PAGES = {
+  'rokka-kahvalti-ornek': 'Rokka Kahvaltı',
   'sahinler-simit-evi-ornek': 'Şahinler Simit Evi',
   'beyzade-pide-lahmacun-ornek': 'Beyzade Pide & Lahmacun',
   'ayhan-cicekcilik-ornek': 'Ayhan Çiçekçilik',

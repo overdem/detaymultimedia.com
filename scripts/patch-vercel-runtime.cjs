@@ -22,13 +22,13 @@ function copyRecursive(src, dest) {
 }
 
 try {
-  // 1. Patch render function runtime to Node.js 20.x
+  // 1. Patch render function runtime to Node.js 22.x
   const configPath = path.join(process.cwd(), '.vercel/output/functions/render.func/.vc-config.json');
   if (fs.existsSync(configPath)) {
     const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
-    config.runtime = 'nodejs20.x';
+    config.runtime = 'nodejs22.x';
     fs.writeFileSync(configPath, JSON.stringify(config, null, '\t'));
-    console.log('✓ Patched render function runtime to Node.js 20.x');
+    console.log('✓ Patched render function runtime to Node.js 22.x');
   }
 
   // 2. Copy API folder to .vercel/output/functions

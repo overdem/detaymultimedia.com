@@ -40,6 +40,7 @@ h2 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height
 .meta { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .note { margin: 0; color: var(--muted); font-size: 14px; }
 img, video { display: block; max-width: 100%; }
+.shot { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
 .shot { display: block; width: auto; height: auto; max-width: 100%; max-height: 72vh; max-height: 72svh; margin: 0 auto; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
 video.shot { aspect-ratio: 9 / 16; }
 .swipe {
@@ -84,13 +85,11 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
     <p class="eyebrow">Örnek çalışma · Detay Multimedya</p>
     <h1>Şayka Balık &amp; Meze için <em>örnek içerikler</em></h1>
     <p class="lede">Haftalık paylaşımların nasıl görüneceğini göstermek için hazırladığımız bir reels, beş karelik bir karusel ve 24 Kasım Öğretmenler Günü gönderisi.</p>
-    <div class="all"><a class="dl" href="indir/sayka-tumu.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Tüm dosyaları indir (ZIP, 8 MB)</a></div>
   </header>
 
   <section aria-labelledby="h-reel">
     <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">16 sn · dikey</span></div>
-    <video class="shot" controls playsinline preload="metadata" poster="img/reel_poster.jpg" src="video/reel.mp4" width="720" height="1280"></video>
-    <div class="dl-row"><a class="dl" href="indir/sayka-ogretmenler-gunu-reels.mp4" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Reels’i indir (MP4, 1080×1920)</a></div>
+    <video class="shot" controls controlslist="nodownload noplaybackrate" disablepictureinpicture playsinline preload="metadata" poster="img/reel_poster.jpg" src="video/reel.mp4" width="720" height="1280"></video>
     <p class="note">“Bugünün dersi: Ege mutfağı.” Kömürde balık, meze, ahtapot ve “ödev” olarak Kordon’da buluşma; sonunda Öğretmenler Günü kutlaması. Video sessizdir; müzik Instagram’da paylaşırken eklenir.</p>
   </section>
 
@@ -104,12 +103,11 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
       <figure><img class="shot" src="img/karusel_5.jpg" alt="Kare 5: Masanız hazır. Rezervasyon 0537 834 78 86, Eski Kordon, Çanakkale." width="1080" height="1350" loading="lazy"></figure>
     </div>
     <div class="dots" id="dots" aria-label="Kare seçimi"></div>
-    <div class="dl-row"><a class="dl" id="dl-one" href="indir/sayka-karusel-1.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span id="dl-one-t">Bu kareyi indir (1/5)</span></a><a class="dl ghost" href="indir/sayka-karusel.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>5 karenin tümü (ZIP)</a></div>
   </section>
 
   <section aria-labelledby="h-post">
     <div class="head"><h2 id="h-post">Tek gönderi</h2><span class="meta">24 Kasım · 4:5</span></div>
-    <div class="dl-row" style="flex-direction:column;align-items:center"><img class="shot" src="img/post.jpg" alt="Kara tahta üzerinde tebeşirle: Bize ilk harfleri öğretenlere… Öğretmenler Günü kutlu olsun. Yanında kırmızı elma." width="1080" height="1350" loading="lazy"><a class="dl" href="indir/sayka-ogretmenler-gunu-gonderi.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Gönderiyi indir (JPG)</a></div>
+    <div><img class="shot" src="img/post.jpg" alt="Kara tahta üzerinde tebeşirle: Bize ilk harfleri öğretenlere… Öğretmenler Günü kutlu olsun. Yanında kırmızı elma." width="1080" height="1350" loading="lazy"></div>
     <p class="note">“Öğretmenlerimize tatlı ikramı bizden” bir kampanya önerisidir; onayınıza göre metinden çıkarılabilir.</p>
   </section>
 
@@ -172,10 +170,10 @@ Kaydet, akşam planına ekle. 👇
 
   <footer>
     <p><strong>Detay Multimedya</strong></p>
-    <p>Fotoğraflar yapay zekâyla üretilmiş temsili görsellerdir; çalışmaya başladığımızda Şayka’nın kendi tabakları ve mekânıyla çekim yapılır.</p>
   </footer>
 </main>
 <script>
+document.addEventListener('contextmenu', function (e) { if (e.target.closest('.shot')) e.preventDefault(); });
 (function () {
   var swipe = document.getElementById('swipe'), dots = document.getElementById('dots'), count = document.getElementById('count');
   var figs = swipe.querySelectorAll('figure');
@@ -193,9 +191,6 @@ Kaydet, akşam planına ekle. 👇
     });
     dots.querySelectorAll('button').forEach(function (b, i) { b.setAttribute('aria-current', i === best ? 'true' : 'false'); });
     count.textContent = (best + 1) + ' / ' + figs.length;
-    var one = document.getElementById('dl-one');
-    one.href = 'indir/sayka-karusel-' + (best + 1) + '.jpg';
-    document.getElementById('dl-one-t').textContent = 'Bu kareyi indir (' + (best + 1) + '/' + figs.length + ')';
   }
   swipe.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
   update();

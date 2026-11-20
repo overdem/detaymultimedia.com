@@ -27,7 +27,7 @@ export async function POST(request) {
   const city = decodeURIComponent(h.get('x-vercel-ip-city') || '') || 'şehir bilinmiyor';
   const time = new Date().toLocaleTimeString('tr-TR', { timeZone: 'Europe/Istanbul', hour: '2-digit', minute: '2-digit' });
 
-  await fetch('https://ntfy.sh', {
+  const r = await fetch('https://ntfy.sh', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -38,7 +38,7 @@ export async function POST(request) {
       click: `https://sunum.detaymultimedia.com/${page}/`,
       ...(process.env.NOTIFY_EMAIL ? { email: process.env.NOTIFY_EMAIL } : {}),
     }),
-  }).catch(() => {});
+  }).catch(() => null);
 
-  return new Response(null, { status: 204 });
+  return new Response(null, { status: r && r.ok ? 202 : 502 });
 }

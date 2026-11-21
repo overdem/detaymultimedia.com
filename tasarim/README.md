@@ -16,7 +16,7 @@ Her müşteri için tek bir tasarım dosyası: logosundan ve renklerinden çıka
 | Firma | Dosya | Başlık / Gövde / Vurgu | Ana renkler |
 |---|---|---|---|
 | Şayka Restaurant | [sayka.md](sayka.md) | Young Serif / Hanken Grotesk / Courgette | lacivert, köpük, yelken sarısı |
-| Şevket Steakhouse | [sevket.md](sevket.md) | Big Shoulders Display / Schibsted Grotesk / Gelasio italik | kömür, haki altın, kemik |
+| Şevket Steakhouse | [sevket.md](sevket.md) | Brygada 1918 (italik vurgu) / Gabarito — onaylı sistem, bkz. proje dokümanı canakkale/sevket/SEVKET.md | kömür, altın, krem |
 | Kuzey Çiçekçilik | [kuzey-cicekcilik.md](kuzey-cicekcilik.md) | Bricolage Grotesque / Albert Sans / Yeseva One | tabela sarısı, siyah, gül kırmızısı |
 | Şahinler Simit Evi | [sahinler-simit-evi.md](sahinler-simit-evi.md) | Sedan / Onest / Sriracha | hamur kremi, kabuk kahve, susam |
 | Beyzade Pide & Lahmacun | [beyzade-pide-lahmacun.md](beyzade-pide-lahmacun.md) | Gloock / Golos Text / Coustard | hardal altın, tarçın, is siyahı |

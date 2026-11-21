@@ -3,97 +3,97 @@
 > Bu dosya Şevket Steakhouse (Şevk-ET) için üretilen tüm içeriklerin (karusel, post, reels, sunum sayfası) tek kaynağıdır. Yeni iş yaparken buradaki palet ve fontların dışına çıkma; değişiklik gerekiyorsa önce bu dosyayı güncelle.
 
 - **Kategori:** Restoran · steakhouse / kasap
-- **Sunum sayfası:** https://sunum.detaymultimedia.com/sevket-24-kasim/
-- **Kaynak:** sevketsteakhouse.com (21.11.2026): siyah-beyaz boğa kafatası logo 'Şevk-ET STEAKHOUSE', üst menü haki altın şerit, 'Dededen Toruna' sloganı; Instagram @sevketkasapsteakhouse profili siyah-beyaz usta portresi.
+- **Sunum sayfası:** https://sunum.detaymultimedia.com/sevket-24-kasim/ · https://sunum.detaymultimedia.com/sevket-mac-21-kasim/
+- **Kaynak:** Onaylı marka sistemi: proje dokümanı canakkale/sevket/SEVKET.md (20.11.2026, Özdem 'daha pro' isteğiyle onayladı) — renkler, yerleşim ve kurallar oradan. Logo: sevketsteakhouse.com ve kendi gönderilerindeki boğa kafatası 'Şevk-ET'. 21.11.2026: yalnız fontlar standart olmayanlarla değiştirildi (Playfair Display → Brygada 1918, Montserrat → Gabarito).
 - **Son güncelleme:** 21.11.2026
 
 ## Marka gözlemi
 
-Siyah, beyaz ve haki-altın üçlüsü. Logo kalın, dar, ağır harfli; 'ET' kısmı altın. '100 yıllık ustalık, 3. nesil', 'kendi yetiştirdiğimiz besiler' anlatısı güçlü. Ton: ciddi, erkeksi, zanaat; parlak lüks değil, kasap tezgâhı dürüstlüğü.
+Kömür siyahı zemin, ince altın çerçeve, serif başlık + altın italik vurgu kelimesi, geniş aralıklı büyük harf etiketler. 3. nesil / 100 yıllık ustalık / kendi besisi anlatısı; slogan 'Dededen Toruna'. Ton: premium ama samimi steakhouse; maç günleri ve fasıl de var. Ayrıntılar ve onaylı işler için SEVKET.md.
 
 ## Renk paleti
 
 | Token | Hex | Rol |
 |---|---|---|
-| `kömür` | `#111111` | Ana zemin |
-| `kul` | `#2B2B2B` | İkincil koyu zemin, kart |
-| `haki` | `#AE9A64` | Marka vurgusu: 'ET', çizgiler, rozet |
-| `kemik` | `#F3EEE3` | Açık zemin / yazı |
-| `kesim` | `#8E2A1E` | Çok sınırlı: et/ateş vurgusu, 'yeni' noktası |
+| `komur` | `#0D0A08` | Ana zemin |
+| `panel` | `#17120E` | Panel / kart zemini |
+| `cizgi` | `#3A2E22` | İnce ayraç çizgileri, panel kenarı |
+| `krem` | `#F4ECDE` | Başlık ve gövde yazısı |
+| `altin` | `#CBA46A` | Çerçeve, kicker satırı, italik vurgu kelimesi, indirim halkası |
 
-**Oranlar:** %65 kömür/kul, %20 kemik, %12 haki, %3 kesim.
+**Oranlar:** %75 komur/panel, %15 krem, %8 altin, %2 cizgi. Maç hikâyelerinde kulüp renkleri yalnız ince şerit olarak eklenir (GS #FDB913/#A90432, FB #FFED00/#00205B).
 
 **Kontrol edilmiş yazı/zemin çiftleri (WCAG kontrast oranı):**
 
-- `kemik` yazı / `kömür` zemin → **16.3:1** (AA ✓) — gövde ve başlık
-- `haki` yazı / `kömür` zemin → **6.8:1** (AA ✓) — vurgu kelime, büyük başlık
-- `kömür` yazı / `haki` zemin → **6.8:1** (AA ✓) — rozet içi yazı
-- `kemik` yazı / `kul` zemin → **12.2:1** (AA ✓) — kart yazısı
-- `kömür` yazı / `kemik` zemin → **16.3:1** (AA ✓) — açık karede yazı
+- `krem` yazı / `komur` zemin → **16.8:1** (AA ✓) — başlık/gövde
+- `altin` yazı / `komur` zemin → **8.5:1** (AA ✓) — kicker, vurgu kelimesi
+- `krem` yazı / `panel` zemin → **15.9:1** (AA ✓) — panel yazısı
+- `komur` yazı / `altin` zemin → **8.5:1** (AA ✓) — altın rozet içi
+- `altin` yazı / `panel` zemin → **8.0:1** (AA ✓) — panelde altın vurgu
 
 ## Font sistemi
 
 | Rol | Font | Ağırlık / stil | Nerede |
 |---|---|---|---|
-| Başlık | **Big Shoulders Display** | 900 kapak, 700 ara başlık | Logodaki dar-kalın harflerin karşılığı; tüm büyük harf başlıklar |
-| Gövde | **Schibsted Grotesk** | 400 gövde, 600 etiket | Açıklama, gramaj, fiyat, sayfa metni |
-| İmza | **Gelasio** | 400 italik | 'Dededen Toruna', usta sözü, alıntılar |
+| Başlık | **Brygada 1918** | 500; vurgu kelimesi 500 italik + altın | Serif başlık, dev '%10', alıntı/slogan |
+| Etiket / metin | **Gabarito** | 400 metin, 500–600 büyük harf etiket | Kicker, alt bilgi, adres, rezervasyon; büyük harf geniş aralıklı |
 
 Google Fonts (Türkçe karakterler ğ ş ı İ ç ö ü kontrol edildi):
 
 ```
-https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Schibsted+Grotesk:wght@400;600&family=Gelasio:ital@1&display=swap
+https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,500;0,600;1,500&family=Gabarito:wght@400;500;600&display=swap
 ```
 
 **Ölçek (1080×1350 kare için):**
 
-- Kapak başlığı: 140–180 px Big Shoulders 900, büyük harf, harf aralığı −1%
-- Ara başlık: 64–72 px 700
-- Gövde: 30–32 px Schibsted 400, satır aralığı 1.4
-- Etiket: 22–24 px Schibsted 600, büyük harf, harf aralığı +12%
-- İmza: 44–56 px Gelasio italik
+- Başlık (post 1728×2304): 150–190 px Brygada 500, vurgu kelimesi italik altın
+- Başlık (1080×1350 / hikâye 1080×1920): 96–120 px
+- Kicker: 26–30 px Gabarito 600, büyük harf, +30% aralık, iki yanında 40 px altın çizgi
+- Gövde: 30–34 px Gabarito 400
+- Alt bilgi: 20–22 px Gabarito 500, büyük harf, +25%: 'ŞEVKET STEAKHOUSE · 01/06 · ÇANAKKALE'
+- İndirim: dev '%10' Brygada 600, koyu daire + çift altın halka
 
 **Tipografi kuralları:**
 
-- Başlıkta logodaki gibi bir kelime parçası haki ile vurgulanır (ŞEVK + ET, KUZU + ETİ gibi).
-- Gramaj/fiyat her zaman Schibsted 600 + haki ince çerçeve.
-- Gelasio italik yalnız alıntı/slogan, kare başına bir kez.
+- Her başlıkta tek bir kelime italik + altın (Playfair yerine Brygada 1918 italik).
+- Etiketler her zaman büyük harf ve geniş aralıklı Gabarito.
+- Yazılar fotoğraflara sonradan Python ile basılır (Türkçe karakterler doğru çıksın).
 
 ## Logo ve imza
 
-- Boğa kafatası logo siyah-beyaz; koyu zeminde beyaz versiyon, sol üst ya da alt ortada, kare genişliğinin %14'ü.
-- Logo dosyası müşteriden alınana kadar 'ŞEVK-ET' yazısını Big Shoulders 900 ile, 'ET' haki olacak şekilde yaz.
+- Beyaz boğa kafatası logo üst ortada (SEVKET.md'deki 01_referans/logo_beyaz_maske.png; orijinal dosya müşteriden istenmeli).
+- Kenardan 64 px (post) / 48 px (hikâye) içeride ince altın çerçeve her karede.
 
 ## Görsel dil ve kompozisyon
 
-- Motif: kasap kesim şeması çizgileri (haki, 2 px) ve numaralı bölgeler; menü/kesim karelerinde.
-- Fotoğraflar koyu zemin üstünde, düşük anahtar ışık; kenarlarda 40 px kömür pay.
-- Reels: ateş/kızgın demir anları, kısa sert kesmeler, haki ince ilerleme çizgisi altta.
+- Onaylı yerleşim: üstte logo, altın kicker satırı, serif başlık, altta alt bilgi; fotoğrafların üst %45–60'ı karanlık boş alan (yazı için).
+- Mekân referansı: parlak turuncu-kahve ahşap masa, çapraz sırtlı ahşap sandalyeler, bir turkuaz sandalye, sıcak sarkıt lambalar.
+- Boyutlar: post/karusel 1728×2304 (3:4); hikâye/reels 1080×1920.
 
 ## Fotoğraf yönü (Higgsfield prompt eki)
 
 ```
-Dark low-key steakhouse photography, dry-aged steak on black slate and cast iron, wood fire glow, coarse salt, dramatic side light, deep blacks with warm highlights, butcher craft details, no text, no logos
+Photorealistic editorial food photograph, premium steakhouse advertising, full-frame camera, 50mm, f/2, natural colors, real photo. Location: the real restaurant from image 1, same glossy orange-brown wooden table, warm pendant lamps softly blurred far in the background, night. In the lower 45 percent of the frame: [YEMEK]. The upper 55 percent of the frame is dark, calm, out-of-focus restaurant background with only a few soft warm bokeh lights, empty negative space. Low-key warm side light. Absolutely no text, no letters, no logo, no signs, no TV screen, no watermark, no people.
 ```
 
 ## Sunum sayfası CSS değişkenleri
 
 ```css
 :root {
-  --kömür: #111111;
-  --kul: #2B2B2B;
-  --haki: #AE9A64;
-  --kemik: #F3EEE3;
-  --kesim: #8E2A1E;
-  --font-baslik: 'Big Shoulders Display', Impact, sans-serif;
-  --font-govde: 'Schibsted Grotesk', sans-serif;
-  --font-vurgu: 'Gelasio', Georgia, serif;
+  --komur: #0D0A08;
+  --panel: #17120E;
+  --cizgi: #3A2E22;
+  --krem: #F4ECDE;
+  --altin: #CBA46A;
+  --font-baslik: 'Brygada 1918', Georgia, serif;
+  --font-govde: 'Gabarito', sans-serif;
 }
 ```
 
 ## Yapma
 
-- Altın parıltı/gradyan, lüks otel estetiği kullanma; haki mat kalmalı.
-- Pastel ya da açık renk ağırlıklı kare yapma.
-- Kesim kırmızısını zemin olarak kullanma.
+- İnsan, alkol (burgerin yanında limonata), kulüp logosu kullanma; kulüp renkleri yalnız ince şerit.
+- Yırtık kâğıt etiket / el yazısı stile dönme (Özdem beğenmedi).
+- Altını parlak metalik gradyan yapma.
+- Playfair Display ve Montserrat'ı artık kullanma; yerlerine Brygada 1918 ve Gabarito.
 - Şu fontları kullanma (standart/aşırı kullanılmış): Inter, Manrope, Fraunces, Playfair Display, Cormorant / Cormorant Garamond, DM Serif Display, DM Sans, Space Grotesk, Caveat, Pacifico, Anton, Bebas Neue, Archivo / Archivo Black, Jost, Nunito, Poppins, Montserrat, Roboto, Open Sans, Lato, Lora, Outfit, Plus Jakarta Sans, Raleway, Oswald, Work Sans, Instrument Sans / Instrument Serif, Arial / Helvetica / system-ui.

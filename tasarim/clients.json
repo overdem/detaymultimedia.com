@@ -1,315 +1,1580 @@
 [
-{
- "slug": "sayka", "name": "Şayka Restaurant (Balık & Meze)", "category": "Restoran · balık & meze, Kordon",
- "page": "https://sunum.detaymultimedia.com/sayka-ornek/",
- "source": "Instagram @sayka_restaurant profil logosu (21.11.2026): beyaz zemin, lacivert dalga, sarı-hardal yelkenli tekne, fırça yazı \"Şayka\", martılar.",
- "observation": "Logo çizgisel ve denizci: lacivert-mavi dalga şeritleri, tek sıcak renk olarak yelkenin hardal sarısı, el yazısı fırça logotip. Mekân Kordon'da, yabancı turist de alıyor. Ton: ferah, tuzlu, samimi; lüks değil ama özenli.",
- "palette": [
-  {"token":"lacivert","hex":"#0F4C97","role":"Ana renk: başlıklar, logo, buton zemini"},
-  {"token":"derin","hex":"#0A2A4F","role":"Koyu zemin (gece/akşam kareleri), gövde yazısı"},
-  {"token":"dalga","hex":"#6FA8D6","role":"İnce dalga çizgileri, ayraçlar, ikincil vurgu"},
-  {"token":"kopuk","hex":"#EAF4FB","role":"Açık zemin, bilgi paneli"},
-  {"token":"yelken","hex":"#E3A82B","role":"Tek sıcak vurgu: fiyat rozeti, 'Yeni', ok işareti"},
-  {"token":"tuz","hex":"#FFFFFF","role":"Fotoğraf üstü yazı, logo zemini"}
- ],
- "ratio": "%60 kopuk/tuz, %25 lacivert/derin, %10 dalga, %5 yelken. Yelken asla zemin olmaz; tek bir öğede kullanılır.",
- "pairs": [["lacivert","kopuk","başlık ve gövde"],["derin","kopuk","gövde"],["tuz","derin","koyu karede yazı"],["yelken","derin","rozet koyu zeminde"],["tuz","lacivert","buton"]],
- "fonts": [
-  {"role":"Başlık","family":"Young Serif","axes":"","weights":"400 (tek ağırlık)","use":"Kapak başlığı, yemek adları","var":"baslik","fallback":"Georgia, serif"},
-  {"role":"Gövde","family":"Hanken Grotesk","axes":"wght@400;500;700","weights":"400 gövde, 700 etiket","use":"Açıklama, fiyat, adres, sunum sayfası metni","var":"govde","fallback":"sans-serif"},
-  {"role":"El yazısı vurgu","family":"Courgette","axes":"","weights":"400","use":"Logodaki fırça yazıya selam: tek kelimelik vurgu ('bugün', 'taze')","var":"vurgu","fallback":"cursive"}
- ],
- "scale": [["Kapak başlığı","96–120 px Young Serif, satır aralığı 1.0"],["Ara başlık","48–56 px"],["Gövde","30–34 px Hanken 400, satır aralığı 1.35"],["Etiket/rozet","24 px Hanken 700, büyük harf, harf aralığı +8%"],["El yazısı vurgu","64–80 px, en fazla 1–2 kelime"]],
- "type_rules": ["Başlıklar cümle düzeninde (yalnız ilk harf büyük); büyük harf sadece etiketlerde.","Courgette bir karede en fazla bir kez, başlığın yanında ve hafif eğik (−4°).","Fiyatlar Hanken 700 + yelken rengi rozet içinde."],
- "logo": ["Logo görseli müşteriden alınana kadar Instagram profil logosu referans; karelere yeniden çizme, köşede 'Şayka' fırça yazısı yerine Courgette ile 'Şayka' yazma — sadece sunum sayfasında başlık olarak kullan.","Karelerde imza: sağ alt köşede küçük lacivert dalga çizgisi + '@sayka_restaurant' (Hanken 500, 22 px)."],
- "layout": ["Motif: 2–3 ince dalga çizgisi (dalga rengi, 3 px) kare kenarlarında; logodaki dalgaların sadeleştirilmiş hali.","Fotoğraflar tam kare ya da üstte %70 + altta kopuk renkli bilgi paneli.","Akşam/gün batımı karelerinde derin zemin + tuz yazı; gündüz karelerinde kopuk zemin.","Reels geçişleri: yatay kaydırma (dalga hareketi), sert kesme yok."],
- "photo": "Dardanelles seaside, natural daylight or golden hour, fresh grilled fish and Turkish meze on white and blue ceramic plates, linen tablecloth, sea and ferry softly blurred in background, crisp clean colors, navy and white tones, no text, no logos",
- "dont": ["Kırmızı, turuncu veya altın-siyah 'lüks' görünüm kullanma.","Yelken sarısını geniş alan olarak kullanma.","Koyu ahşap/rustik dokular ekleme; marka ferah ve denizci."]
-},
-{
- "slug": "sevket", "name": "Şevket Steakhouse (Şevk-ET)", "category": "Restoran · steakhouse / kasap",
- "page": "https://sunum.detaymultimedia.com/sevket-24-kasim/",
- "source": "sevketsteakhouse.com (21.11.2026): siyah-beyaz boğa kafatası logo 'Şevk-ET STEAKHOUSE', üst menü haki altın şerit, 'Dededen Toruna' sloganı; Instagram @sevketkasapsteakhouse profili siyah-beyaz usta portresi.",
- "observation": "Siyah, beyaz ve haki-altın üçlüsü. Logo kalın, dar, ağır harfli; 'ET' kısmı altın. '100 yıllık ustalık, 3. nesil', 'kendi yetiştirdiğimiz besiler' anlatısı güçlü. Ton: ciddi, erkeksi, zanaat; parlak lüks değil, kasap tezgâhı dürüstlüğü.",
- "palette": [
-  {"token":"kömür","hex":"#111111","role":"Ana zemin"},
-  {"token":"kul","hex":"#2B2B2B","role":"İkincil koyu zemin, kart"},
-  {"token":"haki","hex":"#AE9A64","role":"Marka vurgusu: 'ET', çizgiler, rozet"},
-  {"token":"kemik","hex":"#F3EEE3","role":"Açık zemin / yazı"},
-  {"token":"kesim","hex":"#8E2A1E","role":"Çok sınırlı: et/ateş vurgusu, 'yeni' noktası"}
- ],
- "ratio": "%65 kömür/kul, %20 kemik, %12 haki, %3 kesim.",
- "pairs": [["kemik","kömür","gövde ve başlık"],["haki","kömür","vurgu kelime, büyük başlık"],["kömür","haki","rozet içi yazı"],["kemik","kul","kart yazısı"],["kömür","kemik","açık karede yazı"]],
- "fonts": [
-  {"role":"Başlık","family":"Big Shoulders Display","axes":"wght@700;900","weights":"900 kapak, 700 ara başlık","use":"Logodaki dar-kalın harflerin karşılığı; tüm büyük harf başlıklar","var":"baslik","fallback":"Impact, sans-serif"},
-  {"role":"Gövde","family":"Schibsted Grotesk","axes":"wght@400;600","weights":"400 gövde, 600 etiket","use":"Açıklama, gramaj, fiyat, sayfa metni","var":"govde","fallback":"sans-serif"},
-  {"role":"İmza","family":"Gelasio","axes":"ital@1","weights":"400 italik","use":"'Dededen Toruna', usta sözü, alıntılar","var":"vurgu","fallback":"Georgia, serif"}
- ],
- "scale": [["Kapak başlığı","140–180 px Big Shoulders 900, büyük harf, harf aralığı −1%"],["Ara başlık","64–72 px 700"],["Gövde","30–32 px Schibsted 400, satır aralığı 1.4"],["Etiket","22–24 px Schibsted 600, büyük harf, harf aralığı +12%"],["İmza","44–56 px Gelasio italik"]],
- "type_rules": ["Başlıkta logodaki gibi bir kelime parçası haki ile vurgulanır (ŞEVK + ET, KUZU + ETİ gibi).","Gramaj/fiyat her zaman Schibsted 600 + haki ince çerçeve.","Gelasio italik yalnız alıntı/slogan, kare başına bir kez."],
- "logo": ["Boğa kafatası logo siyah-beyaz; koyu zeminde beyaz versiyon, sol üst ya da alt ortada, kare genişliğinin %14'ü.","Logo dosyası müşteriden alınana kadar 'ŞEVK-ET' yazısını Big Shoulders 900 ile, 'ET' haki olacak şekilde yaz."],
- "layout": ["Motif: kasap kesim şeması çizgileri (haki, 2 px) ve numaralı bölgeler; menü/kesim karelerinde.","Fotoğraflar koyu zemin üstünde, düşük anahtar ışık; kenarlarda 40 px kömür pay.","Reels: ateş/kızgın demir anları, kısa sert kesmeler, haki ince ilerleme çizgisi altta."],
- "photo": "Dark low-key steakhouse photography, dry-aged steak on black slate and cast iron, wood fire glow, coarse salt, dramatic side light, deep blacks with warm highlights, butcher craft details, no text, no logos",
- "dont": ["Altın parıltı/gradyan, lüks otel estetiği kullanma; haki mat kalmalı.","Pastel ya da açık renk ağırlıklı kare yapma.","Kesim kırmızısını zemin olarak kullanma."]
-},
-{
- "slug": "kuzey-cicekcilik", "name": "Kuzey Çiçekçilik", "category": "Çiçekçi · Kepez",
- "page": "https://sunum.detaymultimedia.com/kuzey-cicekcilik-ornek/",
- "source": "Logo yok. Google Haritalar dükkân fotoğrafı (21.11.2026): sarı tabela üzerinde siyah kalın büyük harf 'KUZEY ÇİÇEKÇİLİK'. Instagram @kuzeycicekcilik17 profili: sahibinin kırmızı gül buketli fotoğrafı.",
- "observation": "Marka kimliği tabeladan ibaret: canlı sarı + siyah kalın harf, mahalle dükkânı netliği. Ürün dili kırmızı gül ve yeşil yaprak. Ton: enerjik, ulaşılabilir, hızlı sipariş; butik/pastel değil.",
- "palette": [
-  {"token":"tabela","hex":"#F5C31C","role":"Marka rengi: zemin blokları, şerit, rozet"},
-  {"token":"murekkep","hex":"#151515","role":"Başlık ve gövde yazısı"},
-  {"token":"gul","hex":"#C8102E","role":"Ürün vurgusu: gül, kalp, özel gün etiketi"},
-  {"token":"yaprak","hex":"#2F6B3A","role":"İkincil: yeşillik, 'aynı gün teslim' etiketi"},
-  {"token":"kagit","hex":"#FFFBEA","role":"Açık zemin, bilgi kartı"}
- ],
- "ratio": "%40 kagit, %30 tabela, %20 murekkep, %7 gul, %3 yaprak.",
- "pairs": [["murekkep","tabela","tabela şeridi yazısı"],["murekkep","kagit","gövde"],["kagit","gul","özel gün rozeti"],["kagit","yaprak","teslimat etiketi"],["tabela","murekkep","koyu şerit üstü"]],
- "fonts": [
-  {"role":"Başlık","family":"Bricolage Grotesque","axes":"wght@700;800","weights":"800 büyük harf","use":"Tabeladaki kalın büyük harfin karşılığı; kapak ve fiyat","var":"baslik","fallback":"sans-serif"},
-  {"role":"Gövde","family":"Albert Sans","axes":"wght@400;600","weights":"400 / 600","use":"Açıklama, adres, sipariş bilgisi","var":"govde","fallback":"sans-serif"},
-  {"role":"Çiçek adı","family":"Yeseva One","axes":"","weights":"400","use":"Çiçek/buket adı, 'Anneler Günü' gibi özel gün başlığı","var":"vurgu","fallback":"Georgia, serif"}
- ],
- "scale": [["Kapak başlığı","110–140 px Bricolage 800, büyük harf"],["Buket adı","64–80 px Yeseva One"],["Gövde","30–32 px Albert 400"],["Fiyat","72 px Bricolage 800 + '₺' 40 px"],["Etiket","22 px Albert 600, büyük harf, +10%"]],
- "type_rules": ["Tabela hissi: her karede bir yerde sarı zemin üstünde siyah büyük harf şerit (yükseklik 120–160 px).","Yeseva One yalnız ürün/gün adı için; gövde metni asla.","WhatsApp sipariş numarası her satış karesinde Albert 600 ile."],
- "logo": ["Logo yok → 'KUZEY ÇİÇEKÇİLİK' Bricolage 800, siyah, sarı şerit içinde 'yazı-logo' olarak kullan; sunumda yeni logo önerisi bonus olarak sunulabilir.","İmza: sarı şerit + '@kuzeycicekcilik17 · 0542 678 81 09'."],
- "layout": ["Motif: tabela şeridi (tam genişlik sarı bant) ve yuvarlak sarı fiyat damgası.","Fotoğraflar kâğıt zeminde, beyaz çerçevesiz, ürün merkezde; arka plan sade.","Reels: ürünün elden ele geçişi, sarı şerit alttan yukarı kayarak giriş."],
- "photo": "Bright florist shop photography, red roses and seasonal bouquets wrapped in kraft paper, clean warm daylight, neighborhood flower shop in Çanakkale, vivid true colors, shallow depth of field, no text, no logos",
- "dont": ["Pastel pembe/lila butik estetiği kullanma; marka sarı-siyah.","İnce zarif serif ile kapak yapma.","Sarıyı açık sarıya (limon/krem) çekme."]
-},
-{
- "slug": "sahinler-simit-evi", "name": "Şahinler Simit Evi", "category": "Fırın / simit · Barbaros",
- "page": "https://sunum.detaymultimedia.com/sahinler-simit-evi-ornek/",
- "source": "Instagram @simitevisahinler profil logosu (21.11.2026): krem yuvarlak rozet, kahverengi el yazısı 'Şahinler', üstte kavisli 'ÇANAKKALE', altta 'SİMİT EVİ', ince çizgi çerçeve; öne çıkanlarda aynı rozet içinde çizim ikonlar.",
- "observation": "Krem + tek kahverengi, damga/rozet kimliği, vintage fırın havası. Öne çıkan ikonları tutarlı çizilmiş. Ton: sıcak, sabah, mahalle fırını; nostaljik ama temiz.",
- "palette": [
-  {"token":"hamur","hex":"#F3EEDB","role":"Ana zemin (logo zemini)"},
-  {"token":"kabuk","hex":"#6E4632","role":"Logo rengi: başlık, çizgiler, ikonlar"},
-  {"token":"susam","hex":"#C99A5B","role":"Vurgu: susam/kızarık ton, ayraçlar"},
-  {"token":"pekmez","hex":"#3B2418","role":"Koyu zemin, gövde yazısı"},
-  {"token":"cay","hex":"#B5402A","role":"Çok sınırlı: çay bardağı kırmızısı, kampanya noktası"}
- ],
- "ratio": "%60 hamur, %25 kabuk/pekmez, %10 susam, %5 cay.",
- "pairs": [["kabuk","hamur","başlık"],["pekmez","hamur","gövde"],["hamur","pekmez","koyu kare yazısı"],["hamur","kabuk","rozet içi"],["hamur","cay","kampanya noktası"]],
- "fonts": [
-  {"role":"Başlık","family":"Sedan","axes":"","weights":"400","use":"Ürün adları, kapak; klasik fırın serifi","var":"baslik","fallback":"Georgia, serif"},
-  {"role":"Gövde","family":"Onest","axes":"wght@400;600","weights":"400 / 600","use":"Açıklama, saat, adres","var":"govde","fallback":"sans-serif"},
-  {"role":"El yazısı","family":"Sriracha","axes":"","weights":"400","use":"Logodaki 'Şahinler' el yazısına yakın; tek kelime vurgu ('sıcacık', 'taze')","var":"vurgu","fallback":"cursive"}
- ],
- "scale": [["Kapak başlığı","100–120 px Sedan"],["El yazısı","72–96 px Sriracha, −3° eğik"],["Gövde","30 px Onest 400"],["Rozet yazısı","22 px Onest 600, büyük harf, +14%"],["Saat/fiyat","56 px Sedan"]],
- "type_rules": ["Her karede bir rozet/damga öğesi (daire çerçeve, kavisli yazı) bulunur.","Sriracha yalnız tek kelime; uzun cümle yok.","Saatler '06:30'dan itibaren' gibi Sedan ile büyük."],
- "logo": ["Krem rozet logo karelerde sağ üstte, genişliğin %16'sı; koyu karede krem üstüne kabuk çizgili versiyon.","Öne çıkan ikonların çizim dili (ince kahverengi çizgi) karusel ikonlarında da kullanılır."],
- "layout": ["Motif: kavisli yazılı daire rozet, ince çift çizgi çerçeve, susam noktacıkları doku olarak (%8 opaklık).","Fotoğraflar hafif sıcak, sabah ışığı; bazı karelerde fotoğraf yuvarlak rozet içinde.","Reels: buharın yükselişi, tepsiden çıkış; geçişlerde rozet dönerek gelir."],
- "photo": "Fresh Turkish simit with sesame on a wooden bakery tray, warm early morning light, steam, tea glass in background, cozy neighborhood bakery, cream and brown tones, no text, no logos",
- "dont": ["Siyah zemin veya neon/canlı renk kullanma.","Kalın modern sans ile kapak yapma; marka vintage fırın.","Rozeti bozacak kadar çok öğe ekleme."]
-},
-{
- "slug": "beyzade-pide-lahmacun", "name": "Beyzade Pide & Lahmacun", "category": "Pide / lahmacun · Cevat Paşa",
- "page": "https://sunum.detaymultimedia.com/beyzade-pide-lahmacun-ornek/",
- "source": "Instagram @beyzadepide17 profil logosu (21.11.2026): hardal-altın halka, krem iç, siyah aşçı şapkası ve bıyık, kahverengi serif 'BEYZADE', oklava çizgisi; öne çıkanlarda siyah çizgi ikonlar (pide, lahmacun, kebap, künefe).",
- "observation": "Altın halka + kahverengi serif + siyah karakter çizimi: 'usta' kişiliği güçlü (şapka ve bıyık). Ton: iştahlı, geleneksel, esprili usta karakteri; fırın sıcaklığı.",
- "palette": [
-  {"token":"altin","hex":"#DDA03F","role":"Logo halkası: vurgu zemini, rozet, şerit"},
-  {"token":"tarcin","hex":"#6E4A2C","role":"Logo yazısı: başlık"},
-  {"token":"is","hex":"#2B2B2B","role":"Şapka/bıyık siyahı: gövde yazısı, çizgi ikonlar"},
-  {"token":"un","hex":"#FBF6EA","role":"Ana açık zemin"},
-  {"token":"kor","hex":"#B4471F","role":"Fırın ateşi vurgusu, fiyat"}
- ],
- "ratio": "%55 un, %20 altin, %15 tarcin/is, %10 kor.",
- "pairs": [["tarcin","un","başlık"],["is","un","gövde"],["is","altin","altın şerit içi yazı"],["un","kor","fiyat rozeti"],["un","is","koyu kart"]],
- "fonts": [
-  {"role":"Başlık","family":"Gloock","axes":"","weights":"400","use":"Logodaki yüksek kontrastlı serifin karşılığı; ürün adları","var":"baslik","fallback":"Georgia, serif"},
-  {"role":"Gövde","family":"Golos Text","axes":"wght@400;600","weights":"400 / 600","use":"Açıklama, sipariş hattı, adres","var":"govde","fallback":"sans-serif"},
-  {"role":"Fiyat/sayı","family":"Coustard","axes":"wght@400;900","weights":"900","use":"Fiyat, adet, '2 lahmacun + ayran' gibi kampanya rakamları","var":"vurgu","fallback":"serif"}
- ],
- "scale": [["Kapak başlığı","104–128 px Gloock"],["Fiyat","96 px Coustard 900"],["Gövde","30–32 px Golos 400"],["Etiket","22 px Golos 600, büyük harf, +10%"]],
- "type_rules": ["'BEYZADE' kelimesi her zaman büyük harf Gloock + tarcin.","Fiyatlar Coustard 900 altın daire içinde.","Siyah çizgi ikon dili (öne çıkanlardaki gibi) menü karelerinde kullanılır."],
- "logo": ["Altın halkalı rozet logo kare genişliğinin %18'i, sol üst; koyu karede krem iç korunur.","Usta karakteri (şapka + bıyık) ayrı bir maskot gibi kullanılabilir: 'Usta önerisi' etiketi."],
- "layout": ["Motif: oklava çizgisi (ince yatay çizgi, uçları yuvarlak) ayraç olarak; altın yarım halka kare köşelerinde.","Fotoğraflar fırından çıkış anı, taş fırın ağzı; un zemin üstünde.","Reels: hamur açma → fırın → kesme; geçişte oklava çizgisi ekranı süpürür."],
- "photo": "Turkish pide and lahmacun fresh out of a stone oven, wooden peel, flour dusted marble counter, warm oven glow, chef hands, appetizing close-up, golden and brown tones, no text, no logos",
- "dont": ["Mavi/yeşil soğuk tonlar kullanma.","Usta karakterini değiştirme ya da yeni maskot çizme.","Altını parlak metalik gradyan yapma; mat hardal kalmalı."]
-},
-{
- "slug": "ayhan-cicekcilik", "name": "Ayhan Çiçekçilik", "category": "Çiçekçi & peyzaj · Cevat Paşa",
- "page": "https://sunum.detaymultimedia.com/ayhan-cicekcilik-ornek/",
- "source": "Instagram @ayhan_cicekcilik profil logosu (21.11.2026): beyaz zemin, zeytin yeşili küçük harf el yazısı 'ayhan', altında ince büyük harf 'ÇİÇEKÇİLİK & PEYZAJ DÜZENLEME'; site ayhancicekcilik.com.",
- "observation": "Zeytin yeşili tek renk, zarif küçük harf yazı + ince büyük harf alt satır: köklü, sakin, butik. Peyzaj işi de var. Ton: zarif, doğal, güven veren; renk ürünlerden gelsin.",
- "palette": [
-  {"token":"zeytin","hex":"#3F5A2E","role":"Logo rengi: başlık, çizgiler"},
-  {"token":"adacayi","hex":"#8A9472","role":"İkincil: ayraç, etiket zemini"},
-  {"token":"kirli-beyaz","hex":"#F7F5EF","role":"Ana zemin"},
-  {"token":"toprak","hex":"#2E2A24","role":"Gövde yazısı"},
-  {"token":"pudra","hex":"#E7B7B0","role":"Çiçek vurgusu: özel gün rozeti (az)"}
- ],
- "ratio": "%65 kirli-beyaz, %20 zeytin, %10 adacayi, %5 pudra.",
- "pairs": [["zeytin","kirli-beyaz","başlık"],["toprak","kirli-beyaz","gövde"],["kirli-beyaz","zeytin","koyu şerit"],["toprak","pudra","rozet içi"],["toprak","adacayi","etiket"]],
- "fonts": [
-  {"role":"Başlık","family":"Gilda Display","axes":"","weights":"400","use":"Kapak ve ürün başlığı; ince, zarif serif","var":"baslik","fallback":"Georgia, serif"},
-  {"role":"Gövde","family":"Red Hat Text","axes":"wght@400;500","weights":"400 / 500","use":"Açıklama, saat, sipariş","var":"govde","fallback":"sans-serif"},
-  {"role":"El yazısı","family":"Italianno","axes":"","weights":"400","use":"Logodaki küçük harf yazıya selam; buket adı veya tek kelime","var":"vurgu","fallback":"cursive"}
- ],
- "scale": [["Kapak başlığı","88–110 px Gilda"],["El yazısı","96–120 px Italianno (ince olduğu için büyük)"],["Gövde","30 px Red Hat 400"],["Alt satır/etiket","20–22 px Red Hat 500, büyük harf, +20% (logodaki ince alt satır gibi)"]],
- "type_rules": ["Logodaki gibi: büyük zarif başlık + altında çok aralıklı ince büyük harf satır ikilisi her kapakta.","Italianno beyaz/koyu üzerinde en az 96 px; küçük boyutta kullanma.","Peyzaj içeriklerinde de aynı sistem, sadece fotoğraf değişir."],
- "logo": ["Logo bol boşlukla, kare üst ortada veya alt ortada, genişliğin %22'si; çevresine hiçbir öğe yaklaşmaz.","Koyu zeminde kirli-beyaz tek renk versiyon."],
- "layout": ["Motif: ince zeytin çizgi çerçeve (1.5 px) kenardan 48 px içerde; bol negatif alan.","Fotoğraflar kare içinde kemerli (üstü yuvarlak) çerçevede.","Reels: yavaş zoom, çapraz geçiş (crossfade), müzik akustik."],
- "photo": "Elegant florist and garden design photography, seasonal bouquets and potted plants, soft natural window light, olive green foliage, calm neutral background, refined but natural, no text, no logos",
- "dont": ["Doygun kırmızı/sarı zemin kullanma (Kuzey Çiçekçilik'le karışmasın).","Kalın/dar başlık fontu kullanma.","Kareleri doldurma; boşluk markanın parçası."]
-},
-{
- "slug": "rokka-kahvalti", "name": "Rokka Kahvaltı (Rokka Brunch)", "category": "Kahvaltı / brunch · Aynalı Çarşı",
- "page": "https://sunum.detaymultimedia.com/rokka-kahvalti-ornek/",
- "source": "Instagram @rokkakahvalti profil logosu (21.11.2026): yuvarlak krem zemin, çizim roka/yeşillik ve lavanta dalları, adaçayı yeşili şerit üstünde beyaz kalın el yazısı 'Rokka', altında 'BRUNCH'.",
- "observation": "Bitkisel, illüstratif: adaçayı/zeytin yeşili + lavanta + krem. Yazı kalın, yuvarlak el yazısı. Aynalı Çarşı'da, genç ve brunch odaklı. Ton: taze, bahçe, yumuşak; 'roka' kelime oyunu.",
- "palette": [
-  {"token":"roka","hex":"#6F8A45","role":"Logo şeridi: ana renk, buton"},
-  {"token":"orman","hex":"#33472A","role":"Başlık ve gövde yazısı"},
-  {"token":"lavanta","hex":"#A595BE","role":"İkincil vurgu: etiket, çiçek"},
-  {"token":"krem","hex":"#EFE8D6","role":"Ana zemin"},
-  {"token":"yumurta","hex":"#F2B33D","role":"Kahvaltı vurgusu: yumurta sarısı, fiyat (az)"}
- ],
- "ratio": "%50 krem, %25 roka/orman, %15 lavanta, %10 yumurta.",
- "pairs": [["orman","krem","başlık/gövde"],["krem","roka","şerit yazısı (büyük)"],["krem","orman","koyu kart"],["orman","lavanta","etiket"],["orman","yumurta","fiyat rozeti"]],
- "fonts": [
-  {"role":"Başlık","family":"Shrikhand","axes":"","weights":"400","use":"Logodaki kalın yuvarlak el yazısının karşılığı; kapak başlığı","var":"baslik","fallback":"cursive"},
-  {"role":"Gövde","family":"Epilogue","axes":"wght@400;600","weights":"400 / 600","use":"Menü, saat, rezervasyon","var":"govde","fallback":"sans-serif"},
-  {"role":"Not","family":"Mynerve","axes":"","weights":"400","use":"El yazısı not: 'şefin önerisi', ok ile işaretleme","var":"vurgu","fallback":"cursive"}
- ],
- "scale": [["Kapak başlığı","96–120 px Shrikhand"],["Ara başlık","48 px Epilogue 600"],["Gövde","30 px Epilogue 400"],["El notu","40–48 px Mynerve + çizim ok"]],
- "type_rules": ["Shrikhand yalnız kısa başlık (en fazla 3 kelime).","'BRUNCH' gibi alt kelimeler Epilogue 600 büyük harf, +18% aralık (logodaki gibi).","El notları yamuk ok/daire çizimiyle birlikte."],
- "logo": ["Yuvarlak illüstrasyon logo sağ altta, genişliğin %18'i.","Logodaki roka/lavanta çizimleri kare köşelerinde süs olarak kırpılmış kullanılabilir."],
- "layout": ["Motif: çizim roka yaprakları ve lavanta dalları kenarlardan taşar; krem zemin.","Kahvaltı tabağı kuşbakışı, masa krem/ahşap.","Reels: kuşbakışı masa kurulumu stop-motion; yaprak çizimleri yanıp söner."],
- "photo": "Overhead Turkish breakfast brunch spread, fresh arugula, herbs, eggs, cheeses, olives, lavender sprigs on a cream linen table, soft daylight, fresh green and cream palette, no text, no logos",
- "dont": ["Koyu/siyah zemin kullanma.","Keskin geometrik/modern minimal stil yapma; marka el çizimi.","Lavantayı ana zemin yapma."]
-},
-{
- "slug": "liman-pasa-mudavim", "name": "Liman Paşa Müdavim", "category": "Restoran · balık & et, Eski Balıkhane",
- "page": "https://sunum.detaymultimedia.com/liman-pasa-mudavim-ornek/",
- "source": "Instagram @liman_pasamudavim profil logosu (21.11.2026): beyaz zemin üstünde siyah oval, altın el yazısı 'Paşa' + küçük 'Müdavim', altında aralıklı büyük harf 'LİMAN'.",
- "observation": "Siyah oval + altın script + aralıklı serif büyük harf: klasik meyhane/liman lokantası şıklığı. 'Müdavim' kelimesi sadakat anlatısı veriyor. Ton: gece, rakı sofrası, saygın.",
- "palette": [
-  {"token":"gece","hex":"#0B0B0B","role":"Ana zemin (logo ovali)"},
-  {"token":"pasa-altin","hex":"#DDB032","role":"Logo script rengi: vurgu, çizgi, başlık kelimesi"},
-  {"token":"fildisi","hex":"#F5F0E4","role":"Yazı, açık kart"},
-  {"token":"liman","hex":"#13303F","role":"İkincil koyu: deniz/gece mavisi kart"},
-  {"token":"duman","hex":"#8C8C8C","role":"İkincil gövde, ayrıntı"}
- ],
- "ratio": "%60 gece/liman, %25 fildisi, %10 pasa-altin, %5 duman.",
- "pairs": [["fildisi","gece","gövde"],["pasa-altin","gece","vurgu/başlık"],["fildisi","liman","kart yazısı"],["gece","fildisi","açık kart"],["duman","gece","ikincil bilgi (büyük)"]],
- "fonts": [
-  {"role":"Başlık","family":"Marcellus","axes":"","weights":"400","use":"'LİMAN' gibi aralıklı büyük harf başlıklar","var":"baslik","fallback":"serif"},
-  {"role":"Script","family":"Pinyon Script","axes":"","weights":"400","use":"Logodaki altın 'Paşa' yazısının karşılığı; tek kelime/isim","var":"vurgu","fallback":"cursive"},
-  {"role":"Gövde","family":"Spectral","axes":"wght@400;500","weights":"400 / 500","use":"Menü, açıklama, rezervasyon","var":"govde","fallback":"Georgia, serif"}
- ],
- "scale": [["Kapak başlığı","72–96 px Marcellus büyük harf, harf aralığı +24%"],["Script","110–140 px Pinyon Script, altın"],["Gövde","30 px Spectral 400"],["Etiket","20 px Marcellus, +30%"]],
- "type_rules": ["Kapak düzeni logodan: üstte script altın kelime, altında aralıklı büyük harf satır.","Pinyon Script kare başına en fazla bir kez.","Tüm metinler ortalı; liman/gece ciddiyeti."],
- "logo": ["Siyah oval logo, fildişi zeminde ya da siyah karede altın kontur ile; genişliğin %22'si.","Logo ovali şeklinde fotoğraf maskesi kullanılabilir."],
- "layout": ["Motif: ince altın oval çerçeve, kare ortasında; çift ince altın çizgi ayraç.","Fotoğraflar akşam ışığı, sofra; kenarlarda gece payı.","Reels: yavaş tempolu, mum/ışık yansımaları; altın çizgi soldan sağa açılır."],
- "photo": "Evening harbor restaurant in Çanakkale, raki table with meze and grilled fish, candlelight and warm bulbs, dark navy sea and boats in background, elegant classic atmosphere, deep blacks and warm gold highlights, no text, no logos",
- "dont": ["Açık/pastel zeminli karusel yapma.","Modern grotesk başlık kullanma.","Altını parlak gradyan/metal efekt yapma."]
-},
-{
- "slug": "canakkale-esnaf-kahvaltisi", "name": "Çanakkale Esnaf Kahvaltısı", "category": "Kahvaltı · İsmetpaşa",
- "page": "https://sunum.detaymultimedia.com/canakkale-esnaf-kahvaltisi-ornek/",
- "source": "Instagram @canakkaleesnafkahvaltisi profil logosu (21.11.2026): beyaz zemin, koyu arduvaz mavi-gri serif büyük harf 'ÇANAKKALE ESNAF KAHVALTISI', defne çelengi, alt satırda 'PAKET KAHVALTI · PİŞİ · GÖZLEME'. Bio: 'Çanakkale'nin İlk Esnaf Kahvaltıcısı'.",
- "observation": "Tek renk arduvaz + defne çelengi: köklü, 'ilk' olma iddiası, esnaf ciddiyeti. Ürünler pişi, gözleme, paket kahvaltı. Ton: klasik, güvenilir, çarşı esnafı; sade.",
- "palette": [
-  {"token":"arduvaz","hex":"#33475A","role":"Logo rengi: başlık, çelenk, çizgi"},
-  {"token":"murekkep","hex":"#1E2A36","role":"Gövde yazısı, koyu zemin"},
-  {"token":"defne","hex":"#8C9A80","role":"İkincil: çelenk yaprak tonu, ayraç"},
-  {"token":"kagit","hex":"#FAF8F3","role":"Ana zemin"},
-  {"token":"pisi","hex":"#E8A93A","role":"Ürün vurgusu: kızarmış pişi sarısı (az)"}
- ],
- "ratio": "%65 kagit, %25 arduvaz/murekkep, %6 defne, %4 pisi.",
- "pairs": [["arduvaz","kagit","başlık"],["murekkep","kagit","gövde"],["kagit","arduvaz","koyu şerit"],["murekkep","pisi","fiyat rozeti"],["murekkep","defne","etiket"]],
- "fonts": [
-  {"role":"Başlık","family":"Bona Nova","axes":"wght@400;700","weights":"700 büyük harf","use":"Logodaki klasik serif büyük harflerin karşılığı","var":"baslik","fallback":"Georgia, serif"},
-  {"role":"Gövde","family":"Literata","axes":"wght@400;600","weights":"400 / 600","use":"Açıklama, menü","var":"govde","fallback":"Georgia, serif"},
-  {"role":"Menü/fiş","family":"Courier Prime","axes":"wght@400;700","weights":"400 / 700","use":"Paket kahvaltı içeriği, fiyat listesi; esnaf fişi havası","var":"vurgu","fallback":"monospace"}
- ],
- "scale": [["Kapak başlığı","80–100 px Bona Nova 700, büyük harf, +6%"],["Gövde","30 px Literata 400"],["Menü satırı","26–28 px Courier Prime"],["Alt satır","20 px Bona Nova, büyük harf, +20%, nokta ayraçlı (PİŞİ · GÖZLEME)"]],
- "type_rules": ["Kapak düzeni logodan: ortalı başlık + defne çelengi + noktalı alt satır.","Paket içerikleri Courier Prime fiş listesi gibi, noktalı çizgi ile fiyat.","'İlk esnaf kahvaltıcısı' iddiası rozet içinde Bona Nova ile."],
- "logo": ["Defne çelenkli logo ortada, kapakta büyük (genişliğin %40'ı), iç karelerde küçük alt ortada.","Tek renk arduvaz; koyu zeminde kağıt rengi."],
- "layout": ["Motif: defne çelengi (yarım ya da tam), noktalı fiş çizgileri.","Fotoğraflar kuşbakışı tepsi, bakır/demlik detayı; kağıt zeminli kartlarda.","Reels: pişi tavada kabarma, gözleme katlama; geçişte fiş kâğıdı aşağı kayar."],
- "photo": "Traditional Turkish tradesmen breakfast, fried pişi dough, gözleme, white cheese, olives, tea in tulip glasses on a simple tray, morning light in a classic local eatery, honest and clean, no text, no logos",
- "dont": ["Polaroid/pastel 'eğlenceli' stil kullanma; marka klasik ve ciddi.","Logoyu renklendirme.","El yazısı font ekleme."]
-},
-{
- "slug": "buegros-coffee-shop", "name": "Buegros Coffee Shop", "category": "Kahve dükkânı · Çarşı Cd.",
- "page": "https://sunum.detaymultimedia.com/buegros-coffee-shop-ornek/",
- "source": "Instagram @buegroscoffeeshop profil logosu (21.11.2026): beyaz zemin, siyah çok kalın yuvarlak slab 'BUEGROS', altında ince serif büyük harf 'BUENOS GRANOS DE CAFÉ' ve kalın 'COFFEE SHOP'. Kavurma atölyesi Selçuk/İzmir.",
- "observation": "Saf siyah-beyaz, ağır slab logotip + İspanyolca alt satır: kavurmacı, çekirdek odaklı, 'third wave' ama sıcak. Renk kahve ve kraft ambalajdan gelsin. Ton: özgüvenli, zanaat, sade.",
- "palette": [
-  {"token":"espresso","hex":"#1C1C1C","role":"Logo siyahı: başlık, ana koyu zemin"},
-  {"token":"sut","hex":"#FFFFFF","role":"Ana açık zemin"},
-  {"token":"kraft","hex":"#C8A27A","role":"Ambalaj/kraft vurgusu: etiket, şerit"},
-  {"token":"cekirdek","hex":"#4A2C1D","role":"Kavrulmuş çekirdek: ikincil koyu, gövde"},
-  {"token":"krema","hex":"#EFE6DA","role":"İkincil açık zemin"}
- ],
- "ratio": "%45 sut/krema, %35 espresso, %15 kraft, %5 cekirdek.",
- "pairs": [["espresso","sut","başlık/gövde"],["sut","espresso","koyu kare"],["espresso","kraft","kraft etiket"],["cekirdek","krema","gövde"],["kraft","espresso","büyük vurgu"]],
- "fonts": [
-  {"role":"Başlık","family":"Alfa Slab One","axes":"","weights":"400 (tek, çok kalın)","use":"Logodaki ağır slab'ın karşılığı; kahve adı, kapak","var":"baslik","fallback":"Rockwell, serif"},
-  {"role":"Gövde","family":"Rethink Sans","axes":"wght@400;600","weights":"400 / 600","use":"Demleme notları, açıklama","var":"govde","fallback":"sans-serif"},
-  {"role":"Alt satır","family":"Tenor Sans","axes":"","weights":"400","use":"'BUENOS GRANOS DE CAFÉ' gibi aralıklı büyük harf satırlar, köken bilgisi","var":"vurgu","fallback":"sans-serif"}
- ],
- "scale": [["Kapak başlığı","110–140 px Alfa Slab One"],["Alt satır","22–24 px Tenor Sans, büyük harf, +22%"],["Gövde","30 px Rethink 400"],["Tadım notu","26 px Rethink 600"]],
- "type_rules": ["Kapak logodan: kalın slab kelime + altında ince aralıklı büyük harf satır.","Kahve kartlarında köken / işlem / tadım notu Tenor Sans etiketleri.","İspanyolca/İngilizce kelimeler serbest ama gövde Türkçe."],
- "logo": ["Siyah logotip beyaz zeminde; koyu karede beyaz. Genişliğin %30'u, üst ortada.","Kraft etiket şeklinde (yırtık kenarlı dikdörtgen) logo rozeti kullanılabilir."],
- "layout": ["Motif: kahve paketi etiketi (kraft dikdörtgen, siyah çerçeve), çekirdek sayacı ikonları.","Fotoğraflar yüksek kontrast, siyah-beyaz ağırlıklı ve sadece kahvede sıcak ton.","Reels: espresso akışı yakın plan, sert kesmeler, etiket damgası 'pat' diye iner."],
- "photo": "Specialty coffee shop, espresso extraction close-up, latte art, coffee beans and kraft paper coffee bags, high contrast black and white interior with warm coffee tones, minimalist, no text, no logos",
- "dont": ["Mavi/pastel minimal palet kullanma (logo siyah-beyaz).","İnce zarif serif başlık kullanma.","Kraft dışında renk ekleme."]
-},
-{
- "slug": "esenler-citir-pide", "name": "Esenler Çıtır Pide", "category": "Pide / lahmacun / kebap · Esenler",
- "page": "https://sunum.detaymultimedia.com/esenler-citir-pide-ornek/",
- "source": "Instagram @esenlercitirpide profil logosu (21.11.2026): krem yuvarlak zemin, koyu kahve kavisli 'ESENLER', şiş kebap çizimi, büyük turuncu 'ÇITIR' (kahve gölgeli), altında 'PİDE LAHMACUN KEBAP' ve şerit içinde '2012'.",
- "observation": "Krem + yanık turuncu + koyu kahve; kalın kama serifli 'ÇITIR', şiş ikonu, 'since 2012' şeridi: retro esnaf tabelası. Ton: iştahlı, mahalle, samimi; yüksek enerji.",
- "palette": [
-  {"token":"krem","hex":"#FFF0DF","role":"Logo zemini: ana zemin"},
-  {"token":"citir","hex":"#D06E12","role":"Ana marka: başlık 'ÇITIR', rozet"},
-  {"token":"kahve","hex":"#5E2E1E","role":"Gölge ve yazı: gövde, çizgi"},
-  {"token":"kor","hex":"#A9301C","role":"İkincil: acı/kebap vurgusu"},
-  {"token":"yesil","hex":"#5B7F3A","role":"Çok sınırlı: maydanoz/biber, taze vurgusu"}
- ],
- "ratio": "%50 krem, %25 citir, %15 kahve, %7 kor, %3 yesil.",
- "pairs": [["kahve","krem","gövde/başlık"],["citir","krem","büyük başlık"],["krem","kahve","koyu şerit"],["krem","kor","fiyat rozeti"],["krem","citir","rozet içi (büyük)"]],
- "fonts": [
-  {"role":"Başlık","family":"Rokkitt","axes":"wght@800;900","weights":"900","use":"Logodaki kalın kama serifin karşılığı; 'ÇITIR' gibi kelimeler","var":"baslik","fallback":"serif"},
-  {"role":"Gövde","family":"Chivo","axes":"wght@400;700","weights":"400 / 700","use":"Menü, sipariş, adres","var":"govde","fallback":"sans-serif"},
-  {"role":"Rakam","family":"Abril Fatface","axes":"","weights":"400","use":"'2012', fiyat, adet rakamları","var":"vurgu","fallback":"serif"}
- ],
- "scale": [["Kapak başlığı","130–160 px Rokkitt 900, büyük harf, 6 px kahve gölge (logodaki gibi)"],["Rakam","96–120 px Abril Fatface"],["Gövde","30 px Chivo 400"],["Şerit","24 px Chivo 700, büyük harf, +12%"]],
- "type_rules": ["Başlıklarda logodaki ofset gölge: kahve renkte 6 px sağ-alt, bulanıklık yok.","'2012'den beri' şeridi kurdele şeklinde her kapakta.","Kavisli üst yazı (rozet) kampanya karelerinde."],
- "logo": ["Yuvarlak krem logo, kapakta ortada büyük; iç karelerde sol üst %16.","Şiş kebap çizimi ayrı ikon olarak kullanılabilir."],
- "layout": ["Motif: kurdele şerit, şiş ikonu, retro rozet; krem zeminde yanık turuncu bloklar.","Fotoğraflar sıcak, fırın/ızgara yakın plan; turuncu çerçeveli kart içinde.","Reels: çıtırlık sesi vurgusu (ASMR kesim), rozet zıplayarak girer."],
- "photo": "Crispy Turkish pide and lahmacun, adana kebab skewers on charcoal grill, wood oven flames, close-up appetizing textures, warm orange and brown tones, neighborhood kebab shop, no text, no logos",
- "dont": ["Siyah-kırmızı-sarı 'fast food afiş' paleti kullanma; marka krem-turuncu-kahve retro.","Modern ince sans başlık kullanma.","Gölgeyi bulanık/yumuşak yapma."]
-},
-{
- "slug": "lahmacun-time-ocakbasi", "name": "Lahmacun Time Ocakbaşı Pide", "category": "Ocakbaşı / pide / lahmacun · Kemalpaşa",
- "page": "https://sunum.detaymultimedia.com/lahmacun-time-ocakbasi-ornek/",
- "source": "Logo ve Instagram hesabı bulunamadı (21.11.2026). Palet Google Haritalar mekân fotoğrafından türetildi: cam cephe, fuşya pembe tabureler, sıcak turuncu iç duvar, petrol/turkuaz detaylar, ip ampuller, gece kalabalığı.",
- "observation": "378 yorumlu, gece yoğun, genç ve renkli bir mekân; pembe tabureler ve sıcak ışık mekânın imzası. Adındaki 'Time' kelimesi saat/zaman oyununa açık. Ton: eğlenceli, gece, sokak lezzeti, enerjik. Kimlik sıfırdan kurulacağı için bu palet bir öneri.",
- "palette": [
-  {"token":"tabure","hex":"#E0457B","role":"İmza renk: pembe tabure; başlık vurgusu, rozet"},
-  {"token":"petrol","hex":"#12807F","role":"İkincil: şerit, buton"},
-  {"token":"ocak","hex":"#E7742B","role":"Ateş/ocak turuncusu: fiyat, vurgu"},
-  {"token":"gece","hex":"#1B1D33","role":"Ana koyu zemin"},
-  {"token":"ampul","hex":"#FFE3A3","role":"Açık zemin/yazı, ışık"}
- ],
- "ratio": "%50 gece, %20 ampul, %15 tabure, %10 petrol, %5 ocak.",
- "pairs": [["ampul","gece","gövde"],["tabure","gece","başlık (büyük)"],["gece","ampul","açık kart"],["gece","ocak","fiyat rozeti"],["ampul","petrol","şerit yazısı"]],
- "fonts": [
-  {"role":"Başlık","family":"Unbounded","axes":"wght@700;900","weights":"900","use":"Geniş, yuvarlak, genç başlık; 'TIME' oyunları","var":"baslik","fallback":"sans-serif"},
-  {"role":"Gövde","family":"Readex Pro","axes":"wght@400;600","weights":"400 / 600","use":"Menü, saat, adres","var":"govde","fallback":"sans-serif"},
-  {"role":"El yazısı","family":"Kalam","axes":"wght@400;700","weights":"700","use":"Ok/not: 'gece 02'ye kadar!', 'acılı mı?'","var":"vurgu","fallback":"cursive"}
- ],
- "scale": [["Kapak başlığı","100–130 px Unbounded 900"],["Gövde","30 px Readex 400"],["Not","44–52 px Kalam 700, −5°"],["Saat rozeti","64 px Unbounded 700"]],
- "type_rules": ["Saat/zaman oyunu: 'Lahmacun Time 18:00–02:00', saat kadranı rozeti.","Başlıkta tek kelime pembe, geri kalanı ampul rengi.","Kalam notları yalnız koyu zeminde, kısa."],
- "logo": ["Logo yok → yazı-logo önerisi: 'LAHMACUN' Unbounded 900 + 'TIME' pembe saat rozeti içinde. Sunumda 'kimlik önerisi' olarak açıkça belirt.","İmza: saat rozeti + 0538 093 67 17."],
- "layout": ["Motif: ip ampul noktaları (ampul rengi daireler), saat kadranı rozeti, pembe tabure silueti ikon.","Fotoğraflar gece, sıcak ışık, kalabalık masa; koyu kenar payı.","Reels: hızlı tempo, saat tik-tak geçişleri, ocak alevi."],
- "photo": "Lively Turkish ocakbaşı restaurant at night, lahmacun and pide on wooden boards, grill flames, warm string lights, colorful pink stools and teal details, glass storefront, young crowd, vibrant warm night tones, no text, no logos",
- "dont": ["Klasik/ciddi serif kullanma.","Açık zeminli sade 'kahvaltıcı' stil yapma.","Bu paleti müşteri onayı olmadan 'logo' gibi sunma; öneri olarak sun."]
-}
+ {
+  "slug": "sayka",
+  "name": "Şayka Restaurant (Balık & Meze)",
+  "category": "Restoran · balık & meze, Kordon",
+  "page": "https://sunum.detaymultimedia.com/sayka-ornek/",
+  "source": "Instagram @sayka_restaurant profil logosu (21.11.2026): beyaz zemin, lacivert dalga, sarı-hardal yelkenli tekne, fırça yazı \"Şayka\", martılar.",
+  "observation": "Logo çizgisel ve denizci: lacivert-mavi dalga şeritleri, tek sıcak renk olarak yelkenin hardal sarısı, el yazısı fırça logotip. Mekân Kordon'da, yabancı turist de alıyor. Ton: ferah, tuzlu, samimi; lüks değil ama özenli.",
+  "palette": [
+   {
+    "token": "lacivert",
+    "hex": "#0F4C97",
+    "role": "Ana renk: başlıklar, logo, buton zemini"
+   },
+   {
+    "token": "derin",
+    "hex": "#0A2A4F",
+    "role": "Koyu zemin (gece/akşam kareleri), gövde yazısı"
+   },
+   {
+    "token": "dalga",
+    "hex": "#6FA8D6",
+    "role": "İnce dalga çizgileri, ayraçlar, ikincil vurgu"
+   },
+   {
+    "token": "kopuk",
+    "hex": "#EAF4FB",
+    "role": "Açık zemin, bilgi paneli"
+   },
+   {
+    "token": "yelken",
+    "hex": "#E3A82B",
+    "role": "Tek sıcak vurgu: fiyat rozeti, 'Yeni', ok işareti"
+   },
+   {
+    "token": "tuz",
+    "hex": "#FFFFFF",
+    "role": "Fotoğraf üstü yazı, logo zemini"
+   }
+  ],
+  "ratio": "%60 kopuk/tuz, %25 lacivert/derin, %10 dalga, %5 yelken. Yelken asla zemin olmaz; tek bir öğede kullanılır.",
+  "pairs": [
+   [
+    "lacivert",
+    "kopuk",
+    "başlık ve gövde"
+   ],
+   [
+    "derin",
+    "kopuk",
+    "gövde"
+   ],
+   [
+    "tuz",
+    "derin",
+    "koyu karede yazı"
+   ],
+   [
+    "yelken",
+    "derin",
+    "rozet koyu zeminde"
+   ],
+   [
+    "tuz",
+    "lacivert",
+    "buton"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Young Serif",
+    "axes": "",
+    "weights": "400 (tek ağırlık)",
+    "use": "Kapak başlığı, yemek adları",
+    "var": "baslik",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Hanken Grotesk",
+    "axes": "wght@400;500;700",
+    "weights": "400 gövde, 700 etiket",
+    "use": "Açıklama, fiyat, adres, sunum sayfası metni",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "El yazısı vurgu",
+    "family": "Courgette",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki fırça yazıya selam: tek kelimelik vurgu ('bugün', 'taze')",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "96–120 px Young Serif, satır aralığı 1.0"
+   ],
+   [
+    "Ara başlık",
+    "48–56 px"
+   ],
+   [
+    "Gövde",
+    "30–34 px Hanken 400, satır aralığı 1.35"
+   ],
+   [
+    "Etiket/rozet",
+    "24 px Hanken 700, büyük harf, harf aralığı +8%"
+   ],
+   [
+    "El yazısı vurgu",
+    "64–80 px, en fazla 1–2 kelime"
+   ]
+  ],
+  "type_rules": [
+   "Başlıklar cümle düzeninde (yalnız ilk harf büyük); büyük harf sadece etiketlerde.",
+   "Courgette bir karede en fazla bir kez, başlığın yanında ve hafif eğik (−4°).",
+   "Fiyatlar Hanken 700 + yelken rengi rozet içinde."
+  ],
+  "logo": [
+   "Logo görseli müşteriden alınana kadar Instagram profil logosu referans; karelere yeniden çizme, köşede 'Şayka' fırça yazısı yerine Courgette ile 'Şayka' yazma — sadece sunum sayfasında başlık olarak kullan.",
+   "Karelerde imza: sağ alt köşede küçük lacivert dalga çizgisi + '@sayka_restaurant' (Hanken 500, 22 px)."
+  ],
+  "layout": [
+   "Motif: 2–3 ince dalga çizgisi (dalga rengi, 3 px) kare kenarlarında; logodaki dalgaların sadeleştirilmiş hali.",
+   "Fotoğraflar tam kare ya da üstte %70 + altta kopuk renkli bilgi paneli.",
+   "Akşam/gün batımı karelerinde derin zemin + tuz yazı; gündüz karelerinde kopuk zemin.",
+   "Reels geçişleri: yatay kaydırma (dalga hareketi), sert kesme yok."
+  ],
+  "photo": "Dardanelles seaside, natural daylight or golden hour, fresh grilled fish and Turkish meze on white and blue ceramic plates, linen tablecloth, sea and ferry softly blurred in background, crisp clean colors, navy and white tones, no text, no logos",
+  "dont": [
+   "Kırmızı, turuncu veya altın-siyah 'lüks' görünüm kullanma.",
+   "Yelken sarısını geniş alan olarak kullanma.",
+   "Koyu ahşap/rustik dokular ekleme; marka ferah ve denizci."
+  ]
+ },
+ {
+  "slug": "sevket",
+  "name": "Şevket Steakhouse (Şevk-ET)",
+  "category": "Restoran · steakhouse / kasap",
+  "page": "https://sunum.detaymultimedia.com/sevket-24-kasim/ · https://sunum.detaymultimedia.com/sevket-mac-21-kasim/",
+  "source": "Onaylı marka sistemi: proje dokümanı canakkale/sevket/SEVKET.md (20.11.2026, Özdem 'daha pro' isteğiyle onayladı) — renkler, yerleşim ve kurallar oradan. Logo: sevketsteakhouse.com ve kendi gönderilerindeki boğa kafatası 'Şevk-ET'. 21.11.2026: yalnız fontlar standart olmayanlarla değiştirildi (Playfair Display → Brygada 1918, Montserrat → Gabarito).",
+  "observation": "Kömür siyahı zemin, ince altın çerçeve, serif başlık + altın italik vurgu kelimesi, geniş aralıklı büyük harf etiketler. 3. nesil / 100 yıllık ustalık / kendi besisi anlatısı; slogan 'Dededen Toruna'. Ton: premium ama samimi steakhouse; maç günleri ve fasıl de var. Ayrıntılar ve onaylı işler için SEVKET.md.",
+  "palette": [
+   {
+    "token": "komur",
+    "hex": "#0D0A08",
+    "role": "Ana zemin"
+   },
+   {
+    "token": "panel",
+    "hex": "#17120E",
+    "role": "Panel / kart zemini"
+   },
+   {
+    "token": "cizgi",
+    "hex": "#3A2E22",
+    "role": "İnce ayraç çizgileri, panel kenarı"
+   },
+   {
+    "token": "krem",
+    "hex": "#F4ECDE",
+    "role": "Başlık ve gövde yazısı"
+   },
+   {
+    "token": "altin",
+    "hex": "#CBA46A",
+    "role": "Çerçeve, kicker satırı, italik vurgu kelimesi, indirim halkası"
+   }
+  ],
+  "ratio": "%75 komur/panel, %15 krem, %8 altin, %2 cizgi. Maç hikâyelerinde kulüp renkleri yalnız ince şerit olarak eklenir (GS #FDB913/#A90432, FB #FFED00/#00205B).",
+  "pairs": [
+   [
+    "krem",
+    "komur",
+    "başlık/gövde"
+   ],
+   [
+    "altin",
+    "komur",
+    "kicker, vurgu kelimesi"
+   ],
+   [
+    "krem",
+    "panel",
+    "panel yazısı"
+   ],
+   [
+    "komur",
+    "altin",
+    "altın rozet içi"
+   ],
+   [
+    "altin",
+    "panel",
+    "panelde altın vurgu"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Brygada 1918",
+    "axes": "ital,wght@0,500;0,600;1,500",
+    "weights": "500; vurgu kelimesi 500 italik + altın",
+    "use": "Serif başlık, dev '%10', alıntı/slogan",
+    "var": "baslik",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Etiket / metin",
+    "family": "Gabarito",
+    "axes": "wght@400;500;600",
+    "weights": "400 metin, 500–600 büyük harf etiket",
+    "use": "Kicker, alt bilgi, adres, rezervasyon; büyük harf geniş aralıklı",
+    "var": "govde",
+    "fallback": "sans-serif"
+   }
+  ],
+  "scale": [
+   [
+    "Başlık (post 1728×2304)",
+    "150–190 px Brygada 500, vurgu kelimesi italik altın"
+   ],
+   [
+    "Başlık (1080×1350 / hikâye 1080×1920)",
+    "96–120 px"
+   ],
+   [
+    "Kicker",
+    "26–30 px Gabarito 600, büyük harf, +30% aralık, iki yanında 40 px altın çizgi"
+   ],
+   [
+    "Gövde",
+    "30–34 px Gabarito 400"
+   ],
+   [
+    "Alt bilgi",
+    "20–22 px Gabarito 500, büyük harf, +25%: 'ŞEVKET STEAKHOUSE · 01/06 · ÇANAKKALE'"
+   ],
+   [
+    "İndirim",
+    "dev '%10' Brygada 600, koyu daire + çift altın halka"
+   ]
+  ],
+  "type_rules": [
+   "Her başlıkta tek bir kelime italik + altın (Playfair yerine Brygada 1918 italik).",
+   "Etiketler her zaman büyük harf ve geniş aralıklı Gabarito.",
+   "Yazılar fotoğraflara sonradan Python ile basılır (Türkçe karakterler doğru çıksın)."
+  ],
+  "logo": [
+   "Beyaz boğa kafatası logo üst ortada (SEVKET.md'deki 01_referans/logo_beyaz_maske.png; orijinal dosya müşteriden istenmeli).",
+   "Kenardan 64 px (post) / 48 px (hikâye) içeride ince altın çerçeve her karede."
+  ],
+  "layout": [
+   "Onaylı yerleşim: üstte logo, altın kicker satırı, serif başlık, altta alt bilgi; fotoğrafların üst %45–60'ı karanlık boş alan (yazı için).",
+   "Mekân referansı: parlak turuncu-kahve ahşap masa, çapraz sırtlı ahşap sandalyeler, bir turkuaz sandalye, sıcak sarkıt lambalar.",
+   "Boyutlar: post/karusel 1728×2304 (3:4); hikâye/reels 1080×1920."
+  ],
+  "photo": "Photorealistic editorial food photograph, premium steakhouse advertising, full-frame camera, 50mm, f/2, natural colors, real photo. Location: the real restaurant from image 1, same glossy orange-brown wooden table, warm pendant lamps softly blurred far in the background, night. In the lower 45 percent of the frame: [YEMEK]. The upper 55 percent of the frame is dark, calm, out-of-focus restaurant background with only a few soft warm bokeh lights, empty negative space. Low-key warm side light. Absolutely no text, no letters, no logo, no signs, no TV screen, no watermark, no people.",
+  "dont": [
+   "İnsan, alkol (burgerin yanında limonata), kulüp logosu kullanma; kulüp renkleri yalnız ince şerit.",
+   "Yırtık kâğıt etiket / el yazısı stile dönme (Özdem beğenmedi).",
+   "Altını parlak metalik gradyan yapma.",
+   "Playfair Display ve Montserrat'ı artık kullanma; yerlerine Brygada 1918 ve Gabarito."
+  ]
+ },
+ {
+  "slug": "kuzey-cicekcilik",
+  "name": "Kuzey Çiçekçilik",
+  "category": "Çiçekçi · Kepez",
+  "page": "https://sunum.detaymultimedia.com/kuzey-cicekcilik-ornek/",
+  "source": "Logo yok. Google Haritalar dükkân fotoğrafı (21.11.2026): sarı tabela üzerinde siyah kalın büyük harf 'KUZEY ÇİÇEKÇİLİK'. Instagram @kuzeycicekcilik17 profili: sahibinin kırmızı gül buketli fotoğrafı.",
+  "observation": "Marka kimliği tabeladan ibaret: canlı sarı + siyah kalın harf, mahalle dükkânı netliği. Ürün dili kırmızı gül ve yeşil yaprak. Ton: enerjik, ulaşılabilir, hızlı sipariş; butik/pastel değil.",
+  "palette": [
+   {
+    "token": "tabela",
+    "hex": "#F5C31C",
+    "role": "Marka rengi: zemin blokları, şerit, rozet"
+   },
+   {
+    "token": "murekkep",
+    "hex": "#151515",
+    "role": "Başlık ve gövde yazısı"
+   },
+   {
+    "token": "gul",
+    "hex": "#C8102E",
+    "role": "Ürün vurgusu: gül, kalp, özel gün etiketi"
+   },
+   {
+    "token": "yaprak",
+    "hex": "#2F6B3A",
+    "role": "İkincil: yeşillik, 'aynı gün teslim' etiketi"
+   },
+   {
+    "token": "kagit",
+    "hex": "#FFFBEA",
+    "role": "Açık zemin, bilgi kartı"
+   }
+  ],
+  "ratio": "%40 kagit, %30 tabela, %20 murekkep, %7 gul, %3 yaprak.",
+  "pairs": [
+   [
+    "murekkep",
+    "tabela",
+    "tabela şeridi yazısı"
+   ],
+   [
+    "murekkep",
+    "kagit",
+    "gövde"
+   ],
+   [
+    "kagit",
+    "gul",
+    "özel gün rozeti"
+   ],
+   [
+    "kagit",
+    "yaprak",
+    "teslimat etiketi"
+   ],
+   [
+    "tabela",
+    "murekkep",
+    "koyu şerit üstü"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Bricolage Grotesque",
+    "axes": "wght@700;800",
+    "weights": "800 büyük harf",
+    "use": "Tabeladaki kalın büyük harfin karşılığı; kapak ve fiyat",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Albert Sans",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, adres, sipariş bilgisi",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Çiçek adı",
+    "family": "Yeseva One",
+    "axes": "",
+    "weights": "400",
+    "use": "Çiçek/buket adı, 'Anneler Günü' gibi özel gün başlığı",
+    "var": "vurgu",
+    "fallback": "Georgia, serif"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "110–140 px Bricolage 800, büyük harf"
+   ],
+   [
+    "Buket adı",
+    "64–80 px Yeseva One"
+   ],
+   [
+    "Gövde",
+    "30–32 px Albert 400"
+   ],
+   [
+    "Fiyat",
+    "72 px Bricolage 800 + '₺' 40 px"
+   ],
+   [
+    "Etiket",
+    "22 px Albert 600, büyük harf, +10%"
+   ]
+  ],
+  "type_rules": [
+   "Tabela hissi: her karede bir yerde sarı zemin üstünde siyah büyük harf şerit (yükseklik 120–160 px).",
+   "Yeseva One yalnız ürün/gün adı için; gövde metni asla.",
+   "WhatsApp sipariş numarası her satış karesinde Albert 600 ile."
+  ],
+  "logo": [
+   "Logo yok → 'KUZEY ÇİÇEKÇİLİK' Bricolage 800, siyah, sarı şerit içinde 'yazı-logo' olarak kullan; sunumda yeni logo önerisi bonus olarak sunulabilir.",
+   "İmza: sarı şerit + '@kuzeycicekcilik17 · 0542 678 81 09'."
+  ],
+  "layout": [
+   "Motif: tabela şeridi (tam genişlik sarı bant) ve yuvarlak sarı fiyat damgası.",
+   "Fotoğraflar kâğıt zeminde, beyaz çerçevesiz, ürün merkezde; arka plan sade.",
+   "Reels: ürünün elden ele geçişi, sarı şerit alttan yukarı kayarak giriş."
+  ],
+  "photo": "Bright florist shop photography, red roses and seasonal bouquets wrapped in kraft paper, clean warm daylight, neighborhood flower shop in Çanakkale, vivid true colors, shallow depth of field, no text, no logos",
+  "dont": [
+   "Pastel pembe/lila butik estetiği kullanma; marka sarı-siyah.",
+   "İnce zarif serif ile kapak yapma.",
+   "Sarıyı açık sarıya (limon/krem) çekme."
+  ]
+ },
+ {
+  "slug": "sahinler-simit-evi",
+  "name": "Şahinler Simit Evi",
+  "category": "Fırın / simit · Barbaros",
+  "page": "https://sunum.detaymultimedia.com/sahinler-simit-evi-ornek/",
+  "source": "Instagram @simitevisahinler profil logosu (21.11.2026): krem yuvarlak rozet, kahverengi el yazısı 'Şahinler', üstte kavisli 'ÇANAKKALE', altta 'SİMİT EVİ', ince çizgi çerçeve; öne çıkanlarda aynı rozet içinde çizim ikonlar.",
+  "observation": "Krem + tek kahverengi, damga/rozet kimliği, vintage fırın havası. Öne çıkan ikonları tutarlı çizilmiş. Ton: sıcak, sabah, mahalle fırını; nostaljik ama temiz.",
+  "palette": [
+   {
+    "token": "hamur",
+    "hex": "#F3EEDB",
+    "role": "Ana zemin (logo zemini)"
+   },
+   {
+    "token": "kabuk",
+    "hex": "#6E4632",
+    "role": "Logo rengi: başlık, çizgiler, ikonlar"
+   },
+   {
+    "token": "susam",
+    "hex": "#C99A5B",
+    "role": "Vurgu: susam/kızarık ton, ayraçlar"
+   },
+   {
+    "token": "pekmez",
+    "hex": "#3B2418",
+    "role": "Koyu zemin, gövde yazısı"
+   },
+   {
+    "token": "cay",
+    "hex": "#B5402A",
+    "role": "Çok sınırlı: çay bardağı kırmızısı, kampanya noktası"
+   }
+  ],
+  "ratio": "%60 hamur, %25 kabuk/pekmez, %10 susam, %5 cay.",
+  "pairs": [
+   [
+    "kabuk",
+    "hamur",
+    "başlık"
+   ],
+   [
+    "pekmez",
+    "hamur",
+    "gövde"
+   ],
+   [
+    "hamur",
+    "pekmez",
+    "koyu kare yazısı"
+   ],
+   [
+    "hamur",
+    "kabuk",
+    "rozet içi"
+   ],
+   [
+    "hamur",
+    "cay",
+    "kampanya noktası"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Sedan",
+    "axes": "",
+    "weights": "400",
+    "use": "Ürün adları, kapak; klasik fırın serifi",
+    "var": "baslik",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Onest",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, saat, adres",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "El yazısı",
+    "family": "Sriracha",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki 'Şahinler' el yazısına yakın; tek kelime vurgu ('sıcacık', 'taze')",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "100–120 px Sedan"
+   ],
+   [
+    "El yazısı",
+    "72–96 px Sriracha, −3° eğik"
+   ],
+   [
+    "Gövde",
+    "30 px Onest 400"
+   ],
+   [
+    "Rozet yazısı",
+    "22 px Onest 600, büyük harf, +14%"
+   ],
+   [
+    "Saat/fiyat",
+    "56 px Sedan"
+   ]
+  ],
+  "type_rules": [
+   "Her karede bir rozet/damga öğesi (daire çerçeve, kavisli yazı) bulunur.",
+   "Sriracha yalnız tek kelime; uzun cümle yok.",
+   "Saatler '06:30'dan itibaren' gibi Sedan ile büyük."
+  ],
+  "logo": [
+   "Krem rozet logo karelerde sağ üstte, genişliğin %16'sı; koyu karede krem üstüne kabuk çizgili versiyon.",
+   "Öne çıkan ikonların çizim dili (ince kahverengi çizgi) karusel ikonlarında da kullanılır."
+  ],
+  "layout": [
+   "Motif: kavisli yazılı daire rozet, ince çift çizgi çerçeve, susam noktacıkları doku olarak (%8 opaklık).",
+   "Fotoğraflar hafif sıcak, sabah ışığı; bazı karelerde fotoğraf yuvarlak rozet içinde.",
+   "Reels: buharın yükselişi, tepsiden çıkış; geçişlerde rozet dönerek gelir."
+  ],
+  "photo": "Fresh Turkish simit with sesame on a wooden bakery tray, warm early morning light, steam, tea glass in background, cozy neighborhood bakery, cream and brown tones, no text, no logos",
+  "dont": [
+   "Siyah zemin veya neon/canlı renk kullanma.",
+   "Kalın modern sans ile kapak yapma; marka vintage fırın.",
+   "Rozeti bozacak kadar çok öğe ekleme."
+  ]
+ },
+ {
+  "slug": "beyzade-pide-lahmacun",
+  "name": "Beyzade Pide & Lahmacun",
+  "category": "Pide / lahmacun · Cevat Paşa",
+  "page": "https://sunum.detaymultimedia.com/beyzade-pide-lahmacun-ornek/",
+  "source": "Instagram @beyzadepide17 profil logosu (21.11.2026): hardal-altın halka, krem iç, siyah aşçı şapkası ve bıyık, kahverengi serif 'BEYZADE', oklava çizgisi; öne çıkanlarda siyah çizgi ikonlar (pide, lahmacun, kebap, künefe).",
+  "observation": "Altın halka + kahverengi serif + siyah karakter çizimi: 'usta' kişiliği güçlü (şapka ve bıyık). Ton: iştahlı, geleneksel, esprili usta karakteri; fırın sıcaklığı.",
+  "palette": [
+   {
+    "token": "altin",
+    "hex": "#DDA03F",
+    "role": "Logo halkası: vurgu zemini, rozet, şerit"
+   },
+   {
+    "token": "tarcin",
+    "hex": "#6E4A2C",
+    "role": "Logo yazısı: başlık"
+   },
+   {
+    "token": "is",
+    "hex": "#2B2B2B",
+    "role": "Şapka/bıyık siyahı: gövde yazısı, çizgi ikonlar"
+   },
+   {
+    "token": "un",
+    "hex": "#FBF6EA",
+    "role": "Ana açık zemin"
+   },
+   {
+    "token": "kor",
+    "hex": "#B4471F",
+    "role": "Fırın ateşi vurgusu, fiyat"
+   }
+  ],
+  "ratio": "%55 un, %20 altin, %15 tarcin/is, %10 kor.",
+  "pairs": [
+   [
+    "tarcin",
+    "un",
+    "başlık"
+   ],
+   [
+    "is",
+    "un",
+    "gövde"
+   ],
+   [
+    "is",
+    "altin",
+    "altın şerit içi yazı"
+   ],
+   [
+    "un",
+    "kor",
+    "fiyat rozeti"
+   ],
+   [
+    "un",
+    "is",
+    "koyu kart"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Gloock",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki yüksek kontrastlı serifin karşılığı; ürün adları",
+    "var": "baslik",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Golos Text",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, sipariş hattı, adres",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Fiyat/sayı",
+    "family": "Coustard",
+    "axes": "wght@400;900",
+    "weights": "900",
+    "use": "Fiyat, adet, '2 lahmacun + ayran' gibi kampanya rakamları",
+    "var": "vurgu",
+    "fallback": "serif"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "104–128 px Gloock"
+   ],
+   [
+    "Fiyat",
+    "96 px Coustard 900"
+   ],
+   [
+    "Gövde",
+    "30–32 px Golos 400"
+   ],
+   [
+    "Etiket",
+    "22 px Golos 600, büyük harf, +10%"
+   ]
+  ],
+  "type_rules": [
+   "'BEYZADE' kelimesi her zaman büyük harf Gloock + tarcin.",
+   "Fiyatlar Coustard 900 altın daire içinde.",
+   "Siyah çizgi ikon dili (öne çıkanlardaki gibi) menü karelerinde kullanılır."
+  ],
+  "logo": [
+   "Altın halkalı rozet logo kare genişliğinin %18'i, sol üst; koyu karede krem iç korunur.",
+   "Usta karakteri (şapka + bıyık) ayrı bir maskot gibi kullanılabilir: 'Usta önerisi' etiketi."
+  ],
+  "layout": [
+   "Motif: oklava çizgisi (ince yatay çizgi, uçları yuvarlak) ayraç olarak; altın yarım halka kare köşelerinde.",
+   "Fotoğraflar fırından çıkış anı, taş fırın ağzı; un zemin üstünde.",
+   "Reels: hamur açma → fırın → kesme; geçişte oklava çizgisi ekranı süpürür."
+  ],
+  "photo": "Turkish pide and lahmacun fresh out of a stone oven, wooden peel, flour dusted marble counter, warm oven glow, chef hands, appetizing close-up, golden and brown tones, no text, no logos",
+  "dont": [
+   "Mavi/yeşil soğuk tonlar kullanma.",
+   "Usta karakterini değiştirme ya da yeni maskot çizme.",
+   "Altını parlak metalik gradyan yapma; mat hardal kalmalı."
+  ]
+ },
+ {
+  "slug": "ayhan-cicekcilik",
+  "name": "Ayhan Çiçekçilik",
+  "category": "Çiçekçi & peyzaj · Cevat Paşa",
+  "page": "https://sunum.detaymultimedia.com/ayhan-cicekcilik-ornek/",
+  "source": "Instagram @ayhan_cicekcilik profil logosu (21.11.2026): beyaz zemin, zeytin yeşili küçük harf el yazısı 'ayhan', altında ince büyük harf 'ÇİÇEKÇİLİK & PEYZAJ DÜZENLEME'; site ayhancicekcilik.com.",
+  "observation": "Zeytin yeşili tek renk, zarif küçük harf yazı + ince büyük harf alt satır: köklü, sakin, butik. Peyzaj işi de var. Ton: zarif, doğal, güven veren; renk ürünlerden gelsin.",
+  "palette": [
+   {
+    "token": "zeytin",
+    "hex": "#3F5A2E",
+    "role": "Logo rengi: başlık, çizgiler"
+   },
+   {
+    "token": "adacayi",
+    "hex": "#8A9472",
+    "role": "İkincil: ayraç, etiket zemini"
+   },
+   {
+    "token": "kirli-beyaz",
+    "hex": "#F7F5EF",
+    "role": "Ana zemin"
+   },
+   {
+    "token": "toprak",
+    "hex": "#2E2A24",
+    "role": "Gövde yazısı"
+   },
+   {
+    "token": "pudra",
+    "hex": "#E7B7B0",
+    "role": "Çiçek vurgusu: özel gün rozeti (az)"
+   }
+  ],
+  "ratio": "%65 kirli-beyaz, %20 zeytin, %10 adacayi, %5 pudra.",
+  "pairs": [
+   [
+    "zeytin",
+    "kirli-beyaz",
+    "başlık"
+   ],
+   [
+    "toprak",
+    "kirli-beyaz",
+    "gövde"
+   ],
+   [
+    "kirli-beyaz",
+    "zeytin",
+    "koyu şerit"
+   ],
+   [
+    "toprak",
+    "pudra",
+    "rozet içi"
+   ],
+   [
+    "toprak",
+    "adacayi",
+    "etiket"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Gilda Display",
+    "axes": "",
+    "weights": "400",
+    "use": "Kapak ve ürün başlığı; ince, zarif serif",
+    "var": "baslik",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Red Hat Text",
+    "axes": "wght@400;500",
+    "weights": "400 / 500",
+    "use": "Açıklama, saat, sipariş",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "El yazısı",
+    "family": "Italianno",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki küçük harf yazıya selam; buket adı veya tek kelime",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "88–110 px Gilda"
+   ],
+   [
+    "El yazısı",
+    "96–120 px Italianno (ince olduğu için büyük)"
+   ],
+   [
+    "Gövde",
+    "30 px Red Hat 400"
+   ],
+   [
+    "Alt satır/etiket",
+    "20–22 px Red Hat 500, büyük harf, +20% (logodaki ince alt satır gibi)"
+   ]
+  ],
+  "type_rules": [
+   "Logodaki gibi: büyük zarif başlık + altında çok aralıklı ince büyük harf satır ikilisi her kapakta.",
+   "Italianno beyaz/koyu üzerinde en az 96 px; küçük boyutta kullanma.",
+   "Peyzaj içeriklerinde de aynı sistem, sadece fotoğraf değişir."
+  ],
+  "logo": [
+   "Logo bol boşlukla, kare üst ortada veya alt ortada, genişliğin %22'si; çevresine hiçbir öğe yaklaşmaz.",
+   "Koyu zeminde kirli-beyaz tek renk versiyon."
+  ],
+  "layout": [
+   "Motif: ince zeytin çizgi çerçeve (1.5 px) kenardan 48 px içerde; bol negatif alan.",
+   "Fotoğraflar kare içinde kemerli (üstü yuvarlak) çerçevede.",
+   "Reels: yavaş zoom, çapraz geçiş (crossfade), müzik akustik."
+  ],
+  "photo": "Elegant florist and garden design photography, seasonal bouquets and potted plants, soft natural window light, olive green foliage, calm neutral background, refined but natural, no text, no logos",
+  "dont": [
+   "Doygun kırmızı/sarı zemin kullanma (Kuzey Çiçekçilik'le karışmasın).",
+   "Kalın/dar başlık fontu kullanma.",
+   "Kareleri doldurma; boşluk markanın parçası."
+  ]
+ },
+ {
+  "slug": "rokka-kahvalti",
+  "name": "Rokka Kahvaltı (Rokka Brunch)",
+  "category": "Kahvaltı / brunch · Aynalı Çarşı",
+  "page": "https://sunum.detaymultimedia.com/rokka-kahvalti-ornek/",
+  "source": "Instagram @rokkakahvalti profil logosu (21.11.2026): yuvarlak krem zemin, çizim roka/yeşillik ve lavanta dalları, adaçayı yeşili şerit üstünde beyaz kalın el yazısı 'Rokka', altında 'BRUNCH'.",
+  "observation": "Bitkisel, illüstratif: adaçayı/zeytin yeşili + lavanta + krem. Yazı kalın, yuvarlak el yazısı. Aynalı Çarşı'da, genç ve brunch odaklı. Ton: taze, bahçe, yumuşak; 'roka' kelime oyunu.",
+  "palette": [
+   {
+    "token": "roka",
+    "hex": "#6F8A45",
+    "role": "Logo şeridi: ana renk, buton"
+   },
+   {
+    "token": "orman",
+    "hex": "#33472A",
+    "role": "Başlık ve gövde yazısı"
+   },
+   {
+    "token": "lavanta",
+    "hex": "#A595BE",
+    "role": "İkincil vurgu: etiket, çiçek"
+   },
+   {
+    "token": "krem",
+    "hex": "#EFE8D6",
+    "role": "Ana zemin"
+   },
+   {
+    "token": "yumurta",
+    "hex": "#F2B33D",
+    "role": "Kahvaltı vurgusu: yumurta sarısı, fiyat (az)"
+   }
+  ],
+  "ratio": "%50 krem, %25 roka/orman, %15 lavanta, %10 yumurta.",
+  "pairs": [
+   [
+    "orman",
+    "krem",
+    "başlık/gövde"
+   ],
+   [
+    "krem",
+    "roka",
+    "şerit yazısı (büyük)"
+   ],
+   [
+    "krem",
+    "orman",
+    "koyu kart"
+   ],
+   [
+    "orman",
+    "lavanta",
+    "etiket"
+   ],
+   [
+    "orman",
+    "yumurta",
+    "fiyat rozeti"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Shrikhand",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki kalın yuvarlak el yazısının karşılığı; kapak başlığı",
+    "var": "baslik",
+    "fallback": "cursive"
+   },
+   {
+    "role": "Gövde",
+    "family": "Epilogue",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Menü, saat, rezervasyon",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Not",
+    "family": "Mynerve",
+    "axes": "",
+    "weights": "400",
+    "use": "El yazısı not: 'şefin önerisi', ok ile işaretleme",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "96–120 px Shrikhand"
+   ],
+   [
+    "Ara başlık",
+    "48 px Epilogue 600"
+   ],
+   [
+    "Gövde",
+    "30 px Epilogue 400"
+   ],
+   [
+    "El notu",
+    "40–48 px Mynerve + çizim ok"
+   ]
+  ],
+  "type_rules": [
+   "Shrikhand yalnız kısa başlık (en fazla 3 kelime).",
+   "'BRUNCH' gibi alt kelimeler Epilogue 600 büyük harf, +18% aralık (logodaki gibi).",
+   "El notları yamuk ok/daire çizimiyle birlikte."
+  ],
+  "logo": [
+   "Yuvarlak illüstrasyon logo sağ altta, genişliğin %18'i.",
+   "Logodaki roka/lavanta çizimleri kare köşelerinde süs olarak kırpılmış kullanılabilir."
+  ],
+  "layout": [
+   "Motif: çizim roka yaprakları ve lavanta dalları kenarlardan taşar; krem zemin.",
+   "Kahvaltı tabağı kuşbakışı, masa krem/ahşap.",
+   "Reels: kuşbakışı masa kurulumu stop-motion; yaprak çizimleri yanıp söner."
+  ],
+  "photo": "Overhead Turkish breakfast brunch spread, fresh arugula, herbs, eggs, cheeses, olives, lavender sprigs on a cream linen table, soft daylight, fresh green and cream palette, no text, no logos",
+  "dont": [
+   "Koyu/siyah zemin kullanma.",
+   "Keskin geometrik/modern minimal stil yapma; marka el çizimi.",
+   "Lavantayı ana zemin yapma."
+  ]
+ },
+ {
+  "slug": "liman-pasa-mudavim",
+  "name": "Liman Paşa Müdavim",
+  "category": "Restoran · balık & et, Eski Balıkhane",
+  "page": "https://sunum.detaymultimedia.com/liman-pasa-mudavim-ornek/",
+  "source": "Instagram @liman_pasamudavim profil logosu (21.11.2026): beyaz zemin üstünde siyah oval, altın el yazısı 'Paşa' + küçük 'Müdavim', altında aralıklı büyük harf 'LİMAN'.",
+  "observation": "Siyah oval + altın script + aralıklı serif büyük harf: klasik meyhane/liman lokantası şıklığı. 'Müdavim' kelimesi sadakat anlatısı veriyor. Ton: gece, rakı sofrası, saygın.",
+  "palette": [
+   {
+    "token": "gece",
+    "hex": "#0B0B0B",
+    "role": "Ana zemin (logo ovali)"
+   },
+   {
+    "token": "pasa-altin",
+    "hex": "#DDB032",
+    "role": "Logo script rengi: vurgu, çizgi, başlık kelimesi"
+   },
+   {
+    "token": "fildisi",
+    "hex": "#F5F0E4",
+    "role": "Yazı, açık kart"
+   },
+   {
+    "token": "liman",
+    "hex": "#13303F",
+    "role": "İkincil koyu: deniz/gece mavisi kart"
+   },
+   {
+    "token": "duman",
+    "hex": "#8C8C8C",
+    "role": "İkincil gövde, ayrıntı"
+   }
+  ],
+  "ratio": "%60 gece/liman, %25 fildisi, %10 pasa-altin, %5 duman.",
+  "pairs": [
+   [
+    "fildisi",
+    "gece",
+    "gövde"
+   ],
+   [
+    "pasa-altin",
+    "gece",
+    "vurgu/başlık"
+   ],
+   [
+    "fildisi",
+    "liman",
+    "kart yazısı"
+   ],
+   [
+    "gece",
+    "fildisi",
+    "açık kart"
+   ],
+   [
+    "duman",
+    "gece",
+    "ikincil bilgi (büyük)"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Marcellus",
+    "axes": "",
+    "weights": "400",
+    "use": "'LİMAN' gibi aralıklı büyük harf başlıklar",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Script",
+    "family": "Pinyon Script",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki altın 'Paşa' yazısının karşılığı; tek kelime/isim",
+    "var": "vurgu",
+    "fallback": "cursive"
+   },
+   {
+    "role": "Gövde",
+    "family": "Spectral",
+    "axes": "wght@400;500",
+    "weights": "400 / 500",
+    "use": "Menü, açıklama, rezervasyon",
+    "var": "govde",
+    "fallback": "Georgia, serif"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "72–96 px Marcellus büyük harf, harf aralığı +24%"
+   ],
+   [
+    "Script",
+    "110–140 px Pinyon Script, altın"
+   ],
+   [
+    "Gövde",
+    "30 px Spectral 400"
+   ],
+   [
+    "Etiket",
+    "20 px Marcellus, +30%"
+   ]
+  ],
+  "type_rules": [
+   "Kapak düzeni logodan: üstte script altın kelime, altında aralıklı büyük harf satır.",
+   "Pinyon Script kare başına en fazla bir kez.",
+   "Tüm metinler ortalı; liman/gece ciddiyeti."
+  ],
+  "logo": [
+   "Siyah oval logo, fildişi zeminde ya da siyah karede altın kontur ile; genişliğin %22'si.",
+   "Logo ovali şeklinde fotoğraf maskesi kullanılabilir."
+  ],
+  "layout": [
+   "Motif: ince altın oval çerçeve, kare ortasında; çift ince altın çizgi ayraç.",
+   "Fotoğraflar akşam ışığı, sofra; kenarlarda gece payı.",
+   "Reels: yavaş tempolu, mum/ışık yansımaları; altın çizgi soldan sağa açılır."
+  ],
+  "photo": "Evening harbor restaurant in Çanakkale, raki table with meze and grilled fish, candlelight and warm bulbs, dark navy sea and boats in background, elegant classic atmosphere, deep blacks and warm gold highlights, no text, no logos",
+  "dont": [
+   "Açık/pastel zeminli karusel yapma.",
+   "Modern grotesk başlık kullanma.",
+   "Altını parlak gradyan/metal efekt yapma."
+  ]
+ },
+ {
+  "slug": "canakkale-esnaf-kahvaltisi",
+  "name": "Çanakkale Esnaf Kahvaltısı",
+  "category": "Kahvaltı · İsmetpaşa",
+  "page": "https://sunum.detaymultimedia.com/canakkale-esnaf-kahvaltisi-ornek/",
+  "source": "Instagram @canakkaleesnafkahvaltisi profil logosu (21.11.2026): beyaz zemin, koyu arduvaz mavi-gri serif büyük harf 'ÇANAKKALE ESNAF KAHVALTISI', defne çelengi, alt satırda 'PAKET KAHVALTI · PİŞİ · GÖZLEME'. Bio: 'Çanakkale'nin İlk Esnaf Kahvaltıcısı'.",
+  "observation": "Tek renk arduvaz + defne çelengi: köklü, 'ilk' olma iddiası, esnaf ciddiyeti. Ürünler pişi, gözleme, paket kahvaltı. Ton: klasik, güvenilir, çarşı esnafı; sade.",
+  "palette": [
+   {
+    "token": "arduvaz",
+    "hex": "#33475A",
+    "role": "Logo rengi: başlık, çelenk, çizgi"
+   },
+   {
+    "token": "murekkep",
+    "hex": "#1E2A36",
+    "role": "Gövde yazısı, koyu zemin"
+   },
+   {
+    "token": "defne",
+    "hex": "#8C9A80",
+    "role": "İkincil: çelenk yaprak tonu, ayraç"
+   },
+   {
+    "token": "kagit",
+    "hex": "#FAF8F3",
+    "role": "Ana zemin"
+   },
+   {
+    "token": "pisi",
+    "hex": "#E8A93A",
+    "role": "Ürün vurgusu: kızarmış pişi sarısı (az)"
+   }
+  ],
+  "ratio": "%65 kagit, %25 arduvaz/murekkep, %6 defne, %4 pisi.",
+  "pairs": [
+   [
+    "arduvaz",
+    "kagit",
+    "başlık"
+   ],
+   [
+    "murekkep",
+    "kagit",
+    "gövde"
+   ],
+   [
+    "kagit",
+    "arduvaz",
+    "koyu şerit"
+   ],
+   [
+    "murekkep",
+    "pisi",
+    "fiyat rozeti"
+   ],
+   [
+    "murekkep",
+    "defne",
+    "etiket"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Bona Nova",
+    "axes": "wght@400;700",
+    "weights": "700 büyük harf",
+    "use": "Logodaki klasik serif büyük harflerin karşılığı",
+    "var": "baslik",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Literata",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, menü",
+    "var": "govde",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Menü/fiş",
+    "family": "Courier Prime",
+    "axes": "wght@400;700",
+    "weights": "400 / 700",
+    "use": "Paket kahvaltı içeriği, fiyat listesi; esnaf fişi havası",
+    "var": "vurgu",
+    "fallback": "monospace"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "80–100 px Bona Nova 700, büyük harf, +6%"
+   ],
+   [
+    "Gövde",
+    "30 px Literata 400"
+   ],
+   [
+    "Menü satırı",
+    "26–28 px Courier Prime"
+   ],
+   [
+    "Alt satır",
+    "20 px Bona Nova, büyük harf, +20%, nokta ayraçlı (PİŞİ · GÖZLEME)"
+   ]
+  ],
+  "type_rules": [
+   "Kapak düzeni logodan: ortalı başlık + defne çelengi + noktalı alt satır.",
+   "Paket içerikleri Courier Prime fiş listesi gibi, noktalı çizgi ile fiyat.",
+   "'İlk esnaf kahvaltıcısı' iddiası rozet içinde Bona Nova ile."
+  ],
+  "logo": [
+   "Defne çelenkli logo ortada, kapakta büyük (genişliğin %40'ı), iç karelerde küçük alt ortada.",
+   "Tek renk arduvaz; koyu zeminde kağıt rengi."
+  ],
+  "layout": [
+   "Motif: defne çelengi (yarım ya da tam), noktalı fiş çizgileri.",
+   "Fotoğraflar kuşbakışı tepsi, bakır/demlik detayı; kağıt zeminli kartlarda.",
+   "Reels: pişi tavada kabarma, gözleme katlama; geçişte fiş kâğıdı aşağı kayar."
+  ],
+  "photo": "Traditional Turkish tradesmen breakfast, fried pişi dough, gözleme, white cheese, olives, tea in tulip glasses on a simple tray, morning light in a classic local eatery, honest and clean, no text, no logos",
+  "dont": [
+   "Polaroid/pastel 'eğlenceli' stil kullanma; marka klasik ve ciddi.",
+   "Logoyu renklendirme.",
+   "El yazısı font ekleme."
+  ]
+ },
+ {
+  "slug": "buegros-coffee-shop",
+  "name": "Buegros Coffee Shop",
+  "category": "Kahve dükkânı · Çarşı Cd.",
+  "page": "https://sunum.detaymultimedia.com/buegros-coffee-shop-ornek/",
+  "source": "Instagram @buegroscoffeeshop profil logosu (21.11.2026): beyaz zemin, siyah çok kalın yuvarlak slab 'BUEGROS', altında ince serif büyük harf 'BUENOS GRANOS DE CAFÉ' ve kalın 'COFFEE SHOP'. Kavurma atölyesi Selçuk/İzmir.",
+  "observation": "Saf siyah-beyaz, ağır slab logotip + İspanyolca alt satır: kavurmacı, çekirdek odaklı, 'third wave' ama sıcak. Renk kahve ve kraft ambalajdan gelsin. Ton: özgüvenli, zanaat, sade.",
+  "palette": [
+   {
+    "token": "espresso",
+    "hex": "#1C1C1C",
+    "role": "Logo siyahı: başlık, ana koyu zemin"
+   },
+   {
+    "token": "sut",
+    "hex": "#FFFFFF",
+    "role": "Ana açık zemin"
+   },
+   {
+    "token": "kraft",
+    "hex": "#C8A27A",
+    "role": "Ambalaj/kraft vurgusu: etiket, şerit"
+   },
+   {
+    "token": "cekirdek",
+    "hex": "#4A2C1D",
+    "role": "Kavrulmuş çekirdek: ikincil koyu, gövde"
+   },
+   {
+    "token": "krema",
+    "hex": "#EFE6DA",
+    "role": "İkincil açık zemin"
+   }
+  ],
+  "ratio": "%45 sut/krema, %35 espresso, %15 kraft, %5 cekirdek.",
+  "pairs": [
+   [
+    "espresso",
+    "sut",
+    "başlık/gövde"
+   ],
+   [
+    "sut",
+    "espresso",
+    "koyu kare"
+   ],
+   [
+    "espresso",
+    "kraft",
+    "kraft etiket"
+   ],
+   [
+    "cekirdek",
+    "krema",
+    "gövde"
+   ],
+   [
+    "kraft",
+    "espresso",
+    "büyük vurgu"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Alfa Slab One",
+    "axes": "",
+    "weights": "400 (tek, çok kalın)",
+    "use": "Logodaki ağır slab'ın karşılığı; kahve adı, kapak",
+    "var": "baslik",
+    "fallback": "Rockwell, serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Rethink Sans",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Demleme notları, açıklama",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Alt satır",
+    "family": "Tenor Sans",
+    "axes": "",
+    "weights": "400",
+    "use": "'BUENOS GRANOS DE CAFÉ' gibi aralıklı büyük harf satırlar, köken bilgisi",
+    "var": "vurgu",
+    "fallback": "sans-serif"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "110–140 px Alfa Slab One"
+   ],
+   [
+    "Alt satır",
+    "22–24 px Tenor Sans, büyük harf, +22%"
+   ],
+   [
+    "Gövde",
+    "30 px Rethink 400"
+   ],
+   [
+    "Tadım notu",
+    "26 px Rethink 600"
+   ]
+  ],
+  "type_rules": [
+   "Kapak logodan: kalın slab kelime + altında ince aralıklı büyük harf satır.",
+   "Kahve kartlarında köken / işlem / tadım notu Tenor Sans etiketleri.",
+   "İspanyolca/İngilizce kelimeler serbest ama gövde Türkçe."
+  ],
+  "logo": [
+   "Siyah logotip beyaz zeminde; koyu karede beyaz. Genişliğin %30'u, üst ortada.",
+   "Kraft etiket şeklinde (yırtık kenarlı dikdörtgen) logo rozeti kullanılabilir."
+  ],
+  "layout": [
+   "Motif: kahve paketi etiketi (kraft dikdörtgen, siyah çerçeve), çekirdek sayacı ikonları.",
+   "Fotoğraflar yüksek kontrast, siyah-beyaz ağırlıklı ve sadece kahvede sıcak ton.",
+   "Reels: espresso akışı yakın plan, sert kesmeler, etiket damgası 'pat' diye iner."
+  ],
+  "photo": "Specialty coffee shop, espresso extraction close-up, latte art, coffee beans and kraft paper coffee bags, high contrast black and white interior with warm coffee tones, minimalist, no text, no logos",
+  "dont": [
+   "Mavi/pastel minimal palet kullanma (logo siyah-beyaz).",
+   "İnce zarif serif başlık kullanma.",
+   "Kraft dışında renk ekleme."
+  ]
+ },
+ {
+  "slug": "esenler-citir-pide",
+  "name": "Esenler Çıtır Pide",
+  "category": "Pide / lahmacun / kebap · Esenler",
+  "page": "https://sunum.detaymultimedia.com/esenler-citir-pide-ornek/",
+  "source": "Instagram @esenlercitirpide profil logosu (21.11.2026): krem yuvarlak zemin, koyu kahve kavisli 'ESENLER', şiş kebap çizimi, büyük turuncu 'ÇITIR' (kahve gölgeli), altında 'PİDE LAHMACUN KEBAP' ve şerit içinde '2012'.",
+  "observation": "Krem + yanık turuncu + koyu kahve; kalın kama serifli 'ÇITIR', şiş ikonu, 'since 2012' şeridi: retro esnaf tabelası. Ton: iştahlı, mahalle, samimi; yüksek enerji.",
+  "palette": [
+   {
+    "token": "krem",
+    "hex": "#FFF0DF",
+    "role": "Logo zemini: ana zemin"
+   },
+   {
+    "token": "citir",
+    "hex": "#D06E12",
+    "role": "Ana marka: başlık 'ÇITIR', rozet"
+   },
+   {
+    "token": "kahve",
+    "hex": "#5E2E1E",
+    "role": "Gölge ve yazı: gövde, çizgi"
+   },
+   {
+    "token": "kor",
+    "hex": "#A9301C",
+    "role": "İkincil: acı/kebap vurgusu"
+   },
+   {
+    "token": "yesil",
+    "hex": "#5B7F3A",
+    "role": "Çok sınırlı: maydanoz/biber, taze vurgusu"
+   }
+  ],
+  "ratio": "%50 krem, %25 citir, %15 kahve, %7 kor, %3 yesil.",
+  "pairs": [
+   [
+    "kahve",
+    "krem",
+    "gövde/başlık"
+   ],
+   [
+    "citir",
+    "krem",
+    "büyük başlık"
+   ],
+   [
+    "krem",
+    "kahve",
+    "koyu şerit"
+   ],
+   [
+    "krem",
+    "kor",
+    "fiyat rozeti"
+   ],
+   [
+    "krem",
+    "citir",
+    "rozet içi (büyük)"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Rokkitt",
+    "axes": "wght@800;900",
+    "weights": "900",
+    "use": "Logodaki kalın kama serifin karşılığı; 'ÇITIR' gibi kelimeler",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Chivo",
+    "axes": "wght@400;700",
+    "weights": "400 / 700",
+    "use": "Menü, sipariş, adres",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Rakam",
+    "family": "Abril Fatface",
+    "axes": "",
+    "weights": "400",
+    "use": "'2012', fiyat, adet rakamları",
+    "var": "vurgu",
+    "fallback": "serif"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "130–160 px Rokkitt 900, büyük harf, 6 px kahve gölge (logodaki gibi)"
+   ],
+   [
+    "Rakam",
+    "96–120 px Abril Fatface"
+   ],
+   [
+    "Gövde",
+    "30 px Chivo 400"
+   ],
+   [
+    "Şerit",
+    "24 px Chivo 700, büyük harf, +12%"
+   ]
+  ],
+  "type_rules": [
+   "Başlıklarda logodaki ofset gölge: kahve renkte 6 px sağ-alt, bulanıklık yok.",
+   "'2012'den beri' şeridi kurdele şeklinde her kapakta.",
+   "Kavisli üst yazı (rozet) kampanya karelerinde."
+  ],
+  "logo": [
+   "Yuvarlak krem logo, kapakta ortada büyük; iç karelerde sol üst %16.",
+   "Şiş kebap çizimi ayrı ikon olarak kullanılabilir."
+  ],
+  "layout": [
+   "Motif: kurdele şerit, şiş ikonu, retro rozet; krem zeminde yanık turuncu bloklar.",
+   "Fotoğraflar sıcak, fırın/ızgara yakın plan; turuncu çerçeveli kart içinde.",
+   "Reels: çıtırlık sesi vurgusu (ASMR kesim), rozet zıplayarak girer."
+  ],
+  "photo": "Crispy Turkish pide and lahmacun, adana kebab skewers on charcoal grill, wood oven flames, close-up appetizing textures, warm orange and brown tones, neighborhood kebab shop, no text, no logos",
+  "dont": [
+   "Siyah-kırmızı-sarı 'fast food afiş' paleti kullanma; marka krem-turuncu-kahve retro.",
+   "Modern ince sans başlık kullanma.",
+   "Gölgeyi bulanık/yumuşak yapma."
+  ]
+ },
+ {
+  "slug": "lahmacun-time-ocakbasi",
+  "name": "Lahmacun Time Ocakbaşı Pide",
+  "category": "Ocakbaşı / pide / lahmacun · Kemalpaşa",
+  "page": "https://sunum.detaymultimedia.com/lahmacun-time-ocakbasi-ornek/",
+  "source": "Logo ve Instagram hesabı bulunamadı (21.11.2026). Palet Google Haritalar mekân fotoğrafından türetildi: cam cephe, fuşya pembe tabureler, sıcak turuncu iç duvar, petrol/turkuaz detaylar, ip ampuller, gece kalabalığı.",
+  "observation": "378 yorumlu, gece yoğun, genç ve renkli bir mekân; pembe tabureler ve sıcak ışık mekânın imzası. Adındaki 'Time' kelimesi saat/zaman oyununa açık. Ton: eğlenceli, gece, sokak lezzeti, enerjik. Kimlik sıfırdan kurulacağı için bu palet bir öneri.",
+  "palette": [
+   {
+    "token": "tabure",
+    "hex": "#E0457B",
+    "role": "İmza renk: pembe tabure; başlık vurgusu, rozet"
+   },
+   {
+    "token": "petrol",
+    "hex": "#12807F",
+    "role": "İkincil: şerit, buton"
+   },
+   {
+    "token": "ocak",
+    "hex": "#E7742B",
+    "role": "Ateş/ocak turuncusu: fiyat, vurgu"
+   },
+   {
+    "token": "gece",
+    "hex": "#1B1D33",
+    "role": "Ana koyu zemin"
+   },
+   {
+    "token": "ampul",
+    "hex": "#FFE3A3",
+    "role": "Açık zemin/yazı, ışık"
+   }
+  ],
+  "ratio": "%50 gece, %20 ampul, %15 tabure, %10 petrol, %5 ocak.",
+  "pairs": [
+   [
+    "ampul",
+    "gece",
+    "gövde"
+   ],
+   [
+    "tabure",
+    "gece",
+    "başlık (büyük)"
+   ],
+   [
+    "gece",
+    "ampul",
+    "açık kart"
+   ],
+   [
+    "gece",
+    "ocak",
+    "fiyat rozeti"
+   ],
+   [
+    "ampul",
+    "petrol",
+    "şerit yazısı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Unbounded",
+    "axes": "wght@700;900",
+    "weights": "900",
+    "use": "Geniş, yuvarlak, genç başlık; 'TIME' oyunları",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Readex Pro",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Menü, saat, adres",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "El yazısı",
+    "family": "Kalam",
+    "axes": "wght@400;700",
+    "weights": "700",
+    "use": "Ok/not: 'gece 02'ye kadar!', 'acılı mı?'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "100–130 px Unbounded 900"
+   ],
+   [
+    "Gövde",
+    "30 px Readex 400"
+   ],
+   [
+    "Not",
+    "44–52 px Kalam 700, −5°"
+   ],
+   [
+    "Saat rozeti",
+    "64 px Unbounded 700"
+   ]
+  ],
+  "type_rules": [
+   "Saat/zaman oyunu: 'Lahmacun Time 18:00–02:00', saat kadranı rozeti.",
+   "Başlıkta tek kelime pembe, geri kalanı ampul rengi.",
+   "Kalam notları yalnız koyu zeminde, kısa."
+  ],
+  "logo": [
+   "Logo yok → yazı-logo önerisi: 'LAHMACUN' Unbounded 900 + 'TIME' pembe saat rozeti içinde. Sunumda 'kimlik önerisi' olarak açıkça belirt.",
+   "İmza: saat rozeti + 0538 093 67 17."
+  ],
+  "layout": [
+   "Motif: ip ampul noktaları (ampul rengi daireler), saat kadranı rozeti, pembe tabure silueti ikon.",
+   "Fotoğraflar gece, sıcak ışık, kalabalık masa; koyu kenar payı.",
+   "Reels: hızlı tempo, saat tik-tak geçişleri, ocak alevi."
+  ],
+  "photo": "Lively Turkish ocakbaşı restaurant at night, lahmacun and pide on wooden boards, grill flames, warm string lights, colorful pink stools and teal details, glass storefront, young crowd, vibrant warm night tones, no text, no logos",
+  "dont": [
+   "Klasik/ciddi serif kullanma.",
+   "Açık zeminli sade 'kahvaltıcı' stil yapma.",
+   "Bu paleti müşteri onayı olmadan 'logo' gibi sunma; öneri olarak sun."
+  ]
+ }
 ]

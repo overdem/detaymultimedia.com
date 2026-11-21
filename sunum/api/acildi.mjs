@@ -3,6 +3,8 @@
 // NTFY_TOPIC (push), RESEND_API_KEY + NOTIFY_EMAIL (e-mail copy), NOTIFY_FROM (optional sender).
 
 const PAGES = {
+  'buegros-coffee-shop-ornek': 'Buegros Coffee Shop',
+  'esenler-citir-pide-ornek': 'Esenler Çıtır Pide',
   'liman-pasa-mudavim-ornek': 'Liman Paşa Müdavim',
   'canakkale-esnaf-kahvaltisi-ornek': 'Çanakkale Esnaf Kahvaltısı',
   'rokka-kahvalti-ornek': 'Rokka Kahvaltı',

@@ -4,22 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="tasarim" content="esenler-citir-pide">
 <title>Esenler Çıtır Pide · Örnek İçerikler</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@800;900&family=Chivo:wght@400;700&family=Abril+Fatface&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: one narrow phone-first column, the work shown at phone size, nothing competing with it. */
+/* Renkler ve fontlar tasarim/esenler-citir-pide.md dosyasından. */
 :root {
-  color-scheme: dark;
-  --bg: #141414;
-  --panel: #1f1f1f;
-  --line: #3a3a3a;
-  --text: #fff4e0;
-  --muted: #c9bfae;
-  --gold: #ffc72c;
-  --display: "Anton", Impact, sans-serif;
-  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+  --bg: #FFF0DF;
+  --panel: #fff8ef;
+  --line: #e4c9ab;
+  --text: #5E2E1E;
+  --muted: #7a4b38;
+  --accent: #A9301C;
+  --accent-ink: #FFF0DF;
+  --display: "Rokkitt", serif;
+  --display-w: 900;
+  --body: "Chivo", sans-serif;
+  --vurgu: "Abril Fatface", serif;
 }
 * { box-sizing: border-box; }
 html { background: var(--bg); }
@@ -30,14 +34,13 @@ body {
 }
 main { max-width: 560px; margin: 0 auto; padding: 32px 20px 48px; display: flex; flex-direction: column; gap: 44px; }
 header { display: flex; flex-direction: column; gap: 14px; text-align: center; padding-top: 8px; }
-.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin: 0; }
-h1 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 9vw, 44px); line-height: 1.12; margin: 0; text-wrap: balance; }
-h1 em { color: var(--gold); font-style: normal; }
-h1, h2 { text-transform: uppercase; letter-spacing: .01em; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); margin: 0; }
+h1 { font-family: var(--display); font-weight: var(--display-w, 400); font-size: clamp(32px, 9vw, 44px); line-height: 1.12; margin: 0; text-wrap: balance; }
+h1 em { color: var(--accent); }
 .lede { margin: 0 auto; max-width: 34em; color: var(--muted); font-size: 15px; }
 section { display: flex; flex-direction: column; gap: 16px; }
 .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
-h2 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0; }
+h2 { font-family: var(--display); font-weight: var(--display-w, 400); font-size: 26px; line-height: 1.2; margin: 0; }
 .meta { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .note { margin: 0; color: var(--muted); font-size: 14px; }
 img, video { display: block; max-width: 100%; }
@@ -54,42 +57,42 @@ video.shot { aspect-ratio: 9 / 16; }
 .dots button {
   width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer;
 }
-.dots button[aria-current="true"] { background: var(--gold); }
-.dots button:focus-visible, video:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.dots button[aria-current="true"] { background: var(--accent); }
+.dots button:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .cap { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 .cap-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 0; }
+h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0; }
 .cap pre { margin: 0; font-family: var(--body); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); -webkit-user-select: all; user-select: all; }
-.copy { font: 600 13px/1 var(--body); color: var(--bg); background: var(--gold); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
+.copy { font: 600 13px/1 var(--body); color: var(--accent-ink); background: var(--accent); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
 .copy:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
 .music { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.music li { border-left: 2px solid var(--gold); padding-left: 14px; }
+.music li { border-left: 2px solid var(--accent); padding-left: 14px; }
 .music b { display: block; font-weight: 600; }
 .music span { color: var(--muted); font-size: 14px; }
 
-.dl-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.dl { display: inline-flex; align-items: center; gap: 8px; font: 600 14px/1 var(--body); color: var(--bg); background: var(--gold); border-radius: 999px; padding: 12px 18px; text-decoration: none; }
-.dl.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
-.dl:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
-.dl svg { width: 16px; height: 16px; flex: none; }
-.all { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 13px; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
 @media (prefers-reduced-motion: no-preference) { .swipe { scroll-behavior: smooth; } }
+h1 { text-transform: uppercase; }
+h1 em { font-style: normal; color: #D06E12; text-shadow: 3px 3px 0 #5E2E1E; display: block; }
+.shot { border: 6px solid #D06E12; border-radius: 18px; box-shadow: 5px 5px 0 #5E2E1E; }
+.motif { display: inline-block; margin: 0 auto; background: #A9301C; color: #FFF0DF; font: 700 12px var(--body); letter-spacing: .14em; text-transform: uppercase; padding: 8px 22px; }
+
 </style>
 </head>
 <body>
 <main>
   <header>
+    <span class="motif">Pide · Lahmacun · Kebap · 2012’den beri</span>
     <p class="eyebrow">Örnek çalışma · Detay Multimedya</p>
     <h1>Esenler Çıtır Pide için <em>örnek içerikler</em></h1>
-    <p class="lede">Haftalık paylaşımların nasıl görüneceğini göstermek için hazırladığımız kısa bir reels, beş karelik bir karusel ve tek gönderi.</p>
+    <p class="lede">Haftalık paylaşımların nasıl görüneceğini göstermek için hazırladığımız kısa bir reels, beş karelik bir karusel ve tek gönderi; logonuzdaki krem, çıtır turuncu ve kurdeleyle.</p>
   </header>
 
   <section aria-labelledby="h-reel">
-    <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">11 sn · dikey</span></div>
+    <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">12 sn · dikey</span></div>
     <video class="shot" controls controlslist="nodownload noplaybackrate" disablepictureinpicture playsinline preload="metadata" poster="img/reel_poster.jpg" src="video/reel.mp4" width="720" height="1280"></video>
     <p class="note">Çıtır pide, ince lahmacun, usta işi kebap ve sipariş hattı; 4 sahnede Esenler Çıtır. Video sessizdir; müzik Instagram’da paylaşırken eklenir.</p>
   </section>
@@ -97,10 +100,10 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
   <section aria-labelledby="h-kar">
     <div class="head"><h2 id="h-kar">Karusel</h2><span class="meta" id="count">1 / 5</span></div>
     <div class="swipe" id="swipe" tabindex="0" aria-label="Karusel kareleri, yana kaydırın">
-      <figure><img class="shot" src="img/karusel_1.jpg" alt="Kare 1: Çıtır. Esenler’de pide, lahmacun, kebap." width="1080" height="1350"></figure>
-      <figure><img class="shot" src="img/karusel_2.jpg" alt="Kare 2: Kuşbaşılı kaşarlı, bol malzemeli pide." width="1080" height="1350" loading="lazy"></figure>
-      <figure><img class="shot" src="img/karusel_3.jpg" alt="Kare 3: İnce, çıtır lahmacun; yanında maydanoz, limon, soğan." width="1080" height="1350" loading="lazy"></figure>
-      <figure><img class="shot" src="img/karusel_4.jpg" alt="Kare 4: Usta işi kebap, ocaktan." width="1080" height="1350" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_1.jpg" alt="Kare 1: Esenler Çıtır, 2012’den beri. Pide, lahmacun, kebap." width="1080" height="1350"></figure>
+      <figure><img class="shot" src="img/karusel_2.jpg" alt="Kare 2: Pide: kuşbaşılı kaşarlı, bol malzemeli." width="1080" height="1350" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_3.jpg" alt="Kare 3: Lahmacun: ince ve çıtır; maydanoz, soğan, limon yanında." width="1080" height="1350" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_4.jpg" alt="Kare 4: Kebap: usta işi, ocaktan." width="1080" height="1350" loading="lazy"></figure>
       <figure><img class="shot" src="img/karusel_5.jpg" alt="Kare 5: Sipariş ver! 0286 214 11 27 · Demokrasi Cd. 8-10/A · Esenler · Paket servis" width="1080" height="1350" loading="lazy"></figure>
     </div>
     <div class="dots" id="dots" aria-label="Kare seçimi"></div>
@@ -108,8 +111,8 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
 
   <section aria-labelledby="h-post">
     <div class="head"><h2 id="h-post">Tek gönderi</h2><span class="meta">4:5</span></div>
-    <div><img class="shot" src="img/post.jpg" alt="Bugün ne yesek? Lahmacun." width="1080" height="1350" loading="lazy"></div>
-    <p class="note">Telefon, adres ve servis bilgisi Google Haritalar kaydınızdan alındı.</p>
+    <div><img class="shot" src="img/post.jpg" alt="Bugün ne yesek? Lahmacun. Sipariş 0286 214 11 27." width="1080" height="1350" loading="lazy"></div>
+    <p class="note">Telefon, adres ve servis bilgisi Google Haritalar kaydınızdan; “2012” logonuzdan alındı.</p>
   </section>
 
   <section aria-labelledby="h-muzik">

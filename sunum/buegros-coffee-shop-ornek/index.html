@@ -4,22 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="tasarim" content="buegros-coffee-shop">
 <title>Buegros Coffee Shop · Örnek İçerikler</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Rethink+Sans:wght@400;600&family=Tenor+Sans&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: one narrow phone-first column, the work shown at phone size, nothing competing with it. */
+/* Renkler ve fontlar tasarim/buegros-coffee-shop.md dosyasından. */
 :root {
   color-scheme: light;
-  --bg: #f5f3ee;
-  --panel: #ffffff;
-  --line: #dcd8cf;
-  --text: #1c1c1a;
-  --muted: #6d6a62;
-  --gold: #2f5d8a;
-  --display: "Manrope", "Helvetica Neue", Arial, sans-serif;
-  --body: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --bg: #FFFFFF;
+  --panel: #EFE6DA;
+  --line: #1C1C1C;
+  --text: #1C1C1C;
+  --muted: #4a4a4a;
+  --accent: #1C1C1C;
+  --accent-ink: #FFFFFF;
+  --display: "Alfa Slab One", Rockwell, serif;
+  --body: "Rethink Sans", sans-serif;
+  --vurgu: "Tenor Sans", sans-serif;
 }
 * { box-sizing: border-box; }
 html { background: var(--bg); }
@@ -30,13 +33,13 @@ body {
 }
 main { max-width: 560px; margin: 0 auto; padding: 32px 20px 48px; display: flex; flex-direction: column; gap: 44px; }
 header { display: flex; flex-direction: column; gap: 14px; text-align: center; padding-top: 8px; }
-.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin: 0; }
-h1 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 9vw, 44px); line-height: 1.12; margin: 0; text-wrap: balance; }
-h1 em { color: var(--gold); }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); margin: 0; }
+h1 { font-family: var(--display); font-weight: var(--display-w, 400); font-size: clamp(32px, 9vw, 44px); line-height: 1.12; margin: 0; text-wrap: balance; }
+h1 em { color: var(--accent); }
 .lede { margin: 0 auto; max-width: 34em; color: var(--muted); font-size: 15px; }
 section { display: flex; flex-direction: column; gap: 16px; }
 .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
-h2 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0; }
+h2 { font-family: var(--display); font-weight: var(--display-w, 400); font-size: 26px; line-height: 1.2; margin: 0; }
 .meta { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .note { margin: 0; color: var(--muted); font-size: 14px; }
 img, video { display: block; max-width: 100%; }
@@ -53,42 +56,44 @@ video.shot { aspect-ratio: 9 / 16; }
 .dots button {
   width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer;
 }
-.dots button[aria-current="true"] { background: var(--gold); }
-.dots button:focus-visible, video:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.dots button[aria-current="true"] { background: var(--accent); }
+.dots button:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .cap { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 .cap-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 0; }
+h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0; }
 .cap pre { margin: 0; font-family: var(--body); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); -webkit-user-select: all; user-select: all; }
-.copy { font: 600 13px/1 var(--body); color: var(--bg); background: var(--gold); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
+.copy { font: 600 13px/1 var(--body); color: var(--accent-ink); background: var(--accent); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
 .copy:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
 .music { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.music li { border-left: 2px solid var(--gold); padding-left: 14px; }
+.music li { border-left: 2px solid var(--accent); padding-left: 14px; }
 .music b { display: block; font-weight: 600; }
 .music span { color: var(--muted); font-size: 14px; }
 
-.dl-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.dl { display: inline-flex; align-items: center; gap: 8px; font: 600 14px/1 var(--body); color: var(--bg); background: var(--gold); border-radius: 999px; padding: 12px 18px; text-decoration: none; }
-.dl.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
-.dl:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
-.dl svg { width: 16px; height: 16px; flex: none; }
-.all { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 13px; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
 @media (prefers-reduced-motion: no-preference) { .swipe { scroll-behavior: smooth; } }
+.eyebrow, .meta, h3 { font-family: var(--vurgu); font-weight: 400; }
+h1 em { font-style: normal; background: #C8A27A; padding: 0 .2em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.shot { border: 3px solid #1C1C1C; border-radius: 4px; }
+.cap { border: 3px solid #1C1C1C; border-radius: 4px; box-shadow: 6px 6px 0 #1C1C1C; }
+.copy { border-radius: 4px; }
+.dots button[aria-current="true"] { background: #C8A27A; outline: 2px solid #1C1C1C; }
+
 </style>
 </head>
 <body>
 <main>
   <header>
+    
     <p class="eyebrow">Örnek çalışma · Detay Multimedya</p>
     <h1>Buegros Coffee Shop için <em>örnek içerikler</em></h1>
-    <p class="lede">Haftalık paylaşımların nasıl görüneceğini göstermek için hazırladığımız kısa bir reels, beş karelik bir karusel ve tek gönderi.</p>
+    <p class="lede">Haftalık paylaşımların nasıl görüneceğini göstermek için hazırladığımız kısa bir reels, beş karelik bir karusel ve tek gönderi; logonuzdaki kalın slab yazı ve kraft etiket diliyle.</p>
   </header>
 
   <section aria-labelledby="h-reel">
-    <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">14 sn · dikey</span></div>
+    <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">15 sn · dikey</span></div>
     <video class="shot" controls controlslist="nodownload noplaybackrate" disablepictureinpicture playsinline preload="metadata" poster="img/reel_poster.jpg" src="video/reel.mp4" width="720" height="1280"></video>
     <p class="note">Flat white, taze kavrulmuş çekirdek, Türk kahvesi ve soğuk içecekler; 5 sahnede Buegros. Video sessizdir; müzik Instagram’da paylaşırken eklenir.</p>
   </section>
@@ -96,18 +101,18 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
   <section aria-labelledby="h-kar">
     <div class="head"><h2 id="h-kar">Karusel</h2><span class="meta" id="count">1 / 5</span></div>
     <div class="swipe" id="swipe" tabindex="0" aria-label="Karusel kareleri, yana kaydırın">
-      <figure><img class="shot" src="img/karusel_1.jpg" alt="Kare 1: Çarşı Caddesi’nde bir fincan mola." width="1080" height="1350"></figure>
+      <figure><img class="shot" src="img/karusel_1.jpg" alt="Kare 1: Bir fincan mola. Çarşı Caddesi, Fevzipaşa." width="1080" height="1350"></figure>
       <figure><img class="shot" src="img/karusel_2.jpg" alt="Kare 2: Taze kavrulmuş çekirdek." width="1080" height="1350" loading="lazy"></figure>
       <figure><img class="shot" src="img/karusel_3.jpg" alt="Kare 3: Türk kahvesi de var. Köpüğü bol, yanında su ve lokum." width="1080" height="1350" loading="lazy"></figure>
-      <figure><img class="shot" src="img/karusel_4.jpg" alt="Kare 4: White chocolate mocha ve limonata." width="1080" height="1350" loading="lazy"></figure>
-      <figure><img class="shot" src="img/karusel_5.jpg" alt="Kare 5: Uğrayın, kahveniz hazır. Çarşı Cd. No:84 · 10:30 · 0530 495 56 75" width="1080" height="1350" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_4.jpg" alt="Kare 4: Buzlu mu olsun? White chocolate mocha ve ev yapımı limonata." width="1080" height="1350" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_5.jpg" alt="Kare 5: Uğrayın, kahveniz hazır. Çarşı Cd. No:84 · Fevzipaşa · 10:30’dan itibaren · 0530 495 56 75" width="1080" height="1350" loading="lazy"></figure>
     </div>
     <div class="dots" id="dots" aria-label="Kare seçimi"></div>
   </section>
 
   <section aria-labelledby="h-post">
     <div class="head"><h2 id="h-post">Tek gönderi</h2><span class="meta">4:5</span></div>
-    <div><img class="shot" src="img/post.jpg" alt="Bugün buzlu mu, sıcak mı?" width="1080" height="1350" loading="lazy"></div>
+    <div><img class="shot" src="img/post.jpg" alt="Bugün buzlu mu, sıcak mı? Yorumlarda söyle, gelince hazırlayalım." width="1080" height="1350" loading="lazy"></div>
     <p class="note">Telefon, adres ve menüdeki içecekler Google Haritalar kaydınızdan alındı.</p>
   </section>
 

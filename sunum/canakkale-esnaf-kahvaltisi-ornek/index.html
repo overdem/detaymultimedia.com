@@ -4,22 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="tasarim" content="canakkale-esnaf-kahvaltisi">
 <title>Çanakkale Esnaf Kahvaltısı · Örnek İçerikler</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Literata:wght@400;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: one narrow phone-first column, the work shown at phone size, nothing competing with it. */
+/* Renkler ve fontlar tasarim/canakkale-esnaf-kahvaltisi.md dosyasından. */
 :root {
   color-scheme: light;
-  --bg: #fdf0e4;
+  --bg: #FAF8F3;
   --panel: #ffffff;
-  --line: #f0d7c2;
-  --text: #3a2a20;
-  --muted: #7a5f4c;
-  --gold: #e5533d;
-  --display: "Nunito", "Helvetica Neue", Arial, sans-serif;
-  --body: "Nunito", "Helvetica Neue", Arial, sans-serif;
+  --line: #d9d6cc;
+  --text: #1E2A36;
+  --muted: #4f5d6b;
+  --accent: #33475A;
+  --accent-ink: #FAF8F3;
+  --display: "Bona Nova", Georgia, serif;
+  --display-w: 700;
+  --body: "Literata", Georgia, serif;
+  --vurgu: "Courier Prime", monospace;
 }
 * { box-sizing: border-box; }
 html { background: var(--bg); }
@@ -30,13 +34,13 @@ body {
 }
 main { max-width: 560px; margin: 0 auto; padding: 32px 20px 48px; display: flex; flex-direction: column; gap: 44px; }
 header { display: flex; flex-direction: column; gap: 14px; text-align: center; padding-top: 8px; }
-.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin: 0; }
-h1 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 9vw, 44px); line-height: 1.12; margin: 0; text-wrap: balance; }
-h1 em { color: var(--gold); }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); margin: 0; }
+h1 { font-family: var(--display); font-weight: var(--display-w, 400); font-size: clamp(32px, 9vw, 44px); line-height: 1.12; margin: 0; text-wrap: balance; }
+h1 em { color: var(--accent); }
 .lede { margin: 0 auto; max-width: 34em; color: var(--muted); font-size: 15px; }
 section { display: flex; flex-direction: column; gap: 16px; }
 .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
-h2 { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0; }
+h2 { font-family: var(--display); font-weight: var(--display-w, 400); font-size: 26px; line-height: 1.2; margin: 0; }
 .meta { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .note { margin: 0; color: var(--muted); font-size: 14px; }
 img, video { display: block; max-width: 100%; }
@@ -53,42 +57,45 @@ video.shot { aspect-ratio: 9 / 16; }
 .dots button {
   width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer;
 }
-.dots button[aria-current="true"] { background: var(--gold); }
-.dots button:focus-visible, video:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.dots button[aria-current="true"] { background: var(--accent); }
+.dots button:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .cap { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 .cap-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 0; }
+h3 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0; }
 .cap pre { margin: 0; font-family: var(--body); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); -webkit-user-select: all; user-select: all; }
-.copy { font: 600 13px/1 var(--body); color: var(--bg); background: var(--gold); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
+.copy { font: 600 13px/1 var(--body); color: var(--accent-ink); background: var(--accent); border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; white-space: nowrap; }
 .copy:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
 .music { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.music li { border-left: 2px solid var(--gold); padding-left: 14px; }
+.music li { border-left: 2px solid var(--accent); padding-left: 14px; }
 .music b { display: block; font-weight: 600; }
 .music span { color: var(--muted); font-size: 14px; }
 
-.dl-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.dl { display: inline-flex; align-items: center; gap: 8px; font: 600 14px/1 var(--body); color: var(--bg); background: var(--gold); border-radius: 999px; padding: 12px 18px; text-decoration: none; }
-.dl.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
-.dl:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
-.dl svg { width: 16px; height: 16px; flex: none; }
-.all { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 footer { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 13px; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
 @media (prefers-reduced-motion: no-preference) { .swipe { scroll-behavior: smooth; } }
+h1 { text-transform: uppercase; letter-spacing: .03em; color: var(--accent); }
+h1 em { font-style: normal; color: #6f7d63; display: block; font-size: .62em; letter-spacing: .14em; margin-top: 6px; }
+.eyebrow { color: #6f7d63; }
+.meta, .cap pre { font-family: var(--vurgu); }
+.head { border-bottom: 2px dotted var(--accent); }
+.motif svg { display: block; margin: 0 auto; }
+.dots button[aria-current="true"] { background: #E8A93A; }
+
 </style>
 </head>
 <body>
 <main>
   <header>
+    <div class="motif" aria-hidden="true"><svg viewBox="0 -44 120 106" width="120" height="106" xmlns="http://www.w3.org/2000/svg"><ellipse cx="42.6" cy="47.1" rx="6.5" ry="2.3" transform="rotate(-197.4 42.6 47.1)" fill="#8C9A80"/><ellipse cx="39.4" cy="55.6" rx="6.5" ry="2.3" transform="rotate(-121.4 39.4 55.6)" fill="#8C9A80"/><ellipse cx="31.5" cy="40.4" rx="6.2" ry="2.2" transform="rotate(-180.1 31.5 40.4)" fill="#8C9A80"/><ellipse cx="26.2" cy="47.2" rx="6.2" ry="2.2" transform="rotate(-104.1 26.2 47.2)" fill="#8C9A80"/><ellipse cx="22.8" cy="30.6" rx="5.9" ry="2.1" transform="rotate(-162.9 22.8 30.6)" fill="#8C9A80"/><ellipse cx="16.1" cy="35.3" rx="5.9" ry="2.1" transform="rotate(-86.9 16.1 35.3)" fill="#8C9A80"/><ellipse cx="17.4" cy="18.7" rx="5.6" ry="2.0" transform="rotate(-145.6 17.4 18.7)" fill="#8C9A80"/><ellipse cx="9.9" cy="21.1" rx="5.6" ry="2.0" transform="rotate(-69.6 9.9 21.1)" fill="#8C9A80"/><ellipse cx="15.7" cy="5.6" rx="5.3" ry="1.9" transform="rotate(-128.4 15.7 5.6)" fill="#8C9A80"/><ellipse cx="8.3" cy="5.7" rx="5.3" ry="1.9" transform="rotate(-52.4 8.3 5.7)" fill="#8C9A80"/><ellipse cx="17.9" cy="-7.4" rx="5.0" ry="1.8" transform="rotate(-111.1 17.9 -7.4)" fill="#8C9A80"/><ellipse cx="11.2" cy="-9.4" rx="5.0" ry="1.8" transform="rotate(-35.1 11.2 -9.4)" fill="#8C9A80"/><ellipse cx="23.9" cy="-19.2" rx="4.7" ry="1.7" transform="rotate(-93.9 23.9 -19.2)" fill="#8C9A80"/><ellipse cx="18.5" cy="-23.0" rx="4.7" ry="1.7" transform="rotate(-17.9 18.5 -23.0)" fill="#8C9A80"/><ellipse cx="33.2" cy="-28.8" rx="4.4" ry="1.6" transform="rotate(-76.6 33.2 -28.8)" fill="#8C9A80"/><ellipse cx="29.3" cy="-33.7" rx="4.4" ry="1.6" transform="rotate(-0.6 29.3 -33.7)" fill="#8C9A80"/><path d="M50.0 54.2 A48.0 48.0 0 0 1 36.0 -34.4" stroke="#8C9A80" stroke-width="0.8" fill="none"/><ellipse cx="77.4" cy="47.1" rx="6.5" ry="2.3" transform="rotate(17.4 77.4 47.1)" fill="#8C9A80"/><ellipse cx="80.6" cy="55.6" rx="6.5" ry="2.3" transform="rotate(-58.6 80.6 55.6)" fill="#8C9A80"/><ellipse cx="88.5" cy="40.4" rx="6.2" ry="2.2" transform="rotate(0.1 88.5 40.4)" fill="#8C9A80"/><ellipse cx="93.8" cy="47.2" rx="6.2" ry="2.2" transform="rotate(-75.9 93.8 47.2)" fill="#8C9A80"/><ellipse cx="97.2" cy="30.6" rx="5.9" ry="2.1" transform="rotate(-17.1 97.2 30.6)" fill="#8C9A80"/><ellipse cx="103.9" cy="35.3" rx="5.9" ry="2.1" transform="rotate(-93.1 103.9 35.3)" fill="#8C9A80"/><ellipse cx="102.6" cy="18.7" rx="5.6" ry="2.0" transform="rotate(-34.4 102.6 18.7)" fill="#8C9A80"/><ellipse cx="110.1" cy="21.1" rx="5.6" ry="2.0" transform="rotate(-110.4 110.1 21.1)" fill="#8C9A80"/><ellipse cx="104.3" cy="5.6" rx="5.3" ry="1.9" transform="rotate(-51.6 104.3 5.6)" fill="#8C9A80"/><ellipse cx="111.7" cy="5.7" rx="5.3" ry="1.9" transform="rotate(-127.6 111.7 5.7)" fill="#8C9A80"/><ellipse cx="102.1" cy="-7.4" rx="5.0" ry="1.8" transform="rotate(-68.9 102.1 -7.4)" fill="#8C9A80"/><ellipse cx="108.8" cy="-9.4" rx="5.0" ry="1.8" transform="rotate(-144.9 108.8 -9.4)" fill="#8C9A80"/><ellipse cx="96.1" cy="-19.2" rx="4.7" ry="1.7" transform="rotate(-86.1 96.1 -19.2)" fill="#8C9A80"/><ellipse cx="101.5" cy="-23.0" rx="4.7" ry="1.7" transform="rotate(-162.1 101.5 -23.0)" fill="#8C9A80"/><ellipse cx="86.8" cy="-28.8" rx="4.4" ry="1.6" transform="rotate(-103.4 86.8 -28.8)" fill="#8C9A80"/><ellipse cx="90.7" cy="-33.7" rx="4.4" ry="1.6" transform="rotate(-179.4 90.7 -33.7)" fill="#8C9A80"/><path d="M70.0 54.2 A48.0 48.0 0 0 0 84.0 -34.4" stroke="#8C9A80" stroke-width="0.8" fill="none"/></svg></div>
     <p class="eyebrow">Örnek çalışma · Detay Multimedya</p>
     <h1>Çanakkale Esnaf Kahvaltısı için <em>örnek içerikler</em></h1>
-    <p class="lede">Haftalık paylaşımların nasıl görüneceğini göstermek için hazırladığımız kısa bir reels, dört karelik bir karusel ve sabah gönderisi.</p>
+    <p class="lede">Haftalık paylaşımların nasıl görüneceğini göstermek için hazırladığımız kısa bir reels, dört karelik bir karusel ve sabah gönderisi; logonuzdaki arduvaz, kâğıt ve defne çelengiyle.</p>
   </header>
 
   <section aria-labelledby="h-reel">
-    <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">14 sn · dikey</span></div>
+    <div class="head"><h2 id="h-reel">Reels</h2><span class="meta">15 sn · dikey</span></div>
     <video class="shot" controls controlslist="nodownload noplaybackrate" disablepictureinpicture playsinline preload="metadata" poster="img/reel_poster.jpg" src="video/reel.mp4" width="720" height="1280"></video>
     <p class="note">Esnaf kahvaltısı, pişi tabağı, tavada menemen ve demlenen çay; 5 sahnede sabahınız. Video sessizdir; müzik Instagram’da paylaşırken eklenir.</p>
   </section>
@@ -96,18 +103,18 @@ footer strong { color: var(--text); font-weight: 600; letter-spacing: .12em; tex
   <section aria-labelledby="h-kar">
     <div class="head"><h2 id="h-kar">Karusel</h2><span class="meta" id="count">1 / 4</span></div>
     <div class="swipe" id="swipe" tabindex="0" aria-label="Karusel kareleri, yana kaydırın">
-      <figure><img class="shot" src="img/karusel_1.jpg" alt="Kare 1: Günaydın İsmetpaşa! Esnaf kahvaltısı sofrası." width="1080" height="1350"></figure>
-      <figure><img class="shot" src="img/karusel_2.jpg" alt="Kare 2: Pişi tabağı. Peynir, zeytin, reçel… çayınız da hazır." width="1080" height="1350" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_1.jpg" alt="Kare 1: Günaydın İsmetpaşa! Esnaf kahvaltısı, pişi, menemen." width="1080" height="1350"></figure>
+      <figure><img class="shot" src="img/karusel_2.jpg" alt="Kare 2: Pişi tabağı: sıcak pişi, peynir, zeytin, gül reçeli; çayınız da hazır." width="1080" height="1350" loading="lazy"></figure>
       <figure><img class="shot" src="img/karusel_3.jpg" alt="Kare 3: Tavada menemen, sofraya tavasıyla gelir." width="1080" height="1350" loading="lazy"></figure>
-      <figure><img class="shot" src="img/karusel_4.jpg" alt="Kare 4: Bekleriz! Sabah 07:00’den itibaren. 0542 778 94 17 · Demircioğlu Cd. 87/C · İsmetpaşa" width="1080" height="1350" loading="lazy"></figure>
+      <figure><img class="shot" src="img/karusel_4.jpg" alt="Kare 4: Bekleriz! Çanakkale’nin ilk esnaf kahvaltıcısı. Açılış 07:00 · 0542 778 94 17 · Demircioğlu Cd. 87/C · İsmetpaşa" width="1080" height="1350" loading="lazy"></figure>
     </div>
     <div class="dots" id="dots" aria-label="Kare seçimi"></div>
   </section>
 
   <section aria-labelledby="h-post">
     <div class="head"><h2 id="h-post">Tek gönderi</h2><span class="meta">4:5</span></div>
-    <div><img class="shot" src="img/post.jpg" alt="Çay demlendi, sofra hazır." width="1080" height="1350" loading="lazy"></div>
-    <p class="note">Telefon, adres ve açılış saati Google Haritalar kaydınızdan alındı.</p>
+    <div><img class="shot" src="img/post.jpg" alt="Çay demlendi, sofra hazır. Sabah 07:00’den itibaren, İsmetpaşa." width="1080" height="1350" loading="lazy"></div>
+    <p class="note">Telefon, adres ve açılış saati Google Haritalar kaydınızdan; “ilk esnaf kahvaltıcısı” ifadesi Instagram biyografinizden alındı.</p>
   </section>
 
   <section aria-labelledby="h-muzik">

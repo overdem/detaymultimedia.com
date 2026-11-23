@@ -1,6 +1,6 @@
 # tasarim/mut-coffee.md — mut/kum/kil/krem/hasır, Bodoni Moda + Commissioner + Sacramento, kemer çerçeve + sıva dokusu
 TEL = '0541 440 94 88'; ADR = 'Eski Mahkeme Sk. No:14 · Kemalpaşa'
-PH = dict(latte='f8ac7ea6.png', ic='d4c0d482.png', salep='SALEP.png')
+PH = dict(latte='f8ac7ea6.png', ic='d4c0d482.png', salep='319485d7.png')
 CSS = """
 .s{background:var(--kum);color:var(--mut);font-family:var(--font-govde);text-align:center}
 .grain{position:absolute;inset:0;background-image:radial-gradient(rgba(58,38,27,.06) 1px,transparent 1px);background-size:6px 6px}

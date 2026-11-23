@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Şevket · Happy Hour karuseli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,500;1,500&family=Gabarito:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0d0a08;--panel:#17120e;--line:#3a2e22;--text:#f4ecde;--muted:#b3a593;--gold:#cba46a;
+--display:"Brygada 1918",Georgia,serif;--body:"Gabarito","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:1080px;margin:0 auto;padding:36px 20px 56px;display:flex;flex-direction:column;gap:56px}
+header{display:flex;flex-direction:column;gap:14px;text-align:center}
+.eyebrow{margin:0;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1{margin:0;font-family:var(--display);font-weight:500;font-size:clamp(32px,8vw,52px);line-height:1.1;text-wrap:balance}
+h1 em,h2 em{color:var(--gold)}
+.lede{margin:0 auto;max-width:38em;color:var(--muted);font-size:15px}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.plan{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.plan th,.plan td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.plan th{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.plan td:first-child{white-space:nowrap;color:var(--gold);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+section{display:flex;flex-direction:column;gap:22px}
+.day{display:flex;flex-direction:column;gap:4px;border-bottom:1px solid var(--line);padding-bottom:12px}
+h2{margin:0;font-family:var(--display);font-weight:500;font-size:30px;line-height:1.15}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px}
+.item{display:flex;flex-direction:column;gap:14px;min-width:0}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.kind{margin:0;font-family:var(--display);font-weight:500;font-size:21px}
+.meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.shot{display:block;width:auto;height:auto;max-width:100%;max-height:72vh;max-height:72svh;margin:0 auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.car figure{margin:0;flex:0 0 86%;scroll-snap-align:center;display:flex;flex-direction:column;gap:8px;align-items:center}
+.car img{width:100%;height:auto;max-height:66svh;object-fit:contain;border:1px solid var(--line);border-radius:14px}
+.mini{font-size:13px;color:var(--gold)}
+.dl{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--body);color:var(--bg);background:var(--gold);border-radius:999px;padding:12px 18px;text-decoration:none;border:0;cursor:pointer}
+.dl.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:9px 14px}
+.dl:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.dl svg{width:16px;height:16px;flex:none}
+.cap{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:14px;display:flex;flex-direction:column;gap:10px}
+.cap-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+h4{margin:0;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.cap pre{margin:0;font-family:var(--body);font-size:14px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
+.how{margin:0;color:var(--muted);font-size:14px}
+.how strong{color:var(--text);font-weight:600}
+.notes{border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--muted);font-size:14px}
+.notes h2{font-size:22px;color:var(--text);margin-bottom:8px}
+.notes ul{margin:0;padding-left:18px}
+footer{border-top:1px solid var(--line);padding-top:20px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="eyebrow">Şevket Steakhouse · Karusel</p>
+  <h1>Happy <em>Hour</em></h1>
+  <p class="lede">Hafta içi 17.00’ye kadar tüm yiyecek ve içeceklerde %30 indirim. 5 kare, 1728×2304 (3:4). Kareleri 1’den 5’e sırayla yükleyin.</p>
+  <div class="row"><a class="dl" href="indir/sevket-happy-hour-karusel.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>5 kareyi indir (ZIP)</a></div>
+</header>
+<section>
+  <article class="item">
+    <div class="car"><figure><img src="on/1.jpg" alt="Happy hour karuseli, 1. kare" width="900" height="1200" loading="lazy"><a class="mini" href="indir/sevket-happy-hour-1.jpg" download>1. kareyi indir</a></figure><figure><img src="on/2.jpg" alt="Happy hour karuseli, 2. kare" width="900" height="1200" loading="lazy"><a class="mini" href="indir/sevket-happy-hour-2.jpg" download>2. kareyi indir</a></figure><figure><img src="on/3.jpg" alt="Happy hour karuseli, 3. kare" width="900" height="1200" loading="lazy"><a class="mini" href="indir/sevket-happy-hour-3.jpg" download>3. kareyi indir</a></figure><figure><img src="on/4.jpg" alt="Happy hour karuseli, 4. kare" width="900" height="1200" loading="lazy"><a class="mini" href="indir/sevket-happy-hour-4.jpg" download>4. kareyi indir</a></figure><figure><img src="on/5.jpg" alt="Happy hour karuseli, 5. kare" width="900" height="1200" loading="lazy"><a class="mini" href="indir/sevket-happy-hour-5.jpg" download>5. kareyi indir</a></figure></div>
+    <div class="cap"><div class="cap-top"><h4>Açıklama</h4><button class="dl ghost copy" type="button" data-copy="c1">Kopyala</button></div><pre id="c1">Happy Hour Şevket’te. ⏰
+
+Hafta içi her gün 17.00’ye kadar tüm yiyecek ve içeceklerde %30 indirim.
+Steak’ten köfteye, burgerden ayrana; menünün tamamı.
+
+Öğle arası, iş çıkışı, arkadaşlarla… Masanız hazır.
+📞 0286 213 09 08
+📍 Barbaros Mah. Aziziye Cad. No: 87, Çanakkale
+
+#ŞevketSteakhouse #şevketteyiz #HappyHour #Çanakkale #çanakkaleyenikordon #ÇanakkaleRestoran #steakhouse #burger #öğleyemeği</pre></div>
+    <p class="how"><strong>Nasıl paylaşılır:</strong> Gönderi olarak karusel; konum Şevk-Et Steakhouse. Önerilen saat hafta içi 11.30 (öğle öncesi). Müzik: hareketli, akustik/funk enstrümantal. Kapağı ayrıca hikâyede paylaşıp “Gönderiye git” bağlantısı ekleyin.</p>
+  </article>
+</section>
+<footer>Detay Multimedya</footer>
+</main>
+<script>
+(function(){
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-copy')),txt=el.textContent;
+      function done(ok){b.textContent=ok?'Kopyalandı':'Metni seçip kopyalayın';setTimeout(function(){b.textContent='Kopyala';},2200);}
+      function select(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
+      try{navigator.clipboard.writeText(txt).then(function(){done(true);},function(){select();done(false);});}catch(e){select();done(false);}
+    });
+  });
+  try{
+    var q=new URLSearchParams(location.search);
+    if(q.get('ben')==='1')localStorage.setItem('detay_ben','1');
+    if(q.get('ben')==='0')localStorage.removeItem('detay_ben');
+    if(localStorage.getItem('detay_ben')==='1'||sessionStorage.getItem('detay_bildirildi'))return;
+    sessionStorage.setItem('detay_bildirildi','1');
+    var body=JSON.stringify({sayfa:'sevket-happy-hour'});
+    if(!(navigator.sendBeacon&&navigator.sendBeacon('/api/acildi',new Blob([body],{type:'application/json'})))){
+      fetch('/api/acildi',{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true});
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

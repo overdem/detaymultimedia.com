@@ -1,6 +1,6 @@
 # tasarim/revgan-canakkale.md — tabya/derin/şeftali/krem/bronz, Cinzel + Libre Bodoni + Schibsted Grotesk, yarım güneş + dalga motifi
 TEL = '0530 132 10 17'; ADR = 'Anadolu Hamidiye Tabyası · Barbaros'
-PH = dict(bahce='6683dfe0.png', kahvalti='KAHVALTI.png', aksam='AKSAM.png', kutlama='KUTLAMA.png')
+PH = dict(bahce='6683dfe0.png', kahvalti='d9220895.png', aksam='91cdf013.png', kutlama='3e27f9fb.png')
 def sun(w=150, c='var(--seftali)'):
     h = w // 2
     waves = ''.join(f'<path d="M0 {h+10+i*14} q {w/8} -8 {w/4} 0 t {w/4} 0 t {w/4} 0 t {w/4} 0" stroke="{c}" stroke-width="{max(2,w//50)}" fill="none"/>' for i in range(3))

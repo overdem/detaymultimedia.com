@@ -1576,5 +1576,665 @@
    "Açık zeminli sade 'kahvaltıcı' stil yapma.",
    "Bu paleti müşteri onayı olmadan 'logo' gibi sunma; öneri olarak sun."
   ]
+ },
+ {
+  "slug": "ihsan-i-ikram-esnaf-lokantasi",
+  "name": "İhsan-ı İkram Esnaf Lokantası",
+  "updated": "23.11.2026",
+  "category": "Esnaf lokantası · et lokantası & zeytinyağlılar, Kemalpaşa / Yalı Cd.",
+  "page": "https://sunum.detaymultimedia.com/ihsan-i-ikram-esnaf-lokantasi-ornek/",
+  "source": "Instagram hesabı bulunamadı (23.11.2026). Kaynak: kendi basılı menü kartı (Google Haritalar fotoğrafı, Ağu 2026): koyu kahve-siyah kalın geometrik 'İhsan-ı İkram' yazısı, kiremit-bordo etiket içinde beyaz 'Menü', pembemsi krem kâğıt, alt satırda 'Et Lokantası & Zeytinyağlılar'. Zeytin ve bakır tonları menü içeriğinden (zeytinyağlılar, tencere) türetilmiş öneri.",
+  "observation": "Menü kartındaki yazı modern ve kalın, kâğıt sıcak ve sade: geleneksel esnaf lokantası ama tozlu değil. 06:30'dan gece 04:30'a kadar açık; çorba, sulu yemek, zeytinyağlı ve et yemekleri. Ton: doyurucu, samimi, her saat açık, ev yemeği.",
+  "palette": [
+   {
+    "token": "murekkep",
+    "hex": "#2E2420",
+    "role": "Yazı-logo rengi: başlık, gövde"
+   },
+   {
+    "token": "etiket",
+    "hex": "#7A3B2E",
+    "role": "'Menü' etiketi: vurgu blok, şerit, buton"
+   },
+   {
+    "token": "kagit",
+    "hex": "#F5E8E1",
+    "role": "Menü kâğıdı: ana açık zemin"
+   },
+   {
+    "token": "zeytin",
+    "hex": "#5E6B34",
+    "role": "Zeytinyağlılar: ikincil vurgu, küçük etiket"
+   },
+   {
+    "token": "bakir",
+    "hex": "#C9853F",
+    "role": "Tencere/bakır: ince çizgi, saat rozeti (koyu zeminde)"
+   }
+  ],
+  "ratio": "%55 kağıt, %25 mürekkep, %12 etiket, %5 zeytin, %3 bakır.",
+  "pairs": [
+   [
+    "murekkep",
+    "kagit",
+    "gövde"
+   ],
+   [
+    "kagit",
+    "etiket",
+    "etiket/şerit yazısı"
+   ],
+   [
+    "kagit",
+    "murekkep",
+    "koyu kart"
+   ],
+   [
+    "etiket",
+    "kagit",
+    "başlık vurgu kelimesi"
+   ],
+   [
+    "zeytin",
+    "kagit",
+    "küçük etiket"
+   ],
+   [
+    "bakir",
+    "murekkep",
+    "saat rozeti (büyük)"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Lexend",
+    "axes": "wght@600;800",
+    "weights": "800 / 600",
+    "use": "Menüdeki kalın geometrik 'İhsan-ı İkram' yazısının karşılığı",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Karla",
+    "axes": "wght@400;700",
+    "weights": "400 / 700",
+    "use": "Yemek adı, açıklama, adres",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Tebeşir",
+    "family": "Patrick Hand",
+    "axes": "",
+    "weights": "400",
+    "use": "Günün yemeği tahtası notu: 'bugün tencerede', fiyat değil",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "96–120 px Lexend 800, sıkı satır"
+   ],
+   [
+    "Etiket",
+    "26 px Lexend 600, kiremit kutu içinde beyaz"
+   ],
+   [
+    "Gövde",
+    "30 px Karla 400"
+   ],
+   [
+    "Tebeşir notu",
+    "44 px Patrick Hand, −3°"
+   ]
+  ],
+  "type_rules": [
+   "Menü kartındaki gibi: kalın başlık + yanında kiremit kutuda tek kelime etiket ('Menü', 'Bugün', 'Sıcak').",
+   "Yemek listeleri iki sütun menü düzeninde, ince mürekkep çizgilerle.",
+   "Patrick Hand yalnız kısa not; kare başına bir kez."
+  ],
+  "logo": [
+   "Logo dosyası yok → yazı-imza: 'İhsan-ı İkram' Lexend 800 + kiremit 'Esnaf Lokantası' etiketi. Sunumda kimlik önerisi olarak belirt.",
+   "İmza: alt şeritte 0551 160 66 49 · Yalı Cd. Kemalpaşa."
+  ],
+  "layout": [
+   "Motif: menü kartı (krem kâğıt, ince çerçeve, iki sütun), kiremit etiket kutusu, saat rozeti (06:30–04:30).",
+   "Fotoğraflar sıcak, buharlı, benmari/tencere yakın plan; kâğıt kenarlı kart içinde.",
+   "Reels: tencere kapağı açılır, kepçe; etiket kutusu soldan kayar."
+  ],
+  "photo": "Warm traditional Turkish tradesmen's restaurant, homey light, deep brown and brick red tones with cream, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Neon/parlak renk ve modern kafe estetiği kullanma.",
+   "Fiyat yazma (menü fiyatları değişiyor).",
+   "Puan/yorum sayısını içerikte kullanma."
+  ]
+ },
+ {
+  "slug": "bizim-yaka-restaurant",
+  "name": "Bizim Yaka Restaurant",
+  "updated": "23.11.2026",
+  "category": "Et & balık restoranı · Kıyı AVM, Barbaros sahil",
+  "page": "https://sunum.detaymultimedia.com/bizim-yaka-restaurant-ornek/",
+  "source": "Web sitesi bizimyakarestaurant.com logosu (23.11.2026): beyaz imza tarzı el yazısı 'Bizim Yaka' + geometrik büyük olmayan 'Restaurant'. Sitenin renkleri ölçüldü: arduvaz mavi #495A77 (yazı), zeytin yeşili #4F772D, kum altını #CEB077, köpük #F3F7F8.",
+  "observation": "İmza logosu kişisel ve sıcak ('bizim'), site sakin deniz mavisi ve zeytin yeşili. Kıyıda gün batımı, meze çeşitliliği, ızgara ahtapot, et ve balık. Ton: rahat, deniz kenarı akşamı, cömert sofra.",
+  "palette": [
+   {
+    "token": "gece",
+    "hex": "#1F2A40",
+    "role": "Ana koyu zemin (beyaz logonun zemini)"
+   },
+   {
+    "token": "kiyi",
+    "hex": "#495A77",
+    "role": "Site ana rengi: başlık (açık zeminde), ikincil kart"
+   },
+   {
+    "token": "kopuk",
+    "hex": "#F3F7F8",
+    "role": "Açık zemin, koyu zeminde yazı"
+   },
+   {
+    "token": "zeytin",
+    "hex": "#4F772D",
+    "role": "Site vurgu yeşili: buton, etiket"
+   },
+   {
+    "token": "kum",
+    "hex": "#CEB077",
+    "role": "Gün batımı/kum: imza yazısı, ince çizgi (koyu zeminde)"
+   }
+  ],
+  "ratio": "%45 gece/kıyı, %35 köpük, %10 kum, %10 zeytin.",
+  "pairs": [
+   [
+    "kopuk",
+    "gece",
+    "gövde"
+   ],
+   [
+    "kum",
+    "gece",
+    "imza/vurgu"
+   ],
+   [
+    "kiyi",
+    "kopuk",
+    "açık kartta başlık"
+   ],
+   [
+    "gece",
+    "kopuk",
+    "açık kartta gövde"
+   ],
+   [
+    "kopuk",
+    "zeytin",
+    "buton/etiket"
+   ],
+   [
+    "kopuk",
+    "kiyi",
+    "kart yazısı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Urbanist",
+    "axes": "wght@500;700",
+    "weights": "700 / 500",
+    "use": "Logodaki geometrik 'Restaurant' yazısının karşılığı; geniş harf aralıklı başlık",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Figtree",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Menü, açıklama, rezervasyon",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "İmza",
+    "family": "Allura",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki el yazısı 'Bizim Yaka' havası; tek kelime/kısa ifade",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "72–96 px Urbanist 700, +8% harf aralığı"
+   ],
+   [
+    "İmza",
+    "120–150 px Allura, kum rengi"
+   ],
+   [
+    "Gövde",
+    "30 px Figtree 400"
+   ],
+   [
+    "Etiket",
+    "20 px Urbanist 700, +24%, büyük harf"
+   ]
+  ],
+  "type_rules": [
+   "Logodaki gibi: büyük el yazısı kelime + altında küçük geometrik satır.",
+   "Allura kare başına bir kez.",
+   "Başlıklar sola yaslı, ufuk çizgisi hizasında."
+  ],
+  "logo": [
+   "Beyaz imza logosu koyu zeminde sağ alt köşede (%22). Dosya: web sitesindeki PNG; içerikte logo yerine yazıyla 'Bizim Yaka' kullanıldıysa Allura ile."
+  ],
+  "layout": [
+   "Motif: ince ufuk çizgisi (kum rengi yatay çizgi, karenin 2/3 hizasında), yarım güneş dairesi.",
+   "Fotoğraflar gün batımı, deniz kenarı masa, meze yukarıdan.",
+   "Reels: güneş batarken ufuk çizgisi soldan sağa çizilir."
+  ],
+  "photo": "Seaside restaurant on the Canakkale waterfront, slate blue sea, olive green herbs, sand-gold accents, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Parlak turkuaz/tropik renk kullanma.",
+   "Logoyu yeniden çizme; yoksa yazı imza kullan."
+  ]
+ },
+ {
+  "slug": "revgan-canakkale",
+  "name": "Revgan Çanakkale",
+  "updated": "23.11.2026",
+  "category": "Restoran · Anadolu Hamidiye Tabyası, Boğaz kıyısı",
+  "page": "https://sunum.detaymultimedia.com/revgan-canakkale-ornek/",
+  "source": "Instagram @revgancanakkale profil logosu (23.11.2026, 96×96 ölçüm): koyu petrol yeşili zemin (en sık #005454 civarı), şeftali renginde dalgaların üstünde yarım güneş ikonu, aralıklı yüksek kontrastlı serif büyük harf 'REVGAN', altında küçük 'ÇANAKKALE'. Web sitesi revgancanakkale.com renkleri: #0B2F2E, #F6F0E7, #F0C1A6, #8A6633.",
+  "observation": "Logo sakin ve şık: Boğaz'da batan güneş, dalga, tarihi tabya. Kahvaltıdan akşam yemeğine her gün 08:00–00:00, Pazar açık büfe kahvaltı, söz/nişan/doğum günü organizasyonu, denize sıfır bahçe. Ton: zarif, huzurlu, kutlama.",
+  "palette": [
+   {
+    "token": "tabya",
+    "hex": "#0A5250",
+    "role": "Logo zemini: ana koyu zemin"
+   },
+   {
+    "token": "derin",
+    "hex": "#0B2F2E",
+    "role": "Daha koyu: gölge, alt şerit"
+   },
+   {
+    "token": "seftali",
+    "hex": "#F0C1A6",
+    "role": "Logo güneşi: başlık, ikon, çizgi"
+   },
+   {
+    "token": "krem",
+    "hex": "#F6F0E7",
+    "role": "Açık zemin, koyu zeminde gövde"
+   },
+   {
+    "token": "bronz",
+    "hex": "#8A6633",
+    "role": "İnce ayrıntı, açık zeminde etiket"
+   }
+  ],
+  "ratio": "%55 tabya/derin, %25 krem, %15 şeftali, %5 bronz.",
+  "pairs": [
+   [
+    "krem",
+    "tabya",
+    "gövde"
+   ],
+   [
+    "seftali",
+    "tabya",
+    "başlık/vurgu"
+   ],
+   [
+    "krem",
+    "derin",
+    "koyu şerit"
+   ],
+   [
+    "tabya",
+    "krem",
+    "açık kart"
+   ],
+   [
+    "bronz",
+    "krem",
+    "açık kartta küçük etiket"
+   ],
+   [
+    "derin",
+    "seftali",
+    "şeftali buton"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Cinzel",
+    "axes": "wght@400;600",
+    "weights": "400 / 600 büyük harf",
+    "use": "Logodaki aralıklı serif 'REVGAN' karşılığı",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Libre Bodoni",
+    "axes": "ital,wght@0,400;1,400",
+    "weights": "400 / italik",
+    "use": "Açıklama, menü; italik vurgu",
+    "var": "govde",
+    "fallback": "Georgia, serif"
+   },
+   {
+    "role": "Etiket",
+    "family": "Schibsted Grotesk",
+    "axes": "wght@500",
+    "weights": "500",
+    "use": "Saat, adres, küçük büyük harf etiketler",
+    "var": "vurgu",
+    "fallback": "sans-serif"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "72–96 px Cinzel 400, +22% harf aralığı"
+   ],
+   [
+    "Gövde",
+    "30 px Libre Bodoni 400"
+   ],
+   [
+    "İtalik vurgu",
+    "44–56 px Libre Bodoni italik, şeftali"
+   ],
+   [
+    "Etiket",
+    "20 px Schibsted 500, +26%, büyük harf"
+   ]
+  ],
+  "type_rules": [
+   "Logodaki gibi ortalı: ikon (yarım güneş + dalga) → aralıklı büyük harf başlık → küçük alt satır.",
+   "Vurgu kelimesi Libre Bodoni italik.",
+   "Etiketler noktalı ayraçla: KAHVALTI · AKŞAM · ORGANİZASYON."
+  ],
+  "logo": [
+   "Logo ikonunu (güneş+dalga) yeniden çizmek yerine basit yarım daire + üç dalga çizgisi motifi kullan; tam logo varsa koyu zeminde ortada %26.",
+   "İmza: 0530 132 10 17 · Anadolu Hamidiye Tabyası."
+  ],
+  "layout": [
+   "Motif: şeftali yarım güneş + üç ince dalga çizgisi, kemer/tabya kavisi çerçeve.",
+   "Fotoğraflar sabah denizi, kahvaltı sofrası, akşam mum ışığı; petrol gölge.",
+   "Reels: güneş yükselir/batar; yumuşak geçişler."
+  ],
+  "photo": "Elegant restaurant by the sea inside a historic stone fortification in Canakkale, deep teal and soft peach tones, cream linens, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Neon, sert kırmızı, kalın grotesk başlık kullanma.",
+   "Logoyu birebir kopyalama; motif olarak sadeleştir."
+  ]
+ },
+ {
+  "slug": "federal-kordon",
+  "name": "Federal Kordon",
+  "updated": "23.11.2026",
+  "category": "Kafe-restoran · Kordon, Cevat Paşa / Pirireis Cd.",
+  "page": "https://sunum.detaymultimedia.com/federal-kordon-ornek/",
+  "source": "Logo dosyasına ulaşılamadı; Google'daki Instagram bağlantısı (@federalkordon) açılmıyor (23.11.2026). Palet Google Haritalar mekân fotoğrafından türetilmiş ÖNERİ: koyu ahşap bar, siyah, turuncu vurgular, duvarda beyaz plak/tabaklar, pirinç ışıklar.",
+  "observation": "Kordon'da Boğaz'a bakan, porsiyonları cömert bir kafe-restoran; yorumlarda fettuccine Alfredo, ekşi mayalı ekmekle avokadolu ekmek üstü ve önden gelen acuka öne çıkıyor. Ton: sıcak, şehirli, cömert, akşam buluşması.",
+  "palette": [
+   {
+    "token": "komur",
+    "hex": "#171615",
+    "role": "Ana koyu zemin"
+   },
+   {
+    "token": "ceviz",
+    "hex": "#5B3B28",
+    "role": "Ahşap: ikincil koyu kart"
+   },
+   {
+    "token": "turuncu",
+    "hex": "#E2702B",
+    "role": "Vurgu: başlık kelimesi, rozet"
+   },
+   {
+    "token": "plak",
+    "hex": "#EEEAE2",
+    "role": "Açık zemin, koyu zeminde yazı"
+   },
+   {
+    "token": "pirinc",
+    "hex": "#B38B4F",
+    "role": "İnce çizgi, ayrıntı"
+   }
+  ],
+  "ratio": "%50 kömür/ceviz, %30 plak, %15 turuncu, %5 pirinç.",
+  "pairs": [
+   [
+    "plak",
+    "komur",
+    "gövde"
+   ],
+   [
+    "turuncu",
+    "komur",
+    "başlık vurgu"
+   ],
+   [
+    "plak",
+    "ceviz",
+    "kart yazısı"
+   ],
+   [
+    "komur",
+    "plak",
+    "açık kart"
+   ],
+   [
+    "komur",
+    "turuncu",
+    "rozet yazısı"
+   ],
+   [
+    "pirinc",
+    "komur",
+    "ince etiket (büyük)"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Big Shoulders Display",
+    "axes": "wght@700;800",
+    "weights": "800",
+    "use": "Dar, uzun, şehirli büyük harf başlık",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Public Sans",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Menü, açıklama",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Etiket",
+    "family": "IBM Plex Mono",
+    "axes": "wght@500",
+    "weights": "500",
+    "use": "Menü kodu, saat, adres: bistro fişi havası",
+    "var": "vurgu",
+    "fallback": "monospace"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "130–170 px Big Shoulders 800, büyük harf"
+   ],
+   [
+    "Gövde",
+    "30 px Public Sans 400"
+   ],
+   [
+    "Etiket",
+    "22 px IBM Plex Mono 500, +8%"
+   ]
+  ],
+  "type_rules": [
+   "Başlıkta tek kelime turuncu.",
+   "Etiketler mono, köşeli parantezle: [ KORDON ] [ 08:00 ].",
+   "Sola yaslı, dergi menüsü düzeni."
+  ],
+  "logo": [
+   "Logo yok/teyit edilemedi → yazı-imza: FEDERAL KORDON, Big Shoulders 800. Sunumda öneri olarak belirt; zincir markanın resmi logosu varsa ona geçilir."
+  ],
+  "layout": [
+   "Motif: plak dairesi (ince halkalı daire), turuncu yuvarlak rozet, ince pirinç çizgiler.",
+   "Fotoğraflar sıcak akşam ışığı, büyük porsiyon yakın plan, pencereden deniz.",
+   "Reels: plak döner gibi dairesel geçiş, hızlı kesim."
+  ],
+  "photo": "Cozy modern cafe-restaurant on the Canakkale seafront promenade, dark wood, black and warm orange accents, warm light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Pastel zemin kullanma.",
+   "Federal Coffee zincirinin logosunu taklit etme."
+  ]
+ },
+ {
+  "slug": "mut-coffee",
+  "name": "Mut Coffee",
+  "updated": "23.11.2026",
+  "category": "Kahve dükkanı · Kemalpaşa / Eski Mahkeme Sk.",
+  "page": "https://sunum.detaymultimedia.com/mut-coffee-ornek/",
+  "source": "Instagram hesabı bulunamadı (23.11.2026). Kaynak: mekândaki duvar yazısı (Google Haritalar fotoğrafı): kum rengi kabartmalı sıva duvar üzerinde koyu kahve, yüksek kontrastlı kalın serif 'MUT'. Kum, kil ve hasır tonları iç mekândan (rattan, örgü sepetler) ölçülerek türetildi.",
+  "observation": "Kum rengi, el yapımı kabartmalı duvarlar, rattan ve örgü sepetlerle bohem, sakin bir butik kafe; 1000'i aşkın yorumla 4,7; latte art ve salep öne çıkıyor; alt kat sohbet, üst kat çalışma. Ton: sıcak, dokulu, sakin, genç.",
+  "palette": [
+   {
+    "token": "mut",
+    "hex": "#3A261B",
+    "role": "Duvar yazısı 'MUT': başlık, gövde"
+   },
+   {
+    "token": "kum",
+    "hex": "#EADBC4",
+    "role": "Sıva duvar: ana açık zemin"
+   },
+   {
+    "token": "kil",
+    "hex": "#B07E52",
+    "role": "Toprak vurgu: büyük başlık, çizgi, rozet"
+   },
+   {
+    "token": "krem",
+    "hex": "#F7F0E5",
+    "role": "En açık: kart"
+   },
+   {
+    "token": "hasir",
+    "hex": "#9C7B52",
+    "role": "Rattan: ince ayrıntı (büyük boyutta)"
+   }
+  ],
+  "ratio": "%55 kum/krem, %25 mut, %15 kil, %5 hasır.",
+  "pairs": [
+   [
+    "mut",
+    "kum",
+    "gövde"
+   ],
+   [
+    "mut",
+    "krem",
+    "kart gövde"
+   ],
+   [
+    "krem",
+    "mut",
+    "koyu kart"
+   ],
+   [
+    "kil",
+    "krem",
+    "büyük başlık vurgu"
+   ],
+   [
+    "krem",
+    "kil",
+    "rozet yazısı (büyük)"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Bodoni Moda",
+    "axes": "opsz,wght@6..96,700;6..96,800",
+    "weights": "800",
+    "use": "Duvardaki kalın yüksek kontrastlı serif 'MUT' karşılığı",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Commissioner",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Menü, açıklama",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "El yazısı",
+    "family": "Sacramento",
+    "axes": "",
+    "weights": "400",
+    "use": "Kısa not: latte art, sıcak salep",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "120–170 px Bodoni Moda 800, büyük harf, +6%"
+   ],
+   [
+    "Gövde",
+    "30 px Commissioner 400"
+   ],
+   [
+    "El yazısı",
+    "70–90 px Sacramento, kil rengi"
+   ]
+  ],
+  "type_rules": [
+   "'MUT' gibi kısa, kalın, aralıklı büyük harf başlık.",
+   "Sacramento kare başına bir kez.",
+   "Bol boşluk; ortalı."
+  ],
+  "logo": [
+   "Logo dosyası yok → yazı-imza: 'MUT' Bodoni Moda 800, mut renginde; altında küçük 'COFFEE' Commissioner +40%. Sunumda kimlik önerisi olarak belirt."
+  ],
+  "layout": [
+   "Motif: kemer (üstü yuvarlak) fotoğraf çerçevesi, sıva dokusu (çok hafif gren), örgü sepet daireleri.",
+   "Fotoğraflar doğal gün ışığı, kum duvar önünde fincan, rattan.",
+   "Reels: yavaş kaydırma, latte art dökülürken."
+  ],
+  "photo": "Boho chic coffee shop with sculpted sand-colored plaster walls, rattan and woven baskets, warm beige and clay tones, soft natural light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Soğuk gri/siyah zemin kullanma.",
+   "Parlak renk ve neon kullanma."
+  ]
  }
 ]

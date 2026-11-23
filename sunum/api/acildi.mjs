@@ -3,6 +3,11 @@
 // NTFY_TOPIC (push), RESEND_API_KEY + NOTIFY_EMAIL (e-mail copy), NOTIFY_FROM (optional sender).
 
 const PAGES = {
+  'ihsan-i-ikram-esnaf-lokantasi-ornek': 'İhsan-ı İkram Esnaf Lokantası',
+  'bizim-yaka-restaurant-ornek': 'Bizim Yaka Restaurant',
+  'revgan-canakkale-ornek': 'Revgan Çanakkale',
+  'federal-kordon-ornek': 'Federal Kordon',
+  'mut-coffee-ornek': 'Mut Coffee',
   'lahmacun-time-ocakbasi-ornek': 'Lahmacun Time Ocakbaşı',
   'buegros-coffee-shop-ornek': 'Buegros Coffee Shop',
   'esenler-citir-pide-ornek': 'Esenler Çıtır Pide',

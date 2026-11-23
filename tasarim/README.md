@@ -27,6 +27,11 @@ Her müşteri için tek bir tasarım dosyası: logosundan ve renklerinden çıka
 | Buegros Coffee Shop | [buegros-coffee-shop.md](buegros-coffee-shop.md) | Alfa Slab One / Rethink Sans / Tenor Sans | espresso siyahı, beyaz, kraft |
 | Esenler Çıtır Pide | [esenler-citir-pide.md](esenler-citir-pide.md) | Rokkitt / Chivo / Abril Fatface | krem, çıtır turuncu, kahve |
 | Lahmacun Time Ocakbaşı | [lahmacun-time-ocakbasi.md](lahmacun-time-ocakbasi.md) | Unbounded / Readex Pro / Kalam | gece, tabure pembesi, petrol |
+| İhsan-ı İkram Esnaf Lokantası | [ihsan-i-ikram-esnaf-lokantasi.md](ihsan-i-ikram-esnaf-lokantasi.md) | Lexend / Karla / Patrick Hand | menü kâğıdı, mürekkep, kiremit etiket |
+| Bizim Yaka Restaurant | [bizim-yaka-restaurant.md](bizim-yaka-restaurant.md) | Urbanist / Figtree / Allura | gece laciverti, kıyı mavisi, kum, zeytin |
+| Revgan Çanakkale | [revgan-canakkale.md](revgan-canakkale.md) | Cinzel / Libre Bodoni / Schibsted Grotesk | tabya petrolü, şeftali, krem |
+| Federal Kordon | [federal-kordon.md](federal-kordon.md) | Big Shoulders Display / Public Sans / IBM Plex Mono (öneri) | kömür, ceviz, turuncu |
+| Mut Coffee | [mut-coffee.md](mut-coffee.md) | Bodoni Moda / Commissioner / Sacramento | kum sıva, mut kahvesi, kil |
 
 ## Yeni firma eklemek
 

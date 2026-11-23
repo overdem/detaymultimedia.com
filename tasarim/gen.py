@@ -33,7 +33,7 @@ def render(c):
     L.append(f"- **Kategori:** {c['category']}")
     L.append(f"- **Sunum sayfası:** {c['page']}")
     L.append(f"- **Kaynak:** {c['source']}")
-    L.append(f"- **Son güncelleme:** 21.11.2026\n")
+    L.append(f"- **Son güncelleme:** {c.get('updated', '21.11.2026')}\n")
     L.append("## Marka gözlemi\n")
     L.append(c['observation'] + "\n")
     L.append("## Renk paleti\n")

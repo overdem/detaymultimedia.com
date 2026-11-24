@@ -100,15 +100,17 @@ p{margin:0}
 .tarti .fiyat{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
 @media (max-width:640px){.tarti li{grid-template-columns:1fr 72px}.tarti b{grid-column:1/-1;margin-bottom:-6px}}
 
-/* hikâye */
-.hikaye .sar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:center}
-.hikaye p{max-width:32em}
-.hikaye h2 + p{margin-top:26px}
-.hikaye p + p{margin-top:14px}
-.ikili{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--murekkep)}
-.ikili img{width:100%;aspect-ratio:3/4.4;object-fit:cover}
-.ikili img + img{border-left:2px solid var(--murekkep)}
-@media (max-width:900px){.hikaye .sar{grid-template-columns:1fr}}
+/* çiftlik – kasap – sofra */
+.zincir{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--murekkep);counter-reset:halka}
+.zincir li{counter-increment:halka;display:flex;flex-direction:column;background:var(--kagit)}
+.zincir li + li{border-left:2px solid var(--murekkep)}
+.zincir img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:50% 78%;border-bottom:2px solid var(--murekkep)}
+.zincir div{padding:20px 22px 26px}
+.zincir h3{font-size:clamp(28px,3vw,40px)}
+.zincir h3::before{content:counter(halka) ". ";color:var(--et)}
+.zincir p{margin-top:10px;font-size:16px}
+.zincir a{font-weight:700;white-space:nowrap;text-underline-offset:3px}
+@media (max-width:900px){.zincir{grid-template-columns:1fr}.zincir li + li{border-left:0;border-top:2px solid var(--murekkep)}.zincir img{aspect-ratio:16/10}}
 
 /* dolap */
 .dolap .sar{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,6vw,96px);align-items:center}

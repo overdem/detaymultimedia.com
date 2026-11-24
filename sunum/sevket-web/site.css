@@ -184,3 +184,36 @@ p{margin:0}
 @media (max-width:900px){.grup .sar{grid-template-columns:1fr}.grup-bas{position:static}.grup-bas img{aspect-ratio:16/10}.kat{top:66px}
   .tezgah li,.tezgah .ek{grid-template-columns:1fr 4.8em 4.6em;gap:4px 10px}.tezgah h3{font-size:19px}.tezgah p{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.inek .parca{transition:none}}
+
+/* dil */
+.dil{font-weight:700;font-size:14px;text-decoration:none;border:2px solid var(--murekkep);padding:6px 9px;line-height:1}
+.dil:hover{background:var(--murekkep);color:var(--kemik)}
+@media (max-width:520px){.ust .dugme span{display:none}}
+
+/* QR menü: masada, telefonda */
+html[data-dil="tr"] body [lang="en"],html[data-dil="en"] body [lang="tr"]{display:none}
+.qr .ust .sar{min-height:60px}
+.dil-sec{display:flex;border:2px solid var(--murekkep)}
+.dil-sec button{font:700 14px var(--yazi);background:transparent;color:var(--murekkep);border:0;padding:9px 13px;cursor:pointer}
+.dil-sec button[aria-pressed="true"]{background:var(--murekkep);color:var(--kemik)}
+.qr .kat{top:62px}
+.qr main{max-width:760px;padding-bottom:40px}
+.qgiris{margin-top:22px;font-size:16px;color:#4c4841}
+.qgrup{padding-top:34px;scroll-margin-top:112px}
+.qgrup h2{font-size:34px;margin-bottom:12px}
+.qgrup .knot{font-size:15px;color:#4c4841;margin:-4px 0 12px}
+.qgrup .ev{font-size:21px;font-weight:900;margin:22px 0 8px;color:var(--et)}
+.qgrup .tezgah li{grid-template-columns:1fr auto 5em;gap:3px 12px;padding:12px 0}
+.qgrup .tezgah .ek{grid-template-columns:1fr auto 5em;gap:12px}
+.qgrup .tezgah p{grid-column:1/-1}
+.tablo{overflow-x:auto;margin-top:18px;border:2px solid var(--murekkep);background:var(--kagit)}
+.tablo table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+.tablo th,.tablo td{padding:10px 10px;text-align:right;border-bottom:1px solid var(--ince);white-space:nowrap}
+.tablo th:first-child{text-align:left}
+.tablo tbody th{font-family:var(--tabela);font-weight:700;white-space:normal;min-width:8.5em}
+.tablo thead th{font-weight:700;border-bottom:2px solid var(--murekkep)}
+.tablo tr:last-child > *{border-bottom:0}
+.qson{margin-top:40px;font-family:var(--tabela);font-weight:900;font-size:28px;text-align:center}
+
+.giris-en h1{font-size:clamp(52px,7.4vw,112px)}
+@media (max-width:900px){.giris-en h1{font-size:clamp(48px,14.5vw,96px)}}

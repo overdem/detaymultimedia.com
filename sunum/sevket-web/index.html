@@ -8,7 +8,11 @@
 <meta name="description" content="Dededen toruna çiftlik, kasap ve steakhouse. Çanakkale Yeni Kordon. Rezervasyon: 0286 213 09 08">
 <link rel="alternate" hreflang="tr" href="https://sunum.detaymultimedia.com/sevket-web/"><link rel="alternate" hreflang="en" href="https://sunum.detaymultimedia.com/sevket-web/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Besley:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./site.css?v=4">
+<link rel="icon" href="./img/ikon.png"><link rel="apple-touch-icon" href="./img/ikon.png">
+<meta property="og:title" content="Şevket Steakhouse | Çanakkale"><meta property="og:description" content="Dededen toruna çiftlik, kasap ve steakhouse. Çanakkale Yeni Kordon. Rezervasyon: 0286 213 09 08"><meta property="og:image" content="https://sunum.detaymultimedia.com/sevket-web/img/og.jpg"><meta property="og:type" content="restaurant">
+<meta name="theme-color" content="#eae3d2">
+<link rel="stylesheet" href="./site.css?v=5">
+<script defer src="./site.js?v=5"></script>
 </head>
 <body>
 <header class="ust"><div class="sar">
@@ -26,7 +30,7 @@
     <p>Çiftlik, kasap ve restoran aynı ailenin. Besiyi biz yetiştirir, eti biz keser, biz pişiririz.</p>
     <div class="dugmeler"><a class="dugme" href="tel:+902862130908">Masa ayırt 0286 213 09 08</a><a class="dugme bos" href="menu/">Menüye bak</a></div>
   </div>
-  <div class="giris-foto"><img src="./img/m-steak.webp" alt="Kütük masada tahtada servis edilen kemikli antrikot, arkada boğa kafatası olan duvar" width="1125" height="1500" fetchpriority="high"></div>
+  <div class="giris-foto"><img src="./img/m-steak.webp" alt="Kütük masada tahtada servis edilen kemikli antrikot, arkada boğa kafatası olan duvar" width="1125" height="1500" class="on" fetchpriority="high"><img src="./img/tbone.webp" alt="" width="1600" height="1080" loading="lazy"><img src="./img/special-tahta.webp" alt="" width="1600" height="827" loading="lazy"><img src="./img/usta-kobe.webp" alt="" width="1600" height="681" loading="lazy"></div>
   <svg class="muhur" viewBox="0 0 200 200" role="img" aria-label="Çiftlik, kasap, sofra. Dededen toruna. Çanakkale">
 <defs><path id="ust-yay" d="M 24 100 A 76 76 0 0 1 176 100"/><path id="alt-yay" d="M 14 100 A 86 86 0 0 0 186 100"/></defs>
 <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="5"/>
@@ -38,12 +42,17 @@
 <text x="100" y="96">Dededen</text><text x="100" y="120">toruna</text></g>
 </svg>
 </div></section>
-<div class="plaka"><div class="sar"><span><b>Her gün</b> 10.30 – 23.00</span><span><b>Yeni Kordon</b>, Aziziye Caddesi</span><span><b>Steakhouse</b> 0286 213 09 08</span><span><b>Kasap</b> 0286 217 72 26</span><span><b>Çiftlik</b> 0533 607 49 92</span></div></div>
+<div class="plaka"><div class="sar"><span class="durum" data-durum hidden></span><span><b>Her gün</b> 10.30 – 23.00</span><span><b>Yeni Kordon</b>, Aziziye Caddesi</span><span><b>Steakhouse</b> 0286 213 09 08</span><span><b>Kasap</b> 0286 217 72 26</span><span><b>Çiftlik</b> 0533 607 49 92</span></div></div>
 
 <section class="bolum hikaye" id="hikaye"><div class="sar">
   <h2>Çiftlik, kasap, sofra</h2>
   <p class="alt-yazi">Üçü de aynı ailenin. Dededen toruna kalan kalite buradan gelir: et, çiftlikten tabağa kadar elimizden hiç çıkmaz.</p>
-  <ol class="zincir"><li><img src="./img/ciftlik.webp" alt="Gün batımında besi çiftliği" width="1125" height="1500" loading="lazy"><div><h3>Çiftlik</h3><p>Besiyi Şevket Çiftliği’nde kendimiz yetiştiririz. Kurban döneminde kurbanlık ve hisse için çiftliği arayın: <a href="tel:+905336074992">0533 607 49 92</a>.</p></div></li><li><img src="./img/kasap.webp" alt="Kasap tahtası ve dinlendirme dolabı" width="1125" height="1500" loading="lazy"><div><h3>Kasap</h3><p>Et kendi tezgâhımızda kesilir, dinlendirilir. Köfte, sucuk ve sosis de burada yapılır. Kasap: <a href="tel:+902862177226">0286 217 72 26</a>.</p></div></li><li><img src="./img/gercek-kose.webp" alt="Kütük masa, kapitone sedir ve boğa kafatası olan köşe" width="1125" height="1500" loading="lazy"><div><h3>Sofra</h3><p>Yemekler mevsimin malzemesiyle hazırlanır, ateşten çıkar çıkmaz servis edilir. Masa için: <a href="tel:+902862130908">0286 213 09 08</a>.</p></div></li></ol>
+  <ol class="zincir"><li data-ac><img src="./img/ciftlik.webp" alt="Gün batımında besi çiftliği" width="1125" height="1500" loading="lazy"><div><h3>Çiftlik</h3><p>Besiyi Şevket Çiftliği’nde kendimiz yetiştiririz. Kurban döneminde kurbanlık ve hisse için çiftliği arayın: <a href="tel:+905336074992">0533 607 49 92</a>.</p></div></li><li data-ac><img src="./img/tezgah.webp" alt="Kasap tahtası ve dinlendirme dolabı" width="1600" height="859" loading="lazy"><div><h3>Kasap</h3><p>Et kendi tezgâhımızda kesilir, dinlendirilir. Köfte, sucuk ve sosis de burada yapılır. Kasap: <a href="tel:+902862177226">0286 217 72 26</a>.</p></div></li><li data-ac><img src="./img/gercek-kose.webp" alt="Kütük masa, kapitone sedir ve boğa kafatası olan köşe" width="1125" height="1500" loading="lazy"><div><h3>Sofra</h3><p>Yemekler mevsimin malzemesiyle hazırlanır, ateşten çıkar çıkmaz servis edilir. Masa için: <a href="tel:+902862130908">0286 213 09 08</a>.</p></div></li></ol>
+  <div class="eller">
+    <figure data-ac><img src="./img/usta-kobe.webp" alt="Kasap önlüklü usta, tahtada dinlendirilmiş et parçalarıyla" width="1600" height="681" loading="lazy"></figure>
+    <div><h3>Eti tanıyan eller</h3><p>Hangi parça size göre, nasıl pişmeli? Tezgâhtakilere sorun, bilirler.</p></div>
+    <figure data-ac><img src="./img/usta-tabak.webp" alt="Tahtada servis tabağını gösteren genç usta" width="1600" height="1155" loading="lazy"></figure>
+  </div>
 </div></section>
 
 <section class="bolum kesim koyu" id="kesim"><div class="sar">
@@ -76,14 +85,23 @@
   <ol class="tarti"><li><b>Ottoman Steak</b><div class="cubuk"><i style="width:78.0%"></i><em>750–800 gr</em></div><span class="fiyat">3.900 ₺</span></li><li><b>Porterhouse Steak</b><div class="cubuk"><i style="width:63.4%"></i><em>600–650 gr</em></div><span class="fiyat">3.400 ₺</span></li><li><b>T-bone Steak</b><div class="cubuk"><i style="width:48.8%"></i><em>450–500 gr</em></div><span class="fiyat">2.900 ₺</span></li><li><b>Dallas Steak</b><div class="cubuk"><i style="width:48.8%"></i><em>450–500 gr</em></div><span class="fiyat">2.900 ₺</span></li><li><b>Dana Pirzola</b><div class="cubuk"><i style="width:39.0%"></i><em>350–400 gr</em></div><span class="fiyat">2.450 ₺</span></li><li><b>Şevket Special</b><div class="cubuk"><i style="width:34.1%"></i><em>350 gr, iki kişilik</em></div><span class="fiyat">2.500 ₺</span></li><li><b>Newyork Steak</b><div class="cubuk"><i style="width:29.2%"></i><em>300 gr</em></div><span class="fiyat">2.200 ₺</span></li><li><b>Dana Şaşlık</b><div class="cubuk"><i style="width:24.4%"></i><em>250 gr</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Dana Antrikot</b><div class="cubuk"><i style="width:21.5%"></i><em>220 gr</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Dana Lokum</b><div class="cubuk"><i style="width:19.5%"></i><em>200 gr</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Fillet Mignon</b><div class="cubuk"><i style="width:19.5%"></i><em>200 gr</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Şevket Kobe</b><div class="cubuk"><i style="width:19.5%"></i><em>200 gr</em></div><span class="fiyat">2.200 ₺</span></li></ol>
 </div></section>
 
+<section class="ara" data-ac><img src="./img/izgara.webp" alt="Izgarada pişen etler" width="1600" height="839" loading="lazy"><p>Ateşten çıkar çıkmaz masada.</p></section>
+
 <section class="bolum dolap koyu" id="dolap"><div class="sar">
-  <img src="./img/m-dryaged.webp" alt="Terasta, içinde dinlendirilen etlerin asılı olduğu Dry Aged Beef dolabı" width="1125" height="1500" loading="lazy">
+  <figure data-ac><img src="./img/m-dryaged.webp" alt="Terasta, içinde dinlendirilen etlerin asılı olduğu Dry Aged Beef dolabı" width="1125" height="1500" loading="lazy"></figure>
   <div>
     <h2>Dolapta bekler, tezgâhta kesilir</h2>
     <p>Terastaki dry aged dolabı süs değil. Kemikli parçalar burada dinlenir, lezzeti yoğunlaşır.</p><p>Eve götürmek isterseniz kasap bölümünü arayın: köfte, sucuk, sosis ve istediğiniz kesim hazırlanır.</p>
     <div class="dugmeler"><a class="dugme" href="tel:+902862177226">Kasabı ara 0286 217 72 26</a><a class="dugme bos" href="menu/#steakler">Steaklere bak</a></div>
   </div>
 </div></section>
+
+<section class="bolum galeri" id="galeri"><div class="sar">
+  <h2>Ateşin başından</h2><p class="alt-yazi">Mutfaktan ve tezgâhtan kareler. Büyütmek için dokunun.</p>
+  <div class="duvar"><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Izgarada"><img data-buyut="Izgarada" src="./img/izgara.webp" alt="Izgarada" width="1600" height="839" loading="lazy"></button><figcaption>Izgarada</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Şevket Special, sıcak tavada"><img data-buyut="Şevket Special, sıcak tavada" src="./img/special-tava.webp" alt="Şevket Special, sıcak tavada" width="1600" height="621" loading="lazy"></button><figcaption>Şevket Special, sıcak tavada</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Kuzu pirzola, tezgâhtan"><img data-buyut="Kuzu pirzola, tezgâhtan" src="./img/kuzu-pirzola.webp" alt="Kuzu pirzola, tezgâhtan" width="940" height="1125" loading="lazy"></button><figcaption>Kuzu pirzola, tezgâhtan</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Kemikli, dilimlenmiş"><img data-buyut="Kemikli, dilimlenmiş" src="./img/tbone.webp" alt="Kemikli, dilimlenmiş" width="1600" height="1080" loading="lazy"></button><figcaption>Kemikli, dilimlenmiş</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Şevket Burger"><img data-buyut="Şevket Burger" src="./img/burger.webp" alt="Şevket Burger" width="1600" height="1209" loading="lazy"></button><figcaption>Şevket Burger</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Masada dilimlenir"><img data-buyut="Masada dilimlenir" src="./img/teras-dilim.webp" alt="Masada dilimlenir" width="1600" height="945" loading="lazy"></button><figcaption>Masada dilimlenir</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Dana füme"><img data-buyut="Dana füme" src="./img/fume-dilim.webp" alt="Dana füme" width="1600" height="859" loading="lazy"></button><figcaption>Dana füme</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Közde füme ve cheddar"><img data-buyut="Közde füme ve cheddar" src="./img/ates.webp" alt="Közde füme ve cheddar" width="1600" height="859" loading="lazy"></button><figcaption>Közde füme ve cheddar</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Sofra"><img data-buyut="Sofra" src="./img/sofra-ustten.webp" alt="Sofra" width="1600" height="859" loading="lazy"></button><figcaption>Sofra</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Kuzu Lokum"><img data-buyut="Kuzu Lokum" src="./img/kuzu-lokum.webp" alt="Kuzu Lokum" width="1600" height="1326" loading="lazy"></button><figcaption>Kuzu Lokum</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Kasap sucuğu"><img data-buyut="Kasap sucuğu" src="./img/sucuk.webp" alt="Kasap sucuğu" width="1600" height="1248" loading="lazy"></button><figcaption>Kasap sucuğu</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Paylaşmalık tahta"><img data-buyut="Paylaşmalık tahta" src="./img/special-tahta.webp" alt="Paylaşmalık tahta" width="1600" height="827" loading="lazy"></button><figcaption>Paylaşmalık tahta</figcaption></figure><figure data-ac><button type="button" aria-label="Fotoğrafı büyüt: Burger, ortadan"><img data-buyut="Burger, ortadan" src="./img/burger-kesit.webp" alt="Burger, ortadan" width="1600" height="586" loading="lazy"></button><figcaption>Burger, ortadan</figcaption></figure></div>
+</div></section>
+<dialog id="buyut" class="buyut" aria-label="Fotoğrafı büyüt"><img alt=""><p></p>
+  <button type="button" class="once" aria-label="Önceki">&#8592;</button><button type="button" class="sonra" aria-label="Sonraki">&#8594;</button><button type="button" class="kapat">Kapat</button></dialog>
 
 <section class="bolum mekan" id="mekan">
   <div class="sar"><h2>Kütük masa, gramofon, teras</h2><p class="alt-yazi">İçeride taş duvar ve kapitone sedirler, dışarıda sarmaşıklı cam teras. İki kişi de gelseniz, on kişi de gelseniz yer var.</p></div>
@@ -125,7 +143,16 @@ document.querySelectorAll('[data-kesim]').forEach(function(e){
 sec('bonfile');
 })();
 </script>
-<footer class="alt"><div class="sar"><p>Bu sayfa, Detay Multimedya’nın Şevket Steakhouse için hazırladığı tasarım önerisidir. Bilgiler ve fiyatlar 24 Kasım 2026’da sevketsteakhouse.com’dan alındı; güncel fiyat için mekânı arayın. Görsellerin bir kısmı temsilidir.</p></div></footer>
+<footer class="alt"><div class="sar">
+  <div class="alt-ust">
+    <div><h2>Ziyaret</h2><p>Barbaros Mah. Aziziye Cad. Eriş Sok. No: 87-89, Çanakkale 17100</p><p>Her gün 10.30 – 23.00</p><p><a href="https://g.page/etinenlezzetlisi?share" rel="noopener">Yol tarifi al</a></p></div>
+    <div><h2>Arayın</h2><p>Steakhouse <a href="tel:+902862130908">0286 213 09 08</a></p><p>Kasap <a href="tel:+902862177226">0286 217 72 26</a></p><p>Çiftlik <a href="tel:+905336074992">0533 607 49 92</a></p><p><a href="mailto:info@sevketkasapsteakhouse.com">info@sevketkasapsteakhouse.com</a></p></div>
+    <div><h2>Sayfalar</h2><p><a href="./menu/">Menü</a></p><p><a href="./#hikaye">Çiftlik, kasap, sofra</a></p><p><a href="./#kesim">Kesimler</a></p><p><a href="./qr/">QR menü</a></p><p><a href="https://www.instagram.com/sevketkasapsteakhouse/" rel="noopener">Instagram</a></p></div>
+  </div>
+  <p class="dev" aria-hidden="true">Şevk-ET</p>
+  <p class="kunye">Bu sayfa, Detay Multimedya’nın Şevket Steakhouse için hazırladığı tasarım önerisidir. Bilgiler ve fiyatlar 24 Kasım 2026’da sevketsteakhouse.com’dan alındı; güncel fiyat için mekânı arayın. Görsellerin bir kısmı temsilidir.</p>
+</div></footer>
+<nav class="cubuk-alt" aria-label="Ana menü"><a href="tel:+902862130908">Ara</a><a href="./menu/">Menü</a><a href="https://g.page/etinenlezzetlisi?share" rel="noopener">Yol tarifi</a></nav>
 <script>
 (function(){try{var q=new URLSearchParams(location.search);
 if(q.get('ben')==='1')localStorage.setItem('detay_ben','1');

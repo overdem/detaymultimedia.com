@@ -8,7 +8,11 @@
 <meta name="description" content="A family farm, butcher and steakhouse in Çanakkale, on the Yeni Kordon waterfront. Reservations: 0286 213 09 08">
 <link rel="alternate" hreflang="tr" href="https://sunum.detaymultimedia.com/sevket-web/"><link rel="alternate" hreflang="en" href="https://sunum.detaymultimedia.com/sevket-web/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Besley:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site.css?v=4">
+<link rel="icon" href="../img/ikon.png"><link rel="apple-touch-icon" href="../img/ikon.png">
+<meta property="og:title" content="Şevket Steakhouse | Çanakkale"><meta property="og:description" content="A family farm, butcher and steakhouse in Çanakkale, on the Yeni Kordon waterfront. Reservations: 0286 213 09 08"><meta property="og:image" content="https://sunum.detaymultimedia.com/sevket-web/img/og.jpg"><meta property="og:type" content="restaurant">
+<meta name="theme-color" content="#eae3d2">
+<link rel="stylesheet" href="../site.css?v=5">
+<script defer src="../site.js?v=5"></script>
 </head>
 <body>
 <header class="ust"><div class="sar">
@@ -26,7 +30,7 @@
     <p>The farm, the butcher’s counter and the restaurant belong to one family. We raise the cattle, cut the meat and cook it.</p>
     <div class="dugmeler"><a class="dugme" href="tel:+902862130908">Book a table 0286 213 09 08</a><a class="dugme bos" href="menu/">See the menu</a></div>
   </div>
-  <div class="giris-foto"><img src="../img/m-steak.webp" alt="A bone-in ribeye served on a board on a live-edge wooden table, with a bull skull on the wall behind" width="1125" height="1500" fetchpriority="high"></div>
+  <div class="giris-foto"><img src="../img/m-steak.webp" alt="A bone-in ribeye served on a board on a live-edge wooden table, with a bull skull on the wall behind" width="1125" height="1500" class="on" fetchpriority="high"><img src="../img/tbone.webp" alt="" width="1600" height="1080" loading="lazy"><img src="../img/special-tahta.webp" alt="" width="1600" height="827" loading="lazy"><img src="../img/usta-kobe.webp" alt="" width="1600" height="681" loading="lazy"></div>
   <svg class="muhur" viewBox="0 0 200 200" role="img" aria-label="Farm, butcher, table. Dededen toruna: from grandfather to grandson. Çanakkale">
 <defs><path id="ust-yay" d="M 24 100 A 76 76 0 0 1 176 100"/><path id="alt-yay" d="M 14 100 A 86 86 0 0 0 186 100"/></defs>
 <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="5"/>
@@ -38,12 +42,17 @@
 <text x="100" y="96">Dededen</text><text x="100" y="120">toruna</text></g>
 </svg>
 </div></section>
-<div class="plaka"><div class="sar"><span><b>Every day</b> 10.30 – 23.00</span><span><b>Yeni Kordon</b>, Aziziye Street</span><span><b>Steakhouse</b> 0286 213 09 08</span><span><b>Butcher</b> 0286 217 72 26</span><span><b>Farm</b> 0533 607 49 92</span></div></div>
+<div class="plaka"><div class="sar"><span class="durum" data-durum hidden></span><span><b>Every day</b> 10.30 – 23.00</span><span><b>Yeni Kordon</b>, Aziziye Street</span><span><b>Steakhouse</b> 0286 213 09 08</span><span><b>Butcher</b> 0286 217 72 26</span><span><b>Farm</b> 0533 607 49 92</span></div></div>
 
 <section class="bolum hikaye" id="hikaye"><div class="sar">
   <h2>Farm, butcher, table</h2>
   <p class="alt-yazi">All three belong to the same family. That is where the quality handed down from grandfather to grandson comes from: the meat never leaves our hands between the farm and your plate.</p>
-  <ol class="zincir"><li><img src="../img/ciftlik.webp" alt="A cattle farm at sunset" width="1125" height="1500" loading="lazy"><div><h3>Farm</h3><p>We raise our own cattle at Şevket Farm. For sacrificial animals and shares ahead of Kurban Bayramı, call the farm: <a href="tel:+905336074992">0533 607 49 92</a>.</p></div></li><li><img src="../img/kasap.webp" alt="A butcher’s block and an aging cabinet" width="1125" height="1500" loading="lazy"><div><h3>Butcher</h3><p>The meat is cut and aged at our own counter. Köfte, sucuk and sausages are made here too. Butcher: <a href="tel:+902862177226">0286 217 72 26</a>.</p></div></li><li><img src="../img/gercek-kose.webp" alt="A corner with a live-edge table, a tufted bench and a bull skull" width="1125" height="1500" loading="lazy"><div><h3>Table</h3><p>Dishes are made with what is in season and served straight off the fire. For a table: <a href="tel:+902862130908">0286 213 09 08</a>.</p></div></li></ol>
+  <ol class="zincir"><li data-ac><img src="../img/ciftlik.webp" alt="A cattle farm at sunset" width="1125" height="1500" loading="lazy"><div><h3>Farm</h3><p>We raise our own cattle at Şevket Farm. For sacrificial animals and shares ahead of Kurban Bayramı, call the farm: <a href="tel:+905336074992">0533 607 49 92</a>.</p></div></li><li data-ac><img src="../img/tezgah.webp" alt="A butcher’s block and an aging cabinet" width="1600" height="859" loading="lazy"><div><h3>Butcher</h3><p>The meat is cut and aged at our own counter. Köfte, sucuk and sausages are made here too. Butcher: <a href="tel:+902862177226">0286 217 72 26</a>.</p></div></li><li data-ac><img src="../img/gercek-kose.webp" alt="A corner with a live-edge table, a tufted bench and a bull skull" width="1125" height="1500" loading="lazy"><div><h3>Table</h3><p>Dishes are made with what is in season and served straight off the fire. For a table: <a href="tel:+902862130908">0286 213 09 08</a>.</p></div></li></ol>
+  <div class="eller">
+    <figure data-ac><img src="../img/usta-kobe.webp" alt="A butcher in an apron holding a board of aged beef cuts" width="1600" height="681" loading="lazy"></figure>
+    <div><h3>Hands that know the meat</h3><p>Which cut suits you, and how should it be cooked? Ask the people behind the counter. They know.</p></div>
+    <figure data-ac><img src="../img/usta-tabak.webp" alt="A young cook presenting a serving board" width="1600" height="1155" loading="lazy"></figure>
+  </div>
 </div></section>
 
 <section class="bolum kesim koyu" id="kesim"><div class="sar">
@@ -76,14 +85,23 @@
   <ol class="tarti"><li><b>Ottoman Steak</b><div class="cubuk"><i style="width:78.0%"></i><em>750–800 g</em></div><span class="fiyat">3.900 ₺</span></li><li><b>Porterhouse Steak</b><div class="cubuk"><i style="width:63.4%"></i><em>600–650 g</em></div><span class="fiyat">3.400 ₺</span></li><li><b>T-bone Steak</b><div class="cubuk"><i style="width:48.8%"></i><em>450–500 g</em></div><span class="fiyat">2.900 ₺</span></li><li><b>Dallas Steak</b><div class="cubuk"><i style="width:48.8%"></i><em>450–500 g</em></div><span class="fiyat">2.900 ₺</span></li><li><b>Beef Chop</b><div class="cubuk"><i style="width:39.0%"></i><em>350–400 g</em></div><span class="fiyat">2.450 ₺</span></li><li><b>Şevket Special</b><div class="cubuk"><i style="width:34.1%"></i><em>350 g, for two</em></div><span class="fiyat">2.500 ₺</span></li><li><b>New York Steak</b><div class="cubuk"><i style="width:29.2%"></i><em>300 g</em></div><span class="fiyat">2.200 ₺</span></li><li><b>Beef Shashlik</b><div class="cubuk"><i style="width:24.4%"></i><em>250 g</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Beef Ribeye</b><div class="cubuk"><i style="width:21.5%"></i><em>220 g</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Dana Lokum (beef tenderloin)</b><div class="cubuk"><i style="width:19.5%"></i><em>200 g</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Filet Mignon</b><div class="cubuk"><i style="width:19.5%"></i><em>200 g</em></div><span class="fiyat">1.300 ₺</span></li><li><b>Şevket Kobe</b><div class="cubuk"><i style="width:19.5%"></i><em>200 g</em></div><span class="fiyat">2.200 ₺</span></li></ol>
 </div></section>
 
+<section class="ara" data-ac><img src="../img/izgara.webp" alt="Steaks cooking on the grill" width="1600" height="839" loading="lazy"><p>Off the fire, straight to the table.</p></section>
+
 <section class="bolum dolap koyu" id="dolap"><div class="sar">
-  <img src="../img/m-dryaged.webp" alt="The Dry Aged Beef cabinet on the terrace, with aging cuts hanging inside" width="1125" height="1500" loading="lazy">
+  <figure data-ac><img src="../img/m-dryaged.webp" alt="The Dry Aged Beef cabinet on the terrace, with aging cuts hanging inside" width="1125" height="1500" loading="lazy"></figure>
   <div>
     <h2>Aged in the cabinet, cut at the counter</h2>
     <p>The dry-aging cabinet on the terrace is not decoration. Bone-in cuts rest here while their flavour deepens.</p><p>To take some home, call the butcher: köfte, sucuk, sausages and any cut you like, prepared to order.</p>
     <div class="dugmeler"><a class="dugme" href="tel:+902862177226">Call the butcher 0286 217 72 26</a><a class="dugme bos" href="menu/#steakler">See the steaks</a></div>
   </div>
 </div></section>
+
+<section class="bolum galeri" id="galeri"><div class="sar">
+  <h2>From the fire</h2><p class="alt-yazi">Shots from the kitchen and the counter. Tap to enlarge.</p>
+  <div class="duvar"><figure data-ac><button type="button" aria-label="Enlarge photo: On the grill"><img data-buyut="On the grill" src="../img/izgara.webp" alt="On the grill" width="1600" height="839" loading="lazy"></button><figcaption>On the grill</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Şevket Special in the hot pan"><img data-buyut="Şevket Special in the hot pan" src="../img/special-tava.webp" alt="Şevket Special in the hot pan" width="1600" height="621" loading="lazy"></button><figcaption>Şevket Special in the hot pan</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Lamb chops at the counter"><img data-buyut="Lamb chops at the counter" src="../img/kuzu-pirzola.webp" alt="Lamb chops at the counter" width="940" height="1125" loading="lazy"></button><figcaption>Lamb chops at the counter</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Bone-in, sliced"><img data-buyut="Bone-in, sliced" src="../img/tbone.webp" alt="Bone-in, sliced" width="1600" height="1080" loading="lazy"></button><figcaption>Bone-in, sliced</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Şevket Burger"><img data-buyut="Şevket Burger" src="../img/burger.webp" alt="Şevket Burger" width="1600" height="1209" loading="lazy"></button><figcaption>Şevket Burger</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Sliced at the table"><img data-buyut="Sliced at the table" src="../img/teras-dilim.webp" alt="Sliced at the table" width="1600" height="945" loading="lazy"></button><figcaption>Sliced at the table</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Smoked beef"><img data-buyut="Smoked beef" src="../img/fume-dilim.webp" alt="Smoked beef" width="1600" height="859" loading="lazy"></button><figcaption>Smoked beef</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Smoked beef and cheddar over the coals"><img data-buyut="Smoked beef and cheddar over the coals" src="../img/ates.webp" alt="Smoked beef and cheddar over the coals" width="1600" height="859" loading="lazy"></button><figcaption>Smoked beef and cheddar over the coals</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: The table"><img data-buyut="The table" src="../img/sofra-ustten.webp" alt="The table" width="1600" height="859" loading="lazy"></button><figcaption>The table</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Lamb Lokum"><img data-buyut="Lamb Lokum" src="../img/kuzu-lokum.webp" alt="Lamb Lokum" width="1600" height="1326" loading="lazy"></button><figcaption>Lamb Lokum</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: The butcher’s sucuk"><img data-buyut="The butcher’s sucuk" src="../img/sucuk.webp" alt="The butcher’s sucuk" width="1600" height="1248" loading="lazy"></button><figcaption>The butcher’s sucuk</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: A board to share"><img data-buyut="A board to share" src="../img/special-tahta.webp" alt="A board to share" width="1600" height="827" loading="lazy"></button><figcaption>A board to share</figcaption></figure><figure data-ac><button type="button" aria-label="Enlarge photo: Burger, cut through"><img data-buyut="Burger, cut through" src="../img/burger-kesit.webp" alt="Burger, cut through" width="1600" height="586" loading="lazy"></button><figcaption>Burger, cut through</figcaption></figure></div>
+</div></section>
+<dialog id="buyut" class="buyut" aria-label="Enlarge photo"><img alt=""><p></p>
+  <button type="button" class="once" aria-label="Previous">&#8592;</button><button type="button" class="sonra" aria-label="Next">&#8594;</button><button type="button" class="kapat">Close</button></dialog>
 
 <section class="bolum mekan" id="mekan">
   <div class="sar"><h2>Log tables, gramophones, a terrace</h2><p class="alt-yazi">Stone walls and tufted benches inside, a glazed terrace with ivy outside. There is room for two and room for ten.</p></div>
@@ -125,7 +143,16 @@ document.querySelectorAll('[data-kesim]').forEach(function(e){
 sec('bonfile');
 })();
 </script>
-<footer class="alt"><div class="sar"><p>This page is a design proposal prepared by Detay Multimedya for Şevket Steakhouse. Information and prices were taken from sevketsteakhouse.com on 24 November 2026; call the restaurant for current prices. Some images are illustrative.</p></div></footer>
+<footer class="alt"><div class="sar">
+  <div class="alt-ust">
+    <div><h2>Visit</h2><p>Barbaros Mah. Aziziye Cad. Eriş Sok. No: 87-89, Çanakkale 17100</p><p>Every day 10.30 – 23.00</p><p><a href="https://g.page/etinenlezzetlisi?share" rel="noopener">Get directions</a></p></div>
+    <div><h2>Call</h2><p>Steakhouse <a href="tel:+902862130908">0286 213 09 08</a></p><p>Butcher <a href="tel:+902862177226">0286 217 72 26</a></p><p>Farm <a href="tel:+905336074992">0533 607 49 92</a></p><p><a href="mailto:info@sevketkasapsteakhouse.com">info@sevketkasapsteakhouse.com</a></p></div>
+    <div><h2>Pages</h2><p><a href="./menu/">Menu</a></p><p><a href="./#hikaye">Farm, butcher, table</a></p><p><a href="./#kesim">Cuts</a></p><p><a href="../qr/">QR menu</a></p><p><a href="https://www.instagram.com/sevketkasapsteakhouse/" rel="noopener">Instagram</a></p></div>
+  </div>
+  <p class="dev" aria-hidden="true">Şevk-ET</p>
+  <p class="kunye">This page is a design proposal prepared by Detay Multimedya for Şevket Steakhouse. Information and prices were taken from sevketsteakhouse.com on 24 November 2026; call the restaurant for current prices. Some images are illustrative.</p>
+</div></footer>
+<nav class="cubuk-alt" aria-label="Main menu"><a href="tel:+902862130908">Call</a><a href="./menu/">Menu</a><a href="https://g.page/etinenlezzetlisi?share" rel="noopener">Directions</a></nav>
 <script>
 (function(){try{var q=new URLSearchParams(location.search);
 if(q.get('ben')==='1')localStorage.setItem('detay_ben','1');

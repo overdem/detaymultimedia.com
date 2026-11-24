@@ -2236,5 +2236,637 @@
    "Soğuk gri/siyah zemin kullanma.",
    "Parlak renk ve neon kullanma."
   ]
+ },
+ {
+  "slug": "veranda-coffee-company",
+  "name": "Veranda Coffee Company",
+  "updated": "24.11.2026",
+  "category": "Kahve dükkanı · Kordon (Yalı Cd.) + Yeni Kordon + Kepez Bahçe",
+  "page": "https://sunum.detaymultimedia.com/veranda-coffee-company-ornek/",
+  "source": "Logo: menu.coffeeveranda.com kapak (kraft zemin üzerinde koyu kahve daire içinde ince el çizimi 'VERANDA' + turuncu fincan). 96×96 ölçüm: kraft #B9925A çevresi, çizgi #3E2B22, fincan #E7611D. Siyah #1C1A18 Kordon şubesinin 'şık, siyah ağırlıklı' iç mekânından (Google yorumu).",
+  "observation": "Kordon'da deniz manzaralı kahve; Ruby cheesecake ve 'Boğaz'a karşı kahvaltı' menünün öne çıkanları; üç şube (Kordon, Yeni Kordon, Kepez Bahçe). Ton: sıcak, el yapımı, deniz kenarı.",
+  "palette": [
+   {
+    "token": "kraft",
+    "hex": "#B9925A",
+    "role": "Logo zemini: büyük alan, bant"
+   },
+   {
+    "token": "murekkep",
+    "hex": "#3E2B22",
+    "role": "Logo çizgisi: başlık, gövde"
+   },
+   {
+    "token": "fincan",
+    "hex": "#E7611D",
+    "role": "Logodaki turuncu fincan: tek vurgu, rozet"
+   },
+   {
+    "token": "krem",
+    "hex": "#F4EBDD",
+    "role": "Açık zemin, kart"
+   },
+   {
+    "token": "siyah",
+    "hex": "#1C1A18",
+    "role": "İç mekân siyahı: koyu kare"
+   }
+  ],
+  "ratio": "%40 krem, %25 kraft, %20 mürekkep/siyah, %10 fincan turuncusu (yalnız vurgu).",
+  "pairs": [
+   [
+    "murekkep",
+    "krem",
+    "gövde"
+   ],
+   [
+    "murekkep",
+    "kraft",
+    "başlık / bant"
+   ],
+   [
+    "krem",
+    "siyah",
+    "koyu kare gövde"
+   ],
+   [
+    "fincan",
+    "siyah",
+    "büyük başlık vurgu"
+   ],
+   [
+    "krem",
+    "murekkep",
+    "koyu kart"
+   ],
+   [
+    "siyah",
+    "fincan",
+    "rozet yazısı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Amatic SC",
+    "axes": "wght@700",
+    "weights": "700",
+    "use": "Logodaki ince, el çizimi büyük harf 'VERANDA' karşılığı",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Mulish",
+    "axes": "wght@400;700",
+    "weights": "400 / 700",
+    "use": "Menü, açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Kaushan Script",
+    "axes": "",
+    "weights": "400",
+    "use": "Kısa sıcak not: 'Boğaz'a karşı'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "150–210 px Amatic SC 700, büyük harf, +4%"
+   ],
+   [
+    "Gövde",
+    "30 px Mulish 400"
+   ],
+   [
+    "Vurgu",
+    "64–84 px Kaushan Script, fincan turuncusu"
+   ]
+  ],
+  "type_rules": [
+   "Başlık her zaman büyük harf, el çizimi hissi korunur.",
+   "Kaushan Script kare başına bir kez.",
+   "Turuncu yalnız vurgu ve tek rozet; zemin olarak kullanılmaz.",
+   "Turuncu açık zeminde yazı rengi olarak kullanılmaz (2,9:1); açık karede turuncu yalnız rozet zemini, üstünde siyah yazı."
+  ],
+  "logo": [
+   "Logo dosyası menü kapağından; sunumda daire + 'VERANDA' yazı-imza (Amatic SC, mürekkep) ve küçük turuncu fincan noktası. Elinizde vektör logo varsa onunla değiştirilir."
+  ],
+  "layout": [
+   "Motif: logodaki ince çift daire (fotoğraf daire çerçeve / rozet), kraft kâğıt dokusu (hafif gren).",
+   "Fotoğraflar: Kordon, deniz, siyah masa, Ruby cheesecake.",
+   "Reels: deniz kenarından yavaş yakınlaşma."
+  ],
+  "photo": "warm kraft brown and black tones with a touch of burnt orange, seaside light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Turuncuyu büyük zemin yapma.",
+   "Soğuk mavi/gri palet kullanma.",
+   "Çok kalın blok font kullanma; logo ince ve el çizimi."
+  ]
+ },
+ {
+  "slug": "cream-coffee-kitchen",
+  "name": "Cream Coffee & Kitchen",
+  "updated": "24.11.2026",
+  "category": "Kahvaltı / kafe · Kepez Sahil, Boğazkent",
+  "page": "https://sunum.detaymultimedia.com/cream-coffee-kitchen-ornek/",
+  "source": "Logo: creamcoffeekitchen.com/img/logo.png (fincan amblemi + kalın serif 'Cream', 'COFFEE & KITCHEN'). 96×96 ölçüm: kahve #461E1E–#4B2B25; site CSS: --cream #F6F0E7, --coffee #4B2B25, --latte #C8A27C. Deniz/gün batımı tonu (#D98C5F) kendi gün batımı fotoğrafından (öneri).",
+  "observation": "Kepez sahilinde denize sıfır, hasır gölgelikli kahvaltı; filtre kahve ve serpme kahvaltı yorumlarda öne çıkıyor; Google 4,7 (338). Ton: sakin, sıcak, deniz kenarı sabahı.",
+  "palette": [
+   {
+    "token": "kahve",
+    "hex": "#4B2B25",
+    "role": "Logo: başlık, gövde, koyu zemin"
+   },
+   {
+    "token": "krem",
+    "hex": "#F6F0E7",
+    "role": "Ana açık zemin"
+   },
+   {
+    "token": "latte",
+    "hex": "#C8A27C",
+    "role": "Ara ton: çizgi, bant, büyük vurgu"
+   },
+   {
+    "token": "kum",
+    "hex": "#EADBC8",
+    "role": "İkincil açık zemin"
+   },
+   {
+    "token": "gunbatimi",
+    "hex": "#D98C5F",
+    "role": "Gün batımı: küçük vurgu (öneri)"
+   }
+  ],
+  "ratio": "%50 krem/kum, %30 kahve, %15 latte, %5 gün batımı.",
+  "pairs": [
+   [
+    "kahve",
+    "krem",
+    "gövde"
+   ],
+   [
+    "kahve",
+    "kum",
+    "gövde"
+   ],
+   [
+    "krem",
+    "kahve",
+    "koyu kare"
+   ],
+   [
+    "latte",
+    "kahve",
+    "büyük başlık vurgu"
+   ],
+   [
+    "kahve",
+    "latte",
+    "bant yazısı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Petrona",
+    "axes": "wght@600;800",
+    "weights": "800",
+    "use": "Logodaki kalın serif 'Cream' karşılığı",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Source Sans 3",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Menü, açıklama",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Great Vibes",
+    "axes": "",
+    "weights": "400",
+    "use": "Kısa not: 'denize sıfır'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "120–170 px Petrona 800"
+   ],
+   [
+    "Gövde",
+    "30 px Source Sans 3 400"
+   ],
+   [
+    "Vurgu",
+    "80–100 px Great Vibes, latte"
+   ]
+  ],
+  "type_rules": [
+   "Başlık küçük harfli, sıcak serif; büyük harfle bağırmaz.",
+   "Great Vibes kare başına bir kez.",
+   "Etiketler Source Sans 3 600, +30% aralık, büyük harf."
+  ],
+  "logo": [
+   "Web sitesindeki logo (kahve rengi, krem zemin); koyu zeminde krem renkli yazı-imza 'Cream' Petrona 800 + 'COFFEE & KITCHEN'."
+  ],
+  "layout": [
+   "Motif: hasır şemsiye dokusu yerine ince yatay dalga çizgisi, yuvarlatılmış kart (24 px).",
+   "Fotoğraflar: deniz, hasır gölgelik, kahvaltı, gün batımı.",
+   "Reels: sabah → gün batımı akışı."
+  ],
+  "photo": "creamy beige and coffee brown tones, seaside under woven straw parasols, soft morning light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Neon ve soğuk renk kullanma.",
+   "Maskot maymunu çizme ya da taklit etme (marka varlığı, ancak kendi dosyaları kullanılır)."
+  ]
+ },
+ {
+  "slug": "ferin-patisserie-coffee",
+  "name": "ferin | patisserie & coffee",
+  "updated": "24.11.2026",
+  "category": "Butik pastane / kahve · Kemalpaşa, Dibek Sk.",
+  "page": "https://sunum.detaymultimedia.com/ferin-patisserie-coffee-ornek/",
+  "source": "Logo: ferin.com.tr/assets/images/ferin-logo.png (bordo 'fJ' monogram + klasik serif 'FÈRIN PATISSERIE & COFFEE'). 96×96 ölçüm: bordo #4A1B1B. Fildişi, gül kurusu ve altın kırıntısı tonları butik iç mekândan türetildi (öneri).",
+  "observation": "Tarihi Kemalpaşa sokaklarında butik pastane; tatlılar Büşra Hanım'ın kendi elinden; kirazlı tart ve focaccia yorumlarda öne çıkıyor; Google 4,7 (123). Ton: zarif, sakin, el yapımı.",
+  "palette": [
+   {
+    "token": "bordo",
+    "hex": "#4A1B1B",
+    "role": "Logo: başlık, gövde, koyu zemin"
+   },
+   {
+    "token": "fildisi",
+    "hex": "#F7F1E8",
+    "role": "Ana açık zemin"
+   },
+   {
+    "token": "gul",
+    "hex": "#C9928A",
+    "role": "Gül kurusu: ince çizgi, büyük vurgu (öneri)"
+   },
+   {
+    "token": "kaymak",
+    "hex": "#EDE2D3",
+    "role": "İkincil zemin, kart"
+   },
+   {
+    "token": "altin",
+    "hex": "#A8834F",
+    "role": "Altın kırıntısı: ayrıntı (büyük boyutta)"
+   }
+  ],
+  "ratio": "%55 fildişi/kaymak, %30 bordo, %10 gül kurusu, %5 altın.",
+  "pairs": [
+   [
+    "bordo",
+    "fildisi",
+    "gövde"
+   ],
+   [
+    "bordo",
+    "kaymak",
+    "kart gövde"
+   ],
+   [
+    "fildisi",
+    "bordo",
+    "koyu kare"
+   ],
+   [
+    "gul",
+    "bordo",
+    "büyük vurgu"
+   ],
+   [
+    "altin",
+    "fildisi",
+    "büyük ayrıntı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "EB Garamond",
+    "axes": "wght@500;600",
+    "weights": "500 / 600",
+    "use": "Logodaki klasik serif 'FÈRIN' karşılığı, büyük harf geniş aralık",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Be Vietnam Pro",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Menü, açıklama",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Parisienne",
+    "axes": "",
+    "weights": "400",
+    "use": "Kısa not: 'el yapımı'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "110–150 px EB Garamond 500, büyük harf, +12%"
+   ],
+   [
+    "Gövde",
+    "29 px Be Vietnam Pro 400"
+   ],
+   [
+    "Vurgu",
+    "76–96 px Parisienne, gül kurusu/bordo"
+   ]
+  ],
+  "type_rules": [
+   "Başlık büyük harf, geniş harf aralığı (logodaki gibi).",
+   "Parisienne kare başına bir kez.",
+   "Bol boşluk; ortalı, sakin."
+  ],
+  "logo": [
+   "Web sitesindeki 'fJ' monogram + yazı; sunumda monogram yerine yazı-imza 'FERİN' EB Garamond + 'PATISSERIE & COFFEE'. Vektör logo varsa onunla değiştirilir."
+  ],
+  "layout": [
+   "Motif: ince çift çerçeve (0.5 px + 2 px) ve oval fotoğraf penceresi, pasta kutusu kurdelesi gibi ince yatay çizgi.",
+   "Fotoğraflar: tart, vitrin, focaccia; mermer ve porselen.",
+   "Reels: yakın plan, yavaş."
+  ],
+  "photo": "elegant patisserie, deep burgundy and warm ivory tones, soft window light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Parlak pembe/şeker renkleri kullanma.",
+   "Kalın grotesk başlık kullanma."
+  ]
+ },
+ {
+  "slug": "assos-troy-beach-hotel",
+  "name": "Assos Troy Beach Hotel",
+  "updated": "24.11.2026",
+  "category": "Konaklama · Behram / Kadırga Koyu + Troy Port Hotel (Assos Antik Liman)",
+  "page": "https://sunum.detaymultimedia.com/assos-troy-beach-hotel-ornek/",
+  "source": "Logo: troybeachhotel.com SVG (bakır gradyan 'ASSOS TROY BEACH HOTEL', #D99983 → #966638); site metin rengi #5A422B. Deniz mavisi ve çim yeşili Kadırga Koyu fotoğraflarından (site 'Mavi ve Yeşilin Buluştuğu Nokta').",
+  "observation": "Kadırga Koyu'nda denize sıfır, havuzlu ve plajlı otel; Google 4,9 (1.371); kardeş otel Troy Port, Assos Antik Liman'da yıl boyu açık. Ton: Ege, sıcak, ferah.",
+  "palette": [
+   {
+    "token": "bakir",
+    "hex": "#966638",
+    "role": "Logo koyu bakır: başlık vurgu, çizgi"
+   },
+   {
+    "token": "pembe_bakir",
+    "hex": "#D99983",
+    "role": "Logo açık bakır: büyük vurgu, rozet"
+   },
+   {
+    "token": "toprak",
+    "hex": "#5A422B",
+    "role": "Metin: gövde, başlık"
+   },
+   {
+    "token": "deniz",
+    "hex": "#1F5F73",
+    "role": "Kadırga Koyu denizi: koyu zemin"
+   },
+   {
+    "token": "kum",
+    "hex": "#F8F1EA",
+    "role": "Açık zemin"
+   }
+  ],
+  "ratio": "%45 kum, %25 deniz, %15 toprak, %15 bakır tonları.",
+  "pairs": [
+   [
+    "toprak",
+    "kum",
+    "gövde"
+   ],
+   [
+    "kum",
+    "deniz",
+    "koyu kare"
+   ],
+   [
+    "bakir",
+    "kum",
+    "büyük başlık"
+   ],
+   [
+    "pembe_bakir",
+    "deniz",
+    "büyük vurgu"
+   ],
+   [
+    "kum",
+    "toprak",
+    "koyu kart"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Castoro",
+    "axes": "",
+    "weights": "400 (+italik)",
+    "use": "Logodaki klasik serif 'TROY' karşılığı",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Mukta",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Alex Brush",
+    "axes": "",
+    "weights": "400",
+    "use": "Kısa not: 'Assos'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "120–170 px Castoro, büyük harf, +10%"
+   ],
+   [
+    "Gövde",
+    "30 px Mukta 400"
+   ],
+   [
+    "Vurgu",
+    "80–100 px Alex Brush, açık bakır"
+   ]
+  ],
+  "type_rules": [
+   "Başlık büyük harf, geniş aralık; logodaki gibi bakır gradyan yalnız kapakta.",
+   "Alex Brush kare başına bir kez.",
+   "Gövde Mukta, sol hizalı ya da ortalı."
+  ],
+  "logo": [
+   "Web sitesindeki bakır gradyanlı logo; sunumda yazı-imza 'ASSOS / TROY / BEACH HOTEL' Castoro, bakır gradyan."
+  ],
+  "layout": [
+   "Motif: antik liman taşına gönderme yapan ince yatay taş sırası çizgisi; fotoğraflar yumuşak köşeli (18 px).",
+   "Fotoğraflar: kabanalar, havuz, Antik Liman.",
+   "Reels: deniz → havuz → liman; sakin geçiş."
+  ],
+  "photo": "Aegean coast at Assos, terracotta copper and sea blue tones, warm natural light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Neon turkuaz ve tropikal renk kullanma.",
+   "Bakırı küçük gövde yazısında kullanma (kontrast)."
+  ]
+ },
+ {
+  "slug": "bozcaada-oyku-butik-otel",
+  "name": "Bozcaada Öykü Butik Otel",
+  "updated": "24.11.2026",
+  "category": "Konaklama · Bozcaada / Alaybey, Camii Sk.",
+  "page": "https://sunum.detaymultimedia.com/bozcaada-oyku-butik-otel-ornek/",
+  "source": "Logo yok (Instagram @oykubutikotelbozcaada profil resmi geceleyin fenerlerle aydınlanan taş bina fotoğrafı). Palet bu fotoğraftan ve ada kahvaltısı paylaşımlarından türetildi: gece kırmızısı-kahve, fener amberi, taş, badana beyazı, asma yeşili — öneri.",
+  "observation": "Bozcaada'da limana bir dakika, Arnavut kaldırımlı Camii Sokak'ta; Emel Hanım'ın kahvaltısı yorumlarda 'efsane'; Google 4,9 (320). Ton: sıcak, ev gibi, ada akşamı.",
+  "palette": [
+   {
+    "token": "gece",
+    "hex": "#2E1A14",
+    "role": "Ada gecesi: koyu zemin, başlık"
+   },
+   {
+    "token": "fener",
+    "hex": "#E3A447",
+    "role": "Fener amberi: vurgu, rozet"
+   },
+   {
+    "token": "tas",
+    "hex": "#C9B49A",
+    "role": "Taş duvar: ara zemin"
+   },
+   {
+    "token": "badana",
+    "hex": "#FBF7F0",
+    "role": "Badana beyazı: açık zemin"
+   },
+   {
+    "token": "asma",
+    "hex": "#55663F",
+    "role": "Asma yaprağı: küçük ayrıntı (büyük boyutta)"
+   }
+  ],
+  "ratio": "%45 badana/taş, %30 gece, %15 fener, %10 asma.",
+  "pairs": [
+   [
+    "gece",
+    "badana",
+    "gövde"
+   ],
+   [
+    "gece",
+    "tas",
+    "gövde (büyük)"
+   ],
+   [
+    "badana",
+    "gece",
+    "koyu kare"
+   ],
+   [
+    "fener",
+    "gece",
+    "büyük başlık vurgu"
+   ],
+   [
+    "badana",
+    "asma",
+    "asma bandı yazısı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Vollkorn",
+    "axes": "wght@600;800",
+    "weights": "600 / 800",
+    "use": "Sıcak, kitap gibi serif: 'Öykü' adına uygun (öneri)",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Libre Franklin",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Dancing Script",
+    "axes": "wght@600",
+    "weights": "600",
+    "use": "Kısa not: 'ada kahvaltısı'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "130–180 px Vollkorn 800"
+   ],
+   [
+    "Gövde",
+    "30 px Libre Franklin 400"
+   ],
+   [
+    "Vurgu",
+    "70–90 px Dancing Script 600, fener amberi"
+   ]
+  ],
+  "type_rules": [
+   "Başlık küçük harf, kitap kapağı gibi ortalı.",
+   "Dancing Script kare başına bir kez.",
+   "Koyu karelerde fener amberi yalnız vurgu."
+  ],
+  "logo": [
+   "Logo yok → yazı-imza 'Öykü' Vollkorn 800 + 'BUTİK OTEL · BOZCAADA' Libre Franklin 600 +30%. Sunumda kimlik önerisi olarak belirt."
+  ],
+  "layout": [
+   "Motif: kitap sayfası gibi ince çerçeve + küçük fener noktası; kemerli kapı formunda fotoğraf penceresi.",
+   "Fotoğraflar: kahvaltı, taş bina gece, oda.",
+   "Reels: sabah kahvaltısı → ada akşamı."
+  ],
+  "photo": "Bozcaada island, warm stone and lantern amber tones with whitewashed walls, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Soğuk mavi 'Ege kartpostalı' klişesine kayma.",
+   "Logo uydurma; yalnız yazı-imza."
+  ]
  }
 ]

@@ -3,6 +3,11 @@
 // NTFY_TOPIC (push), RESEND_API_KEY + NOTIFY_EMAIL (e-mail copy), NOTIFY_FROM (optional sender).
 
 const PAGES = {
+  'veranda-coffee-company-ornek': 'Veranda Coffee Company',
+  'cream-coffee-kitchen-ornek': 'Cream Coffee & Kitchen',
+  'ferin-patisserie-coffee-ornek': 'ferin | patisserie & coffee',
+  'assos-troy-beach-hotel-ornek': 'Assos Troy Beach Hotel',
+  'bozcaada-oyku-butik-otel-ornek': 'Bozcaada Öykü Butik Otel',
   'ihsan-i-ikram-esnaf-lokantasi-ornek': 'İhsan-ı İkram Esnaf Lokantası',
   'bizim-yaka-restaurant-ornek': 'Bizim Yaka Restaurant',
   'revgan-canakkale-ornek': 'Revgan Çanakkale',

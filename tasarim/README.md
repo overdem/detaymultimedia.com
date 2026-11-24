@@ -32,6 +32,11 @@ Her müşteri için tek bir tasarım dosyası: logosundan ve renklerinden çıka
 | Revgan Çanakkale | [revgan-canakkale.md](revgan-canakkale.md) | Cinzel / Libre Bodoni / Schibsted Grotesk | tabya petrolü, şeftali, krem |
 | Federal Kordon | [federal-kordon.md](federal-kordon.md) | Big Shoulders Display / Public Sans / IBM Plex Mono (öneri) | kömür, ceviz, turuncu |
 | Mut Coffee | [mut-coffee.md](mut-coffee.md) | Bodoni Moda / Commissioner / Sacramento | kum sıva, mut kahvesi, kil |
+| Veranda Coffee Company | [veranda-coffee-company.md](veranda-coffee-company.md) | Amatic SC / Mulish / Kaushan Script | kraft, mürekkep kahve, fincan turuncusu, siyah |
+| Cream Coffee & Kitchen | [cream-coffee-kitchen.md](cream-coffee-kitchen.md) | Petrona / Source Sans 3 / Great Vibes | krem, kahve, latte, gün batımı |
+| ferin patisserie & coffee | [ferin-patisserie-coffee.md](ferin-patisserie-coffee.md) | EB Garamond / Be Vietnam Pro / Parisienne | bordo, fildişi, gül kurusu |
+| Assos Troy Beach Hotel | [assos-troy-beach-hotel.md](assos-troy-beach-hotel.md) | Castoro / Mukta / Alex Brush | bakır, Kadırga denizi, kum |
+| Bozcaada Öykü Butik Otel | [bozcaada-oyku-butik-otel.md](bozcaada-oyku-butik-otel.md) | Vollkorn / Libre Franklin / Dancing Script (öneri) | ada gecesi, fener amberi, taş, badana |
 
 ## Yeni firma eklemek
 

@@ -2868,5 +2868,641 @@
    "Soğuk mavi 'Ege kartpostalı' klişesine kayma.",
    "Logo uydurma; yalnız yazı-imza."
   ]
+ },
+ {
+  "slug": "talay-baglari-konukevi",
+  "name": "Talay Bağları Konukevi",
+  "updated": "25.11.2026",
+  "category": "Konaklama · Bozcaada / Sulubahçe Bağ Yolu",
+  "page": "https://sunum.detaymultimedia.com/talay-baglari-konukevi-ornek/",
+  "source": "Web sitesi talaybaglari.com logosu (mavi serif 'BOZCAADA TALAY BAĞLARI KONUK EVİ', 96×96 ölçüm: #2070A0/#1060A0 baskın) + Instagram @talaybaglarikonukevi profil logosu (krem zemin üstünde koyu kahve yazı). Bağ yeşili ve üzüm moru bağ fotoğraflarından tamamlandı.",
+  "observation": "Talay ailesinin dört kardeşi aileye ait eski bağevini restore edip konukevine çevirmiş; yalnız 4 oda, bağların arasında deniz ve bağ manzaralı teras; Google 4,9 (60), yorumlarda Serpil Hanım'ın ilgisi ve kahvaltı. Ton: sakin, aile hikayesi, bağ ve deniz. Alkol tanıtımı yok: bağ/deneyim odaklı.",
+  "palette": [
+   {
+    "token": "murekkep",
+    "hex": "#1D5A86",
+    "role": "Logo mavisi: başlık, koyu zemin"
+   },
+   {
+    "token": "bag",
+    "hex": "#4B6633",
+    "role": "Bağ yaprağı: ikinci koyu zemin, küçük ayrıntı"
+   },
+   {
+    "token": "uzum",
+    "hex": "#5A2A46",
+    "role": "Üzüm moru: vurgu yazısı (küçük dozda)"
+   },
+   {
+    "token": "kirec",
+    "hex": "#F7F4EC",
+    "role": "Kireç beyazı: açık zemin"
+   },
+   {
+    "token": "toprak",
+    "hex": "#6B5646",
+    "role": "Instagram logosu kahvesi: ince çizgi, etiket"
+   }
+  ],
+  "ratio": "%50 kireç, %25 mürekkep mavisi, %15 bağ yeşili, %10 üzüm/toprak.",
+  "pairs": [
+   [
+    "murekkep",
+    "kirec",
+    "gövde"
+   ],
+   [
+    "kirec",
+    "murekkep",
+    "koyu kare yazısı"
+   ],
+   [
+    "kirec",
+    "bag",
+    "bağ karesi yazısı"
+   ],
+   [
+    "uzum",
+    "kirec",
+    "vurgu"
+   ],
+   [
+    "toprak",
+    "kirec",
+    "etiket"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Cardo",
+    "axes": "wght@400;700",
+    "weights": "400 / 700",
+    "use": "Logodaki klasik serif büyük harf havası",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Hind",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Ms Madi",
+    "axes": "",
+    "weights": "400",
+    "use": "El yazısı not: 'bağların arasında'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "120–170 px Cardo 700"
+   ],
+   [
+    "Etiket",
+    "20–24 px Hind 600, +30% aralık, büyük harf"
+   ],
+   [
+    "Gövde",
+    "30 px Hind 400"
+   ],
+   [
+    "Vurgu",
+    "80–100 px Ms Madi, üzüm moru"
+   ]
+  ],
+  "type_rules": [
+   "Başlık logodaki gibi ortalı ve sakin; büyük harf yalnız etiketlerde.",
+   "Ms Madi kare başına bir kez, en az 80 px.",
+   "Koyu karede yazı yalnız kireç beyazı."
+  ],
+  "logo": [
+   "Yazı-imza: 'TALAY BAĞLARI' Cardo 700 büyük harf + üstte küçük 'BOZCAADA', altta 'konuk evi' Ms Madi; mürekkep mavisi. Firmanın gerçek logo dosyası gelince o kullanılır."
+  ],
+  "layout": [
+   "Motif: asma dalı gibi ince yatay çizgi + üç küçük üzüm tanesi (daire) imza köşesinde.",
+   "Fotoğraflar yumuşak köşeli dikey pencerede; altta kireç beyazı bant.",
+   "Reels: bağ → teras kahvaltısı → oda → iletişim."
+  ],
+  "photo": "Bozcaada vineyard, soft Aegean light, deep vineyard green, whitewashed stone and calm sea blue tones, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Şarap kadehi, şişe ya da içki öne çıkaran kare kullanma (alkol tanıtım kısıtı).",
+   "Logo uydurma; yalnız yazı-imza.",
+   "Neon/turkuaz kartpostal mavisi."
+  ]
+ },
+ {
+  "slug": "kinzi-house",
+  "name": "Kinzi House",
+  "updated": "25.11.2026",
+  "category": "Konaklama (apart) · Çanakkale Merkez / Kemalpaşa, Dibek Sk.",
+  "page": "https://sunum.detaymultimedia.com/kinzi-house-ornek/",
+  "source": "Logo, web sitesi ve Instagram hesabı bulunamadı. Palet Google Haritalar giriş fotoğrafından (koyu ceviz doğramalar, kireç beyazı cephe, saksı yeşilleri) türetildi + Boğaz mavisi — öneri.",
+  "observation": "Saat Kulesi'ne bir dakika, Dibek Sokak'ta; mutfaklı aile daireleri; Google 4,8 (266), trivago 9,5. Misafirler merkezi konumu, ilgili ev sahibini ve temizliği övüyor. Ton: sıcak, şehir içinde ev.",
+  "palette": [
+   {
+    "token": "ceviz",
+    "hex": "#4A2F20",
+    "role": "Ceviz doğrama: başlık, koyu zemin"
+   },
+   {
+    "token": "kirec",
+    "hex": "#F5F0E6",
+    "role": "Kireç cephe: açık zemin"
+   },
+   {
+    "token": "tas",
+    "hex": "#D6CCBD",
+    "role": "Arnavut kaldırımı taşı: ara zemin"
+   },
+   {
+    "token": "yaprak",
+    "hex": "#4F6B3A",
+    "role": "Saksı yeşili: küçük ayrıntı"
+   },
+   {
+    "token": "bogaz",
+    "hex": "#2B5A70",
+    "role": "Boğaz mavisi: vurgu"
+   }
+  ],
+  "ratio": "%50 kireç/taş, %30 ceviz, %10 Boğaz mavisi, %10 yaprak.",
+  "pairs": [
+   [
+    "ceviz",
+    "kirec",
+    "gövde"
+   ],
+   [
+    "ceviz",
+    "tas",
+    "gövde"
+   ],
+   [
+    "kirec",
+    "ceviz",
+    "koyu kare"
+   ],
+   [
+    "bogaz",
+    "kirec",
+    "vurgu"
+   ],
+   [
+    "kirec",
+    "bogaz",
+    "Boğaz bandı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Sora",
+    "axes": "wght@600;700",
+    "weights": "600 / 700",
+    "use": "Yalın, modern başlık",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Asap",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Yellowtail",
+    "axes": "",
+    "weights": "400",
+    "use": "Kısa not: 'evinizdesiniz'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "110–150 px Sora 700"
+   ],
+   [
+    "Gövde",
+    "30 px Asap 400"
+   ],
+   [
+    "Vurgu",
+    "70–90 px Yellowtail, Boğaz mavisi"
+   ]
+  ],
+  "type_rules": [
+   "Başlık sola dayalı, sıkı satır.",
+   "Yellowtail kare başına bir kez.",
+   "Rakamlar (1 dk, 4,8) Sora 700 iri."
+  ],
+  "logo": [
+   "Logo yok → yazı-imza 'KINZI HOUSE' Sora 700 +12% aralık + altta 'Kemalpaşa · Çanakkale' Asap. Sunumda öneri diye belirt."
+  ],
+  "layout": [
+   "Motif: kapı doğraması gibi ince ceviz çerçeve + köşede küçük anahtar dairesi.",
+   "Fotoğraf + alt bilgi şeridi (kireç).",
+   "Reels: sokak girişi → daire → kordon akşamı → iletişim."
+  ],
+  "photo": "Canakkale old town, warm walnut wood, lime-washed walls and leafy green tones, natural daylight, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Lüks otel/havuz imajı verme; apart ve aile odaklı kal.",
+   "Logo uydurma."
+  ]
+ },
+ {
+  "slug": "biada-oteli",
+  "name": "Biada Oteli",
+  "updated": "25.11.2026",
+  "category": "Konaklama · Bozcaada / Rum Mahallesi, Mehtepaltı Sk.",
+  "page": "https://sunum.detaymultimedia.com/biada-oteli-ornek/",
+  "source": "Instagram @biadaotelleri profil logosu: beyaz zemin üstünde gri el yazısı 'biAda' (96×96 ölçüm: #FFFFFF baskın, #808080 / #809090 yazı). Yazı için gri koyulaştırıldı. Panjur yeşili, sıva, kiremit ve fener amberi Instagram'daki bina fotoğraflarından.",
+  "observation": "Rum Mahallesi'nin meydanında restore edilmiş taş konak: koyu yeşil panjurlar, dış merdiven, akşam fenerleri; BiAda Grande, Medio, Lounge ve Kitchen; Google 4,9 (209), Instagram 7,3K. Ton: zarif, sakin, tarihî.",
+  "palette": [
+   {
+    "token": "grafit",
+    "hex": "#45494B",
+    "role": "Logo grisi (koyulaştırılmış): başlık, gövde"
+   },
+   {
+    "token": "siva",
+    "hex": "#E8E1D6",
+    "role": "Sıva: açık zemin"
+   },
+   {
+    "token": "panjur",
+    "hex": "#25332C",
+    "role": "Panjur yeşili: koyu zemin"
+   },
+   {
+    "token": "kiremit",
+    "hex": "#A9573A",
+    "role": "Kiremit: küçük vurgu"
+   },
+   {
+    "token": "fener",
+    "hex": "#E6A65B",
+    "role": "Gece feneri: koyu zeminde vurgu"
+   },
+   {
+    "token": "beyaz",
+    "hex": "#FFFFFF",
+    "role": "Logo zemini"
+   }
+  ],
+  "ratio": "%45 sıva/beyaz, %30 panjur yeşili, %15 grafit, %10 kiremit/fener.",
+  "pairs": [
+   [
+    "grafit",
+    "siva",
+    "gövde"
+   ],
+   [
+    "grafit",
+    "beyaz",
+    "gövde"
+   ],
+   [
+    "siva",
+    "panjur",
+    "koyu kare"
+   ],
+   [
+    "fener",
+    "panjur",
+    "koyu karede vurgu"
+   ],
+   [
+    "kiremit",
+    "siva",
+    "büyük vurgu"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Forum",
+    "axes": "",
+    "weights": "400",
+    "use": "Klasik, ince serif: konak havası",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Kumbh Sans",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Meow Script",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki el yazısına yakın: 'biAda'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "110–150 px Forum"
+   ],
+   [
+    "Gövde",
+    "29 px Kumbh Sans 400"
+   ],
+   [
+    "Vurgu / imza",
+    "110–160 px Meow Script"
+   ]
+  ],
+  "type_rules": [
+   "Forum büyük harfle değil, cümle düzeninde.",
+   "Meow Script imza ve tek vurgu için.",
+   "Koyu karede fener amberi yalnız tek kelime."
+  ],
+  "logo": [
+   "Logo el yazısı 'biAda' (gri, beyaz zemin). Dosya gelene kadar Meow Script ile yazı-imza: 'biAda' grafit, altına 'BOZCAADA' Kumbh Sans 600 +30% aralık."
+  ],
+  "layout": [
+   "Motif: panjur çıtası gibi ince dikey çizgi çifti + fotoğraflarda pencere oranında dikey çerçeve.",
+   "Gece kareleri panjur yeşili, gündüz kareleri sıva.",
+   "Reels: konak cephesi → akşam masası → oda → iletişim."
+  ],
+  "photo": "Bozcaada historic Greek quarter, greige plaster, dark green shutters, terracotta roof, warm lantern light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Mavi-beyaz Ege klişesi.",
+   "İçki şişesi/bar rafı öne çıkaran kare (alkol tanıtım kısıtı)."
+  ]
+ },
+ {
+  "slug": "kalidna-otel-bozcaada",
+  "name": "Kalidna Otel Bozcaada",
+  "updated": "25.11.2026",
+  "category": "Konaklama · Bozcaada / Alaybey, Kumkuyu Mevkii",
+  "page": "https://sunum.detaymultimedia.com/kalidna-otel-bozcaada-ornek/",
+  "source": "Instagram @kalidnaotelbozcaada profil logosu: ekru zemin üstünde lacivert serif 'KALİDNA OTEL' (96×96 ölçüm: #F0E0E0/#E0E0D0 zemin, #203050/#304060 yazı). Çam yeşili, kum ve deniz paylaşımlardaki bahçe ve kıyıdan.",
+  "observation": "Kumkuyu'da bahçeli, aile işletmesi bir otel; çam gölgesinde kahve, ferah ve temiz odalar ('7 numaralı oda' paylaşımı); Google 4,8 (231). Ton: sakin, ev gibi, kafa dinleme.",
+  "palette": [
+   {
+    "token": "lacivert",
+    "hex": "#26324E",
+    "role": "Logo laciverti: başlık, koyu zemin"
+   },
+   {
+    "token": "ekru",
+    "hex": "#EFE8E2",
+    "role": "Logo zemini: açık zemin"
+   },
+   {
+    "token": "cam",
+    "hex": "#3D5A45",
+    "role": "Çam gölgesi: ikinci koyu"
+   },
+   {
+    "token": "kum",
+    "hex": "#D9C8AE",
+    "role": "Kum: ara zemin"
+   },
+   {
+    "token": "deniz",
+    "hex": "#4A7891",
+    "role": "Ada denizi: küçük vurgu"
+   }
+  ],
+  "ratio": "%50 ekru/kum, %30 lacivert, %12 çam, %8 deniz.",
+  "pairs": [
+   [
+    "lacivert",
+    "ekru",
+    "gövde"
+   ],
+   [
+    "lacivert",
+    "kum",
+    "gövde"
+   ],
+   [
+    "ekru",
+    "lacivert",
+    "koyu kare"
+   ],
+   [
+    "ekru",
+    "cam",
+    "çam karesi"
+   ],
+   [
+    "deniz",
+    "ekru",
+    "büyük vurgu"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Bellefair",
+    "axes": "",
+    "weights": "400",
+    "use": "Logodaki geniş, zarif serif",
+    "var": "baslik",
+    "fallback": "serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Sarabun",
+    "axes": "wght@400;600",
+    "weights": "400 / 600",
+    "use": "Açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Corinthia",
+    "axes": "wght@400;700",
+    "weights": "400 / 700",
+    "use": "Kısa not: 'çamların gölgesinde'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "110–160 px Bellefair, büyük harf, +8% aralık"
+   ],
+   [
+    "Gövde",
+    "30 px Sarabun 400"
+   ],
+   [
+    "Vurgu",
+    "90–120 px Corinthia 700, deniz mavisi"
+   ]
+  ],
+  "type_rules": [
+   "Başlık logodaki gibi büyük harf ve ortalı.",
+   "Corinthia kare başına bir kez, 90 px altına inme.",
+   "Gövde ekru zeminde lacivert."
+  ],
+  "logo": [
+   "Logo: lacivert 'KALİDNA OTEL' serif, ekru daire. Dosya gelene kadar Bellefair büyük harf yazı-imza + altında ince çizgi ve 'BOZCAADA'."
+  ],
+  "layout": [
+   "Motif: logodaki gibi ekru daire içinde imza; köşede ince çam iğnesi çizgileri.",
+   "Fotoğraf üstte, altında ekru bilgi kartı.",
+   "Reels: bahçe kahvesi → oda → kahvaltı → iletişim."
+  ],
+  "photo": "Bozcaada garden hotel, navy and warm ecru tones, pine shade, soft morning light, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Parlak turkuaz/neon.",
+   "Kalabalık plaj imajı; sakin aile işletmesi kal."
+  ]
+ },
+ {
+  "slug": "assos-behram-hotel",
+  "name": "Assos Behram Hotel",
+  "updated": "25.11.2026",
+  "category": "Konaklama · Ayvacık / Behramkale, Assos Antik Liman",
+  "page": "https://sunum.detaymultimedia.com/assos-behram-hotel-ornek/",
+  "source": "Instagram @assosbehramhotel profil logosu: beyaz zemin üstünde bronz-taba tapınak cephesi ve 'ASSOS' (96×96 ölçüm: #C09070 baskın). Web sitesi assosbehramhotel.com düğme rengi amber #FEB249. Ege laciverti ve taş paylaşımlardaki liman fotoğraflarından.",
+  "observation": "Assos Antik Limanı'nda, denize sıfır taş otel; Antik Yunan tanrıları temalı, yetişkinlere özel (+12) 'special class' odalar; limanda balık restoranı, Aristo hikayesi ve yürüyüş parkurları; Instagram 22K. Google 4,1 (1.079) → itibar için düzenli, sıcak içerik.",
+  "palette": [
+   {
+    "token": "bronz",
+    "hex": "#B48461",
+    "role": "Logo bronzu: imza, motif (yazıda yalnız büyük)"
+   },
+   {
+    "token": "ege",
+    "hex": "#1D3A57",
+    "role": "Ege laciverti: koyu zemin, başlık"
+   },
+   {
+    "token": "tas",
+    "hex": "#EDE4D7",
+    "role": "Liman taşı: açık zemin"
+   },
+   {
+    "token": "amber",
+    "hex": "#F2A848",
+    "role": "Gün batımı amberi (web sitesi düğmesi): vurgu"
+   },
+   {
+    "token": "gece",
+    "hex": "#18212C",
+    "role": "Gece: en koyu zemin"
+   }
+  ],
+  "ratio": "%40 taş, %35 Ege laciverti/gece, %15 bronz, %10 amber.",
+  "pairs": [
+   [
+    "ege",
+    "tas",
+    "gövde"
+   ],
+   [
+    "tas",
+    "ege",
+    "koyu kare"
+   ],
+   [
+    "amber",
+    "gece",
+    "koyu karede vurgu"
+   ],
+   [
+    "bronz",
+    "gece",
+    "imza / büyük başlık"
+   ],
+   [
+    "gece",
+    "amber",
+    "amber rozet yazısı"
+   ]
+  ],
+  "fonts": [
+   {
+    "role": "Başlık",
+    "family": "Philosopher",
+    "axes": "wght@400;700",
+    "weights": "400 / 700",
+    "use": "Antik/felsefe göndermesi, karakterli",
+    "var": "baslik",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Gövde",
+    "family": "Alegreya Sans",
+    "axes": "wght@400;500",
+    "weights": "400 / 500",
+    "use": "Açıklama, iletişim",
+    "var": "govde",
+    "fallback": "sans-serif"
+   },
+   {
+    "role": "Vurgu",
+    "family": "Imperial Script",
+    "axes": "",
+    "weights": "400",
+    "use": "Kısa not: 'antik limanda'",
+    "var": "vurgu",
+    "fallback": "cursive"
+   }
+  ],
+  "scale": [
+   [
+    "Kapak başlığı",
+    "110–150 px Philosopher 700"
+   ],
+   [
+    "Gövde",
+    "30 px Alegreya Sans 400"
+   ],
+   [
+    "Vurgu",
+    "90–120 px Imperial Script, amber ya da bronz"
+   ]
+  ],
+  "type_rules": [
+   "Başlık ortalı; tapınak alınlığı gibi üçgen/simetrik yerleşim.",
+   "Imperial Script kare başına bir kez.",
+   "Bronz yazı yalnız koyu zeminde ve büyük."
+  ],
+  "logo": [
+   "Logo: bronz tapınak cephesi + 'ASSOS BEHRAM HOTEL'. Dosya gelene kadar CSS ile sade alınlık (üçgen + 4 sütun çizgisi) + Philosopher yazı-imza; logo çizimi kopyalanmaz."
+  ],
+  "layout": [
+   "Motif: tapınak alınlığı üçgeni ve sütun çizgileri, bronz ince çizgi.",
+   "Gece/akşam kareleri Ege laciverti, gündüz taş.",
+   "Reels: liman akşamı → balık sofrası → oda → gün batımı."
+  ],
+  "photo": "Assos ancient harbor, honey stone, Aegean deep blue and sunset amber tones, photorealistic, no people, no text, no logos, no letters",
+  "dont": [
+   "Rakı/şarap kadehi öne çıkaran kare (alkol tanıtım kısıtı).",
+   "Logo yeniden çizmek.",
+   "Neon turuncu."
+  ]
  }
 ]

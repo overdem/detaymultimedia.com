@@ -37,6 +37,11 @@ Her müşteri için tek bir tasarım dosyası: logosundan ve renklerinden çıka
 | ferin patisserie & coffee | [ferin-patisserie-coffee.md](ferin-patisserie-coffee.md) | EB Garamond / Be Vietnam Pro / Parisienne | bordo, fildişi, gül kurusu |
 | Assos Troy Beach Hotel | [assos-troy-beach-hotel.md](assos-troy-beach-hotel.md) | Castoro / Mukta / Alex Brush | bakır, Kadırga denizi, kum |
 | Bozcaada Öykü Butik Otel | [bozcaada-oyku-butik-otel.md](bozcaada-oyku-butik-otel.md) | Vollkorn / Libre Franklin / Dancing Script (öneri) | ada gecesi, fener amberi, taş, badana |
+| Talay Bağları Konukevi | [talay-baglari-konukevi.md](talay-baglari-konukevi.md) | Cardo / Hind / Ms Madi | logo mavisi, bağ yeşili, üzüm moru, kireç |
+| Kinzi House | [kinzi-house.md](kinzi-house.md) | Sora / Asap / Yellowtail (öneri) | ceviz, kireç, taş, Boğaz mavisi |
+| Biada Oteli | [biada-oteli.md](biada-oteli.md) | Forum / Kumbh Sans / Meow Script | grafit, sıva, panjur yeşili, kiremit, fener |
+| Kalidna Otel Bozcaada | [kalidna-otel-bozcaada.md](kalidna-otel-bozcaada.md) | Bellefair / Sarabun / Corinthia | lacivert, ekru, çam, kum, deniz |
+| Assos Behram Hotel | [assos-behram-hotel.md](assos-behram-hotel.md) | Philosopher / Alegreya Sans / Imperial Script | tapınak bronzu, Ege laciverti, taş, amber |
 
 ## Yeni firma eklemek
 

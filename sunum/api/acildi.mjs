@@ -3,6 +3,11 @@
 // NTFY_TOPIC (push), RESEND_API_KEY + NOTIFY_EMAIL (e-mail copy), NOTIFY_FROM (optional sender).
 
 const PAGES = {
+  'talay-baglari-konukevi-ornek': 'Talay Bağları Konukevi',
+  'kinzi-house-ornek': 'Kinzi House',
+  'biada-oteli-ornek': 'Biada Oteli',
+  'kalidna-otel-bozcaada-ornek': 'Kalidna Otel Bozcaada',
+  'assos-behram-hotel-ornek': 'Assos Behram Hotel',
   'veranda-coffee-company-ornek': 'Veranda Coffee Company',
   'cream-coffee-kitchen-ornek': 'Cream Coffee & Kitchen',
   'ferin-patisserie-coffee-ornek': 'ferin | patisserie & coffee',
